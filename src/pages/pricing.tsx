@@ -110,7 +110,7 @@ export default function Pricing(): ReactNode {
                   to={
                     tier.name === 'Free' || tier.name === 'Pro'
                       ? '/docs/getting-started/quick-start'
-                      : 'mailto:sales@zpoa.com'
+                      : 'mailto:info@zpoa.com'
                   }>
                   {tier.btn}
                 </Link>

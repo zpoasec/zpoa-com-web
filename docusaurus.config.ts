@@ -148,7 +148,7 @@ const config: Config = {
         href: 'https://www.zpoa.com',
         width: 160,
       },
-      copyright: `Copyright © ${new Date().getFullYear()} ZPOA, Inc. All rights reserved.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Zpoa Inc. All rights reserved.<br/>8 The Green, Ste R, Dover, DE 19901`,
     },
     prism: {
       theme: prismThemes.github,
