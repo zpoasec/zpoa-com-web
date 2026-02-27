@@ -78,7 +78,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/logo.webp',
+    image: 'img/logo.png',
     colorMode: {
       defaultMode: 'light',
       respectPrefersColorScheme: false,
@@ -86,9 +86,9 @@ const config: Config = {
     navbar: {
       title: '',
       logo: {
-        alt: 'ZPOA Shield',
-        src: 'img/logo.webp',
-        style: {height: '36px'},
+        alt: 'ZPOA',
+        src: 'img/logo.png',
+        style: {height: '40px'},
       },
       items: [
         {to: '/docs/intro', label: 'Features', position: 'left'},
