@@ -80,8 +80,8 @@ const config: Config = {
   themeConfig: {
     image: 'img/logo.webp',
     colorMode: {
-      defaultMode: 'dark',
-      respectPrefersColorScheme: true,
+      defaultMode: 'light',
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: '',
