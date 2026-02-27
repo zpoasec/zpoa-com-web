@@ -1,30 +1,469 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #046bd2;
+  --ifm-color-primary-dark: #045cb4;
+  --ifm-color-primary-darker: #0356aa;
+  --ifm-color-primary-darkest: #03478c;
+  --ifm-color-primary-light: #057af0;
+  --ifm-color-primary-lighter: #1384f4;
+  --ifm-color-primary-lightest: #3d9df6;
   --ifm-code-font-size: 95%;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', monospace;
+  --ifm-heading-font-weight: 700;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --zpoa-accent: #06b6d4;
+  --zpoa-accent-light: #22d3ee;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #06b6d4;
+  --ifm-color-primary-dark: #05a3be;
+  --ifm-color-primary-darker: #059ab4;
+  --ifm-color-primary-darkest: #047f94;
+  --ifm-color-primary-light: #0ec9ea;
+  --ifm-color-primary-lighter: #22d3ee;
+  --ifm-color-primary-lightest: #4eddf2;
+  --ifm-background-color: #0a0e1a;
+  --ifm-background-surface-color: #111827;
+  --ifm-navbar-background-color: #0d1117;
+  --ifm-footer-background-color: #050810;
+  --ifm-card-background-color: #111827;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar */
+.navbar {
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(13, 17, 23, 0.85);
+}
+
+.navbar__title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.navbar-login-btn {
+  background: linear-gradient(135deg, var(--zpoa-accent), #6366f1);
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 6px 16px !important;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: opacity 0.2s;
+}
+
+.navbar-login-btn:hover {
+  opacity: 0.9;
+  color: #fff !important;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme='dark'] .hero-section {
+  background: radial-gradient(ellipse at top, rgba(6, 182, 212, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at bottom right, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
+              #0a0e1a;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-section h1 .accent {
+  background: linear-gradient(135deg, var(--zpoa-accent), #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-section .tagline {
+  font-size: 1.25rem;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  background: linear-gradient(135deg, var(--zpoa-accent), #6366f1);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  text-decoration: none;
+}
+
+.hero-btn-secondary:hover {
+  border-color: var(--zpoa-accent);
+  color: var(--zpoa-accent);
+  text-decoration: none;
+}
+
+/* Feature Cards */
+.features-section {
+  padding: 5rem 0;
+}
+
+.features-section h2 {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.feature-card {
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+[data-theme='dark'] .feature-card {
+  background: rgba(17, 24, 39, 0.6);
+}
+
+[data-theme='light'] .feature-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--zpoa-accent);
+}
+
+.feature-card .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card .pill {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Pillar colors */
+.pill-detect { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+.pill-comply { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.pill-discover { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+.pill-armor { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.pill-fortress { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.pill-neural { background: rgba(6, 182, 212, 0.15); color: #22d3ee; }
+
+/* Integrations Banner */
+.integrations-section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.integrations-section h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.integrations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+.integration-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='dark'] .integration-badge {
+  background: rgba(17, 24, 39, 0.6);
+}
+
+[data-theme='light'] .integration-badge {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+[data-theme='dark'] .cta-section {
+  background: linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.04));
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.15rem;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+/* Stats */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--zpoa-accent), #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-item .label {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-top: 0.25rem;
+}
+
+/* Pricing */
+.pricing-section {
+  padding: 5rem 0;
+}
+
+.pricing-section h1 {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-section .subtitle {
+  text-align: center;
+  font-size: 1.15rem;
+  opacity: 0.7;
+  margin-bottom: 3rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.pricing-card {
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme='dark'] .pricing-card {
+  background: rgba(17, 24, 39, 0.6);
+}
+
+[data-theme='light'] .pricing-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.pricing-card.featured {
+  border-color: var(--zpoa-accent);
+  position: relative;
+}
+
+.pricing-card.featured::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--zpoa-accent), #6366f1);
+  color: #fff;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.pricing-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.pricing-card .price span {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.pricing-card .features-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  flex: 1;
+}
+
+.pricing-card .features-list li {
+  padding: 6px 0;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricing-card .features-list li::before {
+  content: '\2713';
+  color: var(--zpoa-accent);
+  font-weight: 700;
+}
+
+.pricing-card .pricing-btn {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.pricing-card .pricing-btn:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.pricing-card .pricing-btn.primary {
+  background: linear-gradient(135deg, var(--zpoa-accent), #6366f1);
+  color: #fff;
+}
+
+.pricing-card .pricing-btn.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme='light'] .pricing-card .pricing-btn.secondary {
+  border-color: #d1d5db;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.25rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-row {
+    gap: 2rem;
+  }
 }

@@ -1,19 +1,19 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+release:
+  label: Release
+  permalink: /release
+  description: Product releases and updates
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+integrations:
+  label: Integrations
+  permalink: /integrations
+  description: Integration announcements
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+product:
+  label: Product
+  permalink: /product
+  description: Product news and features
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+security:
+  label: Security
+  permalink: /security
+  description: Security insights and best practices
