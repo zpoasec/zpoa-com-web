@@ -84,10 +84,11 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'ZPOA Shield',
+      title: '',
       logo: {
-        alt: 'ZPOA Shield Logo',
+        alt: 'ZPOA Shield',
         src: 'img/logo.webp',
+        style: {height: '36px'},
       },
       items: [
         {to: '/docs/intro', label: 'Features', position: 'left'},
