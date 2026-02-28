@@ -35,6 +35,9 @@ const sidebars: SidebarsConfig = {
             'modules/comply/frameworks',
             'modules/comply/evidence',
             'modules/comply/risks',
+            'modules/comply/ai-copilot',
+            'modules/comply/ai-features',
+            'modules/comply/cross-framework-mapping',
           ],
         },
         {
@@ -105,6 +108,7 @@ const sidebars: SidebarsConfig = {
         'administration/api-keys',
         'administration/sso',
         'administration/billing',
+        'administration/ai-settings',
       ],
     },
     {

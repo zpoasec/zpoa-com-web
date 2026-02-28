@@ -22,7 +22,7 @@ JavaScript must be enabled in your browser. ZPOA Shield makes extensive use of m
 
 - **Use the latest stable release** of your preferred browser for optimal performance and security.
 - **Disable aggressive ad blockers** on the ZPOA Shield domain, as they may interfere with API calls and real-time data streams.
-- **Allow pop-ups** from shield.zpoa.com if you use features such as report exports or OAuth-based connector authentication flows.
+- **Allow pop-ups** from app.zpoashield.com if you use features such as report exports or OAuth-based connector authentication flows.
 
 ## Network Requirements
 
@@ -30,10 +30,10 @@ JavaScript must be enabled in your browser. ZPOA Shield makes extensive use of m
 
 All communication between your browser and the ZPOA Shield platform occurs over HTTPS on port 443. Ensure your firewall and proxy configurations allow outbound HTTPS traffic to the following domains:
 
-- `shield.zpoa.com` -- Primary application
-- `api.zpoa.com` -- API endpoints
-- `auth.zpoa.com` -- Authentication services
-- `static.zpoa.com` -- Static assets and documentation
+- `app.zpoashield.com` -- Primary application
+- `api.zpoashield.com` -- API endpoints
+- `auth.zpoashield.com` -- Authentication services
+- `static.zpoashield.com` -- Static assets and documentation
 
 ### WebSocket Connectivity
 

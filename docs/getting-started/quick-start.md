@@ -7,7 +7,7 @@ This guide walks you through creating your ZPOA Shield account and completing th
 
 ## Step 1: Sign Up
 
-Visit [shield.zpoa.com](https://shield.zpoa.com) and click **Get Started**. Enter your work email address, choose a strong password, and verify your email. Once verified, you will be directed to the onboarding wizard.
+Visit [app.zpoashield.com](https://app.zpoashield.com) and click **Get Started**. Enter your work email address, choose a strong password, and verify your email. Once verified, you will be directed to the onboarding wizard.
 
 ## Step 2: Complete the Onboarding Wizard
 

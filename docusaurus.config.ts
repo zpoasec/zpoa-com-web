@@ -106,7 +106,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://zpoa.apps-dev.us-east.in.hinisoft.com',
+          href: 'https://app.zpoashield.com',
           label: 'Login',
           position: 'right',
           className: 'navbar-login-btn',

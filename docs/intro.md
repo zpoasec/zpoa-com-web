@@ -10,7 +10,7 @@ ZPOA Shield is a unified cybersecurity SaaS platform designed to consolidate you
 ZPOA Shield is built around six core modules, each addressing a critical pillar of modern cybersecurity:
 
 - **Detect (SIEM)** -- Real-time log ingestion, correlation, and alerting. Ingest data from across your infrastructure and surface threats as they emerge.
-- **Comply (GRC)** -- Automated compliance posture assessment against industry frameworks such as SOC 2, ISO 27001, PCI-DSS, HIPAA, and more.
+- **Comply (GRC)** -- AI-powered compliance management with automated posture assessment, a conversational Compliance Copilot, AI policy generation, evidence validation, audit readiness reports, and cross-framework inheritance across SOC 2, ISO 27001, PCI-DSS, HIPAA, and more.
 - **Discover (Asset Inventory)** -- Continuous discovery and classification of every asset in your environment, from cloud workloads to on-premises endpoints.
 - **Armor (Endpoint Protection)** -- Endpoint hardening, vulnerability management, and patch orchestration to reduce your attack surface.
 - **Fortress (Network Security)** -- Network segmentation analysis, firewall rule auditing, and traffic anomaly detection to protect your perimeter and internal zones.
