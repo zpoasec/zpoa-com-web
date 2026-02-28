@@ -5,7 +5,7 @@ title: Integration Architecture Overview
 
 # Integration Architecture Overview
 
-ZPOA Shield connects to your entire security ecosystem through a unified connector framework. With over 90 pre-built connectors spanning 14 categories, the platform ingests, normalizes, and correlates data from virtually any security tool in your environment.
+ZPOA Shield connects to your entire security ecosystem through a unified connector framework. With over 690 pre-built connectors spanning 23 categories, the platform ingests, normalizes, and correlates data from virtually any security tool in your environment.
 
 ## How Connectors Work
 
@@ -55,24 +55,33 @@ Once the test passes, activate the connector. It immediately begins ingesting da
 
 ## Connector Categories
 
-ZPOA Shield organizes its 90+ connectors into the following 14 categories:
+ZPOA Shield organizes its 690+ connectors into the following 23 categories:
 
 | Category | Examples | Count |
 |---|---|---|
-| Cloud Providers | AWS, Azure, GCP | 12 |
-| Identity Providers | Okta, Entra ID, Duo | 13 |
-| SIEM / Log Sources | Splunk, Syslog, CEF | 13 |
-| EDR | CrowdStrike, SentinelOne, Defender | 14 |
-| Network Security | Palo Alto, Fortinet, Cisco | 18 |
-| Email Security | Proofpoint, Mimecast | 4 |
-| Threat Intelligence | MISP, VirusTotal, STIX/TAXII | 11 |
-| Ticketing | Jira, ServiceNow | 2 |
-| Communication | Slack, Teams, PagerDuty | 4 |
-| DevOps | GitHub, Jenkins, Kubernetes | 6 |
-| Databases | MySQL, PostgreSQL, MongoDB | 5 |
-| Vulnerability Management | Qualys, Tenable, Rapid7 | 4 |
-| Custom / Generic | REST API, Webhook, File Upload | 3+ |
-| SaaS Applications | Salesforce, Google Workspace | 3+ |
+| SaaS Applications | Salesforce, Google Workspace, Slack, Zoom | 160 |
+| HR / HCM | Workday, BambooHR, ADP, SAP SuccessFactors | 112 |
+| AI / ML | OpenAI, AWS Bedrock, Hugging Face, Databricks | 40 |
+| ERP | SAP, Oracle ERP, NetSuite, Dynamics 365 | 36 |
+| Miscellaneous | Custom apps, legacy systems, niche tools | 35 |
+| IGA / Directory | Active Directory, LDAP, Azure AD, SCIM | 30 |
+| Generic / Custom | REST API, Webhook, File Upload, JDBC | 28 |
+| SIEM / Log Sources | Splunk, Syslog, CEF, Elastic, Sentinel | 26 |
+| Marketing | HubSpot, Marketo, Mailchimp, Salesforce Marketing | 24 |
+| Network Security | Palo Alto, Fortinet, Cisco, Check Point | 24 |
+| Financial | Stripe, QuickBooks, Xero, Sage | 20 |
+| ITSM | ServiceNow, Jira, Freshservice, BMC | 20 |
+| LMS | Cornerstone, Moodle, Canvas, Docebo | 17 |
+| Mainframe | IBM z/OS, AS/400, RACF, ACF2 | 15 |
+| Legal | DocuSign, Ironclad, ContractPodAi | 14 |
+| Identity Providers | Okta, Entra ID, Duo, Ping, OneLogin | 14 |
+| EDR | CrowdStrike, SentinelOne, Defender, Carbon Black | 14 |
+| CRM | Salesforce, HubSpot CRM, Dynamics CRM | 14 |
+| Healthcare | Epic, Cerner, Meditech, athenahealth | 12 |
+| PAM | CyberArk, BeyondTrust, Delinea, HashiCorp Vault | 12 |
+| Databases | MySQL, PostgreSQL, MongoDB, Oracle, SQL Server | 5 |
+| Email Security | Proofpoint, Mimecast, Abnormal, Barracuda | 4 |
+| Cloud Providers | AWS, Azure, GCP | 3 |
 
 ## What's Next
 

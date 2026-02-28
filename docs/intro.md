@@ -13,12 +13,12 @@ ZPOA Shield is built around six core modules, each addressing a critical pillar 
 - **Comply (GRC)** -- AI-powered compliance management with automated posture assessment, a conversational Compliance Copilot, AI policy generation, evidence validation, audit readiness reports, and cross-framework inheritance across SOC 2, ISO 27001, PCI-DSS, HIPAA, and more.
 - **Discover (Asset Inventory)** -- Continuous discovery and classification of every asset in your environment, from cloud workloads to on-premises endpoints.
 - **Armor (Endpoint Protection)** -- Endpoint hardening, vulnerability management, and patch orchestration to reduce your attack surface.
-- **Fortress (Network Security)** -- Network segmentation analysis, firewall rule auditing, and traffic anomaly detection to protect your perimeter and internal zones.
+- **Fortress (Identity Governance)** -- Complete identity governance and administration (IGA) with lifecycle management, access reviews, 690+ app connectors, non-human identity governance, threat detection, just-in-time access, and AI-powered access intelligence.
 - **Neural Mesh (AI Engine)** -- An AI-powered intelligence layer that correlates signals across all modules, identifies complex attack chains, and provides actionable recommendations.
 
-## 90+ Integrations
+## 690+ Integrations
 
-ZPOA Shield connects to the tools and platforms you already use. With over 90 pre-built integrations spanning cloud providers (AWS, Azure, GCP), identity providers (Okta, Azure AD), endpoint agents, SaaS applications, network devices, and ticketing systems, you can start ingesting data within minutes of signing up.
+ZPOA Shield connects to the tools and platforms you already use. With over 690 pre-built integrations spanning 23 categories -- cloud providers, identity providers, endpoint agents, SaaS applications, HR/HCM systems, ERP platforms, network devices, AI/ML tools, and more -- you can start ingesting data within minutes of signing up.
 
 ## A Single Pane of Glass
 

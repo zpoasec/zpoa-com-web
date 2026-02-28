@@ -42,7 +42,7 @@ The alert pipeline processes every generated alert through the following stages:
 
 ## Key Capabilities
 
-- Ingest logs from 90+ integrations with no custom parsing required.
+- Ingest logs from 690+ integrations with no custom parsing required.
 - Query billions of events in sub-second response times.
 - Map detections to the MITRE ATT&CK framework automatically.
 - Export data to external systems via API or scheduled reports.
