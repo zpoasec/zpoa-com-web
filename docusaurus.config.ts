@@ -91,7 +91,7 @@ const config: Config = {
         style: {height: '40px'},
       },
       items: [
-        {to: '/docs/intro', label: 'Features', position: 'left'},
+        {to: '/features', label: 'Features', position: 'left'},
         {to: '/pricing', label: 'Pricing', position: 'left'},
         {
           type: 'docSidebar',
@@ -119,7 +119,7 @@ const config: Config = {
         {
           title: 'Product',
           items: [
-            {label: 'Features', to: '/docs/intro'},
+            {label: 'Features', to: '/features'},
             {label: 'Pricing', to: '/pricing'},
             {label: 'Integrations', to: '/docs/integrations/overview'},
             {label: 'Changelog', to: '/blog'},
