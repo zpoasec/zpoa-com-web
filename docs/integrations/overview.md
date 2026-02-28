@@ -9,7 +9,7 @@ ZPOA Shield connects to your entire security ecosystem through a unified connect
 
 ## How Connectors Work
 
-Every integration in ZPOA Shield is powered by a **connector** -- a managed component that handles authentication, data retrieval, normalization, and delivery into the platform's processing pipeline. Connectors operate as isolated microservices, ensuring that a failure in one integration never impacts another.
+Every integration in ZPOA Shield is powered by a **connector** -- a managed component that handles authentication, data retrieval, normalization, and delivery into the platform. Connectors are isolated from one another, ensuring that a failure in one integration never impacts another.
 
 Each connector supports one or more **data modes**:
 
@@ -23,26 +23,19 @@ Each connector supports one or more **data modes**:
 Source System
     |
     v
-Connector (auth, fetch/receive, normalize)
+Connector (authenticate, fetch/receive, normalize)
     |
     v
-Ingestion Pipeline (validation, enrichment, dedup)
-    |
-    v
-Apache Kafka (event bus)
-   / \
-  v   v
-Detection Engine    Data Lake / Storage
+Platform (validate, enrich, detect)
     |
     v
 Alerts, Dashboards, Compliance Reports
 ```
 
-1. **Connector** -- Authenticates with the source, retrieves or receives raw data, and transforms it into the ZPOA Common Event Format (ZCEF).
-2. **Ingestion Pipeline** -- Validates schema conformance, enriches events with asset and threat intelligence context, and deduplicates redundant records.
-3. **Kafka Event Bus** -- Provides durable, ordered message delivery to all downstream consumers.
-4. **Detection Engine** -- Applies correlation rules, ML models, and behavioral analytics in real time.
-5. **Data Lake / Storage** -- Persists normalized events for search, investigation, and long-term compliance retention.
+1. **Connector** -- Authenticates with the source, fetches or receives raw data, and normalizes it into the ZPOA Common Event Format (ZCEF).
+2. **Platform** -- Validates, enriches with asset and threat intelligence context, and deduplicates events.
+3. **Detection** -- Correlation rules, ML models, and behavioral analytics run against incoming events in real time, generating alerts when conditions are met.
+4. **Storage** -- Normalized events are persisted for search, investigation, and long-term compliance retention.
 
 ## Connector Lifecycle
 

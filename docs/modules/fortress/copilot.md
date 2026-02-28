@@ -84,18 +84,3 @@ High-impact actions follow the standard approval process:
 3. **Approval routing** -- If required, the action is routed to the appropriate approver
 4. **Execution** -- Once approved, the action is executed via the standard provisioning pipeline
 5. **Verification** -- Copilot confirms the action completed successfully
-
-## API Endpoints
-
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/fortress/copilot/chat` | Send message to Copilot |
-| GET | `/fortress/copilot/conversations` | List conversations |
-| GET | `/fortress/copilot/conversations/:id` | Get conversation history |
-| POST | `/fortress/copilot/conversations/:id/close` | Close conversation |
-| GET | `/fortress/copilot/actions` | List action history |
-| GET | `/fortress/copilot/templates` | List query templates |
-| POST | `/fortress/copilot/templates` | Create query template |
-| GET | `/fortress/copilot/dashboard` | Dashboard statistics |
-
-All endpoints are prefixed with `/api/v1` and require a valid Bearer token.

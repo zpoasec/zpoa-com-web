@@ -80,14 +80,3 @@ Track how AI tools are being used across the organization:
 3. **Decide** -- Sanction, block, or flag tools for further review
 4. **Enforce** -- Apply policies through IdP integration (block SSO, require MFA, etc.)
 5. **Monitor** -- Continuously track usage and detect new tools
-
-## API Endpoints
-
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/fortress/saas/ai-tools` | List all AI/ML tools |
-| PUT | `/fortress/saas/apps/:id` | Update AI tool status (sanction/block) |
-| GET | `/fortress/saas/apps/:id/licenses` | List users with access to an AI tool |
-| GET | `/fortress/saas/apps/:id/usage` | List AI tool usage events |
-
-All endpoints are prefixed with `/api/v1` and require a valid Bearer token.

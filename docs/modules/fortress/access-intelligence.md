@@ -89,18 +89,3 @@ When a recommendation is generated, it includes:
 2. **Reviewed** -- Admin or manager reviews the recommendation
 3. **Applied** -- Access is provisioned (`status: applied`)
 4. **Rejected** -- Recommendation is rejected with reason (`status: rejected`)
-
-## API Endpoints
-
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/fortress/access-intelligence/recommend/:identityId` | Generate AI recommendation |
-| GET | `/fortress/access-intelligence/recommendations` | List recommendations |
-| PATCH | `/fortress/access-intelligence/recommendations/:id` | Apply or reject |
-| GET | `/fortress/access-intelligence/peer-groups` | List peer groups |
-| POST | `/fortress/access-intelligence/peer-groups/discover` | Trigger peer group discovery |
-| GET | `/fortress/access-intelligence/role-mining` | List mining suggestions |
-| POST | `/fortress/access-intelligence/role-mining/run` | Trigger role mining |
-| GET | `/fortress/access-intelligence/onboarding-status/:id` | Get onboarding progress |
-
-All endpoints are prefixed with `/api/v1` and require a valid Bearer token.

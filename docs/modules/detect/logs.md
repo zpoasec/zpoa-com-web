@@ -3,7 +3,7 @@ sidebar_position: 4
 title: Log Search
 ---
 
-The Log Search interface provides direct access to the normalized event data stored in ZPOA Shield's ClickHouse backend. Analysts can use it for ad-hoc investigations, threat hunting, and forensic analysis.
+The Log Search interface provides direct access to the normalized event data stored in ZPOA Shield's analytics database. Analysts can use it for ad-hoc investigations, threat hunting, and forensic analysis.
 
 ## Full-Text Search
 

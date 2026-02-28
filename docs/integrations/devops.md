@@ -79,21 +79,9 @@ Collect Kubernetes API server audit logs to monitor cluster activity, RBAC chang
 - **Data Types:** API server audit events (RequestReceived, ResponseComplete), admission controller decisions
 
 ```yaml
-# Kubernetes audit policy (minimal example)
-apiVersion: audit.k8s.io/v1
-kind: Policy
-rules:
-  - level: Metadata
-    resources:
-      - group: ""
-        resources: ["secrets", "configmaps"]
-  - level: RequestResponse
-    resources:
-      - group: "rbac.authorization.k8s.io"
-        resources: ["clusterroles", "clusterrolebindings"]
-  - level: Metadata
-    stages:
-      - ResponseComplete
+# Example: Kubernetes audit policy to capture security-relevant events
+# Configure your API server to forward audit events to ZPOA Shield
+# Key events: secrets access, RBAC changes, pod creation, namespace modifications
 ```
 
 **Key Use Cases:**

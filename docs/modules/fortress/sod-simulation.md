@@ -71,19 +71,3 @@ For legitimate business needs that create SoD conflicts:
 3. **Approval** -- Security officer reviews and approves with conditions
 4. **Time-bound** -- Exceptions expire automatically and must be re-approved
 5. **Audit trail** -- Full history of exception grants, renewals, and expirations
-
-## API Endpoints
-
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/fortress/sod-sim/simulations` | Run a new simulation |
-| GET | `/fortress/sod-sim/simulations` | List past simulations |
-| GET | `/fortress/sod-sim/simulations/:id` | Get simulation details |
-| GET | `/fortress/sod-sim/violations` | List simulation violations |
-| PATCH | `/fortress/sod-sim/violations/:id/status` | Update violation status |
-| POST | `/fortress/sod-sim/violations/:id/exception` | Grant exception |
-| GET | `/fortress/sod-sim/rules` | List SoD simulation rules |
-| POST | `/fortress/sod-sim/rules` | Create SoD simulation rule |
-| GET | `/fortress/sod-sim/dashboard` | Dashboard statistics |
-
-All endpoints are prefixed with `/api/v1` and require a valid Bearer token.

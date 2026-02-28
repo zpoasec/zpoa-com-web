@@ -9,15 +9,15 @@ The Detect module is ZPOA Shield's Security Information and Event Management (SI
 
 ### Log Ingestion
 
-ZPOA Shield ingests log data from all connected sources through a high-throughput streaming pipeline powered by Apache Kafka. This architecture ensures reliable, ordered delivery of events even during peak traffic. Connectors push data into dedicated Kafka topics partitioned by source type, enabling parallel processing at scale.
+ZPOA Shield ingests log data from all connected sources through a high-throughput streaming pipeline. This architecture ensures reliable, ordered delivery of events even during peak traffic.
 
 ### Schema Normalization (OCSF)
 
 Raw log events arrive in dozens of vendor-specific formats. The Detect module normalizes every event into the Open Cybersecurity Schema Framework (OCSF), an open standard that provides a consistent data model across all sources. Normalization ensures that detection rules, queries, and dashboards work uniformly regardless of the originating system.
 
-### Storage (ClickHouse)
+### Storage
 
-Normalized events are stored in ClickHouse, a columnar database optimized for analytical queries over large volumes of time-series data. ClickHouse provides sub-second query performance on billions of rows, enabling fast log search, aggregation, and trend analysis. Data retention policies are configurable per tenant.
+Normalized events are stored in a high-performance columnar database optimized for analytical queries over large volumes of time-series data. The storage engine provides sub-second query performance on billions of rows, enabling fast log search, aggregation, and trend analysis. Data retention policies are configurable per tenant.
 
 ## Correlation Engine
 

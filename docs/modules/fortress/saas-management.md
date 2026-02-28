@@ -105,24 +105,3 @@ Enable a self-service workflow for employees to request access to SaaS applicati
 2. Request routes to the appropriate approver (manager, IT admin, security team)
 3. Upon approval, a license is automatically provisioned
 4. If rejected, the requester receives the reason
-
-## API Endpoints
-
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/fortress/saas/apps` | List all SaaS applications |
-| GET | `/fortress/saas/apps/:id` | Get application details |
-| POST | `/fortress/saas/apps` | Register a new application |
-| PUT | `/fortress/saas/apps/:id` | Update application |
-| DELETE | `/fortress/saas/apps/:id` | Remove application |
-| GET | `/fortress/saas/shadow-it` | List shadow IT applications |
-| GET | `/fortress/saas/ai-tools` | List AI/ML tools |
-| POST | `/fortress/saas/licenses` | Assign a license |
-| DELETE | `/fortress/saas/licenses/:id` | Revoke a license |
-| GET | `/fortress/saas/apps/:id/licenses` | List licenses for an app |
-| GET | `/fortress/saas/licenses/unused` | List unused licenses |
-| GET | `/fortress/saas/dashboard` | Get SaaS dashboard stats |
-| POST | `/fortress/saas/requests` | Create an app request |
-| GET | `/fortress/saas/requests` | List app requests |
-
-All endpoints are prefixed with `/api/v1` and require a valid Bearer token.

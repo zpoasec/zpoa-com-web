@@ -54,20 +54,3 @@ When a vendor contract expires:
 3. Active sessions are terminated
 4. A final access report is generated for audit
 5. Identities remain in disabled state for 90 days before permanent deletion
-
-## API Endpoints
-
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/fortress/vendors` | List vendor organizations |
-| POST | `/fortress/vendors` | Register vendor organization |
-| GET | `/fortress/vendors/:id` | Get vendor org details |
-| PUT | `/fortress/vendors/:id` | Update vendor org |
-| GET | `/fortress/vendors/:id/identities` | List vendor identities |
-| POST | `/fortress/vendors/identities` | Create vendor identity |
-| DELETE | `/fortress/vendors/identities/:id` | Remove vendor identity |
-| POST | `/fortress/vendors/reviews` | Start access review |
-| POST | `/fortress/vendors/reviews/:id/complete` | Complete review |
-| GET | `/fortress/vendors/dashboard` | Dashboard statistics |
-
-All endpoints are prefixed with `/api/v1` and require a valid Bearer token.

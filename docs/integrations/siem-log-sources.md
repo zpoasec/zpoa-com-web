@@ -78,10 +78,10 @@ Collect enhanced Windows telemetry from Microsoft Sysmon including process creat
 
 ### Apache Kafka
 
-Consume events directly from your existing Kafka topics. ZPOA Shield acts as a Kafka consumer group, reading from one or more topics without disrupting other consumers.
+Consume events directly from your existing Kafka topics. ZPOA Shield reads from one or more topics without disrupting other consumers.
 
-- **Configuration:** Broker list, topic names, consumer group ID, SASL/SSL authentication.
-- **Formats Supported:** JSON, Avro (with Schema Registry), raw text.
+- **Configuration:** Broker addresses, topic names, authentication credentials.
+- **Formats Supported:** JSON, Avro, raw text.
 
 ### Amazon S3 Transport
 
