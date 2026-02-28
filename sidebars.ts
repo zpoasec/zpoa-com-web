@@ -68,6 +68,10 @@ const sidebars: SidebarsConfig = {
             'modules/fortress/identities',
             'modules/fortress/policies',
             'modules/fortress/anomalies',
+            'modules/fortress/saas-management',
+            'modules/fortress/ai-governance',
+            'modules/fortress/access-intelligence',
+            'modules/fortress/onboarding',
           ],
         },
         {
