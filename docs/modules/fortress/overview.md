@@ -93,6 +93,123 @@ Minimize time from hire to full access with automated Day-1 provisioning:
 - **AI recommendations** -- When birthright rules do not match, AI recommends access based on peer groups
 - **Day-30 micro-certification** -- Automatic review and cleanup of unused access
 
+### NHI Governance
+
+Complete lifecycle management for non-human identities:
+
+- **Identity types** -- Service accounts, API keys, bots, certificates, and machine credentials
+- **Rotation policies** -- Automated rotation schedules with escalation for overdue credentials
+- **Orphan detection** -- Identify NHIs that have lost their human owner
+- **Owner assignment** -- Every NHI must have a responsible human owner
+
+### Identity Threat Detection and Response (ITDR)
+
+Detect and respond to identity-based attacks in real-time:
+
+- **Threat detection** -- 10 threat types including credential stuffing, MFA fatigue, session hijacking, and privilege escalation
+- **Detection engines** -- Behavioral, signature, and ML-based detection rules
+- **Auto-response** -- Disable accounts, force MFA, revoke sessions automatically
+- **MITRE ATT&CK mapping** -- Every detection maps to relevant tactics and techniques
+
+### Just-in-Time Access
+
+Eliminate standing privileges with temporary, on-demand elevated access:
+
+- **Request workflow** -- Users request access when needed with business justification
+- **AI-recommended durations** -- Optimal session length based on historical patterns
+- **Auto-expiry** -- Access automatically revoked when the session expires
+- **Extension limits** -- Maximum extensions per session with approval required
+
+### Continuous Access Evaluation (CAE)
+
+Real-time trust scoring with adaptive access controls:
+
+- **Trust scores (0-100)** -- Continuously updated based on device, location, behavior, and MFA
+- **Adaptive policies** -- Dynamically adjust access based on current risk level
+- **Real-time evaluation** -- Re-evaluate on device change, location change, or anomalous behavior
+- **Score trends** -- Track trust score history for compliance reporting
+
+### Access Storefront
+
+Self-service app catalog with AI-powered recommendations:
+
+- **App catalog** -- Browse, search, and request access to applications and resources
+- **AI recommendations** -- "People like you" engine suggests relevant access
+- **Multi-step approval** -- Complex requests routed through sequential approval workflows
+- **Provision time tracking** -- End-to-end metrics from request to access
+
+### SOD Simulation
+
+What-if analysis for access changes before implementation:
+
+- **Propose changes** -- Simulate role assignments, permission grants, or transfers
+- **Conflict detection** -- Identify toxic combinations, excessive privilege, and cross-app conflicts
+- **Risk score delta** -- See before/after risk impact of proposed changes
+- **Exception workflow** -- Request approved exceptions with justification and expiry
+
+### Entitlement Intelligence
+
+Deep permission mapping with usage tracking across all applications:
+
+- **Granular entitlements** -- Map permissions at application, resource, and action levels
+- **Usage tracking** -- Monitor when and how often each entitlement is used
+- **Permission creep alerts** -- Detect gradual accumulation of unnecessary access
+- **Identity comparison** -- Compare entitlements between two identities
+
+### Vendor Identity Management
+
+Third-party identity lifecycle tied to contracts and sponsors:
+
+- **Vendor registration** -- Organizations with contract binding and risk tiers
+- **Sponsor approval** -- Every vendor identity requires an internal sponsor
+- **Periodic reviews** -- Automated review campaigns for vendor access
+- **Auto-disable** -- Vendor identities disabled on contract expiry
+
+### Access Analytics
+
+Risk scoring, heatmaps, and trend analysis for identity access:
+
+- **Per-identity and per-department risk scores** -- Composite scores based on privilege, usage, and behavior
+- **Risk heatmaps** -- Visual risk distribution across the organization
+- **Outlier detection** -- Identify identities deviating from peer group norms
+- **MFA coverage and over-privileged tracking** -- Key metrics trending over time
+
+### Passwordless Governance
+
+Visibility and policy enforcement for the passwordless transition:
+
+- **Credential inventory** -- Track passkeys, FIDO2 keys, biometrics, and certificates
+- **Enforcement policies** -- Department-level and role-level passwordless requirements
+- **Adoption tracking** -- Per-method and per-department adoption rates
+- **Password-only detection** -- Identify users still relying solely on passwords
+
+### Compliance-as-Code
+
+Policy-as-code engine for identity compliance:
+
+- **Policy languages** -- Define rules in Rego, CEL, or JSON Logic
+- **Automated evaluation** -- Scheduled and on-demand policy runs against all identities
+- **Drift detection** -- Detect when identity states drift from policy expectations
+- **Auto-remediation** -- Automatically restore non-compliant identities to compliant state
+
+### Identity Fabric
+
+Unified cross-provider identity policy mesh:
+
+- **Cross-provider policies** -- Define once, enforce across Okta, Azure AD, AWS IAM, and more
+- **Event correlation** -- Unified view of identity actions across all providers
+- **Identity mapping** -- Map provider accounts to canonical identities with confidence scoring
+- **Conflict resolution** -- Automated and manual resolution of cross-provider inconsistencies
+
+### AI Access Copilot
+
+Natural language interface for identity access management:
+
+- **Conversational queries** -- Ask "Who has admin access to production?" in plain English
+- **Action execution** -- Grant, revoke, and review access through natural language commands
+- **Query templates** -- Pre-built templates for common access queries
+- **Action audit log** -- Every Copilot action is logged with full audit trail
+
 ## 690+ Connectors
 
 Fortress connects to virtually every enterprise application through 690+ pre-built connectors:
@@ -114,3 +231,16 @@ Fortress connects to virtually every enterprise application through 690+ pre-bui
 - [AI Governance](./ai-governance.md) -- Govern AI tool usage across the organization
 - [Access Intelligence](./access-intelligence.md) -- AI-powered access recommendations and role mining
 - [Instant Onboarding](./onboarding.md) -- Day-1 provisioning and onboarding automation
+- [NHI Governance](./nhi.md) -- Non-human identity lifecycle and rotation management
+- [ITDR](./itdr.md) -- Identity threat detection and automated response
+- [JIT Access](./jit-access.md) -- Just-in-time temporary elevated access
+- [Continuous Access Evaluation](./cae.md) -- Real-time trust scoring and adaptive policies
+- [Access Storefront](./storefront.md) -- Self-service app catalog with AI recommendations
+- [SOD Simulation](./sod-simulation.md) -- What-if analysis for access changes
+- [Entitlement Intelligence](./entitlements.md) -- Deep permission mapping and usage tracking
+- [Vendor Identity Management](./vendors.md) -- Third-party identity lifecycle governance
+- [Access Analytics](./analytics.md) -- Risk scoring, heatmaps, and trend analysis
+- [Passwordless Governance](./passwordless.md) -- Passwordless transition tracking and enforcement
+- [Compliance-as-Code](./compliance-code.md) -- Policy-as-code with drift detection
+- [Identity Fabric](./identity-fabric.md) -- Cross-provider identity policy mesh
+- [AI Access Copilot](./copilot.md) -- Natural language access management interface
