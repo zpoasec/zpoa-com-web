@@ -17,7 +17,7 @@ ZPOA Shield uses a hybrid pricing model: **SIEM priced by data volume** (GB inge
 | **SIEM Log Ingestion** | 1 GB/day | 10 GB/day | 50 GB/day | Unlimited | Unlimited |
 | **Managed Identities** | 25 | 500 | 5,000 | Unlimited | Unlimited |
 | **Data Retention** | 7 days | 90 days | 1 year | Custom | Custom |
-| **Connectors** | 10 | 100 | 690+ | 690+ | 690+ |
+| **Connectors** | 690+ | 690+ | 690+ | 690+ | 690+ |
 | **Compliance Frameworks** | 1 | 4 | All | All | All |
 | **ITDR & JIT Access** | — | — | Included | Included | Included |
 | **NHI Governance** | — | — | Included | Included | Included |

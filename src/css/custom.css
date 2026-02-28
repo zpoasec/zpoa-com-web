@@ -595,9 +595,9 @@ body {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  max-width: 1100px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -755,6 +755,56 @@ body {
   color: var(--zpoa-blue);
 }
 
+/* ── Comparison Table ── */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  max-width: 1300px;
+  margin: 0 auto;
+  font-size: 0.875rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--zpoa-gray-200);
+}
+
+[data-theme='dark'] .comparison-table th,
+[data-theme='dark'] .comparison-table td {
+  border-color: #2A3A4E;
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+  min-width: 200px;
+}
+
+.comparison-table thead th {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--zpoa-heading);
+  background: var(--zpoa-gray-50);
+  position: sticky;
+  top: 0;
+}
+
+[data-theme='dark'] .comparison-table thead th {
+  color: #FFFFFF;
+  background: #162030;
+}
+
+.comparison-table tbody tr:hover {
+  background: rgba(0, 82, 204, 0.03);
+}
+
+[data-theme='dark'] .comparison-table tbody tr:hover {
+  background: rgba(76, 154, 255, 0.05);
+}
+
 /* ── Footer override — black bg like webex.com ── */
 .footer--dark {
   background: #000000;
@@ -790,6 +840,12 @@ body {
 }
 
 /* ── Responsive ── */
+@media (max-width: 1200px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 996px) {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
