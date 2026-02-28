@@ -11,8 +11,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://zpoasec.github.io',
-  baseUrl: '/zpoa-com-web/',
+  url: 'https://www.zpoa.com',
+  baseUrl: '/',
 
   organizationName: 'zpoasec',
   projectName: 'zpoa-com-web',
