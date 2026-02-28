@@ -132,11 +132,11 @@ function HeroSection(): ReactNode {
             </div>
             <div className="stat-item">
               <div className="number">6</div>
-              <div className="label">Modules</div>
+              <div className="label">Security Pillars</div>
             </div>
             <div className="stat-item">
               <div className="number">23</div>
-              <div className="label">Categories</div>
+              <div className="label">Ecosystems</div>
             </div>
             <div className="stat-item">
               <div className="number">24/7</div>
@@ -281,11 +281,11 @@ function StatsBar(): ReactNode {
           </div>
           <div className="stats-bar-item">
             <div className="stats-bar-number">6</div>
-            <div className="stats-bar-label">Unified Modules</div>
+            <div className="stats-bar-label">Security Pillars</div>
           </div>
           <div className="stats-bar-item">
             <div className="stats-bar-number">23</div>
-            <div className="stats-bar-label">Categories</div>
+            <div className="stats-bar-label">Ecosystems</div>
           </div>
         </div>
       </div>

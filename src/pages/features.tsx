@@ -178,7 +178,7 @@ function StatsBar(): ReactNode {
     {number: '99.9%', label: 'Uptime SLA'},
     {number: '<1s', label: 'Alert Latency'},
     {number: '85%', label: 'MTTR Reduction'},
-    {number: '6', label: 'Unified Modules'},
+    {number: '6', label: 'Security Pillars'},
   ];
 
   return (
