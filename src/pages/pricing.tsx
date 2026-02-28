@@ -196,7 +196,7 @@ export default function Pricing(): ReactNode {
           <div className="savings-section" style={{marginTop: '3rem', textAlign: 'center', opacity: 0.8}}>
             <h3>Why ZPOA Shield?</h3>
             <p style={{maxWidth: '700px', margin: '1rem auto'}}>
-              Most organizations pay separately for SIEM ($150+/GB/day) and IGA ($15+/identity/year).
+              Most organizations pay separately for SIEM ($150+/GB/day) and IGA ($15+/identity/month).
               ZPOA Shield bundles both into a single platform starting at $499/month — saving 60-80% vs. buying point solutions.
             </p>
           </div>
