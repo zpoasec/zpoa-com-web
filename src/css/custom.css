@@ -755,11 +755,17 @@ body {
   color: var(--zpoa-blue);
 }
 
+/* ── Comparison Section ── */
+.comparison-section {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 /* ── Comparison Table ── */
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
-  max-width: 1300px;
+  table-layout: fixed;
   margin: 0 auto;
   font-size: 0.875rem;
 }
@@ -767,8 +773,9 @@ body {
 .comparison-table th,
 .comparison-table td {
   padding: 0.75rem 1rem;
-  text-align: center;
+  text-align: center !important;
   border-bottom: 1px solid var(--zpoa-gray-200);
+  vertical-align: middle;
 }
 
 [data-theme='dark'] .comparison-table th,
@@ -778,9 +785,9 @@ body {
 
 .comparison-table th:first-child,
 .comparison-table td:first-child {
-  text-align: left;
+  text-align: left !important;
   font-weight: 500;
-  min-width: 200px;
+  width: 220px;
 }
 
 .comparison-table thead th {
