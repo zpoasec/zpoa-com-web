@@ -9,20 +9,35 @@ ZPOA Shield offers flexible subscription plans designed to scale with your organ
 
 ## Subscription Plans
 
-| Feature | Starter | Professional | Enterprise |
-|---|---|---|---|
-| Data Ingestion | Up to 10 GB/day | Up to 100 GB/day | Custom |
-| Retention | 30 days | 90 days | 1 year+ (custom) |
-| Connectors | 10 | 50 | Unlimited |
-| Users | 5 | 25 | Unlimited |
-| Detection Rules | 100 built-in | 500+ built-in + custom | Unlimited + custom |
-| Response Actions | Manual only | Automated playbooks | Full SOAR |
-| Compliance Frameworks | 2 | 5 | All supported |
-| Support | Email (business hours) | Email + Chat (24/5) | Dedicated CSM (24/7) |
-| SSO/SAML | Not included | Included | Included |
-| API Access | Basic (60 req/min) | Standard (300 req/min) | Premium (1,000 req/min) |
+ZPOA Shield uses a hybrid pricing model: **SIEM priced by data volume** (GB ingested per day) and **IGA priced by managed identities** (human users + non-human identities).
 
-All plans include access to the ZPOA Shield web console, mobile app, and core detection capabilities. Plans are billed monthly or annually (annual billing provides a 20% discount).
+| Feature | Free | Pro | Business | Enterprise | MSSP |
+|---|---|---|---|---|---|
+| **Price** | $0/mo | $499/mo | $1,999/mo | Custom | Custom |
+| **SIEM Log Ingestion** | 1 GB/day | 10 GB/day | 50 GB/day | Unlimited | Unlimited |
+| **Managed Identities** | 25 | 500 | 5,000 | Unlimited | Unlimited |
+| **Data Retention** | 7 days | 90 days | 1 year | Custom | Custom |
+| **Connectors** | 10 | 100 | 690+ | 690+ | 690+ |
+| **Compliance Frameworks** | 1 | 4 | All | All | All |
+| **ITDR & JIT Access** | — | — | Included | Included | Included |
+| **NHI Governance** | — | — | Included | Included | Included |
+| **SSO / SAML** | — | — | Included | Included | Included |
+| **API Rate** | 100 req/min | 1,000 req/min | 5,000 req/min | 10,000 req/min | 10,000 req/min |
+| **Multi-Tenant** | — | — | — | — | Included |
+| **White-Label** | — | — | — | — | Included |
+| **Support** | Community | Email & Chat | 24/7 Priority | Dedicated CSM | Dedicated CSM |
+
+All plans include access to the ZPOA Shield web console and core SIEM + IGA capabilities. Plans are billed monthly or annually (annual billing provides a 20% discount).
+
+### Overage Pricing
+
+If your usage exceeds the included limits, ZPOA Shield continues to operate without interruption. Overage charges are applied automatically:
+
+| Plan | Log Ingestion Overage | Identity Overage |
+|---|---|---|
+| Pro | $5 per GB/day | $2 per identity/month |
+| Business | $3 per GB/day | $1 per identity/month |
+| Enterprise | Volume discounts | Volume discounts |
 
 ## Managing Your Subscription
 
@@ -32,8 +47,8 @@ Navigate to **Settings > Billing > Subscription** to view:
 
 - Current plan name and billing cycle (monthly/annual)
 - Plan start date and next renewal date
-- Current data ingestion usage vs. plan limit
-- Active user count vs. plan limit
+- Current SIEM log ingestion usage vs. plan limit
+- Managed identity count vs. plan limit
 - Active connector count vs. plan limit
 
 ### Upgrading Your Plan
@@ -61,10 +76,10 @@ Downgrades take effect at the end of the current billing cycle. You retain full 
 
 Track your resource consumption in real time under **Settings > Billing > Usage**:
 
-- **Data Ingestion** -- Daily and monthly ingestion volume with a trend chart. A visual indicator shows your current usage relative to the plan limit.
-- **Storage** -- Total stored data volume including hot (searchable) and cold (archived) tiers.
-- **Users** -- Active user count by role.
+- **SIEM Log Ingestion** -- Daily and monthly ingestion volume with a trend chart. A visual indicator shows your current usage relative to the plan limit.
+- **Managed Identities** -- Total human and non-human identities governed by Fortress IGA.
 - **Connectors** -- Active connector count by category.
+- **Compliance Frameworks** -- Active frameworks vs. plan limit.
 - **API Calls** -- Total API requests by day/week/month, broken down by key.
 
 ### Usage Alerts
@@ -115,7 +130,7 @@ Manage payment methods under **Settings > Billing > Payment Methods**:
 
 ## Overages
 
-If your data ingestion exceeds the plan limit, ZPOA Shield continues to ingest data to ensure no gaps in security coverage. Overage charges are billed at the per-GB rate for your plan tier and appear as a line item on your next invoice. Configure overage limits to cap maximum spend:
+If your log ingestion or managed identity count exceeds the plan limit, ZPOA Shield continues to operate to ensure no gaps in security coverage. Overage charges are billed at the per-GB or per-identity rate for your plan tier and appear as a line item on your next invoice. Configure overage limits to cap maximum spend:
 
 1. Navigate to **Settings > Billing > Overage Policy**.
 2. Set a **hard cap** (ingestion stops when the limit is reached) or a **soft cap** (ingestion continues but you are notified).
