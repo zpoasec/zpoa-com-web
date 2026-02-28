@@ -57,7 +57,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/zpoasec/zpoa-com-web/tree/main/',
+          editUrl: undefined,
         },
         blog: {
           showReadingTime: true,
@@ -65,7 +65,7 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl: 'https://github.com/zpoasec/zpoa-com-web/tree/main/',
+          editUrl: undefined,
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -145,7 +145,7 @@ const config: Config = {
       ],
       logo: {
         alt: 'ZPOA Logo',
-        src: 'img/logo-footer.png',
+        src: 'img/logo.png',
         href: 'https://www.zpoa.com',
         width: 160,
       },
