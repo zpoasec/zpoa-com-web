@@ -21,6 +21,10 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
+  customFields: {
+    apiUrl: process.env.REACT_APP_API_URL || '',
+  },
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],

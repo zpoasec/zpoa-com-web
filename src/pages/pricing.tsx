@@ -149,9 +149,13 @@ export default function Pricing(): ReactNode {
                 <Link
                   className={`pricing-btn ${tier.btnClass}`}
                   to={
-                    tier.name === 'Free' || tier.name === 'Pro' || tier.name === 'Business'
-                      ? '/docs/getting-started/quick-start'
-                      : 'mailto:info@zpoa.com'
+                    tier.name === 'Free'
+                      ? '/signup?plan=free'
+                      : tier.name === 'Pro'
+                        ? '/signup?plan=pro'
+                        : tier.name === 'Business'
+                          ? '/signup?plan=business'
+                          : 'mailto:info@zpoa.com'
                   }>
                   {tier.btn}
                 </Link>
