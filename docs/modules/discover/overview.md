@@ -5,7 +5,7 @@ title: "Discover - Overview"
 
 # Discover: Asset Discovery and Vulnerability Management
 
-ZPOA Shield **Discover** provides comprehensive asset discovery and vulnerability management across your entire infrastructure. Whether your workloads run in the cloud, on-premises, or in hybrid environments, Discover delivers continuous visibility into your attack surface and the vulnerabilities that threaten it.
+Z Shield **Discover** provides comprehensive asset discovery and vulnerability management across your entire infrastructure. Whether your workloads run in the cloud, on-premises, or in hybrid environments, Discover delivers continuous visibility into your attack surface and the vulnerabilities that threaten it.
 
 ## Key Capabilities
 

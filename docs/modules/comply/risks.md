@@ -22,7 +22,7 @@ Risk scores are categorized into bands:
 | 10 -- 15 | High |
 | 16 -- 25 | Critical |
 
-Scores can be assigned manually or derived automatically from compliance gaps and security findings detected by ZPOA Shield.
+Scores can be assigned manually or derived automatically from compliance gaps and security findings detected by Z Shield.
 
 ## Risk Matrix
 
@@ -32,7 +32,7 @@ The matrix is interactive. Click any cell to view the risks within that likeliho
 
 ## Treatment Plans
 
-Every risk should have an associated treatment plan defining how the organization intends to address it. ZPOA Shield supports four treatment strategies:
+Every risk should have an associated treatment plan defining how the organization intends to address it. Z Shield supports four treatment strategies:
 
 - **Mitigate** -- Implement controls or actions to reduce the likelihood or impact of the risk. The treatment plan should specify the mitigation actions, responsible parties, and target completion date.
 - **Accept** -- Acknowledge the risk and choose not to take further action, typically because the cost of mitigation exceeds the potential impact. Accepted risks must be reviewed periodically.
@@ -49,7 +49,7 @@ Every risk must be assigned an owner -- an individual accountable for monitoring
 - Periodic review reminders on a configurable schedule (monthly by default).
 - Alerts when associated compliance controls change status.
 
-Ownership can be assigned to any ZPOA Shield user. The risk register dashboard includes an owner-centric view so individuals can see all risks assigned to them in one place.
+Ownership can be assigned to any Z Shield user. The risk register dashboard includes an owner-centric view so individuals can see all risks assigned to them in one place.
 
 ## Integration with Compliance
 

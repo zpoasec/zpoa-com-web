@@ -84,6 +84,22 @@ const modules = [
     link: '/docs/modules/fortress/overview',
   },
   {
+    id: 'monitor',
+    subtitle: 'User Activity Monitoring',
+    headline: 'Every action. Every user. Full visibility.',
+    description:
+      'Insider threat detection, data loss prevention, workforce analytics, and session recording in a single agent. Metadata-first privacy with 3-tier recording, AI-powered video and audio analysis, remote management, and deep integration with identity governance.',
+    highlights: [
+      'Real-time activity monitoring with insider threat scoring',
+      'Data exfiltration detection across USB, cloud, email, and print',
+      'AI-powered screenshot and audio analysis with keyword detection',
+      'Remote desktop, shell, file transfer, and patch management',
+    ],
+    accentClass: 'accent-monitor',
+    image: '/img/features/monitor.jpg',
+    link: '/docs/modules/monitor/overview',
+  },
+  {
     id: 'neural-mesh',
     subtitle: 'AI Intelligence Engine',
     headline: 'AI that connects the dots.',
@@ -112,7 +128,7 @@ function FeatHero(): ReactNode {
           One unified platform.
         </h1>
         <p className="tagline">
-          Six purpose-built modules that work together seamlessly, giving your
+          Seven purpose-built modules that work together seamlessly, giving your
           team complete visibility and control across your entire security
           landscape.
         </p>
@@ -178,7 +194,7 @@ function StatsBar(): ReactNode {
     {number: '99.9%', label: 'Uptime SLA'},
     {number: '<1s', label: 'Alert Latency'},
     {number: '85%', label: 'MTTR Reduction'},
-    {number: '6', label: 'Security Pillars'},
+    {number: '7', label: 'Security Pillars'},
   ];
 
   return (
@@ -201,7 +217,7 @@ function FeatCTA(): ReactNode {
   return (
     <section className="cta-section">
       <div className="container">
-        <h2>See ZPOA Shield in action</h2>
+        <h2>See Z Shield in action</h2>
         <p>Deploy in minutes. Free tier available. No credit card required.</p>
         <div className="hero-buttons">
           <Link
@@ -222,7 +238,7 @@ export default function Features(): ReactNode {
   return (
     <Layout
       title="Features"
-      description="ZPOA Shield features — SIEM, compliance, identity governance, endpoint protection, and AI in one platform">
+      description="Z Shield features — SIEM, compliance, identity governance, endpoint protection, and AI in one platform">
       <FeatHero />
       <main>
         {modules.map((mod, i) => (

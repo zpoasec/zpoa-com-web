@@ -7,7 +7,7 @@ Audits require proof that security controls are not only defined but actively op
 
 ## Automated Evidence Gathering
 
-For controls that can be verified programmatically, ZPOA Shield collects evidence automatically from your connected systems. Automated evidence types include:
+For controls that can be verified programmatically, Z Shield collects evidence automatically from your connected systems. Automated evidence types include:
 
 - **Configuration snapshots** -- Point-in-time captures of security-relevant settings from cloud providers, identity providers, and SaaS applications (for example, S3 bucket policies, MFA enforcement settings, or firewall rules).
 - **API response records** -- Structured data retrieved from system APIs that demonstrate control effectiveness, such as user access lists or encryption status.

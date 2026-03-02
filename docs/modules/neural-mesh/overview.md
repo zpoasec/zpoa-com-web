@@ -5,7 +5,7 @@ title: "Neural Mesh - Overview"
 
 # Neural Mesh: AI-Powered Security Operations
 
-ZPOA Shield **Neural Mesh** is the intelligence layer that powers advanced security operations across the entire platform. By combining large language models, graph analytics, and multi-source threat intelligence, Neural Mesh transforms raw security data into actionable insights -- enabling faster investigations, proactive threat hunting, and natural language interaction with your security posture.
+Z Shield **Neural Mesh** is the intelligence layer that powers advanced security operations across the entire platform. By combining large language models, graph analytics, and multi-source threat intelligence, Neural Mesh transforms raw security data into actionable insights -- enabling faster investigations, proactive threat hunting, and natural language interaction with your security posture.
 
 ## Key Capabilities
 
@@ -51,7 +51,7 @@ Neural Mesh continuously correlates internal security data with external threat 
 
 ## How It Works
 
-1. **Ingest** -- Neural Mesh continuously receives data from all ZPOA Shield modules and external intelligence feeds.
+1. **Ingest** -- Neural Mesh continuously receives data from all Z Shield modules and external intelligence feeds.
 2. **Correlate** -- Graph analytics and ML models identify relationships, patterns, and anomalies across data sources.
 3. **Analyze** -- AI models assess risk, generate investigation narratives, and produce actionable recommendations.
 4. **Act** -- Findings are delivered as alerts, investigation reports, or interactive responses to natural language queries.

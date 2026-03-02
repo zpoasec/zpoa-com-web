@@ -118,7 +118,7 @@ const comparisonRows = [
 
 export default function Pricing(): ReactNode {
   return (
-    <Layout title="Pricing" description="ZPOA Shield pricing — SIEM + IGA in one platform">
+    <Layout title="Pricing" description="Z Shield pricing — SIEM + IGA in one platform">
       <div className="pricing-section">
         <div className="container">
           <h1>Simple, Usage-Based Pricing</h1>
@@ -198,10 +198,10 @@ export default function Pricing(): ReactNode {
           </div>
 
           <div className="savings-section" style={{marginTop: '3rem', textAlign: 'center', opacity: 0.8}}>
-            <h3>Why ZPOA Shield?</h3>
+            <h3>Why Z Shield?</h3>
             <p style={{maxWidth: '700px', margin: '1rem auto'}}>
               Most organizations pay separately for SIEM ($150+/GB/day) and IGA ($15+/identity/month).
-              ZPOA Shield bundles both into a single platform starting at $499/month — saving 60-80% vs. buying point solutions.
+              Z Shield bundles both into a single platform starting at $499/month — saving 60-80% vs. buying point solutions.
             </p>
           </div>
         </div>

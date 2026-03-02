@@ -3,7 +3,7 @@ sidebar_position: 5
 title: MITRE ATT&CK Mapping
 ---
 
-ZPOA Shield maps all detection activity to the MITRE ATT&CK framework, providing a strategic view of adversary techniques observed in your environment and highlighting gaps in your detection coverage.
+Z Shield maps all detection activity to the MITRE ATT&CK framework, providing a strategic view of adversary techniques observed in your environment and highlighting gaps in your detection coverage.
 
 ## Heatmap Visualization
 
@@ -55,7 +55,7 @@ The Gap Analysis report identifies techniques that are relevant to your environm
 - **Threat intelligence** -- Techniques actively used by threat actors targeting your industry vertical.
 - **Peer benchmarking** -- Anonymized, aggregated coverage data from organizations of similar size and industry.
 
-For each identified gap, the report recommends specific detection rules from the ZPOA Shield pre-built library or provides guidance for writing custom rules. Gaps are ranked by risk priority to help you focus on the most impactful improvements first.
+For each identified gap, the report recommends specific detection rules from the Z Shield pre-built library or provides guidance for writing custom rules. Gaps are ranked by risk priority to help you focus on the most impactful improvements first.
 
 ## Using MITRE Data in Investigations
 

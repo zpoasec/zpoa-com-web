@@ -3,18 +3,18 @@ sidebar_position: 3
 title: First Connector
 ---
 
-Connectors are the bridges between your infrastructure and ZPOA Shield. This guide walks you through connecting your first data source using AWS as an example. The process is similar for all supported integrations.
+Connectors are the bridges between your infrastructure and Z Shield. This guide walks you through connecting your first data source using AWS as an example. The process is similar for all supported integrations.
 
 ## Prerequisites
 
 Before you begin, ensure you have:
 
-- An active ZPOA Shield account with Administrator or Analyst privileges.
+- An active Z Shield account with Administrator or Analyst privileges.
 - Access credentials for the data source you want to connect (for AWS, this means an IAM access key or a cross-account IAM role ARN).
 
 ## Step 1: Navigate to Integrations
 
-From the ZPOA Shield dashboard, open the left sidebar and go to **Settings > Integrations**. This page displays all available connectors organized by category: Cloud Providers, Identity Providers, SaaS Applications, Endpoint Agents, Network Devices, and Custom Sources.
+From the Z Shield dashboard, open the left sidebar and go to **Settings > Integrations**. This page displays all available connectors organized by category: Cloud Providers, Identity Providers, SaaS Applications, Endpoint Agents, Network Devices, and Custom Sources.
 
 ## Step 2: Choose a Connector
 
@@ -25,13 +25,13 @@ Browse or search for the connector you need. For this guide, select **AWS** unde
 Each connector requires specific credentials. For AWS, you have two options:
 
 - **IAM Access Key**: Provide an Access Key ID and Secret Access Key for an IAM user with the required read permissions.
-- **Cross-Account Role (recommended)**: Provide the Role ARN of an IAM role in your AWS account that grants ZPOA Shield read access. This method avoids storing long-lived credentials.
+- **Cross-Account Role (recommended)**: Provide the Role ARN of an IAM role in your AWS account that grants Z Shield read access. This method avoids storing long-lived credentials.
 
 The configuration form includes a link to a CloudFormation template that automatically creates the required IAM role with least-privilege permissions.
 
 ## Step 4: Test Connection
 
-Click **Test Connection**. ZPOA Shield will attempt to authenticate with the provided credentials and verify that it can reach the necessary AWS APIs. If the test succeeds, you will see a green confirmation message. If it fails, review the error details, correct your credentials or network configuration, and test again.
+Click **Test Connection**. Z Shield will attempt to authenticate with the provided credentials and verify that it can reach the necessary AWS APIs. If the test succeeds, you will see a green confirmation message. If it fails, review the error details, correct your credentials or network configuration, and test again.
 
 ## Step 5: Verify Data Flow
 

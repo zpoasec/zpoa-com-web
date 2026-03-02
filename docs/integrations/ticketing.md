@@ -5,13 +5,13 @@ title: Ticketing Integrations
 
 # Ticketing Integrations
 
-ZPOA Shield integrates with enterprise ticketing and IT service management (ITSM) platforms to bridge the gap between security detection and operational response. When the platform identifies a security incident, it can automatically create, update, and track tickets in your existing workflow tools.
+Z Shield integrates with enterprise ticketing and IT service management (ITSM) platforms to bridge the gap between security detection and operational response. When the platform identifies a security incident, it can automatically create, update, and track tickets in your existing workflow tools.
 
 ## Supported Platforms
 
 ### Jira (Atlassian)
 
-ZPOA Shield integrates with Jira Cloud and Jira Data Center to create and manage security incident tickets within your existing project workflows.
+Z Shield integrates with Jira Cloud and Jira Data Center to create and manage security incident tickets within your existing project workflows.
 
 #### Configuration
 
@@ -19,10 +19,10 @@ ZPOA Shield integrates with Jira Cloud and Jira Data Center to create and manage
 2. Enter your Jira instance URL (e.g., `https://yourorg.atlassian.net`).
 3. Authenticate using one of the following methods:
    - **API Token** (Jira Cloud) -- Generate a token at `id.atlassian.com/manage-profile/security/api-tokens`.
-   - **OAuth 2.0** (Jira Cloud) -- Register a ZPOA Shield OAuth app in Atlassian Developer Console.
+   - **OAuth 2.0** (Jira Cloud) -- Register a Z Shield OAuth app in Atlassian Developer Console.
    - **Personal Access Token** (Jira Data Center) -- Generate a PAT in your Jira profile settings.
 4. Select the target **project** and **issue type** for security tickets.
-5. Map ZPOA Shield alert fields to Jira issue fields.
+5. Map Z Shield alert fields to Jira issue fields.
 
 ```json
 {
@@ -41,24 +41,24 @@ ZPOA Shield integrates with Jira Cloud and Jira Data Center to create and manage
 #### Capabilities
 
 - **Auto-create tickets** -- Automatically generate Jira issues when alerts exceed a configured severity threshold.
-- **Bidirectional sync** -- Status changes in Jira (e.g., "In Progress", "Done") are reflected back in ZPOA Shield, and vice versa.
-- **Comment sync** -- Investigation notes added in ZPOA Shield appear as Jira comments, keeping all stakeholders informed.
-- **Attachment support** -- ZPOA Shield can attach evidence files (PCAP excerpts, screenshots, IOC lists) to Jira tickets.
-- **Custom workflows** -- Map ZPOA Shield alert states to your Jira workflow transitions.
+- **Bidirectional sync** -- Status changes in Jira (e.g., "In Progress", "Done") are reflected back in Z Shield, and vice versa.
+- **Comment sync** -- Investigation notes added in Z Shield appear as Jira comments, keeping all stakeholders informed.
+- **Attachment support** -- Z Shield can attach evidence files (PCAP excerpts, screenshots, IOC lists) to Jira tickets.
+- **Custom workflows** -- Map Z Shield alert states to your Jira workflow transitions.
 
 ### ServiceNow
 
-ZPOA Shield integrates with ServiceNow ITSM and Security Incident Response (SIR) to create and manage incidents within the ServiceNow platform.
+Z Shield integrates with ServiceNow ITSM and Security Incident Response (SIR) to create and manage incidents within the ServiceNow platform.
 
 #### Configuration
 
 1. Navigate to **Settings > Integrations > Ticketing > ServiceNow**.
 2. Enter your ServiceNow instance URL (e.g., `https://yourorg.service-now.com`).
 3. Authenticate using:
-   - **OAuth 2.0** (recommended) -- Register ZPOA Shield as an OAuth application in ServiceNow.
+   - **OAuth 2.0** (recommended) -- Register Z Shield as an OAuth application in ServiceNow.
    - **Basic Authentication** -- Service account with `sn_si.analyst` and `itil` roles.
 4. Select the target table (`sn_si_incident` for Security Incidents, `incident` for standard ITSM incidents).
-5. Map ZPOA Shield fields to ServiceNow columns.
+5. Map Z Shield fields to ServiceNow columns.
 
 ```json
 {
@@ -77,11 +77,11 @@ ZPOA Shield integrates with ServiceNow ITSM and Security Incident Response (SIR)
 
 #### Capabilities
 
-- **Auto-create incidents** -- Generate ServiceNow security incidents or standard incidents from ZPOA Shield alerts.
-- **Bidirectional sync** -- Incident state changes in ServiceNow update the corresponding alert in ZPOA Shield.
-- **CMDB enrichment** -- ZPOA Shield maps affected assets to ServiceNow CMDB Configuration Items (CIs) for impact analysis.
+- **Auto-create incidents** -- Generate ServiceNow security incidents or standard incidents from Z Shield alerts.
+- **Bidirectional sync** -- Incident state changes in ServiceNow update the corresponding alert in Z Shield.
+- **CMDB enrichment** -- Z Shield maps affected assets to ServiceNow CMDB Configuration Items (CIs) for impact analysis.
 - **SLA tracking** -- Leverage ServiceNow SLA policies to track response and resolution times for security incidents.
-- **Runbook attachment** -- Attach ZPOA Shield playbook steps as work notes on the ServiceNow incident.
+- **Runbook attachment** -- Attach Z Shield playbook steps as work notes on the ServiceNow incident.
 
 ## Workflow Automation
 

@@ -5,7 +5,7 @@ title: Cloud Provider Integrations
 
 # Cloud Provider Integrations
 
-ZPOA Shield provides deep integrations with the three major cloud platforms -- AWS, Microsoft Azure, and Google Cloud Platform. These connectors ingest security-relevant logs, alerts, and configuration data to give you centralized visibility across multi-cloud environments.
+Z Shield provides deep integrations with the three major cloud platforms -- AWS, Microsoft Azure, and Google Cloud Platform. These connectors ingest security-relevant logs, alerts, and configuration data to give you centralized visibility across multi-cloud environments.
 
 ## Amazon Web Services (AWS)
 
@@ -20,7 +20,7 @@ ZPOA Shield provides deep integrations with the three major cloud platforms -- A
 
 ### Configuration
 
-1. Create an IAM role in your AWS account with a trust policy allowing ZPOA Shield's external account ID.
+1. Create an IAM role in your AWS account with a trust policy allowing Z Shield's external account ID.
 2. Attach the managed policy `ZpoaShieldReadOnly` or use the minimum permissions below:
 
 ```json
@@ -43,12 +43,12 @@ ZPOA Shield provides deep integrations with the three major cloud platforms -- A
 }
 ```
 
-3. Enter the IAM Role ARN in the ZPOA Shield connector configuration page.
+3. Enter the IAM Role ARN in the Z Shield connector configuration page.
 4. Select the AWS regions you want to monitor and click **Test Connection**.
 
 ### Multi-Account Support
 
-For AWS Organizations deployments, configure a single connector with a management account role that can assume roles in member accounts. ZPOA Shield will automatically discover and ingest from all member accounts.
+For AWS Organizations deployments, configure a single connector with a management account role that can assume roles in member accounts. Z Shield will automatically discover and ingest from all member accounts.
 
 ## Microsoft Azure
 
@@ -62,13 +62,13 @@ For AWS Organizations deployments, configure a single connector with a managemen
 
 ### Configuration
 
-1. Register ZPOA Shield as an application in Microsoft Entra ID (Azure AD).
+1. Register Z Shield as an application in Microsoft Entra ID (Azure AD).
 2. Grant the following API permissions:
    - `SecurityEvents.Read.All`
    - `AuditLog.Read.All`
    - `ActivityLog.Read`
 3. Create a client secret or upload a certificate.
-4. In ZPOA Shield, enter the **Tenant ID**, **Client ID**, and **Client Secret**.
+4. In Z Shield, enter the **Tenant ID**, **Client ID**, and **Client Secret**.
 
 ```bash
 # Verify access using Azure CLI (optional)
@@ -78,7 +78,7 @@ az monitor activity-log list --start-time 2025-01-01
 
 ### Azure Lighthouse
 
-For managed service providers monitoring multiple Azure tenants, ZPOA Shield supports Azure Lighthouse delegated access. Configure a single connector with cross-tenant permissions.
+For managed service providers monitoring multiple Azure tenants, Z Shield supports Azure Lighthouse delegated access. Configure a single connector with cross-tenant permissions.
 
 ## Google Cloud Platform (GCP)
 
@@ -91,7 +91,7 @@ For managed service providers monitoring multiple Azure tenants, ZPOA Shield sup
 
 1. Create a service account in your GCP project with the **Security Reviewer** and **Logs Viewer** roles.
 2. Generate a JSON key file for the service account.
-3. Upload the JSON key in the ZPOA Shield connector settings.
+3. Upload the JSON key in the Z Shield connector settings.
 4. Specify the GCP project IDs or organization ID to monitor.
 
 ```json
@@ -111,4 +111,4 @@ For organization-wide ingestion, grant the service account permissions at the or
 - **Use dedicated service accounts** with least-privilege permissions for each cloud connector.
 - **Enable multi-region ingestion** to ensure complete coverage across your cloud footprint.
 - **Monitor connector health** on the Integrations dashboard to catch authentication or quota issues early.
-- **Rotate credentials** on a regular schedule (every 90 days recommended) and update them in ZPOA Shield before expiration.
+- **Rotate credentials** on a regular schedule (every 90 days recommended) and update them in Z Shield before expiration.

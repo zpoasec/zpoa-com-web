@@ -5,7 +5,7 @@ title: Database Integrations
 
 # Database Integrations
 
-ZPOA Shield monitors database activity to detect unauthorized access, suspicious queries, privilege misuse, and data exfiltration. By ingesting audit logs and query metadata from your database systems, the platform provides visibility into one of the most critical layers of your infrastructure.
+Z Shield monitors database activity to detect unauthorized access, suspicious queries, privilege misuse, and data exfiltration. By ingesting audit logs and query metadata from your database systems, the platform provides visibility into one of the most critical layers of your infrastructure.
 
 ## Supported Databases
 
@@ -13,7 +13,7 @@ ZPOA Shield monitors database activity to detect unauthorized access, suspicious
 
 Ingest MySQL audit logs to monitor authentication events, schema changes, and query activity.
 
-- **Connection Method:** MySQL Enterprise Audit Plugin (log file or syslog), or ZPOA Shield database agent
+- **Connection Method:** MySQL Enterprise Audit Plugin (log file or syslog), or Z Shield database agent
 - **Data Types:** Connection events (connect, disconnect, failed login), query events (DDL, DML), administrative commands
 - **Requirements:** MySQL Enterprise Edition (for native audit plugin) or MariaDB Audit Plugin for MariaDB/community MySQL
 
@@ -34,7 +34,7 @@ SET GLOBAL audit_log_format = 'JSON';
 
 Collect PostgreSQL audit events using the pgAudit extension or native logging.
 
-- **Connection Method:** pgAudit extension (log file or syslog), or ZPOA Shield database agent
+- **Connection Method:** pgAudit extension (log file or syslog), or Z Shield database agent
 - **Data Types:** Session audit logs, object audit logs (table/column-level), DDL and DML events
 - **Requirements:** pgAudit extension installed and configured
 
@@ -82,7 +82,7 @@ auditLog:
 
 Collect SQL Server audit events, including login activity, permission changes, and data access patterns.
 
-- **Connection Method:** SQL Server Audit (file target or Windows Event Log), or ZPOA Shield database agent
+- **Connection Method:** SQL Server Audit (file target or Windows Event Log), or Z Shield database agent
 - **Data Types:** Server audit events, database audit events, login events, schema changes
 - **Requirements:** SQL Server Standard or Enterprise (SQL Server Audit feature)
 
@@ -111,7 +111,7 @@ ALTER SERVER AUDIT ZpoaShieldAudit WITH (STATE = ON);
 
 Ingest Oracle Unified Audit trail data to monitor privileged operations, data access, and policy violations.
 
-- **Connection Method:** Oracle Unified Audit trail (via ZPOA Shield database agent or syslog)
+- **Connection Method:** Oracle Unified Audit trail (via Z Shield database agent or syslog)
 - **Data Types:** Unified audit records, fine-grained audit events, login/logout events
 - **Requirements:** Oracle Database 12c or later with Unified Auditing enabled
 
@@ -136,7 +136,7 @@ AUDIT POLICY zpoa_security_policy;
 
 ## Database Activity Monitoring
 
-ZPOA Shield correlates database audit data with other telemetry sources to provide comprehensive database security:
+Z Shield correlates database audit data with other telemetry sources to provide comprehensive database security:
 
 - **User-to-identity mapping** -- Map database accounts to identity provider users to detect shared account usage or credential compromise.
 - **Asset correlation** -- Link database events to the server asset inventory for impact assessment.
@@ -147,5 +147,5 @@ ZPOA Shield correlates database audit data with other telemetry sources to provi
 
 - **Enable audit logging at the database level** rather than relying solely on application-layer logging, which can be bypassed.
 - **Filter audit events** to focus on security-relevant activity (authentication, authorization, DDL, sensitive table access) to manage log volume.
-- **Use dedicated service accounts** for ZPOA Shield database agents with read-only access to audit tables.
-- **Rotate database audit logs** and archive them to ZPOA Shield for long-term retention and compliance.
+- **Use dedicated service accounts** for Z Shield database agents with read-only access to audit tables.
+- **Rotate database audit logs** and archive them to Z Shield for long-term retention and compliance.

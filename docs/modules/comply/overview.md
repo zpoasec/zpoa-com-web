@@ -3,11 +3,11 @@ sidebar_position: 1
 title: Comply (GRC) Overview
 ---
 
-The Comply module is ZPOA Shield's Governance, Risk, and Compliance (GRC) engine. It automates compliance posture assessment, maps your security controls to regulatory frameworks, and streamlines evidence collection for audits.
+The Comply module is Z Shield's Governance, Risk, and Compliance (GRC) engine. It automates compliance posture assessment, maps your security controls to regulatory frameworks, and streamlines evidence collection for audits.
 
 ## Automated Compliance Posture Assessment
 
-Traditional compliance management relies on manual spreadsheets, periodic assessments, and point-in-time snapshots. ZPOA Shield replaces this approach with continuous, automated evaluation. The Comply module constantly assesses your environment against the frameworks you have activated and provides a real-time compliance score.
+Traditional compliance management relies on manual spreadsheets, periodic assessments, and point-in-time snapshots. Z Shield replaces this approach with continuous, automated evaluation. The Comply module constantly assesses your environment against the frameworks you have activated and provides a real-time compliance score.
 
 The assessment engine works by:
 
@@ -20,7 +20,7 @@ Compliance scores update automatically as your environment changes, giving you a
 
 ## Framework Mapping
 
-Each regulatory and industry framework defines a set of controls or requirements. The Comply module maintains a comprehensive mapping between these controls and the technical checks performed against your infrastructure. When you activate a framework, ZPOA Shield automatically:
+Each regulatory and industry framework defines a set of controls or requirements. The Comply module maintains a comprehensive mapping between these controls and the technical checks performed against your infrastructure. When you activate a framework, Z Shield automatically:
 
 - Maps your connected data sources to the relevant controls.
 - Identifies which controls can be assessed automatically and which require manual evidence.

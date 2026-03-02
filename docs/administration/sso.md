@@ -5,11 +5,11 @@ title: SSO and SAML Configuration
 
 # SSO and SAML Configuration
 
-ZPOA Shield supports Single Sign-On (SSO) via SAML 2.0, enabling your organization to centralize authentication through your existing identity provider (IdP). SSO eliminates the need for separate ZPOA Shield credentials, enforces your organization's password and MFA policies, and simplifies user provisioning.
+Z Shield supports Single Sign-On (SSO) via SAML 2.0, enabling your organization to centralize authentication through your existing identity provider (IdP). SSO eliminates the need for separate Z Shield credentials, enforces your organization's password and MFA policies, and simplifies user provisioning.
 
 ## Supported Identity Providers
 
-ZPOA Shield has been tested and verified with the following identity providers:
+Z Shield has been tested and verified with the following identity providers:
 
 - **Okta**
 - **Microsoft Entra ID (Azure AD)**
@@ -26,13 +26,13 @@ Any SAML 2.0 compliant identity provider can be configured using the generic set
 
 Before configuring SSO, ensure you have:
 
-- Admin access to your ZPOA Shield tenant.
+- Admin access to your Z Shield tenant.
 - Admin access to your identity provider.
-- The ZPOA Shield SAML metadata, available at: `https://app.zpoashield.com/saml/metadata`
+- The Z Shield SAML metadata, available at: `https://app.zpoashield.com/saml/metadata`
 
 ## SAML 2.0 Configuration
 
-### Step 1: Gather ZPOA Shield Service Provider (SP) Details
+### Step 1: Gather Z Shield Service Provider (SP) Details
 
 | Field | Value |
 |---|---|
@@ -53,7 +53,7 @@ Create a new SAML application in your IdP and enter the SP details from Step 1. 
 | `groups` | Group memberships (for group-based role mapping) | Recommended |
 | `department` | User's department | Optional |
 
-### Step 3: Enter IdP Details in ZPOA Shield
+### Step 3: Enter IdP Details in Z Shield
 
 1. Navigate to **Settings > Authentication > SSO/SAML**.
 2. Toggle **Enable SAML SSO** to on.
@@ -81,7 +81,7 @@ idp_certificate: |
 3. Set the Audience URI to `https://app.zpoashield.com/saml/metadata`.
 4. Under Attribute Statements, map `email`, `firstName`, and `lastName`.
 5. Under Group Attribute Statements, add `groups` filtered by regex matching your desired groups.
-6. Copy the IdP metadata URL from the Sign On tab and paste it into ZPOA Shield.
+6. Copy the IdP metadata URL from the Sign On tab and paste it into Z Shield.
 
 #### Microsoft Entra ID
 
@@ -90,12 +90,12 @@ idp_certificate: |
 3. Under **Single sign-on > SAML**, configure:
    - Identifier (Entity ID): `https://app.zpoashield.com/saml/metadata`
    - Reply URL: `https://app.zpoashield.com/saml/acs`
-4. Download the **Federation Metadata XML** and upload it in ZPOA Shield, or manually enter the IdP details.
+4. Download the **Federation Metadata XML** and upload it in Z Shield, or manually enter the IdP details.
 5. Assign users and groups to the enterprise application.
 
 ## Just-in-Time (JIT) Provisioning
 
-When JIT provisioning is enabled, ZPOA Shield automatically creates user accounts the first time a user authenticates via SSO. This eliminates the need to manually invite users.
+When JIT provisioning is enabled, Z Shield automatically creates user accounts the first time a user authenticates via SSO. This eliminates the need to manually invite users.
 
 To enable JIT provisioning:
 
@@ -106,7 +106,7 @@ To enable JIT provisioning:
 
 ## Group-to-Role Mapping
 
-Map IdP group memberships to ZPOA Shield roles for automated role assignment:
+Map IdP group memberships to Z Shield roles for automated role assignment:
 
 ```json
 {
@@ -131,7 +131,7 @@ Map IdP group memberships to ZPOA Shield roles for automated role assignment:
 }
 ```
 
-When a user's group membership changes in the IdP, their ZPOA Shield role is updated at the next SSO login.
+When a user's group membership changes in the IdP, their Z Shield role is updated at the next SSO login.
 
 ## Enforcing SSO
 

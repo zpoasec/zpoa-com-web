@@ -5,7 +5,7 @@ title: Network Security Integrations
 
 # Network Security Integrations
 
-ZPOA Shield integrates with firewalls, web application firewalls, proxies, load balancers, DNS security appliances, and SASE/CASB platforms. Network telemetry is critical for detecting lateral movement, command-and-control traffic, data exfiltration, and unauthorized access.
+Z Shield integrates with firewalls, web application firewalls, proxies, load balancers, DNS security appliances, and SASE/CASB platforms. Network telemetry is critical for detecting lateral movement, command-and-control traffic, data exfiltration, and unauthorized access.
 
 ## Next-Generation Firewalls
 
@@ -15,7 +15,7 @@ Ingest traffic logs, threat logs, URL filtering logs, and WildFire submissions f
 
 - **Connection Method:** Syslog (CEF/LEEF) or Cortex Data Lake API
 - **Log Types:** Traffic, Threat, URL Filtering, WildFire, GlobalProtect
-- **Configuration:** Configure a syslog server profile in PAN-OS pointing to the ZPOA Shield syslog listener.
+- **Configuration:** Configure a syslog server profile in PAN-OS pointing to the Z Shield syslog listener.
 
 ### Fortinet FortiGate
 
@@ -23,7 +23,7 @@ Collect traffic logs, UTM logs (AV, IPS, web filter, application control), and V
 
 - **Connection Method:** Syslog or FortiAnalyzer REST API
 - **Log Types:** Traffic, UTM, Event, VPN
-- **Configuration:** Enable remote logging under **Log & Report > Log Settings** and set the ZPOA Shield syslog target.
+- **Configuration:** Enable remote logging under **Log & Report > Log Settings** and set the Z Shield syslog target.
 
 ### Cisco ASA / Firepower / Meraki / Umbrella
 
@@ -146,7 +146,7 @@ Most network security devices use syslog forwarding. Below is a generic syslog c
 
 ```bash
 # Configure syslog forwarding on most network appliances
-# Target: ZPOA Shield syslog listener
+# Target: Z Shield syslog listener
 # Protocol: TCP with TLS (recommended)
 # Port: 6514
 # Format: CEF or RFC 5424
@@ -163,4 +163,4 @@ $ActionSendStreamDriverAuthMode anon
 
 - **Use TLS** for all syslog transport to prevent credential and event data exposure in transit.
 - **Tag sources** with the device hostname and function to streamline investigation and filtering.
-- **Configure log rate limits** on high-throughput appliances to avoid overwhelming ingestion during attack surges; ZPOA Shield supports back-pressure signaling for TCP syslog.
+- **Configure log rate limits** on high-throughput appliances to avoid overwhelming ingestion during attack surges; Z Shield supports back-pressure signaling for TCP syslog.

@@ -5,7 +5,7 @@ title: Email Security Integrations
 
 # Email Security Integrations
 
-Email remains the primary attack vector for phishing, business email compromise (BEC), and malware delivery. ZPOA Shield integrates with leading email security gateways and platforms to ingest email threat data, correlate it with identity and endpoint signals, and accelerate incident response.
+Email remains the primary attack vector for phishing, business email compromise (BEC), and malware delivery. Z Shield integrates with leading email security gateways and platforms to ingest email threat data, correlate it with identity and endpoint signals, and accelerate incident response.
 
 ## Supported Platforms
 
@@ -86,12 +86,12 @@ Collect security event logs from Barracuda Email Security Gateway, including spa
 
 ## Phishing Detection and Response
 
-ZPOA Shield enhances raw email security data with cross-platform correlation:
+Z Shield enhances raw email security data with cross-platform correlation:
 
 - **URL Enrichment** -- Submitted URLs are checked against threat intelligence feeds (VirusTotal, Abuse.ch, Mandiant) in real time.
 - **Attachment Analysis** -- File hashes from email attachments are correlated with EDR detections and sandbox results.
 - **Identity Correlation** -- Email recipients are mapped to identity provider accounts to detect compromised users who clicked phishing links and subsequently exhibited anomalous login behavior.
-- **Campaign Clustering** -- ZPOA Shield groups related phishing emails by sender infrastructure, subject line patterns, and payload similarity to identify coordinated campaigns.
+- **Campaign Clustering** -- Z Shield groups related phishing emails by sender infrastructure, subject line patterns, and payload similarity to identify coordinated campaigns.
 
 ## Email Threat Analytics
 

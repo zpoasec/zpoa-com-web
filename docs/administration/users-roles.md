@@ -5,15 +5,15 @@ title: User Management and RBAC
 
 # User Management and Role-Based Access Control
 
-ZPOA Shield uses role-based access control (RBAC) to govern what each user can see and do within the platform. Administrators can invite users, assign roles, organize teams, and audit all access activity from a centralized management console.
+Z Shield uses role-based access control (RBAC) to govern what each user can see and do within the platform. Administrators can invite users, assign roles, organize teams, and audit all access activity from a centralized management console.
 
 ## Built-in Roles
 
-ZPOA Shield ships with four built-in roles. Each role inherits the permissions of the roles below it.
+Z Shield ships with four built-in roles. Each role inherits the permissions of the roles below it.
 
 ### Admin
 
-Full administrative access to the entire ZPOA Shield tenant. Admins can manage users, configure integrations, modify detection rules, update billing, and access all data.
+Full administrative access to the entire Z Shield tenant. Admins can manage users, configure integrations, modify detection rules, update billing, and access all data.
 
 **Permissions include:**
 - All Analyst permissions
@@ -110,7 +110,7 @@ Teams allow you to organize users into functional groups for alert routing and a
 
 ## Audit Log
 
-Every administrative action in ZPOA Shield is recorded in the **Audit Log**, accessible under **Settings > Audit Log**. The audit log captures:
+Every administrative action in Z Shield is recorded in the **Audit Log**, accessible under **Settings > Audit Log**. The audit log captures:
 
 - User login and logout events
 - Role assignments and permission changes

@@ -5,7 +5,7 @@ title: "Armor - Overview"
 
 # Armor: Cloud Security Posture Management
 
-ZPOA Shield **Armor** delivers Cloud Security Posture Management (CSPM) across your multi-cloud environment. Armor continuously monitors cloud configurations, detects misconfigurations before they become breaches, and enforces security policies to maintain a hardened posture.
+Z Shield **Armor** delivers Cloud Security Posture Management (CSPM) across your multi-cloud environment. Armor continuously monitors cloud configurations, detects misconfigurations before they become breaches, and enforces security policies to maintain a hardened posture.
 
 ## Key Capabilities
 
@@ -39,7 +39,7 @@ Move beyond detection with automated and semi-automated policy enforcement:
 - **Preventive guardrails** -- Block non-compliant resource creation via integration with cloud-native policy engines (AWS SCP, Azure Policy, GCP Organization Policies)
 - **Auto-remediation** -- Automatically correct common misconfigurations such as removing public access from storage or enabling encryption
 - **Approval workflows** -- Route high-impact remediations through approval chains before execution
-- **Custom policies** -- Author organization-specific rules using ZPOA Shield's policy language or import Open Policy Agent (OPA) Rego policies
+- **Custom policies** -- Author organization-specific rules using Z Shield's policy language or import Open Policy Agent (OPA) Rego policies
 
 ## How It Works
 

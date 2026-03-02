@@ -5,7 +5,7 @@ title: Vulnerability Management Integrations
 
 # Vulnerability Management Integrations
 
-ZPOA Shield integrates with leading vulnerability management platforms to import scan results, correlate vulnerabilities with asset inventory and threat intelligence, and prioritize remediation based on real-world exploitability.
+Z Shield integrates with leading vulnerability management platforms to import scan results, correlate vulnerabilities with asset inventory and threat intelligence, and prioritize remediation based on real-world exploitability.
 
 ## Supported Platforms
 
@@ -48,7 +48,7 @@ Ingest vulnerability data, asset inventory, and risk scores from Rapid7 InsightV
 **Key Capabilities:**
 - Import real risk scores that factor in exploit availability, malware exposure, and asset criticality.
 - Track remediation project progress and overdue vulnerabilities.
-- Correlate InsightVM findings with ZPOA Shield asset inventory.
+- Correlate InsightVM findings with Z Shield asset inventory.
 
 ### Tenable Nessus / Tenable.io
 
@@ -65,20 +65,20 @@ curl -H "X-ApiKeys: accessKey=${TENABLE_ACCESS_KEY};secretKey=${TENABLE_SECRET_K
 ```
 
 **Key Capabilities:**
-- Leverage Tenable's Vulnerability Priority Rating (VPR) alongside ZPOA Shield's own risk scoring.
+- Leverage Tenable's Vulnerability Priority Rating (VPR) alongside Z Shield's own risk scoring.
 - Import asset operating system, installed software, and network information.
 - Track scan coverage gaps to identify unscanned or stale assets.
 
 ### Rapid7 InsightVM (Standalone)
 
-For organizations using the on-premise Rapid7 Security Console, ZPOA Shield also supports direct API connectivity to the local console.
+For organizations using the on-premise Rapid7 Security Console, Z Shield also supports direct API connectivity to the local console.
 
 - **Connection Method:** InsightVM Security Console API (API Key or Session Authentication)
 - **Data Types:** Sites, assets, vulnerabilities, scan data
 
 ## Vulnerability Correlation and Prioritization
 
-ZPOA Shield goes beyond raw vulnerability import by applying multi-factor prioritization:
+Z Shield goes beyond raw vulnerability import by applying multi-factor prioritization:
 
 ### Risk-Based Prioritization
 
@@ -90,14 +90,14 @@ Each imported vulnerability is scored using a composite risk model that consider
 | Exploit Availability | CISA KEV, Exploit-DB, Metasploit | High |
 | EPSS Probability | FIRST EPSS | High |
 | Threat Intelligence | MISP, Mandiant, Recorded Future | High |
-| Asset Criticality | ZPOA Shield Asset Inventory | Medium |
+| Asset Criticality | Z Shield Asset Inventory | Medium |
 | Network Exposure | Firewall rules, cloud security groups | Medium |
 
 Vulnerabilities with active exploitation in the wild and high EPSS scores on internet-facing critical assets are surfaced as top remediation priorities.
 
 ### Asset Correlation
 
-ZPOA Shield maps vulnerability scan targets to its unified asset inventory using hostname, IP address, MAC address, and cloud instance ID matching. This correlation enables:
+Z Shield maps vulnerability scan targets to its unified asset inventory using hostname, IP address, MAC address, and cloud instance ID matching. This correlation enables:
 
 - **Impact analysis** -- Understand which business services are affected by a vulnerability.
 - **Owner assignment** -- Route remediation tasks to the correct team based on asset ownership.
@@ -105,7 +105,7 @@ ZPOA Shield maps vulnerability scan targets to its unified asset inventory using
 
 ### Threat-Informed Patching
 
-By integrating vulnerability data with threat intelligence feeds (CISA KEV, FIRST EPSS, Mandiant), ZPOA Shield identifies vulnerabilities that are actively being exploited by threat actors and highlights them on the **Vulnerability Dashboard** with clear remediation deadlines.
+By integrating vulnerability data with threat intelligence feeds (CISA KEV, FIRST EPSS, Mandiant), Z Shield identifies vulnerabilities that are actively being exploited by threat actors and highlights them on the **Vulnerability Dashboard** with clear remediation deadlines.
 
 ## Vulnerability Dashboard
 
@@ -119,7 +119,7 @@ The dashboard provides:
 
 ## Best Practices
 
-- **Schedule regular syncs** (at least daily) to ensure ZPOA Shield reflects the latest scan results.
-- **Combine multiple scanners** if your organization uses more than one -- ZPOA Shield deduplicates and merges findings across platforms.
+- **Schedule regular syncs** (at least daily) to ensure Z Shield reflects the latest scan results.
+- **Combine multiple scanners** if your organization uses more than one -- Z Shield deduplicates and merges findings across platforms.
 - **Integrate with ticketing** (Jira, ServiceNow) to automatically create remediation tickets for critical vulnerabilities.
 - **Define remediation SLAs** by severity level and track compliance on the Vulnerability Dashboard.

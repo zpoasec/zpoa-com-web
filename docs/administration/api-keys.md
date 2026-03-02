@@ -5,7 +5,7 @@ title: API Key Management
 
 # API Key Management
 
-ZPOA Shield uses API keys to authenticate programmatic access to the REST API. Administrators can create, rotate, and revoke API keys with fine-grained scope controls to ensure that each integration or automation has only the permissions it needs.
+Z Shield uses API keys to authenticate programmatic access to the REST API. Administrators can create, rotate, and revoke API keys with fine-grained scope controls to ensure that each integration or automation has only the permissions it needs.
 
 ## Creating API Keys
 
@@ -22,7 +22,7 @@ The API key is displayed only once. Copy it immediately and store it securely in
 API Key: zpoa_live_k8f2Gx9mPqR4tY7wZ1bN3cD5eF8hJ0kL...
 ```
 
-**Important:** ZPOA Shield does not store the full API key after generation. If you lose it, you must revoke the existing key and create a new one.
+**Important:** Z Shield does not store the full API key after generation. If you lose it, you must revoke the existing key and create a new one.
 
 ## Scopes and Permissions
 
@@ -75,7 +75,7 @@ When the rate limit is exceeded, the API returns HTTP `429 Too Many Requests` wi
 
 ## Key Rotation
 
-Regular key rotation reduces the risk of compromised credentials. ZPOA Shield supports zero-downtime key rotation:
+Regular key rotation reduces the risk of compromised credentials. Z Shield supports zero-downtime key rotation:
 
 1. Navigate to **Settings > API Keys** and find the key to rotate.
 2. Click **Rotate Key**.
@@ -111,7 +111,7 @@ curl -X DELETE https://api.zpoashield.com/api/v1/api-keys/{key_id} \
 
 ## Key Expiration
 
-Setting an expiration date on API keys is strongly recommended. Expired keys automatically stop working at the configured expiration timestamp. ZPOA Shield sends email notifications to the key creator at 30, 14, and 7 days before expiration.
+Setting an expiration date on API keys is strongly recommended. Expired keys automatically stop working at the configured expiration timestamp. Z Shield sends email notifications to the key creator at 30, 14, and 7 days before expiration.
 
 ## Audit Trail
 

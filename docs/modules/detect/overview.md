@@ -3,13 +3,13 @@ sidebar_position: 1
 title: Detect (SIEM) Overview
 ---
 
-The Detect module is ZPOA Shield's Security Information and Event Management (SIEM) engine. It provides real-time log ingestion, normalization, correlation, and alerting across your entire infrastructure.
+The Detect module is Z Shield's Security Information and Event Management (SIEM) engine. It provides real-time log ingestion, normalization, correlation, and alerting across your entire infrastructure.
 
 ## Architecture
 
 ### Log Ingestion
 
-ZPOA Shield ingests log data from all connected sources through a high-throughput streaming pipeline. This architecture ensures reliable, ordered delivery of events even during peak traffic.
+Z Shield ingests log data from all connected sources through a high-throughput streaming pipeline. This architecture ensures reliable, ordered delivery of events even during peak traffic.
 
 ### Schema Normalization (OCSF)
 

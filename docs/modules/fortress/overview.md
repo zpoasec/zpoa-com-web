@@ -5,7 +5,7 @@ title: "Fortress - Overview"
 
 # Fortress: Identity Security
 
-ZPOA Shield **Fortress** provides comprehensive identity security across your entire organization. As identities have become the primary attack vector in modern environments, Fortress delivers the visibility, governance, and threat detection capabilities needed to secure every user, service account, and API key.
+Z Shield **Fortress** provides comprehensive identity security across your entire organization. As identities have become the primary attack vector in modern environments, Fortress delivers the visibility, governance, and threat detection capabilities needed to secure every user, service account, and API key.
 
 ## Key Capabilities
 

@@ -1,13 +1,13 @@
 ---
 sidebar_position: 1
-title: Welcome to ZPOA Shield
+title: Welcome to Z Shield
 ---
 
-ZPOA Shield is a unified cybersecurity SaaS platform designed to consolidate your entire security operations into a single pane of glass. Rather than juggling dozens of disconnected tools, ZPOA Shield brings detection, compliance, asset discovery, hardening, network defense, and AI-driven intelligence together under one roof.
+Z Shield is a unified cybersecurity SaaS platform designed to consolidate your entire security operations into a single pane of glass. Rather than juggling dozens of disconnected tools, Z Shield brings detection, compliance, asset discovery, hardening, network defense, and AI-driven intelligence together under one roof.
 
 ## The Platform at a Glance
 
-ZPOA Shield is built around six core modules, each addressing a critical pillar of modern cybersecurity:
+Z Shield is built around six core modules, each addressing a critical pillar of modern cybersecurity:
 
 - **Detect (SIEM)** -- Real-time log ingestion, correlation, and alerting. Ingest data from across your infrastructure and surface threats as they emerge.
 - **Comply (GRC)** -- AI-powered compliance management with automated posture assessment, a conversational Compliance Copilot, AI policy generation, evidence validation, audit readiness reports, and cross-framework inheritance across SOC 2, ISO 27001, PCI-DSS, HIPAA, and more.
@@ -18,13 +18,13 @@ ZPOA Shield is built around six core modules, each addressing a critical pillar 
 
 ## 690+ Integrations
 
-ZPOA Shield connects to the tools and platforms you already use. With over 690 pre-built integrations spanning 23 categories -- cloud providers, identity providers, endpoint agents, SaaS applications, HR/HCM systems, ERP platforms, network devices, AI/ML tools, and more -- you can start ingesting data within minutes of signing up.
+Z Shield connects to the tools and platforms you already use. With over 690 pre-built integrations spanning 23 categories -- cloud providers, identity providers, endpoint agents, SaaS applications, HR/HCM systems, ERP platforms, network devices, AI/ML tools, and more -- you can start ingesting data within minutes of signing up.
 
 ## A Single Pane of Glass
 
-Security teams waste valuable time context-switching between tools. ZPOA Shield eliminates that friction by providing a unified dashboard where you can monitor alerts, track compliance posture, review asset inventory, and investigate incidents -- all without leaving the platform. Role-based access controls ensure every team member sees exactly what they need.
+Security teams waste valuable time context-switching between tools. Z Shield eliminates that friction by providing a unified dashboard where you can monitor alerts, track compliance posture, review asset inventory, and investigate incidents -- all without leaving the platform. Role-based access controls ensure every team member sees exactly what they need.
 
-## Who Is ZPOA Shield For?
+## Who Is Z Shield For?
 
 - **Security Operations Centers (SOC)** looking to centralize detection and response.
 - **Compliance and GRC teams** managing multi-framework obligations.

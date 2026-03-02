@@ -5,16 +5,16 @@ title: Integration Architecture Overview
 
 # Integration Architecture Overview
 
-ZPOA Shield connects to your entire security ecosystem through a unified connector framework. With over 690 pre-built connectors spanning 23 categories, the platform ingests, normalizes, and correlates data from virtually any security tool in your environment.
+Z Shield connects to your entire security ecosystem through a unified connector framework. With over 690 pre-built connectors spanning 23 categories, the platform ingests, normalizes, and correlates data from virtually any security tool in your environment.
 
 ## How Connectors Work
 
-Every integration in ZPOA Shield is powered by a **connector** -- a managed component that handles authentication, data retrieval, normalization, and delivery into the platform. Connectors are isolated from one another, ensuring that a failure in one integration never impacts another.
+Every integration in Z Shield is powered by a **connector** -- a managed component that handles authentication, data retrieval, normalization, and delivery into the platform. Connectors are isolated from one another, ensuring that a failure in one integration never impacts another.
 
 Each connector supports one or more **data modes**:
 
 - **Pull Mode** -- The connector periodically polls the source system's API for new events, logs, or alerts.
-- **Push Mode** -- The source system sends data directly to a ZPOA Shield ingestion endpoint (webhook, syslog, HEC).
+- **Push Mode** -- The source system sends data directly to a Z Shield ingestion endpoint (webhook, syslog, HEC).
 - **Streaming Mode** -- A persistent connection (e.g., Kafka consumer, WebSocket) maintains real-time data flow.
 
 ## Data Flow
@@ -47,7 +47,7 @@ Navigate to **Settings > Integrations** and select the connector you need. Provi
 
 ### 2. Test
 
-Click **Test Connection** to verify that ZPOA Shield can authenticate and retrieve a sample payload from the source. The test validates network connectivity, credential validity, and data format compatibility.
+Click **Test Connection** to verify that Z Shield can authenticate and retrieve a sample payload from the source. The test validates network connectivity, credential validity, and data format compatibility.
 
 ### 3. Activate
 
@@ -55,7 +55,7 @@ Once the test passes, activate the connector. It immediately begins ingesting da
 
 ## Connector Categories
 
-ZPOA Shield organizes its 690+ connectors into the following 23 categories:
+Z Shield organizes its 690+ connectors into the following 23 categories:
 
 | Category | Examples | Count |
 |---|---|---|

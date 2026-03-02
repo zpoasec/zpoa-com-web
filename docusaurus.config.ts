@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'ZPOA Shield',
-  tagline: 'Unified Cybersecurity Platform — DETECT | COMPLY | DISCOVER | ARMOR | FORTRESS',
+  title: 'Z Shield',
+  tagline: 'Unified Cybersecurity Platform — DETECT | COMPLY | DISCOVER | ARMOR | FORTRESS | MONITOR',
   favicon: 'img/favicon.ico',
 
   future: {

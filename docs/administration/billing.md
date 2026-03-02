@@ -5,11 +5,11 @@ title: Billing and Subscription
 
 # Billing and Subscription
 
-ZPOA Shield offers flexible subscription plans designed to scale with your organization's security needs. This page covers plan management, usage monitoring, invoice history, payment methods, and how to upgrade or downgrade your subscription.
+Z Shield offers flexible subscription plans designed to scale with your organization's security needs. This page covers plan management, usage monitoring, invoice history, payment methods, and how to upgrade or downgrade your subscription.
 
 ## Subscription Plans
 
-ZPOA Shield uses a hybrid pricing model: **SIEM priced by data volume** (GB ingested per day) and **IGA priced by managed identities** (human users + non-human identities).
+Z Shield uses a hybrid pricing model: **SIEM priced by data volume** (GB ingested per day) and **IGA priced by managed identities** (human users + non-human identities).
 
 | Feature | Free | Pro | Business | Enterprise | MSSP |
 |---|---|---|---|---|---|
@@ -29,11 +29,11 @@ ZPOA Shield uses a hybrid pricing model: **SIEM priced by data volume** (GB inge
 | **Multi-Tenant** | — | — | — | — | Included |
 | **Support** | Community | Email & Chat | 24/7 Priority | Dedicated CSM | Dedicated CSM |
 
-All plans include access to the ZPOA Shield web console and core SIEM + IGA capabilities. Plans are billed monthly or annually (annual billing provides a 20% discount).
+All plans include access to the Z Shield web console and core SIEM + IGA capabilities. Plans are billed monthly or annually (annual billing provides a 20% discount).
 
 ### Overage Pricing
 
-If your usage exceeds the included limits, ZPOA Shield continues to operate without interruption. Overage charges are applied automatically:
+If your usage exceeds the included limits, Z Shield continues to operate without interruption. Overage charges are applied automatically:
 
 | Plan | Log Ingestion Overage | Identity Overage |
 |---|---|---|
@@ -117,7 +117,7 @@ View and download all past invoices under **Settings > Billing > Invoices**:
 
 ## Payment Methods
 
-ZPOA Shield accepts the following payment methods:
+Z Shield accepts the following payment methods:
 
 - **Credit/Debit Card** -- Visa, Mastercard, American Express (for monthly and annual plans)
 - **ACH Bank Transfer** -- Available for annual plans (US-based organizations)
@@ -132,7 +132,7 @@ Manage payment methods under **Settings > Billing > Payment Methods**:
 
 ## Overages
 
-If your log ingestion or managed identity count exceeds the plan limit, ZPOA Shield continues to operate to ensure no gaps in security coverage. Overage charges are billed at the per-GB or per-identity rate for your plan tier and appear as a line item on your next invoice. Configure overage limits to cap maximum spend:
+If your log ingestion or managed identity count exceeds the plan limit, Z Shield continues to operate to ensure no gaps in security coverage. Overage charges are billed at the per-GB or per-identity rate for your plan tier and appear as a line item on your next invoice. Configure overage limits to cap maximum spend:
 
 1. Navigate to **Settings > Billing > Overage Policy**.
 2. Set a **hard cap** (ingestion stops when the limit is reached) or a **soft cap** (ingestion continues but you are notified).

@@ -5,7 +5,7 @@ authors: [zpoa-team]
 tags: [release, product]
 ---
 
-Today we are launching **AI-powered compliance intelligence** in ZPOA Shield's Comply module -- six new features that automate the manual, time-consuming workflows that GRC teams deal with every day.
+Today we are launching **AI-powered compliance intelligence** in Z Shield's Comply module -- six new features that automate the manual, time-consuming workflows that GRC teams deal with every day.
 
 <!-- truncate -->
 
@@ -13,7 +13,7 @@ Today we are launching **AI-powered compliance intelligence** in ZPOA Shield's C
 
 Compliance management has long been one of the most labor-intensive functions in cybersecurity. Analysts spend weeks preparing for audits, manually reviewing evidence, writing policies, and cross-referencing controls across multiple frameworks. These tasks are repetitive, error-prone, and expensive.
 
-ZPOA Shield now applies AI directly to these workflows, using your live compliance data to produce actionable outputs in seconds instead of days.
+Z Shield now applies AI directly to these workflows, using your live compliance data to produce actionable outputs in seconds instead of days.
 
 ## What's New
 
@@ -43,7 +43,7 @@ When you satisfy a control in one framework, mapped controls in other frameworks
 
 ## Bring Your Own AI Provider
 
-ZPOA Shield supports multiple AI providers so you stay in control of where your data goes:
+Z Shield supports multiple AI providers so you stay in control of where your data goes:
 
 - **Ollama** -- Self-hosted open-source models for full data sovereignty
 - **AWS Bedrock** -- Foundation models within your AWS account
@@ -54,4 +54,4 @@ Configure your provider under Settings > AI / LLM and all AI features activate i
 
 ## Get Started
 
-These features are available today for all ZPOA Shield customers. Head to the [Comply module documentation](/docs/modules/comply/overview) to learn more, or jump straight to the [AI / LLM Settings](/docs/administration/ai-settings) page to configure your provider and start automating your compliance workflow.
+These features are available today for all Z Shield customers. Head to the [Comply module documentation](/docs/modules/comply/overview) to learn more, or jump straight to the [AI / LLM Settings](/docs/administration/ai-settings) page to configure your provider and start automating your compliance workflow.

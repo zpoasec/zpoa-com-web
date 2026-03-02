@@ -5,13 +5,13 @@ title: Threat Intelligence Integrations
 
 # Threat Intelligence Integrations
 
-ZPOA Shield enriches every event and alert with contextual threat intelligence from multiple sources. By correlating internal telemetry with external threat data, the platform reduces false positives, prioritizes high-confidence detections, and maps threats to adversary tactics and techniques.
+Z Shield enriches every event and alert with contextual threat intelligence from multiple sources. By correlating internal telemetry with external threat data, the platform reduces false positives, prioritizes high-confidence detections, and maps threats to adversary tactics and techniques.
 
 ## Supported Threat Intelligence Sources
 
 ### MISP (Malware Information Sharing Platform)
 
-Ingest indicators of compromise (IOCs), galaxy clusters, and event metadata from MISP instances. ZPOA Shield synchronizes with one or more MISP servers on a configurable schedule.
+Ingest indicators of compromise (IOCs), galaxy clusters, and event metadata from MISP instances. Z Shield synchronizes with one or more MISP servers on a configurable schedule.
 
 - **Connection Method:** MISP REST API (API Key)
 - **Data Types:** Attributes (IP, domain, hash, URL), events, galaxies, taxonomies
@@ -119,7 +119,7 @@ Import CVE details, CVSS scores, CWE classifications, and CPE matching data from
 
 ## How Threat Intelligence Is Used
 
-ZPOA Shield applies threat intelligence at multiple stages of the detection pipeline:
+Z Shield applies threat intelligence at multiple stages of the detection pipeline:
 
 1. **Ingestion-time enrichment** -- Incoming events are matched against IOC databases in real time. Matching indicators are tagged directly on the event record.
 2. **Detection rules** -- Correlation rules reference threat intelligence lists (e.g., "alert if destination IP is in active C2 feed").

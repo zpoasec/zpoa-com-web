@@ -5,7 +5,7 @@ title: DevOps Integrations
 
 # DevOps Integrations
 
-ZPOA Shield extends security monitoring into the software development lifecycle by integrating with CI/CD pipelines, source code repositories, container orchestrators, and infrastructure-as-code tools. These connectors enable shift-left security practices and provide runtime visibility into your DevOps infrastructure.
+Z Shield extends security monitoring into the software development lifecycle by integrating with CI/CD pipelines, source code repositories, container orchestrators, and infrastructure-as-code tools. These connectors enable shift-left security practices and provide runtime visibility into your DevOps infrastructure.
 
 ## Supported Platforms
 
@@ -80,7 +80,7 @@ Collect Kubernetes API server audit logs to monitor cluster activity, RBAC chang
 
 ```yaml
 # Example: Kubernetes audit policy to capture security-relevant events
-# Configure your API server to forward audit events to ZPOA Shield
+# Configure your API server to forward audit events to Z Shield
 # Key events: secrets access, RBAC changes, pod creation, namespace modifications
 ```
 
@@ -104,7 +104,7 @@ Ingest Ansible playbook execution logs and audit events from Ansible Tower / AWX
 
 ## CI/CD Pipeline Security
 
-ZPOA Shield provides a unified view of security findings across your CI/CD pipelines:
+Z Shield provides a unified view of security findings across your CI/CD pipelines:
 
 | Stage | Security Check | Integrations |
 |---|---|---|

@@ -432,6 +432,7 @@ body {
 .icon-discover { background: #EAE6FF; }
 .icon-armor { background: #DEEBFF; }
 .icon-fortress { background: #FFF7E6; }
+.icon-monitor { background: #F3E8FF; }
 .icon-neural { background: #E6FCFF; }
 
 [data-theme='dark'] .icon-detect { background: rgba(222, 53, 11, 0.15); }
@@ -439,6 +440,7 @@ body {
 [data-theme='dark'] .icon-discover { background: rgba(101, 84, 192, 0.15); }
 [data-theme='dark'] .icon-armor { background: rgba(0, 82, 204, 0.15); }
 [data-theme='dark'] .icon-fortress { background: rgba(255, 171, 0, 0.15); }
+[data-theme='dark'] .icon-monitor { background: rgba(109, 40, 217, 0.15); }
 [data-theme='dark'] .icon-neural { background: rgba(0, 184, 217, 0.15); }
 
 /* ── Integrations Section ── */
@@ -1008,6 +1010,7 @@ body {
 .icon-discover .icon-letter { color: #6554C0; }
 .icon-armor .icon-letter { color: #0052CC; }
 .icon-fortress .icon-letter { color: #FF8B00; }
+.icon-monitor .icon-letter { color: #6D28D9; }
 .icon-neural .icon-letter { color: #00B8D9; }
 
 .feature-subtitle {
@@ -1218,6 +1221,7 @@ body {
 .accent-discover { background: #EAE6FF; color: #6554C0; }
 .accent-armor { background: #DEEBFF; color: #0052CC; }
 .accent-fortress { background: #FFF7E6; color: #FF8B00; }
+.accent-monitor { background: #F3E8FF; color: #6D28D9; }
 .accent-neural { background: #E6FCFF; color: #00B8D9; }
 
 [data-theme='dark'] .accent-detect { background: rgba(222, 53, 11, 0.15); color: #FF5630; }
@@ -1225,6 +1229,7 @@ body {
 [data-theme='dark'] .accent-discover { background: rgba(101, 84, 192, 0.15); color: #8777D9; }
 [data-theme='dark'] .accent-armor { background: rgba(0, 82, 204, 0.15); color: #4C9AFF; }
 [data-theme='dark'] .accent-fortress { background: rgba(255, 139, 0, 0.15); color: #FFAB00; }
+[data-theme='dark'] .accent-monitor { background: rgba(109, 40, 217, 0.15); color: #A78BFA; }
 [data-theme='dark'] .accent-neural { background: rgba(0, 184, 217, 0.15); color: #00C7E6; }
 
 /* ── Module Content ── */

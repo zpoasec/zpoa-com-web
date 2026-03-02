@@ -5,7 +5,7 @@ authors: [zpoa-team]
 tags: [release, integrations]
 ---
 
-ZPOA Shield now supports **90+ integrations** across 14 categories, covering the most widely deployed security tools in the industry.
+Z Shield now supports **90+ integrations** across 14 categories, covering the most widely deployed security tools in the industry.
 
 <!-- truncate -->
 

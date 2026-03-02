@@ -89,6 +89,28 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
+          label: 'Monitor (UAM)',
+          items: [
+            'modules/monitor/overview',
+            'modules/monitor/dashboard',
+            'modules/monitor/activities',
+            'modules/monitor/productivity',
+            'modules/monitor/policies',
+            'modules/monitor/insider-threats',
+            'modules/monitor/investigations',
+            'modules/monitor/recordings',
+            'modules/monitor/audio',
+            'modules/monitor/ai-analysis',
+            'modules/monitor/data-exfiltration',
+            'modules/monitor/remote',
+            'modules/monitor/deployment',
+            'modules/monitor/timesheet',
+            'modules/monitor/wellness',
+            'modules/monitor/privacy',
+          ],
+        },
+        {
+          type: 'category',
           label: 'Neural Mesh (AI)',
           items: [
             'modules/neural-mesh/overview',

@@ -5,7 +5,7 @@ title: REST API Overview
 
 # REST API Overview
 
-The ZPOA Shield REST API provides programmatic access to the platform's core functionality, enabling you to integrate ZPOA Shield with custom tools, automate workflows, and build extensions. This page covers authentication, base URL conventions, rate limits, pagination, error handling, and key endpoints.
+The Z Shield REST API provides programmatic access to the platform's core functionality, enabling you to integrate Z Shield with custom tools, automate workflows, and build extensions. This page covers authentication, base URL conventions, rate limits, pagination, error handling, and key endpoints.
 
 ## Base URL
 
@@ -19,7 +19,7 @@ All communication is encrypted via TLS 1.2 or higher. HTTP requests are automati
 
 ## Authentication
 
-The ZPOA Shield API uses Bearer token authentication. Include your API key in the `Authorization` header of every request:
+The Z Shield API uses Bearer token authentication. Include your API key in the `Authorization` header of every request:
 
 ```bash
 curl -H "Authorization: Bearer zpoa_live_k8f2Gx9mPqR4tY7wZ1bN3cD5eF..." \

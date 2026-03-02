@@ -18,7 +18,7 @@ Neural Mesh ingests intelligence from a diverse set of commercial, open-source, 
 - **Government advisories** -- CISA, CERT, and national cybersecurity agency bulletins
 - **Industry ISACs** -- Sector-specific intelligence sharing communities (Financial, Healthcare, Energy)
 - **Dark web monitoring** -- Credential leaks, ransomware leak sites, and underground forum activity
-- **ZPOA Shield Research** -- Proprietary intelligence from ZPOA Shield's threat research team
+- **Z Shield Research** -- Proprietary intelligence from Z Shield's threat research team
 - **Custom feeds** -- STIX/TAXII and CSV-based feeds from your existing intelligence subscriptions
 
 All intelligence is normalized into a common format, deduplicated, and enriched with confidence scores and context before correlation.

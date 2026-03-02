@@ -1,11 +1,11 @@
 ---
 slug: introducing-zpoa-shield
-title: Introducing ZPOA Shield - Unified Cybersecurity Platform
+title: Introducing Z Shield - Unified Cybersecurity Platform
 authors: [zpoa-team]
 tags: [release, product]
 ---
 
-Today we are excited to announce **ZPOA Shield**, a unified cybersecurity platform that brings together six critical security functions into a single pane of glass.
+Today we are excited to announce **Z Shield**, a unified cybersecurity platform that brings together six critical security functions into a single pane of glass.
 
 <!-- truncate -->
 
@@ -20,7 +20,7 @@ Security teams today are overwhelmed by tool sprawl. The average enterprise uses
 
 ## Our Solution
 
-ZPOA Shield consolidates the core security functions that every organization needs:
+Z Shield consolidates the core security functions that every organization needs:
 
 - **DETECT** -- Next-generation SIEM with real-time log ingestion, correlation engine, and MITRE ATT&CK mapping
 - **COMPLY** -- Automated compliance management for SOC 2, ISO 27001, PCI-DSS, HIPAA, NIST, and GDPR
@@ -35,4 +35,4 @@ We ship with connectors for the tools you already use -- from CrowdStrike and Se
 
 ## Get Started
 
-ZPOA Shield is available today with a free tier for small teams. [Get started now](/docs/getting-started/quick-start) or [explore the documentation](/docs/intro) to learn more.
+Z Shield is available today with a free tier for small teams. [Get started now](/docs/getting-started/quick-start) or [explore the documentation](/docs/intro) to learn more.

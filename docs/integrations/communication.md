@@ -5,7 +5,7 @@ title: Communication Integrations
 
 # Communication Integrations
 
-ZPOA Shield delivers real-time alert notifications, incident updates, and escalation triggers through your team's existing communication channels. These integrations ensure that the right people are informed at the right time, reducing mean time to acknowledge (MTTA) and mean time to respond (MTTR).
+Z Shield delivers real-time alert notifications, incident updates, and escalation triggers through your team's existing communication channels. These integrations ensure that the right people are informed at the right time, reducing mean time to acknowledge (MTTA) and mean time to respond (MTTR).
 
 ## Supported Platforms
 
@@ -17,7 +17,7 @@ Send alert notifications, incident summaries, and interactive response actions t
 
 1. Navigate to **Settings > Integrations > Communication > Slack**.
 2. Click **Connect to Slack** to initiate the OAuth 2.0 authorization flow.
-3. Select the Slack workspace and authorize ZPOA Shield.
+3. Select the Slack workspace and authorize Z Shield.
 4. Configure default notification channels and routing rules.
 
 #### Capabilities
@@ -46,14 +46,14 @@ Send alert notifications, incident summaries, and interactive response actions t
 
 ### Microsoft Teams
 
-Deliver alert notifications and incident summaries to Microsoft Teams channels via incoming webhooks or the ZPOA Shield Teams app.
+Deliver alert notifications and incident summaries to Microsoft Teams channels via incoming webhooks or the Z Shield Teams app.
 
 #### Setup
 
 1. Navigate to **Settings > Integrations > Communication > Microsoft Teams**.
 2. Choose the connection method:
-   - **Incoming Webhook** -- Generate a webhook URL in your Teams channel and paste it into ZPOA Shield.
-   - **Teams App (Bot)** -- Install the ZPOA Shield app from the Teams App Store for richer interactive features.
+   - **Incoming Webhook** -- Generate a webhook URL in your Teams channel and paste it into Z Shield.
+   - **Teams App (Bot)** -- Install the Z Shield app from the Teams App Store for richer interactive features.
 3. Configure notification routing rules.
 
 #### Capabilities
@@ -70,14 +70,14 @@ Trigger PagerDuty incidents for critical security alerts, leveraging PagerDuty's
 
 1. Navigate to **Settings > Integrations > Communication > PagerDuty**.
 2. Enter your PagerDuty **Integration Key** (Events API v2) or authenticate via OAuth 2.0.
-3. Map ZPOA Shield severity levels to PagerDuty urgency levels.
+3. Map Z Shield severity levels to PagerDuty urgency levels.
 
 #### Capabilities
 
 - **Automatic incident creation** -- Critical and high-severity alerts automatically trigger PagerDuty incidents.
 - **Escalation policies** -- Leverage existing PagerDuty escalation chains to ensure alerts are never missed.
-- **Auto-resolve** -- When a ZPOA Shield alert is closed or marked as false positive, the corresponding PagerDuty incident is automatically resolved.
-- **Severity mapping** -- Map ZPOA Shield severity levels (Critical, High, Medium, Low, Info) to PagerDuty urgency (High, Low).
+- **Auto-resolve** -- When a Z Shield alert is closed or marked as false positive, the corresponding PagerDuty incident is automatically resolved.
+- **Severity mapping** -- Map Z Shield severity levels (Critical, High, Medium, Low, Info) to PagerDuty urgency (High, Low).
 
 ```yaml
 pagerduty:
@@ -123,7 +123,7 @@ X-ZPOA-Signature: sha256=<HMAC_SIGNATURE>
 
 - **Custom payload templates** -- Use Handlebars-style templating to structure the webhook payload to match your target system's expected format.
 - **Retry logic** -- Failed webhook deliveries are retried with exponential backoff (up to 5 retries).
-- **HMAC verification** -- ZPOA Shield signs every webhook payload with a shared secret so the receiver can verify authenticity.
+- **HMAC verification** -- Z Shield signs every webhook payload with a shared secret so the receiver can verify authenticity.
 - **Delivery logs** -- View delivery status, response codes, and latency for every webhook invocation under **Settings > Webhooks > Delivery Log**.
 
 ## Notification Management

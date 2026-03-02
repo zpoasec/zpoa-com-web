@@ -5,13 +5,13 @@ title: EDR Integrations
 
 # Endpoint Detection and Response (EDR) Integrations
 
-ZPOA Shield integrates with all major EDR platforms to centralize endpoint telemetry, correlate endpoint alerts with network and identity events, and orchestrate response actions from a single pane of glass.
+Z Shield integrates with all major EDR platforms to centralize endpoint telemetry, correlate endpoint alerts with network and identity events, and orchestrate response actions from a single pane of glass.
 
 ## Supported EDR Platforms
 
 ### CrowdStrike Falcon
 
-Ingest detections, incidents, and raw event data from CrowdStrike Falcon. ZPOA Shield supports bidirectional communication for automated containment actions.
+Ingest detections, incidents, and raw event data from CrowdStrike Falcon. Z Shield supports bidirectional communication for automated containment actions.
 
 - **Connection Method:** CrowdStrike OAuth2 API
 - **Required Scopes:** `detections:read`, `incidents:read`, `hosts:read`
@@ -120,14 +120,14 @@ Ingest HIDS alerts, file integrity monitoring events, and vulnerability detectio
 
 ### osquery
 
-Collect endpoint state and event data from osquery fleet deployments. ZPOA Shield ingests scheduled query results and snapshot logs.
+Collect endpoint state and event data from osquery fleet deployments. Z Shield ingests scheduled query results and snapshot logs.
 
 - **Connection Method:** Fleet server API (Fleet, Kolide) or direct log ingestion
 - **Data Types:** Scheduled query results, process events, file events, socket events
 
 ## Response Actions
 
-For supported EDR platforms, ZPOA Shield can execute automated response actions as part of SOAR playbooks:
+For supported EDR platforms, Z Shield can execute automated response actions as part of SOAR playbooks:
 
 | Action | CrowdStrike | SentinelOne | Defender | Carbon Black |
 |---|---|---|---|---|
@@ -140,6 +140,6 @@ Response actions require elevated API permissions and must be explicitly enabled
 
 ## Best Practices
 
-- **Deduplicate alerts** -- If you run multiple EDR tools, configure ZPOA Shield deduplication rules to prevent duplicate incidents.
+- **Deduplicate alerts** -- If you run multiple EDR tools, configure Z Shield deduplication rules to prevent duplicate incidents.
 - **Enrich with asset context** -- Map EDR agents to your CMDB asset inventory for faster triage.
-- **Tune detection thresholds** -- Use ZPOA Shield's correlation engine to reduce noise by combining EDR signals with network and identity context.
+- **Tune detection thresholds** -- Use Z Shield's correlation engine to reduce noise by combining EDR signals with network and identity context.

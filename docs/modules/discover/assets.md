@@ -13,7 +13,7 @@ Discover automatically identifies and classifies assets from every connected int
 
 - **Cloud Instances** -- Virtual machines, managed databases, storage buckets, and serverless functions across AWS, Azure, and GCP.
 - **Containers** -- Running containers, images, registries, and Kubernetes clusters with full pod-level visibility.
-- **Endpoints** -- Workstations, laptops, and servers enrolled through the ZPOA Shield agent or MDM integrations.
+- **Endpoints** -- Workstations, laptops, and servers enrolled through the Z Shield agent or MDM integrations.
 - **Network Devices** -- Routers, switches, firewalls, VPN gateways, and load balancers discovered via network scanning and SNMP.
 - **Applications** -- Web applications, APIs, SaaS subscriptions, and internally hosted services.
 
@@ -28,7 +28,7 @@ Each asset record is enriched with a comprehensive set of attributes:
 | **Environment** | Production, staging, development, or custom labels |
 | **Owner** | Assigned team or individual responsible for the asset |
 | **Cloud Account** | Source account or subscription where the asset resides |
-| **Tags** | Inherited cloud tags and custom ZPOA Shield labels |
+| **Tags** | Inherited cloud tags and custom Z Shield labels |
 | **Last Seen** | Timestamp of the most recent discovery or heartbeat |
 | **OS / Platform** | Operating system, runtime, or firmware version |
 
@@ -56,7 +56,7 @@ Asset groups can be used as targets for scan policies, alerting rules, and compl
 
 ## Working with the Asset Inventory
 
-Use the search bar and filter panel to locate assets by any combination of attributes. Export results as CSV or JSON for offline analysis, or use the ZPOA Shield API to integrate asset data into your existing CMDB or ITSM workflows.
+Use the search bar and filter panel to locate assets by any combination of attributes. Export results as CSV or JSON for offline analysis, or use the Z Shield API to integrate asset data into your existing CMDB or ITSM workflows.
 
 ```
 GET /api/v1/assets?type=cloud_instance&environment=production&risk_score_gte=75

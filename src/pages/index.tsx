@@ -49,6 +49,15 @@ const features = [
     link: '/features#fortress',
   },
   {
+    title: 'Monitor',
+    subtitle: 'User Activity Intelligence',
+    iconClass: 'icon-monitor',
+    iconLetter: 'M',
+    description:
+      'Insider threat detection, DLP, workforce analytics, session recording, and remote management. Metadata-first privacy with AI-powered analysis.',
+    link: '/features#monitor',
+  },
+  {
     title: 'Neural Mesh',
     subtitle: 'AI Intelligence Engine',
     iconClass: 'icon-neural',
@@ -112,8 +121,8 @@ function HeroSection(): ReactNode {
           </h1>
           <p className="tagline">
             Replace your fragmented security stack with one platform. Detection,
-            compliance, identity governance, cloud security, and AI-powered
-            investigations — all in one place.
+            compliance, identity governance, user monitoring, cloud security,
+            and AI-powered investigations — all in one place.
           </p>
           <div className="hero-buttons">
             <Link
@@ -131,7 +140,7 @@ function HeroSection(): ReactNode {
               <div className="label">Connectors</div>
             </div>
             <div className="stat-item">
-              <div className="number">6</div>
+              <div className="number">7</div>
               <div className="label">Security Pillars</div>
             </div>
             <div className="stat-item">
@@ -174,12 +183,12 @@ function PlatformSection(): ReactNode {
           <div className="platform-image">
             <img
               src="/img/features/platform.jpg"
-              alt="ZPOA Shield Platform"
+              alt="Z Shield Platform"
               loading="lazy"
             />
           </div>
           <div className="platform-content">
-            <div className="section-label">Why ZPOA Shield</div>
+            <div className="section-label">Why Z Shield</div>
             <h2>
               One platform.
               <br />
@@ -187,7 +196,7 @@ function PlatformSection(): ReactNode {
             </h2>
             <p>
               Security teams waste valuable time context-switching between
-              tools. ZPOA Shield eliminates that friction by providing a unified
+              tools. Z Shield eliminates that friction by providing a unified
               dashboard where you can monitor alerts, track compliance, review
               assets, and investigate incidents — all without leaving the
               platform.
@@ -213,7 +222,7 @@ function FeaturesSection(): ReactNode {
     <section className="features-section" id="features">
       <div className="container" style={{textAlign: 'center'}}>
         <div className="section-label">Platform</div>
-        <h2>Six modules. One platform.</h2>
+        <h2>Seven modules. One platform.</h2>
         <p className="section-subtitle">
           Purpose-built security modules that work together seamlessly, giving
           your team complete visibility and control.
@@ -280,7 +289,7 @@ function StatsBar(): ReactNode {
             <div className="stats-bar-label">Alert Latency</div>
           </div>
           <div className="stats-bar-item">
-            <div className="stats-bar-number">6</div>
+            <div className="stats-bar-number">7</div>
             <div className="stats-bar-label">Security Pillars</div>
           </div>
           <div className="stats-bar-item">
@@ -320,7 +329,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Unified Cybersecurity Platform"
-      description="ZPOA Shield — One platform for SIEM, compliance, identity governance, cloud security, and AI-powered threat investigations.">
+      description="Z Shield — One platform for SIEM, compliance, identity governance, cloud security, and AI-powered threat investigations.">
       <HeroSection />
       <TrustedSection />
       <main>

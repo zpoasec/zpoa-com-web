@@ -5,7 +5,7 @@ title: Identity Provider Integrations
 
 # Identity Provider Integrations
 
-Identity is the new perimeter. ZPOA Shield integrates with leading identity and access management (IAM) platforms to detect compromised accounts, monitor privilege escalation, and enforce zero-trust principles across your organization.
+Identity is the new perimeter. Z Shield integrates with leading identity and access management (IAM) platforms to detect compromised accounts, monitor privilege escalation, and enforce zero-trust principles across your organization.
 
 ## Supported Identity Providers
 
@@ -119,7 +119,7 @@ Monitor secrets engine access, authentication events, and policy changes in Hash
 
 ## Authentication Methods
 
-ZPOA Shield supports multiple authentication methods depending on the identity provider:
+Z Shield supports multiple authentication methods depending on the identity provider:
 
 | Method | Description | Providers |
 |---|---|---|
@@ -130,7 +130,7 @@ ZPOA Shield supports multiple authentication methods depending on the identity p
 
 ## Detection Use Cases
 
-Identity provider integrations power the following detection capabilities in ZPOA Shield:
+Identity provider integrations power the following detection capabilities in Z Shield:
 
 - **Impossible travel** -- Detect logins from geographically distant locations within impossible timeframes.
 - **Credential stuffing** -- Identify brute-force and password spray attacks across federated providers.

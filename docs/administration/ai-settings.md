@@ -3,7 +3,7 @@ sidebar_position: 5
 title: AI / LLM Settings
 ---
 
-ZPOA Shield's AI-powered features (Compliance Copilot, AI Policy Generation, AI Evidence Validation, AI Audit Readiness Reports, and AI Remediation Plans) require a configured AI provider. This page explains how to set up and manage your AI provider connection.
+Z Shield's AI-powered features (Compliance Copilot, AI Policy Generation, AI Evidence Validation, AI Audit Readiness Reports, and AI Remediation Plans) require a configured AI provider. This page explains how to set up and manage your AI provider connection.
 
 ## Supported Providers
 
@@ -57,7 +57,7 @@ After adding a provider, click **Set Active** to designate it as the provider fo
 
 ## Testing the Connection
 
-Click **Test Connection** to verify that ZPOA Shield can reach the configured provider and that the credentials are valid. A successful test confirms the provider is ready for use.
+Click **Test Connection** to verify that Z Shield can reach the configured provider and that the credentials are valid. A successful test confirms the provider is ready for use.
 
 ## Graceful Degradation
 

@@ -5,16 +5,16 @@ title: "Vulnerability Management"
 
 # Vulnerability Management
 
-ZPOA Shield Discover provides end-to-end vulnerability management -- from detection through remediation and verification. Vulnerabilities are continuously identified, scored using industry-standard and proprietary methods, and tracked through their full lifecycle.
+Z Shield Discover provides end-to-end vulnerability management -- from detection through remediation and verification. Vulnerabilities are continuously identified, scored using industry-standard and proprietary methods, and tracked through their full lifecycle.
 
 ## CVE Tracking
 
-Every detected vulnerability is mapped to its corresponding **Common Vulnerabilities and Exposures (CVE)** identifier. The vulnerability database is updated continuously from the NVD, vendor advisories, and ZPOA Shield's own research feeds.
+Every detected vulnerability is mapped to its corresponding **Common Vulnerabilities and Exposures (CVE)** identifier. The vulnerability database is updated continuously from the NVD, vendor advisories, and Z Shield's own research feeds.
 
 - Full CVE details including description, affected software versions, and references
 - Vendor patch availability and advisory links
 - Exploit maturity indicators (proof-of-concept, weaponized, actively exploited)
-- Related threat intelligence context from ZPOA Shield Neural Mesh
+- Related threat intelligence context from Z Shield Neural Mesh
 
 ## Scoring and Prioritization
 

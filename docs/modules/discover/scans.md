@@ -5,7 +5,7 @@ title: "Scanning"
 
 # Scanning
 
-ZPOA Shield Discover supports flexible scanning configurations to detect vulnerabilities across your entire infrastructure. Choose between agent-based and agentless approaches, schedule recurring scans, or launch on-demand assessments as needed.
+Z Shield Discover supports flexible scanning configurations to detect vulnerabilities across your entire infrastructure. Choose between agent-based and agentless approaches, schedule recurring scans, or launch on-demand assessments as needed.
 
 ## Scan Types
 
@@ -33,7 +33,7 @@ For critical assets, enable continuous monitoring to detect new vulnerabilities 
 
 ## Scan Profiles
 
-Scan profiles define what checks are performed and how aggressively the scanner operates. ZPOA Shield includes several built-in profiles, and you can create custom profiles tailored to your environment.
+Scan profiles define what checks are performed and how aggressively the scanner operates. Z Shield includes several built-in profiles, and you can create custom profiles tailored to your environment.
 
 | Profile | Description |
 |---------|-------------|
@@ -47,7 +47,7 @@ Custom profiles allow you to include or exclude specific check families, set aut
 
 ## Agent-Based vs. Agentless Scanning
 
-ZPOA Shield supports both scanning approaches to accommodate diverse infrastructure requirements:
+Z Shield supports both scanning approaches to accommodate diverse infrastructure requirements:
 
 **Agent-Based Scanning**
 - Deployed as a lightweight agent on endpoints and servers
@@ -70,7 +70,7 @@ Scan results are available within minutes of completion and include:
 - **Delta analysis** comparing results against the previous scan to highlight new, resolved, and recurring findings
 - **Exportable reports** in PDF, CSV, and JSON formats
 
-Access scan results through the Discover dashboard, the ZPOA Shield API, or configure automated delivery to email and Slack channels.
+Access scan results through the Discover dashboard, the Z Shield API, or configure automated delivery to email and Slack channels.
 
 ```
 POST /api/v1/scans

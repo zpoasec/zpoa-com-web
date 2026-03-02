@@ -3,11 +3,11 @@ sidebar_position: 3
 title: Detection Rules
 ---
 
-Detection rules define the logic that the Detect module uses to identify threats and generate alerts. ZPOA Shield supports both a curated library of pre-built rules and fully custom rules authored by your team.
+Detection rules define the logic that the Detect module uses to identify threats and generate alerts. Z Shield supports both a curated library of pre-built rules and fully custom rules authored by your team.
 
 ## SIGMA-Compatible Rule Format
 
-ZPOA Shield uses a rule format compatible with the SIGMA open standard for detection rules. SIGMA is a widely adopted, vendor-agnostic format that allows security teams to write portable detection logic. If you already maintain SIGMA rules, you can import them directly into ZPOA Shield.
+Z Shield uses a rule format compatible with the SIGMA open standard for detection rules. SIGMA is a widely adopted, vendor-agnostic format that allows security teams to write portable detection logic. If you already maintain SIGMA rules, you can import them directly into Z Shield.
 
 A basic rule definition looks like this:
 
@@ -33,14 +33,14 @@ tags:
 
 ## Pre-Built Rule Library
 
-ZPOA Shield ships with hundreds of pre-built detection rules covering common threat scenarios across cloud infrastructure, identity systems, endpoints, and network traffic. Pre-built rules are organized into rule packs by category:
+Z Shield ships with hundreds of pre-built detection rules covering common threat scenarios across cloud infrastructure, identity systems, endpoints, and network traffic. Pre-built rules are organized into rule packs by category:
 
 - **Cloud Security** -- Unauthorized API calls, insecure storage configurations, privilege escalation in AWS/Azure/GCP.
 - **Identity and Access** -- Brute force attacks, impossible travel, suspicious OAuth grants, MFA bypass.
 - **Endpoint Threats** -- Malware execution patterns, persistence mechanisms, credential dumping.
 - **Network Anomalies** -- Beaconing behavior, DNS tunneling, unusual data transfers.
 
-Pre-built rules are maintained and updated by the ZPOA Shield threat research team. Updates are applied automatically unless you have customized a rule.
+Pre-built rules are maintained and updated by the Z Shield threat research team. Updates are applied automatically unless you have customized a rule.
 
 ## Custom Rules
 

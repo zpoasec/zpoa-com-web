@@ -94,11 +94,11 @@ export default function Signup(): ReactNode {
 
   if (success) {
     return (
-      <Layout title="Welcome to ZPOA Shield" description="Account created successfully">
+      <Layout title="Welcome to Z Shield" description="Account created successfully">
         <div className="signup-section">
           <div className="container" style={{maxWidth: 500, textAlign: 'center', padding: '4rem 1rem'}}>
             <div style={{fontSize: '3rem', marginBottom: '1rem'}}>&#10003;</div>
-            <h1>Welcome to ZPOA Shield!</h1>
+            <h1>Welcome to Z Shield!</h1>
             <p>Your account has been created successfully.</p>
             <p style={{opacity: 0.7}}>
               {form.planTier !== 'free'
@@ -115,7 +115,7 @@ export default function Signup(): ReactNode {
   }
 
   return (
-    <Layout title="Sign Up" description="Create your ZPOA Shield account">
+    <Layout title="Sign Up" description="Create your Z Shield account">
       <div className="signup-section">
         <div className="container" style={{maxWidth: 520, padding: '3rem 1rem'}}>
           <h1 style={{textAlign: 'center'}}>Create Your Account</h1>
