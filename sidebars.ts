@@ -118,6 +118,15 @@ const sidebars: SidebarsConfig = {
             'modules/neural-mesh/threat-intel',
           ],
         },
+        {
+          type: 'category',
+          label: 'AI Security',
+          items: [
+            'modules/ai-sec/overview',
+            'modules/ai-sec/shadow-ai',
+            'modules/ai-sec/dlp',
+          ],
+        },
       ],
     },
     {
