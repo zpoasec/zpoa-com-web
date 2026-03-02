@@ -88,11 +88,11 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: 'Z Shield',
+      title: '',
       logo: {
-        alt: 'Z Shield',
+        alt: 'ZPOA',
         src: 'img/logo.png',
-        style: {height: '36px'},
+        style: {height: '40px'},
       },
       items: [
         {to: '/features', label: 'Features', position: 'left'},
@@ -148,7 +148,7 @@ const config: Config = {
         },
       ],
       logo: {
-        alt: 'Z Shield',
+        alt: 'ZPOA Logo',
         src: 'img/logo.png',
         href: 'https://www.zpoa.com',
         width: 160,
