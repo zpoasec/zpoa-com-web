@@ -48,3 +48,7 @@ Review your configuration summary and click **Go Live**. Z Shield begins ingesti
 ## What Happens Next
 
 After completing the wizard, you will land on the unified dashboard. Initial data population typically takes between two and fifteen minutes depending on the volume of your connected sources. You can monitor ingestion progress from **Settings > Integrations**.
+
+### Approval Center
+
+All access requests, JIT access, enrollment approvals, and cloud provisioning requests flow through the **Approval Center** (Command Center > Approval Center). Set up approval policies early to automate low-risk approvals and enforce SLA deadlines. See [Approval Center](/docs/modules/fortress/approval-center) for details.

@@ -65,6 +65,7 @@ const sidebars: SidebarsConfig = {
           label: 'Fortress (Identity)',
           items: [
             'modules/fortress/overview',
+            'modules/fortress/approval-center',
             'modules/fortress/identities',
             'modules/fortress/policies',
             'modules/fortress/anomalies',
@@ -155,6 +156,7 @@ const sidebars: SidebarsConfig = {
         'administration/users-roles',
         'administration/api-keys',
         'administration/sso',
+        'administration/approval-policies',
         'administration/billing',
         'administration/ai-settings',
       ],
