@@ -55,6 +55,8 @@ const config: Config = {
     },
   ],
 
+  clientModules: ['./src/clientModules/blogReveal.ts'],
+
   presets: [
     [
       'classic',
