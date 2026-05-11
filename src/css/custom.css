@@ -1528,11 +1528,16 @@ body {
 article {
   font-size: 1.0625rem;
   line-height: 1.75;
-}
-
-article .markdown {
   max-width: 740px;
   margin: 0 auto;
+}
+
+article header,
+article .markdown,
+article > footer {
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 article header h1 {
