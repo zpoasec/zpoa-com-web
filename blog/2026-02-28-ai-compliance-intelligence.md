@@ -5,6 +5,8 @@ authors: [zpoa-team]
 tags: [release, product]
 ---
 
+![AI-Powered Compliance Intelligence - Automate Your GRC Workflow](/img/blog/ai-compliance-intelligence/hero.jpg)
+
 Today we are launching **AI-powered compliance intelligence** in Z Shield's Comply module -- six new features that automate the manual, time-consuming workflows that GRC teams deal with every day.
 
 <!-- truncate -->

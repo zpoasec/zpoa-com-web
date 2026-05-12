@@ -5,6 +5,8 @@ authors: [zpoa-team]
 tags: [release, product]
 ---
 
+![Introducing Z Shield - Unified Cybersecurity Platform](/img/blog/introducing-zpoa-shield/hero.jpg)
+
 Today we are excited to announce **Z Shield**, a unified cybersecurity platform that brings together six critical security functions into a single pane of glass.
 
 <!-- truncate -->
