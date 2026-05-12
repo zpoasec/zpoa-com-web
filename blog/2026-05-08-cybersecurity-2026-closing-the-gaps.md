@@ -5,7 +5,7 @@ authors: [zpoa-team]
 tags: [security]
 ---
 
-![Cybersecurity in 2026: Closing the Gaps That Matter](/img/blog/cybersecurity-2026-closing-the-gaps/hero.jpg)
+![Cybersecurity in 2026: Closing the Gaps That Matter](/img/blog/cybersecurity-2026-closing-the-gaps/hero.svg)
 
 Cybersecurity is no longer a static defense -- it is an ongoing contest of persistence. Attackers continuously evolve, leveraging AI, automation, and interconnected systems to move faster and smarter. At the same time, organizations are expanding across cloud, SaaS, and third-party ecosystems, creating a dynamic and complex security landscape.
 

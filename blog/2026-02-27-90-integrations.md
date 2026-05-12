@@ -5,7 +5,7 @@ authors: [zpoa-team]
 tags: [release, integrations]
 ---
 
-![90+ Integrations - Connect Your Entire Security Stack](/img/blog/90-integrations/hero.jpg)
+![90+ Integrations - Connect Your Entire Security Stack](/img/blog/90-integrations/hero.svg)
 
 Z Shield now supports **90+ integrations** across 14 categories, covering the most widely deployed security tools in the industry.
 

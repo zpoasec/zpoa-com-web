@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D1B2A"/>
+      <stop offset="0.55" stop-color="#142233"/>
+      <stop offset="1" stop-color="#1B2D44"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.2" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#2684FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#2684FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.85" cy="0.75" r="0.55">
+      <stop offset="0" stop-color="#4C9AFF" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#4C9AFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#glow1)"/>
+  <rect width="1200" height="675" fill="url(#glow2)"/>
+
+  <!-- Network of nodes -->
+  <g opacity="0.9" stroke="#4C9AFF" stroke-width="1.4" fill="none">
+    <path d="M600 337 L380 200" />
+    <path d="M600 337 L820 200" />
+    <path d="M600 337 L320 380" />
+    <path d="M600 337 L880 380" />
+    <path d="M600 337 L420 510" />
+    <path d="M600 337 L780 510" />
+    <path d="M600 337 L240 250" />
+    <path d="M600 337 L960 250" />
+    <path d="M380 200 L240 250" />
+    <path d="M820 200 L960 250" />
+    <path d="M320 380 L420 510" />
+    <path d="M880 380 L780 510" />
+  </g>
+
+  <!-- Central hub -->
+  <circle cx="600" cy="337" r="70" fill="#0052CC" opacity="0.25" filter="url(#soft)"/>
+  <circle cx="600" cy="337" r="42" fill="#2684FF"/>
+  <circle cx="600" cy="337" r="42" fill="none" stroke="#fff" stroke-width="2" opacity="0.8"/>
+  <text x="600" y="346" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="22" fill="#fff" text-anchor="middle">Z</text>
+
+  <!-- Outer nodes -->
+  <g fill="#6FB3FF">
+    <circle cx="380" cy="200" r="14"/>
+    <circle cx="820" cy="200" r="14"/>
+    <circle cx="320" cy="380" r="14"/>
+    <circle cx="880" cy="380" r="14"/>
+    <circle cx="420" cy="510" r="14"/>
+    <circle cx="780" cy="510" r="14"/>
+    <circle cx="240" cy="250" r="11"/>
+    <circle cx="960" cy="250" r="11"/>
+  </g>
+  <g fill="#fff" opacity="0.85">
+    <circle cx="380" cy="200" r="5"/>
+    <circle cx="820" cy="200" r="5"/>
+    <circle cx="320" cy="380" r="5"/>
+    <circle cx="880" cy="380" r="5"/>
+    <circle cx="420" cy="510" r="5"/>
+    <circle cx="780" cy="510" r="5"/>
+  </g>
+
+  <text x="600" y="610" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="#9ec5ff" text-anchor="middle" letter-spacing="6">90+ INTEGRATIONS</text>
+</svg>
