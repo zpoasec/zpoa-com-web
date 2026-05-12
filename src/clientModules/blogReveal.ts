@@ -5,7 +5,7 @@ const SELECTOR = [
   'article .markdown img',
   'article .markdown h2',
   'article .markdown h3',
-  'html.blog-list-page main[itemtype$="/Blog"] > article',
+  'main.zpoa-blog-list > article',
 ].join(', ');
 
 function applyReveal() {
