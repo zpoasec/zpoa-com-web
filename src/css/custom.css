@@ -1851,33 +1851,46 @@ main.zpoa-blog-list article .markdown > p:nth-of-type(2) {
   margin: 0;
 }
 
-/* Footer with tags and read-more */
-main.zpoa-blog-list article > footer {
-  padding: 1rem 1.5rem 1.25rem;
-  margin-top: auto;
+/* Footer with tags and read-more — stack vertically, full width cols */
+main.zpoa-blog-list article > footer.row {
+  padding: 1rem 1.5rem 1.25rem !important;
+  margin: auto 0 0 !important;
   border-top: 1px solid var(--zpoa-gray-100);
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.75rem;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  gap: 0.75rem !important;
   max-width: none !important;
 }
 
-/* Reset Docusaurus column widths inside footer */
-main.zpoa-blog-list article > footer > .col {
-  flex: 1 1 100% !important;
+[data-theme='dark'] main.zpoa-blog-list article > footer.row {
+  border-top-color: rgba(76, 154, 255, 0.1);
+}
+
+/* Force every column inside footer to 100% width and left-aligned */
+main.zpoa-blog-list article > footer.row > [class*="col"] {
+  flex: 0 0 100% !important;
   max-width: 100% !important;
+  width: 100% !important;
   padding: 0 !important;
+  margin: 0 !important;
   text-align: left !important;
 }
 
-[data-theme='dark'] main.zpoa-blog-list article > footer {
-  border-top-color: #1E2D3D;
+/* Tag list styling */
+main.zpoa-blog-list article > footer.row [class*="tags"] {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
-/* Tag pills */
-main.zpoa-blog-list article .badge {
-  font-size: 0.7rem;
+main.zpoa-blog-list article > footer.row [class*="tag_"] a,
+main.zpoa-blog-list article > footer.row a[rel="tag"] {
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: capitalize;
   background: rgba(0, 82, 204, 0.08);
@@ -1885,55 +1898,61 @@ main.zpoa-blog-list article .badge {
   border: 1px solid rgba(0, 82, 204, 0.15);
   padding: 3px 10px;
   border-radius: 100px;
-  margin: 0 4px 0 0;
+  text-decoration: none;
+  display: inline-block;
 }
 
-[data-theme='dark'] main.zpoa-blog-list article .badge {
+[data-theme='dark'] main.zpoa-blog-list article > footer.row [class*="tag_"] a,
+[data-theme='dark'] main.zpoa-blog-list article > footer.row a[rel="tag"] {
   background: rgba(76, 154, 255, 0.12);
   color: #6FB3FF;
   border-color: rgba(76, 154, 255, 0.25);
 }
 
-/* Read More button — strip docusaurus button styling */
-main.zpoa-blog-list article .button {
-  font-size: 0.82rem;
+/* Read more link — plain <a> in the second col */
+main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] {
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--zpoa-blue);
   text-decoration: none;
-  border: none;
-  background: transparent;
-  padding: 0;
-  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
   width: auto;
-  align-self: flex-start;
   transition: gap 0.15s ease, color 0.15s ease;
 }
 
-main.zpoa-blog-list article .button::after {
+main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] b {
+  font-weight: 600;
+}
+
+main.zpoa-blog-list article > footer.row a[aria-label^="Read more"]::after {
   content: '→';
   font-weight: 500;
   transition: transform 0.15s ease;
 }
 
-[data-theme='dark'] main.zpoa-blog-list article .button {
-  color: #6FB3FF;
-}
-
-main.zpoa-blog-list article .button:hover {
-  text-decoration: none;
+main.zpoa-blog-list article > footer.row a[aria-label^="Read more"]:hover {
   color: #0065FF;
 }
 
-main.zpoa-blog-list article .button:hover::after {
+main.zpoa-blog-list article > footer.row a[aria-label^="Read more"]:hover::after {
   transform: translateX(3px);
 }
 
-[data-theme='dark'] main.zpoa-blog-list article .button:hover {
+[data-theme='dark'] main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] {
+  color: #6FB3FF;
+}
+
+[data-theme='dark'] main.zpoa-blog-list article > footer.row a[aria-label^="Read more"]:hover {
   color: #B3D4FF;
 }
+
+[data-theme='dark'] main.zpoa-blog-list article > footer {
+  border-top-color: #1E2D3D;
+}
+
 
 @media (max-width: 996px) {
   main.zpoa-blog-list { grid-template-columns: repeat(2, 1fr); }
