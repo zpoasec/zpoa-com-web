@@ -1,7 +1,12 @@
 // Adds a gentle fade-up reveal to images and section headings inside blog posts.
 // Uses IntersectionObserver for broad browser support.
 
-const SELECTOR = 'article .markdown img, article .markdown h2, article .markdown h3';
+const SELECTOR = [
+  'article .markdown img',
+  'article .markdown h2',
+  'article .markdown h3',
+  'html.blog-list-page main[itemtype$="/Blog"] > article',
+].join(', ');
 
 function applyReveal() {
   if (typeof window === 'undefined') return;
