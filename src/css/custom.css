@@ -2055,6 +2055,39 @@ nav.pagination-nav {
   padding: 0 !important;
 }
 
+/* On the blog list grid, force pagination to span all columns so it sits
+   below the last row of cards (instead of squeezing into one grid cell). */
+main.zpoa-blog-list > nav.pagination-nav {
+  grid-column: 1 / -1;
+  max-width: 740px;
+  width: 100%;
+  margin: 2rem auto 0 !important;
+}
+
+/* Hide empty pagination items (when there's no prev or next, the wrapper
+   div has no link inside — without this it renders as an empty box). */
+main.zpoa-blog-list > nav.pagination-nav > div:empty {
+  display: none;
+}
+main.zpoa-blog-list > nav.pagination-nav:has(> div:only-child) {
+  grid-template-columns: 1fr;
+  max-width: 360px;
+}
+
+/* Blog-list paginator links only have a sublabel (no title), so the
+   default min-height: 80px makes them look hollow. Tighten them up. */
+main.zpoa-blog-list > nav.pagination-nav .pagination-nav__link {
+  min-height: auto;
+  padding: 0.75rem 1.25rem;
+  justify-content: center;
+}
+main.zpoa-blog-list > nav.pagination-nav .pagination-nav__sublabel {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-weight: 600;
+}
+
 nav.pagination-nav .pagination-nav__link {
   border: 1px solid var(--zpoa-gray-200) !important;
   border-radius: 12px !important;
