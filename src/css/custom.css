@@ -1454,6 +1454,18 @@ body {
   justify-content: center;
 }
 
+/* Schedule page hero subtitle — readable in both themes */
+.schedule-subtitle {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme='dark'] .schedule-subtitle {
+  color: #e6ebf3 !important;
+  opacity: 1 !important;
+}
+
 .signup-form {
   display: flex;
   flex-direction: column;
