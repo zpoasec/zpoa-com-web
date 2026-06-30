@@ -211,7 +211,7 @@ export default function Signup(): ReactNode {
 
           <p style={{textAlign: 'center', marginTop: '1.5rem', fontSize: '0.9rem', opacity: 0.7}}>
             Already have an account?{' '}
-            <a href="https://app.zpoashield.com">Log in</a>
+            <a href="/schedule">Log in</a>
           </p>
         </div>
       </div>

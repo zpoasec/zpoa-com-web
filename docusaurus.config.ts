@@ -112,7 +112,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://app.zpoashield.com',
+          to: '/schedule',
           label: 'Login',
           position: 'right',
           className: 'navbar-login-btn',
