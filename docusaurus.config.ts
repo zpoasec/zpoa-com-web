@@ -113,7 +113,7 @@ const config: Config = {
         },
         {
           to: '/schedule',
-          label: 'Login',
+          label: "Sign up, it's Free",
           position: 'right',
           className: 'navbar-login-btn',
         },
