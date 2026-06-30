@@ -44,7 +44,7 @@ export default function Schedule(): ReactNode {
           <div
             className="calendly-inline-widget"
             data-url={CALENDLY_URL}
-            style={{minWidth: 320, height: 700}}
+            style={{minWidth: 320, height: 1150}}
           />
 
           <noscript>
