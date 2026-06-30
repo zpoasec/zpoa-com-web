@@ -35,7 +35,7 @@ export default function Schedule(): ReactNode {
               Free Consultation
             </span>
             <h1 style={{marginBottom: '0.75rem'}}>Get Started with Z Shield</h1>
-            <p style={{opacity: 0.7, maxWidth: 640, margin: '0 auto'}}>
+            <p style={{color: 'var(--ifm-font-color-base)', maxWidth: 640, margin: '0 auto'}}>
               Schedule a free consultation to see how Z Shield unifies your security operations.
               Our team will walk you through setup, features, and answer any questions.
             </p>
