@@ -155,7 +155,9 @@ export default function Pricing(): ReactNode {
                         ? '/signup?plan=pro'
                         : tier.name === 'Business'
                           ? '/signup?plan=business'
-                          : 'mailto:info@zpoa.com'
+                          : tier.name === 'Enterprise'
+                            ? '/schedule'
+                            : 'mailto:info@zpoa.com'
                   }>
                   {tier.btn}
                 </Link>
