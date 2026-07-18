@@ -1,21 +1,10 @@
-import {type ReactNode, type MouseEvent, useEffect} from 'react';
+import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 
-// Replace with your real Calendly scheduling link.
-const CALENDLY_URL = 'https://calendly.com/zpoa-sales/30min';
-
-// Opens the Calendly popup over the page when the widget is loaded;
-// otherwise the anchor's href opens Calendly in a new tab as a fallback.
-function openCalendly(e: MouseEvent<HTMLAnchorElement>): void {
-  const w = window as unknown as {
-    Calendly?: {initPopupWidget: (opts: {url: string}) => void};
-  };
-  if (w.Calendly?.initPopupWidget) {
-    e.preventDefault();
-    w.Calendly.initPopupWidget({url: CALENDLY_URL});
-  }
-}
+// "Contact Sales" / "Talk to us" -> the "Get Started with Z Shield" page,
+// which embeds the Calendly scheduler for booking a meeting.
+const GET_STARTED_URL = '/schedule';
 
 const ICONS: Record<string, ReactNode> = {
   // self-hosted → server rack you own
@@ -162,14 +151,9 @@ function VpnHero(): ReactNode {
             <Link className="hero-btn-primary" to="/docs/modules/vpn/overview">
               Read the docs
             </Link>
-            <a
-              className="hero-btn-secondary"
-              href={CALENDLY_URL}
-              onClick={openCalendly}
-              target="_blank"
-              rel="noopener noreferrer">
+            <Link className="hero-btn-secondary" to={GET_STARTED_URL}>
               Contact Sales
-            </a>
+            </Link>
           </div>
           <div className="cvpn-trust">
             <span className="cvpn-trust-label">Built for regulated teams</span>
@@ -371,14 +355,9 @@ function VpnCTA(): ReactNode {
           <Link className="hero-btn-primary" to="/docs/modules/vpn/overview">
             Read the docs
           </Link>
-          <a
-            className="hero-btn-secondary"
-            href={CALENDLY_URL}
-            onClick={openCalendly}
-            target="_blank"
-            rel="noopener noreferrer">
+          <Link className="hero-btn-secondary" to={GET_STARTED_URL}>
             Talk to us
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -386,23 +365,6 @@ function VpnCTA(): ReactNode {
 }
 
 export default function CyberVpn(): ReactNode {
-  useEffect(() => {
-    if (!document.getElementById('calendly-widget-css')) {
-      const link = document.createElement('link');
-      link.id = 'calendly-widget-css';
-      link.rel = 'stylesheet';
-      link.href = 'https://assets.calendly.com/assets/external/widget.css';
-      document.head.appendChild(link);
-    }
-    if (!document.getElementById('calendly-widget-js')) {
-      const script = document.createElement('script');
-      script.id = 'calendly-widget-js';
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
-
   return (
     <Layout
       title="ZPOA Zypher VPN"
