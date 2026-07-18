@@ -4,7 +4,7 @@ import Layout from '@theme/Layout';
 
 // "Contact Sales" / "Talk to us" -> the "Get Started with Z Shield" page,
 // which embeds the Calendly scheduler for booking a meeting.
-const GET_STARTED_URL = '/schedule';
+const GET_STARTED_URL = 'https://www.zpoa.com/schedule';
 
 const ICONS: Record<string, ReactNode> = {
   // self-hosted → server rack you own
