@@ -97,7 +97,20 @@ const config: Config = {
         style: {height: '40px'},
       },
       items: [
-        {to: '/features', label: 'Features', position: 'left'},
+        {
+          type: 'dropdown',
+          label: 'Features',
+          position: 'left',
+          items: [
+            {label: 'Platform Overview', to: '/features'},
+            {label: 'Products', to: '/features#products'},
+            {
+              label: 'ZPOA Zypher VPN',
+              to: '/cyber-vpn',
+              className: 'navbar-subitem',
+            },
+          ],
+        },
         {to: '/pricing', label: 'Pricing', position: 'left'},
         {
           type: 'docSidebar',

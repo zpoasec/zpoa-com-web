@@ -117,6 +117,24 @@ const modules = [
   },
 ];
 
+const products = [
+  {
+    id: 'vpn',
+    subtitle: 'ZPOA Zypher VPN',
+    headline: 'Zero-trust access. Fully self-hosted.',
+    description:
+      'A modern WireGuard mesh VPN where the control plane, database, and identity all stay inside your own network. Direct peer-to-peer tunnels, identity-native access governed by the golden record, air-gap capable, with ~30s hot-standby failover.',
+    highlights: [
+      'Self-hosted control plane, database, and relays — nothing leaves your VPC',
+      'Identity-native access governed by the golden record, not an IP',
+      'Direct peer-to-peer WireGuard mesh with encrypted relay fallback',
+      'Air-gap capable, physical per-customer isolation, ~30s failover',
+    ],
+    accentClass: 'accent-vpn',
+    link: '/cyber-vpn',
+  },
+];
+
 function FeatHero(): ReactNode {
   return (
     <section className="feat-hero">
@@ -188,6 +206,42 @@ function ModuleSection({
   );
 }
 
+function ProductsIndex(): ReactNode {
+  return (
+    <section className="feat-module-section feat-section-gray" id="products">
+      <div className="container">
+        <div className="feat-products-head">
+          <span className="hero-label">Products</span>
+          <h2>Standalone products</h2>
+          <p className="tagline">
+            Purpose-built products you can deploy on their own — starting with
+            our self-hosted, zero-trust ZPOA Zypher VPN.
+          </p>
+        </div>
+        <div className="products-grid">
+          {products.map((product) => (
+            <div className="product-card" id={product.id} key={product.id}>
+              <span className={`feat-pill ${product.accentClass}`}>
+                {product.subtitle}
+              </span>
+              <h3>{product.headline}</h3>
+              <p>{product.description}</p>
+              <ul className="feat-highlights">
+                {product.highlights.map((h) => (
+                  <li key={h}>{h}</li>
+                ))}
+              </ul>
+              <Link className="feat-learn-more" to={product.link}>
+                Learn more <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function StatsBar(): ReactNode {
   const stats = [
     {number: '690+', label: 'Connectors'},
@@ -244,6 +298,7 @@ export default function Features(): ReactNode {
         {modules.map((mod, i) => (
           <ModuleSection key={mod.id} module={mod} index={i} />
         ))}
+        <ProductsIndex />
         <StatsBar />
         <FeatCTA />
       </main>
