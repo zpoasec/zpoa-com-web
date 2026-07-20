@@ -56,6 +56,29 @@ const ICONS: Record<string, ReactNode> = {
       <path d="M10 13l-3 3 3 3" />
     </svg>
   ),
+  // speed → gauge / speedometer
+  speed: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 18a8 8 0 0 1 16 0" />
+      <path d="M12 18l4.5-5" />
+      <circle cx="12" cy="18" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+  // shield → smaller blast radius
+  shield: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3l7 3v5c0 4.4-3 8-7 10-4-2-7-5.6-7-10V6l7-3z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  ),
+  // cost → coins / lower TCO
+  cost: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="12" cy="6" rx="7" ry="3" />
+      <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6" />
+      <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
+    </svg>
+  ),
 };
 
 const features = [
@@ -133,6 +156,24 @@ const capabilities: Array<[string, string]> = [
   ['Air-gap / offline', 'Yes, nothing leaves your boundary'],
   ['Identity model', 'Golden-record identity, lifecycle & approvals'],
   ['Data plane (traffic)', 'Direct P2P WireGuard + encrypted relay'],
+];
+
+const businessRows: Array<[string, string, string]> = [
+  ['Network model', 'All traffic backhauls through a central concentrator', 'Direct peer-to-peer, straight to the resource'],
+  ['Speed for users', 'Slow; every packet detours to the gateway', 'Fast, near-native latency with no detour'],
+  ['Reach once connected', 'The whole flat network (lateral movement)', 'Only the apps their identity allows'],
+  ['Attack surface', 'A public VPN gateway, a constant CVE target', 'No inbound public concentrator to exploit'],
+  ['Availability', 'One gateway is a single point of failure', 'No central choke point; tunnels survive outages'],
+  ['Scaling users & sites', 'Buy bigger appliances and more bandwidth', 'Add peers; the mesh scales itself'],
+  ['Onboarding', 'Manual client configs and firewall rules', 'Zero-config, identity-based; online in minutes'],
+  ['Access control', 'Coarse, IP and subnet based', 'Least-privilege, identity and entitlement based'],
+  ['Cost model', 'Appliance, bandwidth, and maintenance', 'Software you self-host, no per-gateway tax'],
+];
+
+const businessOutcomes = [
+  {icon: 'speed', title: 'Faster for everyone', body: 'No backhaul, so the "VPN is slow" tickets stop and remote work feels local.'},
+  {icon: 'shield', title: 'Smaller blast radius', body: 'A compromised device cannot roam a flat network; it reaches only what its identity allows.'},
+  {icon: 'cost', title: 'Lower total cost', body: 'No concentrator appliances to size, patch, and replace, and no per-gateway bandwidth tax.'},
 ];
 
 function VpnHero(): ReactNode {
@@ -317,21 +358,11 @@ function VpnCompare(): ReactNode {
           the database, and the identity that governs access all inside your walls.
         </p>
         <div className="cvpn-compare-grid">
-          <div className="cvpn-table-wrap">
-            <table className="cvpn-table">
-              <thead>
-                <tr><th>Dimension</th><th className="cvpn-th-us">ZPOA Zypher VPN</th></tr>
-              </thead>
-              <tbody>
-                {capabilities.map(([dim, us]) => (
-                  <tr key={dim}>
-                    <td className="cvpn-dim">{dim}</td>
-                    <td className="cvpn-td-us">{us}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <ul className="cvpn-points">
+            {capabilities.map(([dim, us]) => (
+              <li key={dim}><span className="pt-label">{dim}:</span> {us}</li>
+            ))}
+          </ul>
           <div className="cvpn-compare-fig">
             <img
               src="/img/features/cyber-vpn-flow.svg"
@@ -340,6 +371,62 @@ function VpnCompare(): ReactNode {
             />
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function VpnBusinessCase(): ReactNode {
+  return (
+    <section className="cvpn-section cvpn-section-gray">
+      <div className="container">
+        <div className="cvpn-bc-head">
+          <div className="cvpn-eyebrow">The business case</div>
+          <h2 className="cvpn-h2-center">Why a mesh VPN beats a traditional VPN for business</h2>
+          <p className="cvpn-sub cvpn-sub-center">
+            Legacy VPNs were built for a world where everyone sat in one office and
+            &ldquo;the network&rdquo; was a place. Today your people, apps, and data
+            are everywhere, and the old hub-and-spoke model is now the bottleneck,
+            the single point of failure, and the breach headline. A mesh changes the
+            economics.
+          </p>
+        </div>
+
+        <div className="cvpn-table-wrap">
+          <table className="cvpn-table">
+            <thead>
+              <tr>
+                <th>For your business</th>
+                <th>Traditional VPN</th>
+                <th className="cvpn-th-us">ZPOA Zypher (mesh)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {businessRows.map(([dim, trad, mesh]) => (
+                <tr key={dim}>
+                  <td className="cvpn-dim">{dim}</td>
+                  <td>{trad}</td>
+                  <td className="cvpn-td-us">{mesh}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="cvpn-feature-grid cvpn-bc-cards">
+          {businessOutcomes.map((o) => (
+            <div className="cvpn-feature" key={o.title}>
+              <span className="cvpn-feature-ic" aria-hidden="true">{ICONS[o.icon]}</span>
+              <h3>{o.title}</h3>
+              <p>{o.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="cvpn-quote">
+          A traditional VPN connects you to a network. A mesh connects you to
+          exactly what you need, and nothing else.
+        </p>
       </div>
     </section>
   );
@@ -377,6 +464,7 @@ export default function CyberVpn(): ReactNode {
         <VpnFeatures />
         <VpnFlow />
         <VpnCompare />
+        <VpnBusinessCase />
         <VpnCTA />
       </main>
     </Layout>

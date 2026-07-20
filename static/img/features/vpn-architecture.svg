@@ -13,7 +13,7 @@
 
   <!-- control plane band -->
   <rect x="225" y="74" width="835" height="200" rx="11" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1"/>
-  <text x="245" y="97" font-size="12" font-weight="700" fill="#4f46e5" letter-spacing="0.5">CONTROL PLANE — coordination &amp; state · the matchmaker, never sees traffic</text>
+  <text x="245" y="97" font-size="12" font-weight="700" fill="#4f46e5" letter-spacing="0.5">CONTROL PLANE · coordination &amp; state · the matchmaker, never sees traffic</text>
 
   <!-- CP -->
   <rect x="248" y="118" width="160" height="98" rx="10" fill="#0f172a"/>
@@ -44,7 +44,7 @@
 
   <!-- data plane band -->
   <rect x="225" y="300" width="835" height="256" rx="11" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
-  <text x="245" y="323" font-size="12" font-weight="700" fill="#047857" letter-spacing="0.5">DATA PLANE — WireGuard mesh · direct P2P, end-to-end encrypted, never touches the DB</text>
+  <text x="245" y="323" font-size="12" font-weight="700" fill="#047857" letter-spacing="0.5">DATA PLANE · WireGuard mesh · direct P2P, end-to-end encrypted, never touches the DB</text>
 
   <!-- subnet router -->
   <rect x="430" y="372" width="180" height="118" rx="10" fill="#ffffff" stroke="#cbd5e1"/>

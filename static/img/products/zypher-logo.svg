@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="ZPOA Zypher VPN">
+  <defs>
+    <linearGradient id="zbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#312e81"/>
+      <stop offset="0.5" stop-color="#5b21b6"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="zrib" x1="0.2" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c7d2fe"/>
+    </linearGradient>
+    <linearGradient id="zsh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c4b5fd"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="60" fill="url(#zbg)"/>
+
+  <!-- circuit traces -->
+  <g stroke="#818cf8" stroke-width="2.4" fill="#a5b4fc" opacity="0.85" stroke-linecap="round">
+    <line x1="42" y1="112" x2="70" y2="112"/><circle cx="39" cy="112" r="3.2"/>
+    <line x1="34" y1="134" x2="58" y2="134"/><circle cx="31" cy="134" r="3.2"/>
+    <line x1="46" y1="156" x2="66" y2="156"/><circle cx="43" cy="156" r="3.2"/>
+    <line x1="214" y1="112" x2="186" y2="112"/><circle cx="217" cy="112" r="3.2"/>
+    <line x1="222" y1="134" x2="198" y2="134"/><circle cx="225" cy="134" r="3.2"/>
+    <line x1="210" y1="156" x2="190" y2="156"/><circle cx="213" cy="156" r="3.2"/>
+  </g>
+
+  <!-- Z ribbon -->
+  <path d="M72 64 H184 L94 158 H188" fill="none" stroke="url(#zrib)" stroke-width="27"
+        stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M72 64 H184" fill="none" stroke="#eef2ff" stroke-width="27" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- shield + padlock (centered over the Z) -->
+  <g transform="translate(128,150)">
+    <path d="M0 -42 L40 -26 V6 C40 33 23 55 0 64 -23 55 -40 33 -40 6 V-26 Z"
+          fill="url(#zsh)" stroke="#ffffff" stroke-width="4.5"/>
+    <rect x="-16" y="2" width="32" height="26" rx="6" fill="#1e1b2e"/>
+    <path d="M-9.5 2 V-6 A9.5 9.5 0 0 1 9.5 -6 V2" fill="none" stroke="#1e1b2e" stroke-width="6.5"/>
+    <circle cx="0" cy="13" r="3.6" fill="#a78bfa"/>
+    <rect x="-1.7" y="13" width="3.4" height="9" rx="1.7" fill="#a78bfa"/>
+  </g>
+</svg>
