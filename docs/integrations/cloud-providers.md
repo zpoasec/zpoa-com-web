@@ -5,18 +5,18 @@ title: Cloud Provider Integrations
 
 # Cloud Provider Integrations
 
-Z Shield provides deep integrations with the three major cloud platforms -- AWS, Microsoft Azure, and Google Cloud Platform. These connectors ingest security-relevant logs, alerts, and configuration data to give you centralized visibility across multi-cloud environments.
+Z Shield provides deep integrations with the three major cloud platforms - AWS, Microsoft Azure, and Google Cloud Platform. These connectors ingest security-relevant logs, alerts, and configuration data to give you centralized visibility across multi-cloud environments.
 
 ## Amazon Web Services (AWS)
 
 ### Supported Services
 
-- **AWS CloudTrail** -- API activity and management event logs across all AWS accounts and regions.
-- **Amazon GuardDuty** -- Threat detection findings including reconnaissance, instance compromise, and account compromise.
-- **AWS Security Hub** -- Aggregated security findings from AWS services and third-party tools.
-- **AWS WAF** -- Web application firewall logs including blocked requests and rule match details.
-- **Amazon S3 Access Logs** -- Bucket-level access logging for data exfiltration monitoring.
-- **Amazon Route 53 DNS Logs** -- DNS query logs for detecting C2 communication and DNS tunneling.
+- **AWS CloudTrail** - API activity and management event logs across all AWS accounts and regions.
+- **Amazon GuardDuty** - Threat detection findings including reconnaissance, instance compromise, and account compromise.
+- **AWS Security Hub** - Aggregated security findings from AWS services and third-party tools.
+- **AWS WAF** - Web application firewall logs including blocked requests and rule match details.
+- **Amazon S3 Access Logs** - Bucket-level access logging for data exfiltration monitoring.
+- **Amazon Route 53 DNS Logs** - DNS query logs for detecting C2 communication and DNS tunneling.
 
 ### Configuration
 
@@ -54,11 +54,11 @@ For AWS Organizations deployments, configure a single connector with a managemen
 
 ### Supported Services
 
-- **Azure Activity Log** -- Subscription-level operations and administrative events.
-- **Azure Firewall Logs** -- Network and application rule logs from Azure Firewall.
-- **NSG Flow Logs** -- Network Security Group traffic flow data for network forensics.
-- **Azure Key Vault Audit Logs** -- Access and management events for secrets, keys, and certificates.
-- **Azure Kubernetes Service (AKS)** -- Control plane audit logs and container runtime events.
+- **Azure Activity Log** - Subscription-level operations and administrative events.
+- **Azure Firewall Logs** - Network and application rule logs from Azure Firewall.
+- **NSG Flow Logs** - Network Security Group traffic flow data for network forensics.
+- **Azure Key Vault Audit Logs** - Access and management events for secrets, keys, and certificates.
+- **Azure Kubernetes Service (AKS)** - Control plane audit logs and container runtime events.
 
 ### Configuration
 
@@ -84,8 +84,8 @@ For managed service providers monitoring multiple Azure tenants, Z Shield suppor
 
 ### Supported Services
 
-- **Cloud Audit Logs** -- Admin activity, data access, system event, and policy denied logs.
-- **Security Command Center (SCC)** -- Vulnerability findings, threat detections, and security health analytics.
+- **Cloud Audit Logs** - Admin activity, data access, system event, and policy denied logs.
+- **Security Command Center (SCC)** - Vulnerability findings, threat detections, and security health analytics.
 
 ### Configuration
 

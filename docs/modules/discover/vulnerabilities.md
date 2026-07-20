@@ -5,7 +5,7 @@ title: "Vulnerability Management"
 
 # Vulnerability Management
 
-Z Shield Discover provides end-to-end vulnerability management -- from detection through remediation and verification. Vulnerabilities are continuously identified, scored using industry-standard and proprietary methods, and tracked through their full lifecycle.
+Z Shield Discover provides end-to-end vulnerability management - from detection through remediation and verification. Vulnerabilities are continuously identified, scored using industry-standard and proprietary methods, and tracked through their full lifecycle.
 
 ## CVE Tracking
 
@@ -23,7 +23,7 @@ Vulnerabilities are scored using multiple complementary frameworks to ensure acc
 | Scoring Method | Purpose |
 |----------------|---------|
 | **CVSS v3.1 / v4.0** | Industry-standard severity rating (Base, Temporal, Environmental) |
-| **EPSS** | Exploit Prediction Scoring System -- probability of exploitation in the wild within 30 days |
+| **EPSS** | Exploit Prediction Scoring System - probability of exploitation in the wild within 30 days |
 | **ZPOA Risk Score** | Contextual score incorporating asset criticality, exposure, and threat intelligence |
 
 The ZPOA Risk Score combines technical severity with business context to surface the vulnerabilities that represent the greatest real-world risk to your organization. Factors include:
@@ -38,11 +38,11 @@ The ZPOA Risk Score combines technical severity with business context to surface
 
 Track remediation progress from initial detection to verified resolution:
 
-1. **Detected** -- Vulnerability identified by a scan or agent report
-2. **Triaged** -- Risk accepted, deferred, or assigned for remediation
-3. **In Progress** -- Remediation work underway (linked to a ticket or change request)
-4. **Resolved** -- Fix applied and awaiting verification
-5. **Verified** -- Subsequent scan confirms the vulnerability is no longer present
+1. **Detected** - Vulnerability identified by a scan or agent report
+2. **Triaged** - Risk accepted, deferred, or assigned for remediation
+3. **In Progress** - Remediation work underway (linked to a ticket or change request)
+4. **Resolved** - Fix applied and awaiting verification
+5. **Verified** - Subsequent scan confirms the vulnerability is no longer present
 
 Integrate with Jira, ServiceNow, or other ITSM platforms to automatically create and track remediation tickets.
 
@@ -50,10 +50,10 @@ Integrate with Jira, ServiceNow, or other ITSM platforms to automatically create
 
 Define and enforce remediation SLAs based on severity or risk score:
 
-- **Critical** -- 7 days
-- **High** -- 14 days
-- **Medium** -- 30 days
-- **Low** -- 90 days
+- **Critical** - 7 days
+- **High** - 14 days
+- **Medium** - 30 days
+- **Low** - 90 days
 
 SLA timers start at detection. Dashboards highlight approaching and breached SLAs, and automated notifications alert asset owners and security teams when deadlines are at risk.
 

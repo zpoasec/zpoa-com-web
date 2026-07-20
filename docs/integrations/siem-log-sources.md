@@ -5,7 +5,7 @@ title: SIEM and Log Source Integrations
 
 # SIEM and Log Source Integrations
 
-Z Shield supports a broad range of log ingestion methods -- from enterprise SIEM forwarders to raw syslog streams and cloud object storage. These connectors ensure that no matter where your logs originate, they reach the Z Shield detection engine in a normalized, queryable format.
+Z Shield supports a broad range of log ingestion methods - from enterprise SIEM forwarders to raw syslog streams and cloud object storage. These connectors ensure that no matter where your logs originate, they reach the Z Shield detection engine in a normalized, queryable format.
 
 ## Log Forwarders and SIEM Integrations
 

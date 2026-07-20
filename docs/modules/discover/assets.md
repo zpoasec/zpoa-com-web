@@ -11,11 +11,11 @@ The Asset Inventory provides a unified, continuously updated catalog of every as
 
 Discover automatically identifies and classifies assets from every connected integration:
 
-- **Cloud Instances** -- Virtual machines, managed databases, storage buckets, and serverless functions across AWS, Azure, and GCP.
-- **Containers** -- Running containers, images, registries, and Kubernetes clusters with full pod-level visibility.
-- **Endpoints** -- Workstations, laptops, and servers enrolled through the Z Shield agent or MDM integrations.
-- **Network Devices** -- Routers, switches, firewalls, VPN gateways, and load balancers discovered via network scanning and SNMP.
-- **Applications** -- Web applications, APIs, SaaS subscriptions, and internally hosted services.
+- **Cloud Instances** - Virtual machines, managed databases, storage buckets, and serverless functions across AWS, Azure, and GCP.
+- **Containers** - Running containers, images, registries, and Kubernetes clusters with full pod-level visibility.
+- **Endpoints** - Workstations, laptops, and servers enrolled through the Z Shield agent or MDM integrations.
+- **Network Devices** - Routers, switches, firewalls, VPN gateways, and load balancers discovered via network scanning and SNMP.
+- **Applications** - Web applications, APIs, SaaS subscriptions, and internally hosted services.
 
 ## Asset Attributes
 
@@ -36,11 +36,11 @@ Each asset record is enriched with a comprehensive set of attributes:
 
 Every asset receives a dynamic **Asset Risk Score** (0--100) calculated from multiple factors:
 
-- **Vulnerability exposure** -- Number and severity of unpatched vulnerabilities
-- **Internet exposure** -- Whether the asset is publicly reachable
-- **Privilege level** -- Administrative or elevated access associated with the asset
-- **Data sensitivity** -- Classification of data stored or processed
-- **Compliance posture** -- Alignment with applicable regulatory frameworks
+- **Vulnerability exposure** - Number and severity of unpatched vulnerabilities
+- **Internet exposure** - Whether the asset is publicly reachable
+- **Privilege level** - Administrative or elevated access associated with the asset
+- **Data sensitivity** - Classification of data stored or processed
+- **Compliance posture** - Alignment with applicable regulatory frameworks
 
 Risk scores update in near real-time as new findings are detected or remediated.
 
@@ -48,9 +48,9 @@ Risk scores update in near real-time as new findings are detected or remediated.
 
 Organize assets into logical groups for reporting, policy assignment, and access control:
 
-- **Dynamic groups** -- Rule-based groups that automatically include assets matching specified criteria (e.g., all production Linux servers in AWS `us-east-1`).
-- **Static groups** -- Manually curated collections for specific projects or initiatives.
-- **Business units** -- Map assets to organizational units for executive reporting.
+- **Dynamic groups** - Rule-based groups that automatically include assets matching specified criteria (e.g., all production Linux servers in AWS `us-east-1`).
+- **Static groups** - Manually curated collections for specific projects or initiatives.
+- **Business units** - Map assets to organizational units for executive reporting.
 
 Asset groups can be used as targets for scan policies, alerting rules, and compliance benchmarks.
 

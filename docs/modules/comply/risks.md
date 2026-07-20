@@ -17,10 +17,10 @@ Risk scores are categorized into bands:
 
 | Score Range | Rating |
 |-------------|--------|
-| 1 -- 4 | Low |
-| 5 -- 9 | Medium |
-| 10 -- 15 | High |
-| 16 -- 25 | Critical |
+| 1 - 4 | Low |
+| 5 - 9 | Medium |
+| 10 - 15 | High |
+| 16 - 25 | Critical |
 
 Scores can be assigned manually or derived automatically from compliance gaps and security findings detected by Z Shield.
 
@@ -34,16 +34,16 @@ The matrix is interactive. Click any cell to view the risks within that likeliho
 
 Every risk should have an associated treatment plan defining how the organization intends to address it. Z Shield supports four treatment strategies:
 
-- **Mitigate** -- Implement controls or actions to reduce the likelihood or impact of the risk. The treatment plan should specify the mitigation actions, responsible parties, and target completion date.
-- **Accept** -- Acknowledge the risk and choose not to take further action, typically because the cost of mitigation exceeds the potential impact. Accepted risks must be reviewed periodically.
-- **Transfer** -- Shift the risk to a third party, usually through insurance or contractual arrangements.
-- **Avoid** -- Eliminate the risk entirely by discontinuing the activity or system that creates it.
+- **Mitigate** - Implement controls or actions to reduce the likelihood or impact of the risk. The treatment plan should specify the mitigation actions, responsible parties, and target completion date.
+- **Accept** - Acknowledge the risk and choose not to take further action, typically because the cost of mitigation exceeds the potential impact. Accepted risks must be reviewed periodically.
+- **Transfer** - Shift the risk to a third party, usually through insurance or contractual arrangements.
+- **Avoid** - Eliminate the risk entirely by discontinuing the activity or system that creates it.
 
 Each treatment plan tracks its status (Not Started, In Progress, Completed) and includes fields for notes, attachments, and milestone dates.
 
 ## Risk Owners
 
-Every risk must be assigned an owner -- an individual accountable for monitoring the risk and driving its treatment plan to completion. Risk owners receive:
+Every risk must be assigned an owner - an individual accountable for monitoring the risk and driving its treatment plan to completion. Risk owners receive:
 
 - Notifications when their risks are created or updated.
 - Periodic review reminders on a configurable schedule (monthly by default).

@@ -9,10 +9,10 @@ Audits require proof that security controls are not only defined but actively op
 
 For controls that can be verified programmatically, Z Shield collects evidence automatically from your connected systems. Automated evidence types include:
 
-- **Configuration snapshots** -- Point-in-time captures of security-relevant settings from cloud providers, identity providers, and SaaS applications (for example, S3 bucket policies, MFA enforcement settings, or firewall rules).
-- **API response records** -- Structured data retrieved from system APIs that demonstrate control effectiveness, such as user access lists or encryption status.
-- **Log samples** -- Representative log entries proving that monitoring, alerting, or auditing capabilities are active and functioning.
-- **Scan results** -- Vulnerability scan outputs, CIS Benchmark assessment results, and configuration audit findings.
+- **Configuration snapshots** - Point-in-time captures of security-relevant settings from cloud providers, identity providers, and SaaS applications (for example, S3 bucket policies, MFA enforcement settings, or firewall rules).
+- **API response records** - Structured data retrieved from system APIs that demonstrate control effectiveness, such as user access lists or encryption status.
+- **Log samples** - Representative log entries proving that monitoring, alerting, or auditing capabilities are active and functioning.
+- **Scan results** - Vulnerability scan outputs, CIS Benchmark assessment results, and configuration audit findings.
 
 Automated evidence is collected on a scheduled basis (daily by default, configurable per control) and stored with a timestamp and cryptographic hash to ensure integrity.
 
@@ -39,10 +39,10 @@ Every evidence artifact is linked to one or more compliance controls. This linki
 
 Evidence artifacts follow a defined lifecycle:
 
-- **Current** -- The artifact is within its validity period and actively supports its linked controls.
-- **Expiring** -- The artifact's validity period will end within 30 days. A notification is sent to the control owner.
-- **Expired** -- The artifact is no longer valid. The linked controls are flagged as lacking current evidence.
-- **Superseded** -- A newer version of the evidence has been uploaded, replacing this artifact.
+- **Current** - The artifact is within its validity period and actively supports its linked controls.
+- **Expiring** - The artifact's validity period will end within 30 days. A notification is sent to the control owner.
+- **Expired** - The artifact is no longer valid. The linked controls are flagged as lacking current evidence.
+- **Superseded** - A newer version of the evidence has been uploaded, replacing this artifact.
 
 ## Audit-Ready Exports
 

@@ -21,20 +21,20 @@ Navigate to **Comply > Frameworks**, expand a control, and click the **Generate 
 
 The AI generates a complete policy document containing:
 
-- **Policy Objective** -- The purpose and security goal the policy addresses.
-- **Scope** -- Which systems, teams, or data types the policy applies to.
-- **Procedures** -- Step-by-step operational procedures to satisfy the control.
-- **Enforcement** -- How compliance with the policy is monitored and enforced.
-- **Review Schedule** -- Recommended frequency for policy review and updates.
+- **Policy Objective** - The purpose and security goal the policy addresses.
+- **Scope** - Which systems, teams, or data types the policy applies to.
+- **Procedures** - Step-by-step operational procedures to satisfy the control.
+- **Enforcement** - How compliance with the policy is monitored and enforced.
+- **Review Schedule** - Recommended frequency for policy review and updates.
 
 ### Workflow
 
 1. Click **Generate Policy** on any control.
 2. Review the generated draft in the modal preview.
 3. Choose one of three actions:
-   - **Approve** -- The policy is saved and linked to the control.
-   - **Reject** -- The draft is discarded.
-   - **Regenerate** -- Request a new draft with different emphasis.
+   - **Approve** - The policy is saved and linked to the control.
+   - **Reject** - The draft is discarded.
+   - **Regenerate** - Request a new draft with different emphasis.
 
 Approved policies are listed under the control's policy drafts and can be exported for auditor review.
 
@@ -52,9 +52,9 @@ Navigate to **Comply > Evidence** and click the **AI Review** button next to any
 
 The validation returns:
 
-- **Sufficiency Score** (0--100) -- A numeric assessment of how well the collected evidence supports the control.
-- **Findings** -- Specific issues identified in the evidence (missing items, expired artifacts, insufficient detail).
-- **Recommendations** -- Actionable steps to improve evidence coverage.
+- **Sufficiency Score** (0--100) - A numeric assessment of how well the collected evidence supports the control.
+- **Findings** - Specific issues identified in the evidence (missing items, expired artifacts, insufficient detail).
+- **Recommendations** - Actionable steps to improve evidence coverage.
 
 ### Interpreting Results
 
@@ -82,14 +82,14 @@ Navigate to **Comply > Frameworks** and click the **Audit Readiness Report** but
 
 The report includes:
 
-- **Predicted Outcome** -- One of three verdicts:
-  - **Pass** -- All critical controls are satisfied with sufficient evidence.
-  - **Conditional Pass** -- Most controls pass, but specific gaps could result in findings.
-  - **Fail** -- Significant control failures or evidence gaps would likely result in audit failure.
-- **Per-Control Analysis** -- A table showing each control's status, evidence sufficiency, and risk level.
-- **Evidence Gaps** -- A list of controls with missing, expired, or insufficient evidence.
-- **Risk Factors** -- Environmental or operational risks that could affect audit outcome.
-- **Prioritized Recommendations** -- Ordered list of actions to improve audit readiness, ranked by impact.
+- **Predicted Outcome** - One of three verdicts:
+  - **Pass** - All critical controls are satisfied with sufficient evidence.
+  - **Conditional Pass** - Most controls pass, but specific gaps could result in findings.
+  - **Fail** - Significant control failures or evidence gaps would likely result in audit failure.
+- **Per-Control Analysis** - A table showing each control's status, evidence sufficiency, and risk level.
+- **Evidence Gaps** - A list of controls with missing, expired, or insufficient evidence.
+- **Risk Factors** - Environmental or operational risks that could affect audit outcome.
+- **Prioritized Recommendations** - Ordered list of actions to improve audit readiness, ranked by impact.
 
 ### When to Use
 
@@ -111,21 +111,21 @@ Navigate to **Comply > Frameworks**, expand a failing control, and click the **G
 
 Each remediation plan includes:
 
-- **Summary** -- A brief description of the compliance gap and its business impact.
-- **Remediation Steps** -- Ordered action items, each containing:
-  - **Action** -- What needs to be done.
-  - **Owner** -- Suggested responsible team or role.
-  - **Effort** -- Estimated implementation effort (e.g., "2 hours", "1 sprint").
-  - **Priority** -- Critical, High, Medium, or Low.
-- **Overall Priority** -- The aggregate urgency of the remediation.
-- **Estimated Total Effort** -- Combined effort across all steps.
+- **Summary** - A brief description of the compliance gap and its business impact.
+- **Remediation Steps** - Ordered action items, each containing:
+  - **Action** - What needs to be done.
+  - **Owner** - Suggested responsible team or role.
+  - **Effort** - Estimated implementation effort (e.g., "2 hours", "1 sprint").
+  - **Priority** - Critical, High, Medium, or Low.
+- **Overall Priority** - The aggregate urgency of the remediation.
+- **Estimated Total Effort** - Combined effort across all steps.
 
 ### Tracking Progress
 
 Each step in a remediation plan can be tracked independently:
 
-- **Pending** -- Not yet started.
-- **In Progress** -- Work has begun.
-- **Completed** -- Step is done.
+- **Pending** - Not yet started.
+- **In Progress** - Work has begun.
+- **Completed** - Step is done.
 
 Click **Mark Complete** on each step as you finish it. The overall plan status updates automatically based on step progress.

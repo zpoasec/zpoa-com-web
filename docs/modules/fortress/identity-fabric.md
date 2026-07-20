@@ -13,10 +13,10 @@ Fortress Identity Fabric creates a unified policy mesh across all connected iden
 
 Define policies once and enforce everywhere:
 
-- **Unified policy model** -- Single policy definition that translates to each provider's native format
-- **Provider adapters** -- Pre-built adapters for Okta, Azure AD (Entra ID), AWS IAM, Google Workspace, Ping Identity, and more
-- **Enforcement modes** -- Enforce (block non-compliant actions), audit (log but allow), and monitor (observe only)
-- **Conflict resolution** -- When providers have conflicting states, policies define which provider is authoritative
+- **Unified policy model** - Single policy definition that translates to each provider's native format
+- **Provider adapters** - Pre-built adapters for Okta, Azure AD (Entra ID), AWS IAM, Google Workspace, Ping Identity, and more
+- **Enforcement modes** - Enforce (block non-compliant actions), audit (log but allow), and monitor (observe only)
+- **Conflict resolution** - When providers have conflicting states, policies define which provider is authoritative
 
 ### Supported Providers
 
@@ -35,34 +35,34 @@ Identity Fabric connects to all major identity providers:
 
 Correlate identity events across providers in real time:
 
-- **Cross-provider timeline** -- Unified view of all actions for a canonical identity across all providers
-- **Correlation keys** -- Link events using email, employee ID, or custom correlation attributes
-- **Risk signal aggregation** -- Combine risk signals from multiple providers into a unified risk assessment
-- **Anomaly detection** -- Identify inconsistencies across providers (e.g., disabled in Okta but active in AWS)
+- **Cross-provider timeline** - Unified view of all actions for a canonical identity across all providers
+- **Correlation keys** - Link events using email, employee ID, or custom correlation attributes
+- **Risk signal aggregation** - Combine risk signals from multiple providers into a unified risk assessment
+- **Anomaly detection** - Identify inconsistencies across providers (e.g., disabled in Okta but active in AWS)
 
 ### Identity Mapping
 
 Map identities across providers to a canonical identity:
 
-- **Automatic matching** -- Match by email address, employee ID, or UPN
-- **Fuzzy matching** -- Handle name variations, email aliases, and format differences
-- **Confidence scoring** -- Each mapping includes a confidence score (0-100%)
-- **Manual resolution** -- Admins can manually link or unlink identity mappings
-- **Conflict detection** -- Flag when multiple provider accounts map to the same canonical identity with conflicting attributes
+- **Automatic matching** - Match by email address, employee ID, or UPN
+- **Fuzzy matching** - Handle name variations, email aliases, and format differences
+- **Confidence scoring** - Each mapping includes a confidence score (0-100%)
+- **Manual resolution** - Admins can manually link or unlink identity mappings
+- **Conflict detection** - Flag when multiple provider accounts map to the same canonical identity with conflicting attributes
 
 ### Conflict Resolution
 
 When providers disagree:
 
-- **Authoritative source** -- Define which provider is the source of truth for each attribute
-- **Merge strategies** -- Union (combine all), intersect (keep common), or priority-based
-- **Resolution queue** -- Conflicts that cannot be auto-resolved are queued for admin review
-- **Audit trail** -- Every resolution decision is logged with who resolved it and why
+- **Authoritative source** - Define which provider is the source of truth for each attribute
+- **Merge strategies** - Union (combine all), intersect (keep common), or priority-based
+- **Resolution queue** - Conflicts that cannot be auto-resolved are queued for admin review
+- **Audit trail** - Every resolution decision is logged with who resolved it and why
 
 ### Enforcement Modes
 
 Three enforcement levels for gradual rollout:
 
-- **Monitor** -- Observe cross-provider inconsistencies without taking action
-- **Audit** -- Log violations and notify admins but allow the action to proceed
-- **Enforce** -- Block non-compliant actions and require remediation before proceeding
+- **Monitor** - Observe cross-provider inconsistencies without taking action
+- **Audit** - Log violations and notify admins but allow the action to proceed
+- **Enforce** - Block non-compliant actions and require remediation before proceeding

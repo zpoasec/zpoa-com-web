@@ -64,7 +64,7 @@ Click **Test Connection** to verify that Z Shield can reach the configured provi
 If no AI provider is configured or the active provider is unreachable:
 
 - All AI buttons and features remain visible in the interface.
-- Clicking any AI feature displays a clear message: "No active AI provider configured -- go to Settings > AI / LLM to configure one."
+- Clicking any AI feature displays a clear message: "No active AI provider configured - go to Settings > AI / LLM to configure one."
 - Non-AI features (manual compliance assessment, evidence collection, framework mapping) are unaffected.
 
 ## Security Considerations

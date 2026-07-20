@@ -21,10 +21,10 @@ Every alert is assigned one of five severity levels:
 
 Alerts progress through the following statuses during their lifecycle:
 
-- **Open** -- The alert has been generated and is awaiting analyst review.
-- **Investigating** -- An analyst has claimed the alert and is actively investigating.
-- **Resolved** -- The investigation is complete and the threat has been addressed.
-- **False Positive** -- The alert was determined to be benign. Marking an alert as a false positive feeds back into the detection engine to improve future accuracy.
+- **Open** - The alert has been generated and is awaiting analyst review.
+- **Investigating** - An analyst has claimed the alert and is actively investigating.
+- **Resolved** - The investigation is complete and the threat has been addressed.
+- **False Positive** - The alert was determined to be benign. Marking an alert as a false positive feeds back into the detection engine to improve future accuracy.
 
 ## Working with Alerts
 
@@ -42,10 +42,10 @@ Click any alert to open the detail panel. The detail view includes:
 
 Select multiple alerts from the list to perform bulk operations:
 
-- **Assign** -- Assign selected alerts to a specific analyst.
-- **Change Status** -- Move all selected alerts to a new status.
-- **Change Severity** -- Override the severity of selected alerts.
-- **Export** -- Export selected alerts as CSV or JSON for external reporting.
+- **Assign** - Assign selected alerts to a specific analyst.
+- **Change Status** - Move all selected alerts to a new status.
+- **Change Severity** - Override the severity of selected alerts.
+- **Export** - Export selected alerts as CSV or JSON for external reporting.
 
 ### MITRE ATT&CK Mapping
 

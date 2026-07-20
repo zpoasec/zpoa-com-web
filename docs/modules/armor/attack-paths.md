@@ -29,11 +29,11 @@ In this scenario, an internet-facing load balancer routes traffic to an EC2 inst
 
 Not all attack paths carry equal risk. Armor automatically ranks paths by severity using a composite score derived from:
 
-- **Entry point exposure** -- Internet-facing vs. internal-only starting points
-- **Exploit availability** -- Whether vulnerabilities along the path have known exploits
-- **Privilege escalation steps** -- Number and severity of permission boundaries crossed
-- **Target sensitivity** -- Criticality and data classification of the end target
-- **Path length** -- Shorter paths with fewer steps are generally higher risk
+- **Entry point exposure** - Internet-facing vs. internal-only starting points
+- **Exploit availability** - Whether vulnerabilities along the path have known exploits
+- **Privilege escalation steps** - Number and severity of permission boundaries crossed
+- **Target sensitivity** - Criticality and data classification of the end target
+- **Path length** - Shorter paths with fewer steps are generally higher risk
 
 Critical paths are flagged on the dashboard and trigger priority alerting. The ranking helps teams focus remediation effort on the attack chains that pose the greatest real-world threat.
 
@@ -41,12 +41,12 @@ Critical paths are flagged on the dashboard and trigger priority alerting. The r
 
 Each attack path includes actionable remediation recommendations to break the chain at one or more points:
 
-- **Fix the vulnerability** -- Patch the exploitable software on the affected resource
-- **Restrict network access** -- Tighten security group rules to remove unnecessary exposure
-- **Reduce IAM permissions** -- Apply least-privilege to the overprivileged role or user
-- **Enable compensating controls** -- Add WAF rules, enable MFA, or apply encryption
+- **Fix the vulnerability** - Patch the exploitable software on the affected resource
+- **Restrict network access** - Tighten security group rules to remove unnecessary exposure
+- **Reduce IAM permissions** - Apply least-privilege to the overprivileged role or user
+- **Enable compensating controls** - Add WAF rules, enable MFA, or apply encryption
 
-Armor identifies the **minimum remediation set** -- the smallest number of fixes that would eliminate the greatest number of attack paths. This optimization ensures teams get the maximum security improvement per remediation action.
+Armor identifies the **minimum remediation set** - the smallest number of fixes that would eliminate the greatest number of attack paths. This optimization ensures teams get the maximum security improvement per remediation action.
 
 ## Continuous Analysis
 
@@ -59,10 +59,10 @@ Attack path analysis runs continuously as your environment changes:
 
 ## Integration with Workflows
 
-- **Ticketing** -- Create Jira or ServiceNow tickets directly from an attack path finding
-- **Alerting** -- Configure alerts when new critical paths are detected
-- **Reporting** -- Include attack path summaries in executive and compliance reports
-- **API access** -- Query attack paths programmatically for custom automation
+- **Ticketing** - Create Jira or ServiceNow tickets directly from an attack path finding
+- **Alerting** - Configure alerts when new critical paths are detected
+- **Reporting** - Include attack path summaries in executive and compliance reports
+- **API access** - Query attack paths programmatically for custom automation
 
 ```
 GET /api/v1/attack-paths?severity=critical&target_type=data_store

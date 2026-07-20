@@ -5,7 +5,7 @@ title: "AI Access Copilot"
 
 # AI Access Copilot
 
-Fortress AI Access Copilot provides a natural language interface for querying and managing identity access. Ask questions like "Who has admin access to production?" or issue commands like "Revoke John's AWS access" -- the Copilot understands context, executes actions, and maintains a complete audit trail.
+Fortress AI Access Copilot provides a natural language interface for querying and managing identity access. Ask questions like "Who has admin access to production?" or issue commands like "Revoke John's AWS access" - the Copilot understands context, executes actions, and maintains a complete audit trail.
 
 ## How It Works
 
@@ -68,19 +68,19 @@ Templates can be customized and saved for repeated use.
 
 Every Copilot action is logged:
 
-- **Conversation ID** -- Links the action to the conversation context
-- **Action type** -- What was requested (query, grant, revoke, review)
-- **Timestamp** -- When the action was executed
-- **Actor** -- Who initiated the action
-- **Result** -- Success, failure, or pending approval
-- **Approval status** -- Whether the action required and received approval
+- **Conversation ID** - Links the action to the conversation context
+- **Action type** - What was requested (query, grant, revoke, review)
+- **Timestamp** - When the action was executed
+- **Actor** - Who initiated the action
+- **Result** - Success, failure, or pending approval
+- **Approval status** - Whether the action required and received approval
 
 ### Approval Workflow
 
 High-impact actions follow the standard approval process:
 
-1. **Copilot proposes** -- The action is parsed and presented for confirmation
-2. **User confirms** -- The user reviews the specific changes before execution
-3. **Approval routing** -- If required, the action is routed to the appropriate approver
-4. **Execution** -- Once approved, the action is executed via the standard provisioning pipeline
-5. **Verification** -- Copilot confirms the action completed successfully
+1. **Copilot proposes** - The action is parsed and presented for confirmation
+2. **User confirms** - The user reviews the specific changes before execution
+3. **Approval routing** - If required, the action is routed to the appropriate approver
+4. **Execution** - Once approved, the action is executed via the standard provisioning pipeline
+5. **Verification** - Copilot confirms the action completed successfully

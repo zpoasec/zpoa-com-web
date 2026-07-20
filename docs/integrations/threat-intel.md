@@ -50,10 +50,10 @@ Enrich file hashes, URLs, domains, and IP addresses with VirusTotal scan results
 
 Ingest threat feeds from Abuse.ch projects:
 
-- **URLhaus** -- Malicious URL database
-- **MalwareBazaar** -- Malware sample hash repository
-- **ThreatFox** -- IOC sharing platform (IPs, domains, URLs)
-- **Feodo Tracker** -- Botnet C2 infrastructure tracking
+- **URLhaus** - Malicious URL database
+- **MalwareBazaar** - Malware sample hash repository
+- **ThreatFox** - IOC sharing platform (IPs, domains, URLs)
+- **Feodo Tracker** - Botnet C2 infrastructure tracking
 
 Connection is via HTTPS feed download or REST API (no authentication required for public feeds).
 
@@ -121,11 +121,11 @@ Import CVE details, CVSS scores, CWE classifications, and CPE matching data from
 
 Z Shield applies threat intelligence at multiple stages of the detection pipeline:
 
-1. **Ingestion-time enrichment** -- Incoming events are matched against IOC databases in real time. Matching indicators are tagged directly on the event record.
-2. **Detection rules** -- Correlation rules reference threat intelligence lists (e.g., "alert if destination IP is in active C2 feed").
-3. **Alert prioritization** -- Alerts involving high-confidence IOCs from premium feeds are automatically elevated in severity.
-4. **Investigation context** -- Analysts see threat intelligence context (adversary attribution, malware family, campaign details) directly in the investigation timeline.
-5. **MITRE ATT&CK mapping** -- Threat intelligence is mapped to ATT&CK techniques to provide tactical context for detection and response.
+1. **Ingestion-time enrichment** - Incoming events are matched against IOC databases in real time. Matching indicators are tagged directly on the event record.
+2. **Detection rules** - Correlation rules reference threat intelligence lists (e.g., "alert if destination IP is in active C2 feed").
+3. **Alert prioritization** - Alerts involving high-confidence IOCs from premium feeds are automatically elevated in severity.
+4. **Investigation context** - Analysts see threat intelligence context (adversary attribution, malware family, campaign details) directly in the investigation timeline.
+5. **MITRE ATT&CK mapping** - Threat intelligence is mapped to ATT&CK techniques to provide tactical context for detection and response.
 
 ## Managing Threat Feeds
 

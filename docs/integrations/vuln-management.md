@@ -99,9 +99,9 @@ Vulnerabilities with active exploitation in the wild and high EPSS scores on int
 
 Z Shield maps vulnerability scan targets to its unified asset inventory using hostname, IP address, MAC address, and cloud instance ID matching. This correlation enables:
 
-- **Impact analysis** -- Understand which business services are affected by a vulnerability.
-- **Owner assignment** -- Route remediation tasks to the correct team based on asset ownership.
-- **Duplicate resolution** -- Merge vulnerability findings from multiple scanners for the same asset.
+- **Impact analysis** - Understand which business services are affected by a vulnerability.
+- **Owner assignment** - Route remediation tasks to the correct team based on asset ownership.
+- **Duplicate resolution** - Merge vulnerability findings from multiple scanners for the same asset.
 
 ### Threat-Informed Patching
 
@@ -120,6 +120,6 @@ The dashboard provides:
 ## Best Practices
 
 - **Schedule regular syncs** (at least daily) to ensure Z Shield reflects the latest scan results.
-- **Combine multiple scanners** if your organization uses more than one -- Z Shield deduplicates and merges findings across platforms.
+- **Combine multiple scanners** if your organization uses more than one - Z Shield deduplicates and merges findings across platforms.
 - **Integrate with ticketing** (Jira, ServiceNow) to automatically create remediation tickets for critical vulnerabilities.
 - **Define remediation SLAs** by severity level and track compliance on the Vulnerability Dashboard.

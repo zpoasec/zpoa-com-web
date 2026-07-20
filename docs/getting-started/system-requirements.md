@@ -30,10 +30,10 @@ JavaScript must be enabled in your browser. Z Shield makes extensive use of mode
 
 All communication between your browser and the Z Shield platform occurs over HTTPS on port 443. Ensure your firewall and proxy configurations allow outbound HTTPS traffic to the following domains:
 
-- `app.zpoashield.com` -- Primary application
-- `api.zpoashield.com` -- API endpoints
-- `auth.zpoashield.com` -- Authentication services
-- `static.zpoashield.com` -- Static assets and documentation
+- `app.zpoashield.com` - Primary application
+- `api.zpoashield.com` - API endpoints
+- `auth.zpoashield.com` - Authentication services
+- `static.zpoashield.com` - Static assets and documentation
 
 ### WebSocket Connectivity
 

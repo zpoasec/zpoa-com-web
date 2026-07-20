@@ -11,13 +11,13 @@ Z Shield **Discover** provides comprehensive asset discovery and vulnerability m
 
 ### Automated Asset Inventory
 
-Discover continuously identifies and catalogs every asset in your environment through deep integrations with cloud providers, endpoint agents, network scanners, and container orchestrators. Assets are automatically classified, tagged, and enriched with contextual metadata -- eliminating blind spots and reducing manual inventory effort.
+Discover continuously identifies and catalogs every asset in your environment through deep integrations with cloud providers, endpoint agents, network scanners, and container orchestrators. Assets are automatically classified, tagged, and enriched with contextual metadata - eliminating blind spots and reducing manual inventory effort.
 
-- **Cloud instances** -- EC2, Azure VMs, GCP Compute Engine, and more
-- **Containers and serverless** -- Kubernetes pods, ECS tasks, Lambda functions
-- **Endpoints** -- Workstations, servers, and mobile devices
-- **Network devices** -- Routers, switches, firewalls, and load balancers
-- **Applications and services** -- Web applications, APIs, databases
+- **Cloud instances** - EC2, Azure VMs, GCP Compute Engine, and more
+- **Containers and serverless** - Kubernetes pods, ECS tasks, Lambda functions
+- **Endpoints** - Workstations, servers, and mobile devices
+- **Network devices** - Routers, switches, firewalls, and load balancers
+- **Applications and services** - Web applications, APIs, databases
 
 ### Vulnerability Scanning
 
@@ -46,6 +46,6 @@ Discover maps your external and internal attack surface by identifying exposed s
 
 ## Next Steps
 
-- [Asset Inventory](./assets.md) -- Explore your discovered assets
-- [Vulnerability Management](./vulnerabilities.md) -- Prioritize and remediate vulnerabilities
-- [Scanning](./scans.md) -- Configure and manage scan operations
+- [Asset Inventory](./assets.md) - Explore your discovered assets
+- [Vulnerability Management](./vulnerabilities.md) - Prioritize and remediate vulnerabilities
+- [Scanning](./scans.md) - Configure and manage scan operations

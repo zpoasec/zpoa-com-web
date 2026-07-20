@@ -140,6 +140,6 @@ Response actions require elevated API permissions and must be explicitly enabled
 
 ## Best Practices
 
-- **Deduplicate alerts** -- If you run multiple EDR tools, configure Z Shield deduplication rules to prevent duplicate incidents.
-- **Enrich with asset context** -- Map EDR agents to your CMDB asset inventory for faster triage.
-- **Tune detection thresholds** -- Use Z Shield's correlation engine to reduce noise by combining EDR signals with network and identity context.
+- **Deduplicate alerts** - If you run multiple EDR tools, configure Z Shield deduplication rules to prevent duplicate incidents.
+- **Enrich with asset context** - Map EDR agents to your CMDB asset inventory for faster triage.
+- **Tune detection thresholds** - Use Z Shield's correlation engine to reduce noise by combining EDR signals with network and identity context.

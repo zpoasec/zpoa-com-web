@@ -34,11 +34,11 @@ When a rule matches, the engine generates an alert and routes it through the ale
 
 The alert pipeline processes every generated alert through the following stages:
 
-1. **Enrichment** -- The alert is enriched with contextual data such as asset information, threat intelligence, and user identity details.
-2. **Deduplication** -- Duplicate alerts from the same source within a configurable window are grouped to reduce noise.
-3. **Severity Assignment** -- The final severity is calculated based on rule severity, asset criticality, and environmental context.
-4. **Routing** -- The alert is delivered to the appropriate notification channels (Slack, email, PagerDuty, webhooks) based on severity-based routing rules.
-5. **Dashboard** -- The alert appears in the Detect dashboard and is available for investigation.
+1. **Enrichment** - The alert is enriched with contextual data such as asset information, threat intelligence, and user identity details.
+2. **Deduplication** - Duplicate alerts from the same source within a configurable window are grouped to reduce noise.
+3. **Severity Assignment** - The final severity is calculated based on rule severity, asset criticality, and environmental context.
+4. **Routing** - The alert is delivered to the appropriate notification channels (Slack, email, PagerDuty, webhooks) based on severity-based routing rules.
+5. **Dashboard** - The alert appears in the Detect dashboard and is available for investigation.
 
 ## Key Capabilities
 

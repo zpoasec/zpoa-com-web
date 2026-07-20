@@ -19,10 +19,10 @@ When insider threat indicators or policy violations warrant closer examination, 
 
 Once approved, the investigation unlocks enhanced monitoring for the target user:
 
-- **Enhanced activity detail** -- Full URL paths (not just domains), window titles (unmasked), clipboard content, and print job details
-- **Selective screen recording** -- Continuous screen recording for the duration of the investigation, with audio capture if configured
-- **AI analysis** -- Automatic AI-powered analysis of recordings and screenshots with structured findings
-- **Evidence collection** -- All captured data is preserved as investigation evidence with chain-of-custody logging
+- **Enhanced activity detail** - Full URL paths (not just domains), window titles (unmasked), clipboard content, and print job details
+- **Selective screen recording** - Continuous screen recording for the duration of the investigation, with audio capture if configured
+- **AI analysis** - Automatic AI-powered analysis of recordings and screenshots with structured findings
+- **Evidence collection** - All captured data is preserved as investigation evidence with chain-of-custody logging
 
 ## Investigation Lifecycle
 

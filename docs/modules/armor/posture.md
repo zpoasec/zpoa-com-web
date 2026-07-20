@@ -11,17 +11,17 @@ The Armor Security Posture Dashboard provides an at-a-glance view of your organi
 
 The **Posture Score** is a normalized metric (0--100) representing the overall security health of your cloud environment. It is calculated by evaluating all monitored resources against applicable security policies and weighting results by severity.
 
-- **90--100** -- Strong posture with minimal findings
-- **70--89** -- Good posture with some areas requiring attention
-- **50--69** -- Moderate risk; significant misconfigurations present
-- **Below 50** -- Critical risk; immediate remediation recommended
+- **90--100** - Strong posture with minimal findings
+- **70--89** - Good posture with some areas requiring attention
+- **50--69** - Moderate risk; significant misconfigurations present
+- **Below 50** - Critical risk; immediate remediation recommended
 
 The score is broken down by:
 
-- **Cloud provider** -- Compare posture across AWS, Azure, and GCP accounts
-- **Business unit** -- Track posture by team or organizational division
-- **Environment** -- Separate production, staging, and development scores
-- **Resource type** -- Identify which service categories are weakest
+- **Cloud provider** - Compare posture across AWS, Azure, and GCP accounts
+- **Business unit** - Track posture by team or organizational division
+- **Environment** - Separate production, staging, and development scores
+- **Resource type** - Identify which service categories are weakest
 
 ## Trend Analysis
 
@@ -54,11 +54,11 @@ Each benchmark produces a pass/fail report at the individual control level. Comp
 
 All misconfiguration findings are categorized by severity:
 
-- **Critical** -- Immediate exploitation risk (e.g., publicly writable S3 buckets with sensitive data)
-- **High** -- Significant risk requiring prompt remediation (e.g., security groups allowing unrestricted SSH)
-- **Medium** -- Moderate risk that should be addressed within standard SLA windows
-- **Low** -- Informational or best-practice recommendations
-- **Info** -- Non-risk observations for awareness
+- **Critical** - Immediate exploitation risk (e.g., publicly writable S3 buckets with sensitive data)
+- **High** - Significant risk requiring prompt remediation (e.g., security groups allowing unrestricted SSH)
+- **Medium** - Moderate risk that should be addressed within standard SLA windows
+- **Low** - Informational or best-practice recommendations
+- **Info** - Non-risk observations for awareness
 
 The dashboard displays finding counts by severity, affected resource types, and remediation status. Use filters to drill down into specific accounts, regions, or resource categories.
 
@@ -66,7 +66,7 @@ The dashboard displays finding counts by severity, affected resource types, and 
 
 Generate posture reports for stakeholders and compliance evidence:
 
-- **Executive summary** -- High-level posture score and trend with key metrics
-- **Detailed findings report** -- Full list of findings with remediation guidance
-- **Compliance report** -- Benchmark-specific pass/fail results
-- **Scheduled delivery** -- Automatic report generation and distribution via email or Slack
+- **Executive summary** - High-level posture score and trend with key metrics
+- **Detailed findings report** - Full list of findings with remediation guidance
+- **Compliance report** - Benchmark-specific pass/fail results
+- **Scheduled delivery** - Automatic report generation and distribution via email or Slack

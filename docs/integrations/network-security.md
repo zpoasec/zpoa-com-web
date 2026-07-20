@@ -27,10 +27,10 @@ Collect traffic logs, UTM logs (AV, IPS, web filter, application control), and V
 
 ### Cisco ASA / Firepower / Meraki / Umbrella
 
-- **Cisco ASA** -- Syslog-based ingestion of connection, threat, and VPN events.
-- **Cisco Firepower (FTD)** -- eStreamer or syslog for intrusion events, connection events, and file/malware events.
-- **Cisco Meraki** -- Syslog forwarding from Meraki MX appliances for security and flow data.
-- **Cisco Umbrella** -- REST API ingestion of DNS request logs, proxy logs, and security events.
+- **Cisco ASA** - Syslog-based ingestion of connection, threat, and VPN events.
+- **Cisco Firepower (FTD)** - eStreamer or syslog for intrusion events, connection events, and file/malware events.
+- **Cisco Meraki** - Syslog forwarding from Meraki MX appliances for security and flow data.
+- **Cisco Umbrella** - REST API ingestion of DNS request logs, proxy logs, and security events.
 
 ### Check Point
 

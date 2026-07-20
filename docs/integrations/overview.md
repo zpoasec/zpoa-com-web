@@ -9,13 +9,13 @@ Z Shield connects to your entire security ecosystem through a unified connector 
 
 ## How Connectors Work
 
-Every integration in Z Shield is powered by a **connector** -- a managed component that handles authentication, data retrieval, normalization, and delivery into the platform. Connectors are isolated from one another, ensuring that a failure in one integration never impacts another.
+Every integration in Z Shield is powered by a **connector** - a managed component that handles authentication, data retrieval, normalization, and delivery into the platform. Connectors are isolated from one another, ensuring that a failure in one integration never impacts another.
 
 Each connector supports one or more **data modes**:
 
-- **Pull Mode** -- The connector periodically polls the source system's API for new events, logs, or alerts.
-- **Push Mode** -- The source system sends data directly to a Z Shield ingestion endpoint (webhook, syslog, HEC).
-- **Streaming Mode** -- A persistent connection (e.g., Kafka consumer, WebSocket) maintains real-time data flow.
+- **Pull Mode** - The connector periodically polls the source system's API for new events, logs, or alerts.
+- **Push Mode** - The source system sends data directly to a Z Shield ingestion endpoint (webhook, syslog, HEC).
+- **Streaming Mode** - A persistent connection (e.g., Kafka consumer, WebSocket) maintains real-time data flow.
 
 ## Data Flow
 
@@ -32,10 +32,10 @@ Platform (validate, enrich, detect)
 Alerts, Dashboards, Compliance Reports
 ```
 
-1. **Connector** -- Authenticates with the source, fetches or receives raw data, and normalizes it into the ZPOA Common Event Format (ZCEF).
-2. **Platform** -- Validates, enriches with asset and threat intelligence context, and deduplicates events.
-3. **Detection** -- Correlation rules, ML models, and behavioral analytics run against incoming events in real time, generating alerts when conditions are met.
-4. **Storage** -- Normalized events are persisted for search, investigation, and long-term compliance retention.
+1. **Connector** - Authenticates with the source, fetches or receives raw data, and normalizes it into the ZPOA Common Event Format (ZCEF).
+2. **Platform** - Validates, enriches with asset and threat intelligence context, and deduplicates events.
+3. **Detection** - Correlation rules, ML models, and behavioral analytics run against incoming events in real time, generating alerts when conditions are met.
+4. **Storage** - Normalized events are persisted for search, investigation, and long-term compliance retention.
 
 ## Connector Lifecycle
 

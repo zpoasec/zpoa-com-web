@@ -11,10 +11,10 @@ The Monitor dashboard provides a real-time command center for user activity acro
 
 The dashboard displays four key metrics at the top:
 
-- **Active Users** -- Users currently active (keyboard/mouse input detected within the last 5 minutes)
-- **Idle Users** -- Users logged in but with no recent input activity
-- **Offline Users** -- Users whose agent has not sent a heartbeat within the last 5 minutes
-- **Policy Violations** -- Number of activity policy triggers in the selected time range
+- **Active Users** - Users currently active (keyboard/mouse input detected within the last 5 minutes)
+- **Idle Users** - Users logged in but with no recent input activity
+- **Offline Users** - Users whose agent has not sent a heartbeat within the last 5 minutes
+- **Policy Violations** - Number of activity policy triggers in the selected time range
 
 ## Live Activity Feed
 
@@ -28,19 +28,19 @@ A real-time stream of activity events across all monitored users:
 
 Aggregate productivity metrics for the selected time range:
 
-- **Productivity score** -- Weighted average across all users based on time in productive vs. unproductive apps
-- **Top productive apps** -- Most-used productive applications with total time
-- **Top unproductive apps** -- Most-used unproductive applications with total time
-- **Productive hours distribution** -- Histogram showing when productive work peaks across the day
+- **Productivity score** - Weighted average across all users based on time in productive vs. unproductive apps
+- **Top productive apps** - Most-used productive applications with total time
+- **Top unproductive apps** - Most-used unproductive applications with total time
+- **Productive hours distribution** - Histogram showing when productive work peaks across the day
 
 ## Insider Threat Overview
 
 A summary of the highest-risk users and recent threat indicators:
 
-- **Top risk users** -- Users with the highest composite insider threat scores
-- **Recent policy violations** -- Latest triggered policies with severity and affected users
-- **Data exfiltration indicators** -- Users showing abnormal file transfer volumes or USB activity
-- **After-hours activity** -- Users active outside configured working hours
+- **Top risk users** - Users with the highest composite insider threat scores
+- **Recent policy violations** - Latest triggered policies with severity and affected users
+- **Data exfiltration indicators** - Users showing abnormal file transfer volumes or USB activity
+- **After-hours activity** - Users active outside configured working hours
 
 ## Active Users Map
 

@@ -127,7 +127,7 @@ All API key operations are recorded in the audit log:
 
 - **Use separate keys** for each integration or automation script to isolate blast radius.
 - **Set expiration dates** on all keys and track them in your secrets management system.
-- **Apply least-privilege scopes** -- never issue a key with more permissions than the integration requires.
+- **Apply least-privilege scopes** - never issue a key with more permissions than the integration requires.
 - **Rotate keys every 90 days** as part of your credential hygiene policy.
 - **Monitor failed authentication attempts** in the audit log to detect potential key compromise.
 - **Never embed API keys** in source code, commit histories, or client-side applications.

@@ -51,9 +51,9 @@ Each tactic displays the number of associated alerts and the detection rules in 
 
 The Gap Analysis report identifies techniques that are relevant to your environment but lack detection coverage. The analysis considers:
 
-- **Your infrastructure profile** -- The platforms, services, and technologies in use as reported by the Discover module.
-- **Threat intelligence** -- Techniques actively used by threat actors targeting your industry vertical.
-- **Peer benchmarking** -- Anonymized, aggregated coverage data from organizations of similar size and industry.
+- **Your infrastructure profile** - The platforms, services, and technologies in use as reported by the Discover module.
+- **Threat intelligence** - Techniques actively used by threat actors targeting your industry vertical.
+- **Peer benchmarking** - Anonymized, aggregated coverage data from organizations of similar size and industry.
 
 For each identified gap, the report recommends specific detection rules from the Z Shield pre-built library or provides guidance for writing custom rules. Gaps are ranked by risk priority to help you focus on the most impactful improvements first.
 

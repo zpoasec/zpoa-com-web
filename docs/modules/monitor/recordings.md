@@ -43,7 +43,7 @@ Browse captured screenshots with filtering and search:
 
 - Filter by user, date range, trigger type (policy, periodic, investigation, manual)
 - Thumbnail grid view with zoom-on-click
-- Screenshots are blurred by default -- admin can reveal with audit logging
+- Screenshots are blurred by default - admin can reveal with audit logging
 - Periodic screenshots (configurable interval: 1, 5, 10, 15, 30 minutes) available as an additional capture mode
 
 ## Recording Playback

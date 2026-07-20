@@ -29,7 +29,7 @@ Launch immediate scans against any asset, asset group, or network range. On-dema
 
 ### Continuous Monitoring
 
-For critical assets, enable continuous monitoring to detect new vulnerabilities as soon as updated signatures or advisories become available -- without waiting for the next scheduled scan window.
+For critical assets, enable continuous monitoring to detect new vulnerabilities as soon as updated signatures or advisories become available - without waiting for the next scheduled scan window.
 
 ## Scan Profiles
 
@@ -56,7 +56,7 @@ Z Shield supports both scanning approaches to accommodate diverse infrastructure
 - Supports real-time vulnerability detection as new signatures are published
 
 **Agentless Scanning**
-- Connects via cloud provider APIs, SSH, or WinRM -- no software installation required
+- Connects via cloud provider APIs, SSH, or WinRM - no software installation required
 - Ideal for environments where agent deployment is impractical (legacy systems, IoT, third-party managed hosts)
 - Leverages cloud-native snapshot scanning for zero-impact assessments
 - Covers network devices, appliances, and other non-standard targets

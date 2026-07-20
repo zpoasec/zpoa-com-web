@@ -132,8 +132,8 @@ Z Shield supports multiple authentication methods depending on the identity prov
 
 Identity provider integrations power the following detection capabilities in Z Shield:
 
-- **Impossible travel** -- Detect logins from geographically distant locations within impossible timeframes.
-- **Credential stuffing** -- Identify brute-force and password spray attacks across federated providers.
-- **MFA bypass** -- Alert on successful logins that skip expected MFA challenges.
-- **Privilege escalation** -- Monitor role assignments and administrative permission grants.
-- **Dormant account abuse** -- Flag authentication from accounts that have been inactive for extended periods.
+- **Impossible travel** - Detect logins from geographically distant locations within impossible timeframes.
+- **Credential stuffing** - Identify brute-force and password spray attacks across federated providers.
+- **MFA bypass** - Alert on successful logins that skip expected MFA challenges.
+- **Privilege escalation** - Monitor role assignments and administrative permission grants.
+- **Dormant account abuse** - Flag authentication from accounts that have been inactive for extended periods.

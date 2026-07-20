@@ -13,11 +13,11 @@ Fortress Continuous Access Evaluation (CAE) computes real-time trust scores for 
 
 Every identity receives a continuously updated trust score:
 
-- **90-100** -- Full trust. All access granted as normal.
-- **70-89** -- Elevated trust. Standard access with enhanced logging.
-- **40-69** -- Reduced trust. Step-up authentication required for sensitive resources.
-- **20-39** -- Low trust. Access restricted to essential resources only.
-- **0-19** -- Minimal trust. Session terminated, re-authentication required.
+- **90-100** - Full trust. All access granted as normal.
+- **70-89** - Elevated trust. Standard access with enhanced logging.
+- **40-69** - Reduced trust. Step-up authentication required for sensitive resources.
+- **20-39** - Low trust. Access restricted to essential resources only.
+- **0-19** - Minimal trust. Session terminated, re-authentication required.
 
 ### Factor Breakdown
 
@@ -38,19 +38,19 @@ Each factor contributes a sub-score that combines into the overall trust score.
 
 Based on the trust score, identities are classified into risk levels:
 
-- **Trusted** -- Score 70 or above. No additional verification needed.
-- **Cautious** -- Score 40 to 69. May require step-up authentication for sensitive actions.
-- **Risky** -- Score 20 to 39. Access restricted, security team notified.
-- **Blocked** -- Score below 20. All sessions terminated immediately.
+- **Trusted** - Score 70 or above. No additional verification needed.
+- **Cautious** - Score 40 to 69. May require step-up authentication for sensitive actions.
+- **Risky** - Score 20 to 39. Access restricted, security team notified.
+- **Blocked** - Score below 20. All sessions terminated immediately.
 
 ### Adaptive Policies
 
 CAE policies define automated responses to trust score changes:
 
-- **Step-up triggers** -- When trust drops below a threshold, require MFA re-verification
-- **Resource restrictions** -- Progressively limit accessible resources as trust decreases
-- **Session controls** -- Shorten session timeouts for lower-trust identities
-- **Alert thresholds** -- Notify security team when trust drops below critical levels
+- **Step-up triggers** - When trust drops below a threshold, require MFA re-verification
+- **Resource restrictions** - Progressively limit accessible resources as trust decreases
+- **Session controls** - Shorten session timeouts for lower-trust identities
+- **Alert thresholds** - Notify security team when trust drops below critical levels
 
 ### Real-Time Evaluation Triggers
 
@@ -67,7 +67,7 @@ Trust scores are re-evaluated when:
 
 Historical trust score data enables:
 
-- **Trend analysis** -- Identify identities with declining trust over time
-- **Department comparisons** -- Compare trust distributions across teams
-- **Anomaly detection** -- Flag sudden score drops for investigation
-- **Compliance reporting** -- Demonstrate continuous monitoring for auditors
+- **Trend analysis** - Identify identities with declining trust over time
+- **Department comparisons** - Compare trust distributions across teams
+- **Anomaly detection** - Flag sudden score drops for investigation
+- **Compliance reporting** - Demonstrate continuous monitoring for auditors

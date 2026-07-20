@@ -13,17 +13,17 @@ Fortress discovers and tracks the following identity categories:
 
 ### Human Identities
 
-- **Employees** -- Full-time and part-time staff with corporate credentials
-- **Contractors** -- External users with time-bound or project-scoped access
-- **Administrators** -- Privileged users with elevated access to infrastructure and applications
-- **Executives** -- High-value targets requiring enhanced monitoring
+- **Employees** - Full-time and part-time staff with corporate credentials
+- **Contractors** - External users with time-bound or project-scoped access
+- **Administrators** - Privileged users with elevated access to infrastructure and applications
+- **Executives** - High-value targets requiring enhanced monitoring
 
 ### Machine Identities
 
-- **Service Accounts** -- Accounts used by applications and automated processes
-- **API Keys** -- Programmatic access credentials for cloud services and third-party APIs
-- **OAuth Tokens** -- Delegated access tokens for application-to-application communication
-- **Certificates** -- TLS/SSL certificates and SSH keys used for authentication
+- **Service Accounts** - Accounts used by applications and automated processes
+- **API Keys** - Programmatic access credentials for cloud services and third-party APIs
+- **OAuth Tokens** - Delegated access tokens for application-to-application communication
+- **Certificates** - TLS/SSL certificates and SSH keys used for authentication
 
 ## Connected Identity Providers
 
@@ -42,11 +42,11 @@ Fortress integrates with all major identity sources:
 
 Each identity receives a dynamic risk score (0--100) based on multiple factors:
 
-- **Permission scope** -- Breadth and sensitivity of granted permissions
-- **Activity patterns** -- Regularity of usage and deviation from baselines
-- **Authentication posture** -- MFA enrollment, password age, credential hygiene
-- **Account status** -- Active, dormant, or disabled
-- **Anomaly history** -- Past behavioral anomalies associated with the identity
+- **Permission scope** - Breadth and sensitivity of granted permissions
+- **Activity patterns** - Regularity of usage and deviation from baselines
+- **Authentication posture** - MFA enrollment, password age, credential hygiene
+- **Account status** - Active, dormant, or disabled
+- **Anomaly history** - Past behavioral anomalies associated with the identity
 
 The risk score recalculates continuously as new data is ingested.
 
@@ -64,9 +64,9 @@ Dormant account reports can be routed to managers for review or fed into automat
 
 Fortress compares granted permissions against actual usage to identify over-privileged identities:
 
-- **Unused permissions** -- Permissions granted but never exercised within the analysis window
-- **Excessive admin access** -- Users with administrative privileges who perform only routine operations
-- **Cross-account over-privilege** -- Identities with broad access across multiple cloud accounts without justification
+- **Unused permissions** - Permissions granted but never exercised within the analysis window
+- **Excessive admin access** - Users with administrative privileges who perform only routine operations
+- **Cross-account over-privilege** - Identities with broad access across multiple cloud accounts without justification
 
 For each over-privileged identity, Fortress generates a recommended right-sized policy based on observed activity.
 

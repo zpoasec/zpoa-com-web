@@ -9,14 +9,14 @@ The Armor Cloud Resource Inventory provides a complete, continuously synchronize
 
 ## Unified Resource View
 
-All cloud resources -- regardless of provider -- are normalized into a consistent schema and presented in a single searchable inventory. Supported resource categories include:
+All cloud resources - regardless of provider - are normalized into a consistent schema and presented in a single searchable inventory. Supported resource categories include:
 
-- **Compute** -- Virtual machines, container clusters, serverless functions, auto-scaling groups
-- **Storage** -- Object stores, block volumes, file shares, database instances
-- **Networking** -- Virtual networks, subnets, security groups, load balancers, DNS zones, VPN gateways
-- **Identity** -- IAM users, roles, policies, service accounts, identity federation configurations
-- **Management** -- Logging services, monitoring configurations, key management, secrets managers
-- **Application Services** -- API gateways, message queues, notification services, CDN distributions
+- **Compute** - Virtual machines, container clusters, serverless functions, auto-scaling groups
+- **Storage** - Object stores, block volumes, file shares, database instances
+- **Networking** - Virtual networks, subnets, security groups, load balancers, DNS zones, VPN gateways
+- **Identity** - IAM users, roles, policies, service accounts, identity federation configurations
+- **Management** - Logging services, monitoring configurations, key management, secrets managers
+- **Application Services** - API gateways, message queues, notification services, CDN distributions
 
 The inventory updates in near real-time as resources are created, modified, or deleted in your cloud accounts.
 
@@ -40,10 +40,10 @@ Each resource record includes comprehensive metadata:
 
 Armor maps relationships between resources to provide full architectural context:
 
-- **Network connectivity** -- Which resources can communicate with each other via security group and firewall rules
-- **IAM bindings** -- Which identities have access to which resources and at what permission level
-- **Data flows** -- Storage resources connected to compute workloads
-- **Dependencies** -- Load balancers to backend instances, databases to application servers
+- **Network connectivity** - Which resources can communicate with each other via security group and firewall rules
+- **IAM bindings** - Which identities have access to which resources and at what permission level
+- **Data flows** - Storage resources connected to compute workloads
+- **Dependencies** - Load balancers to backend instances, databases to application servers
 
 Relationship data powers the [Attack Path Analysis](./attack-paths.md) engine and enables security teams to understand blast radius during incident response.
 

@@ -11,11 +11,11 @@ As AI tools like ChatGPT, Claude, GitHub Copilot, and others become ubiquitous i
 
 AI tools introduce unique risks that traditional SaaS management does not address:
 
-- **Data leakage** -- Employees may paste sensitive code, customer data, or proprietary information into AI assistants
-- **Shadow AI** -- Teams may adopt AI tools without IT or security awareness
-- **Compliance risk** -- AI tool usage may violate data residency, privacy, or regulatory requirements
-- **Cost proliferation** -- AI tool subscriptions can grow rapidly across departments
-- **IP exposure** -- Code, designs, and business logic shared with AI models may be used for training
+- **Data leakage** - Employees may paste sensitive code, customer data, or proprietary information into AI assistants
+- **Shadow AI** - Teams may adopt AI tools without IT or security awareness
+- **Compliance risk** - AI tool usage may violate data residency, privacy, or regulatory requirements
+- **Cost proliferation** - AI tool subscriptions can grow rapidly across departments
+- **IP exposure** - Code, designs, and business logic shared with AI models may be used for training
 
 ## AI Tool Inventory
 
@@ -42,10 +42,10 @@ Fortress ships with 40+ pre-registered AI tool connectors including:
 
 Shadow AI is the unsanctioned use of AI tools within the organization. Fortress detects shadow AI through:
 
-- **SSO/OAuth logs** -- Discover when employees authenticate with AI services
-- **Network monitoring** -- Detect API calls to known AI endpoints (api.openai.com, api.anthropic.com, etc.)
-- **Expense data** -- Match AI-related charges on corporate cards
-- **Browser extensions** -- Detect AI assistant browser plugins
+- **SSO/OAuth logs** - Discover when employees authenticate with AI services
+- **Network monitoring** - Detect API calls to known AI endpoints (api.openai.com, api.anthropic.com, etc.)
+- **Expense data** - Match AI-related charges on corporate cards
+- **Browser extensions** - Detect AI assistant browser plugins
 
 When shadow AI is detected, security teams can:
 
@@ -57,26 +57,26 @@ When shadow AI is detected, security teams can:
 
 Each AI tool is assessed across multiple risk dimensions:
 
-- **Data Sensitivity** -- What data does the tool process? (public, internal, confidential, restricted)
-- **Data Residency** -- Where is data stored and processed?
-- **Training Data Usage** -- Does the vendor use customer data for model training?
-- **SOC 2 / ISO 27001** -- Does the vendor maintain security certifications?
-- **BAA Availability** -- Can the vendor sign a Business Associate Agreement (for HIPAA)?
-- **DPA Compliance** -- Does the vendor offer GDPR-compliant data processing agreements?
+- **Data Sensitivity** - What data does the tool process? (public, internal, confidential, restricted)
+- **Data Residency** - Where is data stored and processed?
+- **Training Data Usage** - Does the vendor use customer data for model training?
+- **SOC 2 / ISO 27001** - Does the vendor maintain security certifications?
+- **BAA Availability** - Can the vendor sign a Business Associate Agreement (for HIPAA)?
+- **DPA Compliance** - Does the vendor offer GDPR-compliant data processing agreements?
 
 ## Usage Monitoring
 
 Track how AI tools are being used across the organization:
 
-- **Login frequency** -- How often do users access the tool?
-- **User count** -- How many unique users are active?
-- **Department distribution** -- Which teams use which AI tools?
-- **Cost per user** -- Average monthly cost per active user
+- **Login frequency** - How often do users access the tool?
+- **User count** - How many unique users are active?
+- **Department distribution** - Which teams use which AI tools?
+- **Cost per user** - Average monthly cost per active user
 
 ## Governance Workflow
 
-1. **Discover** -- Automatically detect AI tool usage across the organization
-2. **Assess** -- Evaluate each tool against security, privacy, and compliance criteria
-3. **Decide** -- Sanction, block, or flag tools for further review
-4. **Enforce** -- Apply policies through IdP integration (block SSO, require MFA, etc.)
-5. **Monitor** -- Continuously track usage and detect new tools
+1. **Discover** - Automatically detect AI tool usage across the organization
+2. **Assess** - Evaluate each tool against security, privacy, and compliance criteria
+3. **Decide** - Sanction, block, or flag tools for further review
+4. **Enforce** - Apply policies through IdP integration (block SSO, require MFA, etc.)
+5. **Monitor** - Continuously track usage and detect new tools

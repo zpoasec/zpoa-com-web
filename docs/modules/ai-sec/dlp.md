@@ -11,8 +11,8 @@ AI-DLP continuously inspects what data your employees share with AI tools and en
 
 AI-DLP operates through a two-layer system:
 
-1. **Policies** -- You define what sensitive content to detect (e.g., PII, credentials, source code) and what action to take when it is found (alert, block, or log)
-2. **Violations** -- Every time a policy matches content in an AI interaction, a violation event is recorded with full context: who, which tool, what type of data, when, and what action was taken
+1. **Policies** - You define what sensitive content to detect (e.g., PII, credentials, source code) and what action to take when it is found (alert, block, or log)
+2. **Violations** - Every time a policy matches content in an AI interaction, a violation event is recorded with full context: who, which tool, what type of data, when, and what action was taken
 
 ## DLP Violations
 
@@ -33,11 +33,11 @@ Four cards at the top of the Violations page show today's violation activity:
 
 Use the filter bar to focus on the violations that matter most:
 
-- **Severity** -- Filter by Critical, High, Medium, or Low
-- **Data Type** -- Filter by the type of sensitive data detected (PII, credentials, source code, IP, financial, health data, custom)
-- **Action** -- Filter by the response taken (Alert, Block, Log)
-- **Tool** -- Filter by the AI tool name where the violation occurred
-- **User** -- Filter by specific user (identity ID or name)
+- **Severity** - Filter by Critical, High, Medium, or Low
+- **Data Type** - Filter by the type of sensitive data detected (PII, credentials, source code, IP, financial, health data, custom)
+- **Action** - Filter by the response taken (Alert, Block, Log)
+- **Tool** - Filter by the AI tool name where the violation occurred
+- **User** - Filter by specific user (identity ID or name)
 
 ### Violation Table
 
@@ -57,10 +57,10 @@ Each row in the violations table represents a single detected event:
 
 Click the expand icon on any row to see the full violation detail panel:
 
-- **Policy Name** -- Which DLP policy triggered the event
-- **URL** -- The specific endpoint or page where the AI interaction occurred
-- **Content Preview** -- A redacted content excerpt showing the matched text in context (sensitive values are masked with `***`)
-- **Timestamp** -- Precise event time
+- **Policy Name** - Which DLP policy triggered the event
+- **URL** - The specific endpoint or page where the AI interaction occurred
+- **Content Preview** - A redacted content excerpt showing the matched text in context (sensitive values are masked with `***`)
+- **Timestamp** - Precise event time
 
 Use expanded details when investigating an incident or gathering evidence for a compliance audit.
 
@@ -175,11 +175,11 @@ Start with these three baseline policies to cover the most common AI data exposu
 
 AI-DLP violation data flows through the Z Shield platform for correlation and response:
 
-- **Fortress ITDR** -- Users who repeatedly trigger Critical or High violations can be automatically escalated to identity threats in Fortress ITDR with automated response workflows
-- **Comply** -- Violation records serve as audit evidence for data protection regulations. AI-DLP policies align to GDPR Article 25 (privacy by design), HIPAA minimum necessary standard, and PCI-DSS data handling requirements
-- **Detect (SIEM)** -- DLP events appear in the SIEM alert stream for correlation with endpoint activity, access anomalies, and threat intelligence
+- **Fortress ITDR** - Users who repeatedly trigger Critical or High violations can be automatically escalated to identity threats in Fortress ITDR with automated response workflows
+- **Comply** - Violation records serve as audit evidence for data protection regulations. AI-DLP policies align to GDPR Article 25 (privacy by design), HIPAA minimum necessary standard, and PCI-DSS data handling requirements
+- **Detect (SIEM)** - DLP events appear in the SIEM alert stream for correlation with endpoint activity, access anomalies, and threat intelligence
 
 ## Next Steps
 
-- [Shadow AI Discovery](./shadow-ai.md) -- Discover and govern unauthorized AI tool usage across your organization
-- [Overview](./overview.md) -- Return to the AI Security module overview
+- [Shadow AI Discovery](./shadow-ai.md) - Discover and govern unauthorized AI tool usage across your organization
+- [Overview](./overview.md) - Return to the AI Security module overview

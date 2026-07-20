@@ -13,13 +13,13 @@ Neural Mesh ingests intelligence from a diverse set of commercial, open-source, 
 
 ### Included Intelligence Sources
 
-- **Commercial feeds** -- Premium threat intelligence providers with curated, high-fidelity indicators
-- **Open-source feeds** -- Community-maintained intelligence including AlienVault OTX, Abuse.ch, and PhishTank
-- **Government advisories** -- CISA, CERT, and national cybersecurity agency bulletins
-- **Industry ISACs** -- Sector-specific intelligence sharing communities (Financial, Healthcare, Energy)
-- **Dark web monitoring** -- Credential leaks, ransomware leak sites, and underground forum activity
-- **Z Shield Research** -- Proprietary intelligence from Z Shield's threat research team
-- **Custom feeds** -- STIX/TAXII and CSV-based feeds from your existing intelligence subscriptions
+- **Commercial feeds** - Premium threat intelligence providers with curated, high-fidelity indicators
+- **Open-source feeds** - Community-maintained intelligence including AlienVault OTX, Abuse.ch, and PhishTank
+- **Government advisories** - CISA, CERT, and national cybersecurity agency bulletins
+- **Industry ISACs** - Sector-specific intelligence sharing communities (Financial, Healthcare, Energy)
+- **Dark web monitoring** - Credential leaks, ransomware leak sites, and underground forum activity
+- **Z Shield Research** - Proprietary intelligence from Z Shield's threat research team
+- **Custom feeds** - STIX/TAXII and CSV-based feeds from your existing intelligence subscriptions
 
 All intelligence is normalized into a common format, deduplicated, and enriched with confidence scores and context before correlation.
 
@@ -50,10 +50,10 @@ When a match is found, Neural Mesh generates an alert with full context:
 
 Neural Mesh maintains profiles of known threat actors and maps observed activity to their known TTPs:
 
-- **Actor profiles** -- Detailed dossiers including known aliases, motivation, target sectors, and operational history
-- **TTP mapping** -- MITRE ATT&CK technique associations for each tracked actor
-- **Campaign tracking** -- Group related IOCs and activity into coherent campaigns
-- **Relevance scoring** -- Prioritize actors based on their likelihood of targeting your industry, geography, and technology stack
+- **Actor profiles** - Detailed dossiers including known aliases, motivation, target sectors, and operational history
+- **TTP mapping** - MITRE ATT&CK technique associations for each tracked actor
+- **Campaign tracking** - Group related IOCs and activity into coherent campaigns
+- **Relevance scoring** - Prioritize actors based on their likelihood of targeting your industry, geography, and technology stack
 
 ### Example Actor Alert
 
@@ -70,20 +70,20 @@ Recommended Action: Review access logs for affected servers, verify no unauthori
 
 Neural Mesh supports bidirectional intelligence sharing to strengthen collective defense:
 
-- **STIX/TAXII integration** -- Publish and subscribe to intelligence using industry-standard protocols
-- **ISAC participation** -- Share anonymized indicators with your industry's Information Sharing and Analysis Center
-- **Internal distribution** -- Route relevant intelligence to specific teams based on asset ownership and responsibility
-- **Automated enrichment** -- Outgoing indicators are automatically enriched with sighting data and confidence updates
+- **STIX/TAXII integration** - Publish and subscribe to intelligence using industry-standard protocols
+- **ISAC participation** - Share anonymized indicators with your industry's Information Sharing and Analysis Center
+- **Internal distribution** - Route relevant intelligence to specific teams based on asset ownership and responsibility
+- **Automated enrichment** - Outgoing indicators are automatically enriched with sighting data and confidence updates
 
 ## Intelligence Dashboard
 
 The threat intelligence dashboard provides a centralized view of your intelligence posture:
 
-- **Active IOCs** -- Count of indicators currently being monitored, organized by type and source
-- **Recent matches** -- IOC matches detected in your environment within the selected time window
-- **Feed health** -- Status and freshness of all connected intelligence feeds
-- **Top threat actors** -- Most relevant actors based on your organization's risk profile
-- **Intelligence coverage** -- Mapping of monitored indicator types against your data sources to identify coverage gaps
+- **Active IOCs** - Count of indicators currently being monitored, organized by type and source
+- **Recent matches** - IOC matches detected in your environment within the selected time window
+- **Feed health** - Status and freshness of all connected intelligence feeds
+- **Top threat actors** - Most relevant actors based on your organization's risk profile
+- **Intelligence coverage** - Mapping of monitored indicator types against your data sources to identify coverage gaps
 
 ```
 GET /api/v1/threat-intel/matches?severity_gte=high&time_range=7d

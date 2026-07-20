@@ -22,10 +22,10 @@ Send alert notifications, incident summaries, and interactive response actions t
 
 #### Capabilities
 
-- **Channel-based routing** -- Route alerts to specific channels based on severity, category, or affected asset group (e.g., `#soc-critical`, `#cloud-alerts`, `#endpoint-alerts`).
-- **Interactive actions** -- Analysts can acknowledge, escalate, or suppress alerts directly from Slack using message buttons.
-- **Incident channels** -- Automatically create a dedicated Slack channel for each high-severity incident with relevant stakeholders invited.
-- **Threaded updates** -- Subsequent updates to an alert (status changes, new evidence, analyst notes) are posted as thread replies to the original notification.
+- **Channel-based routing** - Route alerts to specific channels based on severity, category, or affected asset group (e.g., `#soc-critical`, `#cloud-alerts`, `#endpoint-alerts`).
+- **Interactive actions** - Analysts can acknowledge, escalate, or suppress alerts directly from Slack using message buttons.
+- **Incident channels** - Automatically create a dedicated Slack channel for each high-severity incident with relevant stakeholders invited.
+- **Threaded updates** - Subsequent updates to an alert (status changes, new evidence, analyst notes) are posted as thread replies to the original notification.
 
 ```json
 {
@@ -52,15 +52,15 @@ Deliver alert notifications and incident summaries to Microsoft Teams channels v
 
 1. Navigate to **Settings > Integrations > Communication > Microsoft Teams**.
 2. Choose the connection method:
-   - **Incoming Webhook** -- Generate a webhook URL in your Teams channel and paste it into Z Shield.
-   - **Teams App (Bot)** -- Install the Z Shield app from the Teams App Store for richer interactive features.
+   - **Incoming Webhook** - Generate a webhook URL in your Teams channel and paste it into Z Shield.
+   - **Teams App (Bot)** - Install the Z Shield app from the Teams App Store for richer interactive features.
 3. Configure notification routing rules.
 
 #### Capabilities
 
-- **Adaptive Cards** -- Notifications are rendered as rich Adaptive Cards with severity indicators, affected asset details, and action buttons.
-- **Channel routing** -- Direct alerts to specific Teams channels based on configurable rules.
-- **Incident tabs** -- Pin an incident investigation tab in a Teams channel for collaborative triage.
+- **Adaptive Cards** - Notifications are rendered as rich Adaptive Cards with severity indicators, affected asset details, and action buttons.
+- **Channel routing** - Direct alerts to specific Teams channels based on configurable rules.
+- **Incident tabs** - Pin an incident investigation tab in a Teams channel for collaborative triage.
 
 ### PagerDuty
 
@@ -74,10 +74,10 @@ Trigger PagerDuty incidents for critical security alerts, leveraging PagerDuty's
 
 #### Capabilities
 
-- **Automatic incident creation** -- Critical and high-severity alerts automatically trigger PagerDuty incidents.
-- **Escalation policies** -- Leverage existing PagerDuty escalation chains to ensure alerts are never missed.
-- **Auto-resolve** -- When a Z Shield alert is closed or marked as false positive, the corresponding PagerDuty incident is automatically resolved.
-- **Severity mapping** -- Map Z Shield severity levels (Critical, High, Medium, Low, Info) to PagerDuty urgency (High, Low).
+- **Automatic incident creation** - Critical and high-severity alerts automatically trigger PagerDuty incidents.
+- **Escalation policies** - Leverage existing PagerDuty escalation chains to ensure alerts are never missed.
+- **Auto-resolve** - When a Z Shield alert is closed or marked as false positive, the corresponding PagerDuty incident is automatically resolved.
+- **Severity mapping** - Map Z Shield severity levels (Critical, High, Medium, Low, Info) to PagerDuty urgency (High, Low).
 
 ```yaml
 pagerduty:
@@ -121,18 +121,18 @@ X-ZPOA-Signature: sha256=<HMAC_SIGNATURE>
 
 #### Capabilities
 
-- **Custom payload templates** -- Use Handlebars-style templating to structure the webhook payload to match your target system's expected format.
-- **Retry logic** -- Failed webhook deliveries are retried with exponential backoff (up to 5 retries).
-- **HMAC verification** -- Z Shield signs every webhook payload with a shared secret so the receiver can verify authenticity.
-- **Delivery logs** -- View delivery status, response codes, and latency for every webhook invocation under **Settings > Webhooks > Delivery Log**.
+- **Custom payload templates** - Use Handlebars-style templating to structure the webhook payload to match your target system's expected format.
+- **Retry logic** - Failed webhook deliveries are retried with exponential backoff (up to 5 retries).
+- **HMAC verification** - Z Shield signs every webhook payload with a shared secret so the receiver can verify authenticity.
+- **Delivery logs** - View delivery status, response codes, and latency for every webhook invocation under **Settings > Webhooks > Delivery Log**.
 
 ## Notification Management
 
 ### Alert Fatigue Prevention
 
-- **Deduplication** -- Repeated alerts for the same event are consolidated into a single notification with an updated count.
-- **Quiet hours** -- Suppress non-critical notifications during defined maintenance windows or off-hours.
-- **Digest mode** -- Aggregate low-severity alerts into periodic summary messages (hourly or daily) instead of individual notifications.
+- **Deduplication** - Repeated alerts for the same event are consolidated into a single notification with an updated count.
+- **Quiet hours** - Suppress non-critical notifications during defined maintenance windows or off-hours.
+- **Digest mode** - Aggregate low-severity alerts into periodic summary messages (hourly or daily) instead of individual notifications.
 
 ### Routing Rules
 

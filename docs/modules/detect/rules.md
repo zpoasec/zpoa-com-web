@@ -35,10 +35,10 @@ tags:
 
 Z Shield ships with hundreds of pre-built detection rules covering common threat scenarios across cloud infrastructure, identity systems, endpoints, and network traffic. Pre-built rules are organized into rule packs by category:
 
-- **Cloud Security** -- Unauthorized API calls, insecure storage configurations, privilege escalation in AWS/Azure/GCP.
-- **Identity and Access** -- Brute force attacks, impossible travel, suspicious OAuth grants, MFA bypass.
-- **Endpoint Threats** -- Malware execution patterns, persistence mechanisms, credential dumping.
-- **Network Anomalies** -- Beaconing behavior, DNS tunneling, unusual data transfers.
+- **Cloud Security** - Unauthorized API calls, insecure storage configurations, privilege escalation in AWS/Azure/GCP.
+- **Identity and Access** - Brute force attacks, impossible travel, suspicious OAuth grants, MFA bypass.
+- **Endpoint Threats** - Malware execution patterns, persistence mechanisms, credential dumping.
+- **Network Anomalies** - Beaconing behavior, DNS tunneling, unusual data transfers.
 
 Pre-built rules are maintained and updated by the Z Shield threat research team. Updates are applied automatically unless you have customized a rule.
 
@@ -68,7 +68,7 @@ This allows you to validate rule logic and tune thresholds before the rule enter
 
 Rules can be in one of the following states:
 
-- **Draft** -- Under development, not evaluated against live data.
-- **Testing** -- Being validated against historical data.
-- **Production** -- Active and generating alerts.
-- **Disabled** -- Temporarily deactivated without deletion.
+- **Draft** - Under development, not evaluated against live data.
+- **Testing** - Being validated against historical data.
+- **Production** - Active and generating alerts.
+- **Disabled** - Temporarily deactivated without deletion.

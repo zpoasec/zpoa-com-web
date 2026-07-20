@@ -5,7 +5,7 @@ title: "Instant Onboarding"
 
 # Instant Onboarding
 
-Fortress Instant Onboarding minimizes the time from hire to full access. Instead of waiting days or weeks for IT to manually provision accounts, new employees get Day-1 access to everything they need -- automatically.
+Fortress Instant Onboarding minimizes the time from hire to full access. Instead of waiting days or weeks for IT to manually provision accounts, new employees get Day-1 access to everything they need - automatically.
 
 ## The Onboarding Pipeline
 
@@ -53,18 +53,18 @@ For access beyond birthright rules, Access Intelligence generates a recommendati
 - Finds the closest **peer group** (people with similar department, title, or access patterns)
 - Recommends applications based on **what peers already have**
 - Assigns confidence scores and priority levels:
-  - **Critical** (above 95% peer adoption) -- Auto-provision immediately
-  - **Standard** (80-95% peer adoption) -- Auto-provision with notification
-  - **Optional** (below 80% peer adoption) -- Require manager approval
+  - **Critical** (above 95% peer adoption) - Auto-provision immediately
+  - **Standard** (80-95% peer adoption) - Auto-provision with notification
+  - **Optional** (below 80% peer adoption) - Require manager approval
 
 ### Step 4: Auto-Provisioning
 
 On the start date, `lifecycle_state` transitions from `pre_hire` to `active` and provisioning begins:
 
-1. **SCIM provisioning** -- Create accounts in connected SaaS applications via SCIM 2.0
-2. **API provisioning** -- Create accounts via vendor-specific APIs
-3. **License assignment** -- Assign appropriate license tiers (free, standard, professional, enterprise)
-4. **Group membership** -- Add to appropriate IdP groups, Slack channels, Teams, etc.
+1. **SCIM provisioning** - Create accounts in connected SaaS applications via SCIM 2.0
+2. **API provisioning** - Create accounts via vendor-specific APIs
+3. **License assignment** - Assign appropriate license tiers (free, standard, professional, enterprise)
+4. **Group membership** - Add to appropriate IdP groups, Slack channels, Teams, etc.
 
 Fortress supports provisioning through 690+ connectors including SCIM, REST API, LDAP, PowerShell, and custom scripts.
 
@@ -81,10 +81,10 @@ When the new employee arrives:
 
 30 days after onboarding, Fortress triggers a lightweight access review:
 
-1. **Manager confirmation** -- "Is this access still appropriate for [employee]?"
-2. **Usage analysis** -- Identify any provisioned applications that have never been used
-3. **Auto-cleanup** -- Remove unused licenses automatically (with configurable policy)
-4. **Cost optimization** -- Downgrade license tiers for underutilized applications
+1. **Manager confirmation** - "Is this access still appropriate for [employee]?"
+2. **Usage analysis** - Identify any provisioned applications that have never been used
+3. **Auto-cleanup** - Remove unused licenses automatically (with configurable policy)
+4. **Cost optimization** - Downgrade license tiers for underutilized applications
 
 ## Handling Transfers
 
@@ -128,8 +128,8 @@ Track onboarding performance:
 
 ### Setting Up Onboarding
 
-1. **Connect HR System** -- Go to Fortress > Connectors and connect your HRIS
-2. **Create Birthright Rules** -- Go to Fortress > Lifecycle and define rules for each department/role
-3. **Enable AI Recommendations** -- Access Intelligence activates automatically once 30+ identities have been imported
-4. **Configure Provisioning** -- Ensure target applications have SCIM or API connectors configured
-5. **Test** -- Create a test identity in your HR system and verify the onboarding pipeline end-to-end
+1. **Connect HR System** - Go to Fortress > Connectors and connect your HRIS
+2. **Create Birthright Rules** - Go to Fortress > Lifecycle and define rules for each department/role
+3. **Enable AI Recommendations** - Access Intelligence activates automatically once 30+ identities have been imported
+4. **Configure Provisioning** - Ensure target applications have SCIM or API connectors configured
+5. **Test** - Create a test identity in your HR system and verify the onboarding pipeline end-to-end

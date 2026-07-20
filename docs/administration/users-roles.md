@@ -53,13 +53,13 @@ Read-only access for stakeholders who need visibility into the security posture 
 
 Admins can create custom roles with granular permission sets. Navigate to **Settings > Users & Roles > Custom Roles** and define permissions across the following categories:
 
-- **Alerts** -- View, acknowledge, assign, escalate, close, suppress
-- **Incidents** -- View, create, update, close
-- **Assets** -- View, edit, delete
-- **Integrations** -- View, configure, test, activate, deactivate
-- **Detection Rules** -- View, create, edit, enable, disable, delete
-- **Reports** -- View, create, export, schedule
-- **Administration** -- Users, API keys, SSO, billing
+- **Alerts** - View, acknowledge, assign, escalate, close, suppress
+- **Incidents** - View, create, update, close
+- **Assets** - View, edit, delete
+- **Integrations** - View, configure, test, activate, deactivate
+- **Detection Rules** - View, create, edit, enable, disable, delete
+- **Reports** - View, create, export, schedule
+- **Administration** - Users, API keys, SSO, billing
 
 ```json
 {
@@ -93,11 +93,11 @@ The invited user receives an email with a link to set up their account. Invitati
 
 From the user management page, admins can:
 
-- **Change role** -- Update a user's assigned role at any time.
-- **Suspend** -- Temporarily disable a user's access without deleting their account.
-- **Reactivate** -- Restore access for a suspended user.
-- **Delete** -- Permanently remove a user and revoke all their sessions and API keys.
-- **Force logout** -- Terminate all active sessions for a specific user.
+- **Change role** - Update a user's assigned role at any time.
+- **Suspend** - Temporarily disable a user's access without deleting their account.
+- **Reactivate** - Restore access for a suspended user.
+- **Delete** - Permanently remove a user and revoke all their sessions and API keys.
+- **Force logout** - Terminate all active sessions for a specific user.
 
 ### Team Management
 
@@ -138,7 +138,7 @@ Each audit log entry includes the timestamp, acting user, action type, target re
 
 ## Best Practices
 
-- **Follow the principle of least privilege** -- Assign the minimum role needed for each user's responsibilities.
+- **Follow the principle of least privilege** - Assign the minimum role needed for each user's responsibilities.
 - **Use custom roles** for specialized teams (e.g., compliance auditors, threat hunters) to avoid over-provisioning.
 - **Review user access quarterly** and remove accounts for departed employees promptly.
 - **Enable SSO** to centralize authentication and enforce organizational password policies.

@@ -11,10 +11,10 @@ Monitor's audio intelligence captures, transcribes, and analyzes voice communica
 
 The endpoint agent captures audio from configurable sources:
 
-- **Microphone** -- Capture ambient audio and conversations
-- **System audio** -- Capture meeting app audio (Zoom, Teams, Slack, Google Meet)
-- **Both** -- Combined capture for complete conversation context
-- **Meeting-app-only mode** -- Auto-start recording when meeting apps are active, stop when they close
+- **Microphone** - Capture ambient audio and conversations
+- **System audio** - Capture meeting app audio (Zoom, Teams, Slack, Google Meet)
+- **Both** - Combined capture for complete conversation context
+- **Meeting-app-only mode** - Auto-start recording when meeting apps are active, stop when they close
 
 Audio is encoded as Opus codec (32kbps mono) in 30-second segments and uploaded in near-real-time.
 
@@ -22,19 +22,19 @@ Audio is encoded as Opus codec (32kbps mono) in 30-second segments and uploaded 
 
 Captured audio is automatically transcribed with AI:
 
-- **Speech-to-text** -- Accurate transcription with punctuation and formatting
-- **Speaker diarization** -- Identifies different speakers and labels each segment (Speaker 1, Speaker 2, etc.)
-- **Language detection** -- Automatically detects the spoken language
-- **Confidence scoring** -- Each transcript segment includes a confidence score for accuracy assessment
+- **Speech-to-text** - Accurate transcription with punctuation and formatting
+- **Speaker diarization** - Identifies different speakers and labels each segment (Speaker 1, Speaker 2, etc.)
+- **Language detection** - Automatically detects the spoken language
+- **Confidence scoring** - Each transcript segment includes a confidence score for accuracy assessment
 
 ## Keyword Detection
 
 Define custom keyword dictionaries for real-time DLP monitoring:
 
-- **Dictionary management** -- Create and manage keyword/phrase lists organized by category (financial, legal, confidential, credentials)
-- **Severity levels** -- Assign severity (low, medium, high, critical) to each dictionary
-- **Contextual matching** -- AI-powered matching understands context, distinguishing "my password is hunter2" from "please reset your password"
-- **Real-time alerts** -- Get notified immediately when sensitive keywords are detected in conversations
+- **Dictionary management** - Create and manage keyword/phrase lists organized by category (financial, legal, confidential, credentials)
+- **Severity levels** - Assign severity (low, medium, high, critical) to each dictionary
+- **Contextual matching** - AI-powered matching understands context, distinguishing "my password is hunter2" from "please reset your password"
+- **Real-time alerts** - Get notified immediately when sensitive keywords are detected in conversations
 
 ## Transcript Viewer
 

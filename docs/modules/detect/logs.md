@@ -47,17 +47,17 @@ Narrowing the time range improves query performance and helps focus your investi
 
 Click any log entry to expand the detail panel. The detail view presents:
 
-- **Parsed Fields** -- All normalized OCSF fields displayed in a structured key-value format with copy-to-clipboard support.
-- **Raw Event** -- The original, unmodified log entry as received from the source.
-- **Context Actions** -- Quick links to pivot into related searches, such as "Show all events from this IP" or "Show all events for this user."
-- **Alert Correlation** -- If this event contributed to one or more alerts, links to those alerts are displayed.
+- **Parsed Fields** - All normalized OCSF fields displayed in a structured key-value format with copy-to-clipboard support.
+- **Raw Event** - The original, unmodified log entry as received from the source.
+- **Context Actions** - Quick links to pivot into related searches, such as "Show all events from this IP" or "Show all events for this user."
+- **Alert Correlation** - If this event contributed to one or more alerts, links to those alerts are displayed.
 
 ## Export
 
 Search results can be exported for offline analysis or reporting. Supported export formats include:
 
-- **CSV** -- Flat tabular format suitable for spreadsheets and data analysis tools.
-- **JSON** -- Structured format preserving nested field hierarchies.
-- **NDJSON** -- Newline-delimited JSON for streaming ingestion into other systems.
+- **CSV** - Flat tabular format suitable for spreadsheets and data analysis tools.
+- **JSON** - Structured format preserving nested field hierarchies.
+- **NDJSON** - Newline-delimited JSON for streaming ingestion into other systems.
 
 Exports can be scoped to the current search results or to selected individual events. Large exports are processed asynchronously, and you will receive a notification when the file is ready for download.

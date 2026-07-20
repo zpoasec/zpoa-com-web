@@ -138,10 +138,10 @@ AUDIT POLICY zpoa_security_policy;
 
 Z Shield correlates database audit data with other telemetry sources to provide comprehensive database security:
 
-- **User-to-identity mapping** -- Map database accounts to identity provider users to detect shared account usage or credential compromise.
-- **Asset correlation** -- Link database events to the server asset inventory for impact assessment.
-- **Query anomaly detection** -- ML-based baselining of normal query patterns detects unusual access volumes, off-hours activity, and new query types.
-- **Compliance reporting** -- Generate audit reports for PCI DSS Requirement 10, HIPAA audit controls, and SOX database access reviews.
+- **User-to-identity mapping** - Map database accounts to identity provider users to detect shared account usage or credential compromise.
+- **Asset correlation** - Link database events to the server asset inventory for impact assessment.
+- **Query anomaly detection** - ML-based baselining of normal query patterns detects unusual access volumes, off-hours activity, and new query types.
+- **Compliance reporting** - Generate audit reports for PCI DSS Requirement 10, HIPAA audit controls, and SOX database access reviews.
 
 ## Best Practices
 

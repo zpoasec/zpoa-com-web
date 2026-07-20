@@ -18,9 +18,9 @@ Z Shield integrates with Jira Cloud and Jira Data Center to create and manage se
 1. Navigate to **Settings > Integrations > Ticketing > Jira**.
 2. Enter your Jira instance URL (e.g., `https://yourorg.atlassian.net`).
 3. Authenticate using one of the following methods:
-   - **API Token** (Jira Cloud) -- Generate a token at `id.atlassian.com/manage-profile/security/api-tokens`.
-   - **OAuth 2.0** (Jira Cloud) -- Register a Z Shield OAuth app in Atlassian Developer Console.
-   - **Personal Access Token** (Jira Data Center) -- Generate a PAT in your Jira profile settings.
+   - **API Token** (Jira Cloud) - Generate a token at `id.atlassian.com/manage-profile/security/api-tokens`.
+   - **OAuth 2.0** (Jira Cloud) - Register a Z Shield OAuth app in Atlassian Developer Console.
+   - **Personal Access Token** (Jira Data Center) - Generate a PAT in your Jira profile settings.
 4. Select the target **project** and **issue type** for security tickets.
 5. Map Z Shield alert fields to Jira issue fields.
 
@@ -40,11 +40,11 @@ Z Shield integrates with Jira Cloud and Jira Data Center to create and manage se
 
 #### Capabilities
 
-- **Auto-create tickets** -- Automatically generate Jira issues when alerts exceed a configured severity threshold.
-- **Bidirectional sync** -- Status changes in Jira (e.g., "In Progress", "Done") are reflected back in Z Shield, and vice versa.
-- **Comment sync** -- Investigation notes added in Z Shield appear as Jira comments, keeping all stakeholders informed.
-- **Attachment support** -- Z Shield can attach evidence files (PCAP excerpts, screenshots, IOC lists) to Jira tickets.
-- **Custom workflows** -- Map Z Shield alert states to your Jira workflow transitions.
+- **Auto-create tickets** - Automatically generate Jira issues when alerts exceed a configured severity threshold.
+- **Bidirectional sync** - Status changes in Jira (e.g., "In Progress", "Done") are reflected back in Z Shield, and vice versa.
+- **Comment sync** - Investigation notes added in Z Shield appear as Jira comments, keeping all stakeholders informed.
+- **Attachment support** - Z Shield can attach evidence files (PCAP excerpts, screenshots, IOC lists) to Jira tickets.
+- **Custom workflows** - Map Z Shield alert states to your Jira workflow transitions.
 
 ### ServiceNow
 
@@ -55,8 +55,8 @@ Z Shield integrates with ServiceNow ITSM and Security Incident Response (SIR) to
 1. Navigate to **Settings > Integrations > Ticketing > ServiceNow**.
 2. Enter your ServiceNow instance URL (e.g., `https://yourorg.service-now.com`).
 3. Authenticate using:
-   - **OAuth 2.0** (recommended) -- Register Z Shield as an OAuth application in ServiceNow.
-   - **Basic Authentication** -- Service account with `sn_si.analyst` and `itil` roles.
+   - **OAuth 2.0** (recommended) - Register Z Shield as an OAuth application in ServiceNow.
+   - **Basic Authentication** - Service account with `sn_si.analyst` and `itil` roles.
 4. Select the target table (`sn_si_incident` for Security Incidents, `incident` for standard ITSM incidents).
 5. Map Z Shield fields to ServiceNow columns.
 
@@ -77,20 +77,20 @@ Z Shield integrates with ServiceNow ITSM and Security Incident Response (SIR) to
 
 #### Capabilities
 
-- **Auto-create incidents** -- Generate ServiceNow security incidents or standard incidents from Z Shield alerts.
-- **Bidirectional sync** -- Incident state changes in ServiceNow update the corresponding alert in Z Shield.
-- **CMDB enrichment** -- Z Shield maps affected assets to ServiceNow CMDB Configuration Items (CIs) for impact analysis.
-- **SLA tracking** -- Leverage ServiceNow SLA policies to track response and resolution times for security incidents.
-- **Runbook attachment** -- Attach Z Shield playbook steps as work notes on the ServiceNow incident.
+- **Auto-create incidents** - Generate ServiceNow security incidents or standard incidents from Z Shield alerts.
+- **Bidirectional sync** - Incident state changes in ServiceNow update the corresponding alert in Z Shield.
+- **CMDB enrichment** - Z Shield maps affected assets to ServiceNow CMDB Configuration Items (CIs) for impact analysis.
+- **SLA tracking** - Leverage ServiceNow SLA policies to track response and resolution times for security incidents.
+- **Runbook attachment** - Attach Z Shield playbook steps as work notes on the ServiceNow incident.
 
 ## Workflow Automation
 
 Both ticketing integrations support rule-based automation:
 
-- **Severity-based routing** -- Route critical alerts to dedicated Jira projects or ServiceNow assignment groups.
-- **Auto-assignment** -- Assign tickets to specific analysts based on alert category, asset owner, or on-call rotation.
-- **Escalation rules** -- Automatically escalate tickets that remain unacknowledged beyond a configurable time window.
-- **Bulk operations** -- Close or update multiple related tickets when a parent incident is resolved.
+- **Severity-based routing** - Route critical alerts to dedicated Jira projects or ServiceNow assignment groups.
+- **Auto-assignment** - Assign tickets to specific analysts based on alert category, asset owner, or on-call rotation.
+- **Escalation rules** - Automatically escalate tickets that remain unacknowledged beyond a configurable time window.
+- **Bulk operations** - Close or update multiple related tickets when a parent incident is resolved.
 
 Configure automation rules under **Settings > Integrations > Ticketing > Automation Rules**.
 

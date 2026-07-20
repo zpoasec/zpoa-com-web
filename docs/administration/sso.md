@@ -149,4 +149,4 @@ Once SSO is configured and tested, admins can enforce SSO as the only authentica
 - **Configure group mappings** to automate role assignment and reduce manual administration.
 - **Enable JIT provisioning** to streamline onboarding for new team members.
 - **Monitor SSO authentication events** in the audit log for anomalous login patterns.
-- **Keep the IdP certificate up to date** -- set a calendar reminder for certificate expiration and rotate before it expires.
+- **Keep the IdP certificate up to date** - set a calendar reminder for certificate expiration and rotate before it expires.

@@ -41,17 +41,17 @@ All evidence is version-controlled, timestamped, and linked to the specific cont
 
 The Comply module includes a suite of AI features that automate workflows traditionally performed manually by GRC analysts and auditors. Each feature uses your live compliance data to produce actionable, context-specific outputs.
 
-- **[Compliance Copilot](/docs/modules/comply/ai-copilot)** -- A conversational AI assistant that answers compliance questions using your live framework data, control statuses, and evidence artifacts.
-- **[AI Policy Generation](/docs/modules/comply/ai-features#ai-policy-generation)** -- Generate structured compliance policy documents for any control with a single click.
-- **[AI Evidence Validation](/docs/modules/comply/ai-features#ai-evidence-validation)** -- Automated sufficiency review of collected evidence, identifying gaps before auditors do.
-- **[AI Audit Readiness Report](/docs/modules/comply/ai-features#ai-audit-readiness-report)** -- Simulate a full audit and receive a predicted outcome with detailed per-control analysis.
-- **[AI Remediation Plans](/docs/modules/comply/ai-features#ai-remediation-plans)** -- Actionable, step-by-step remediation plans for failing or partially compliant controls.
+- **[Compliance Copilot](/docs/modules/comply/ai-copilot)** - A conversational AI assistant that answers compliance questions using your live framework data, control statuses, and evidence artifacts.
+- **[AI Policy Generation](/docs/modules/comply/ai-features#ai-policy-generation)** - Generate structured compliance policy documents for any control with a single click.
+- **[AI Evidence Validation](/docs/modules/comply/ai-features#ai-evidence-validation)** - Automated sufficiency review of collected evidence, identifying gaps before auditors do.
+- **[AI Audit Readiness Report](/docs/modules/comply/ai-features#ai-audit-readiness-report)** - Simulate a full audit and receive a predicted outcome with detailed per-control analysis.
+- **[AI Remediation Plans](/docs/modules/comply/ai-features#ai-remediation-plans)** - Actionable, step-by-step remediation plans for failing or partially compliant controls.
 
 All AI features require an active AI provider. See [AI / LLM Settings](/docs/administration/ai-settings) for setup instructions.
 
 ## Cross-Framework Inheritance
 
-When you satisfy a control in one framework, mapped controls in other frameworks can be updated automatically -- eliminating redundant assessment work. The inheritance engine is rule-based and fully auditable, with no AI involved. See [Cross-Framework Inheritance](/docs/modules/comply/cross-framework-mapping) for details.
+When you satisfy a control in one framework, mapped controls in other frameworks can be updated automatically - eliminating redundant assessment work. The inheritance engine is rule-based and fully auditable, with no AI involved. See [Cross-Framework Inheritance](/docs/modules/comply/cross-framework-mapping) for details.
 
 ## Key Features
 

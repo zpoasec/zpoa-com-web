@@ -3,7 +3,7 @@ sidebar_position: 5
 title: Compliance Copilot
 ---
 
-The Compliance Copilot is a conversational AI assistant built into the Comply module. It answers compliance questions using your live framework data, control statuses, evidence artifacts, and risk register -- providing evidence-backed responses instead of generic guidance.
+The Compliance Copilot is a conversational AI assistant built into the Comply module. It answers compliance questions using your live framework data, control statuses, evidence artifacts, and risk register - providing evidence-backed responses instead of generic guidance.
 
 ## Overview
 
@@ -35,7 +35,7 @@ Type your question in the input field and press **Send**. The Copilot processes 
 
 ### Context Awareness
 
-Each response includes a context badge showing which data the Copilot used to formulate its answer -- for example, "Used: SOC 2 (15 controls), 8 evidence items, 3 risks." This transparency allows you to verify the scope of the analysis.
+Each response includes a context badge showing which data the Copilot used to formulate its answer - for example, "Used: SOC 2 (15 controls), 8 evidence items, 3 risks." This transparency allows you to verify the scope of the analysis.
 
 ## Session Management
 

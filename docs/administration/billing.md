@@ -78,11 +78,11 @@ Downgrades take effect at the end of the current billing cycle. You retain full 
 
 Track your resource consumption in real time under **Settings > Billing > Usage**:
 
-- **SIEM Log Ingestion** -- Daily and monthly ingestion volume with a trend chart. A visual indicator shows your current usage relative to the plan limit.
-- **Managed Identities** -- Total human and non-human identities governed by Fortress IGA.
-- **Connectors** -- Active connector count by category.
-- **Compliance Frameworks** -- Active frameworks vs. plan limit.
-- **API Calls** -- Total API requests by day/week/month, broken down by key.
+- **SIEM Log Ingestion** - Daily and monthly ingestion volume with a trend chart. A visual indicator shows your current usage relative to the plan limit.
+- **Managed Identities** - Total human and non-human identities governed by Fortress IGA.
+- **Connectors** - Active connector count by category.
+- **Compliance Frameworks** - Active frameworks vs. plan limit.
+- **API Calls** - Total API requests by day/week/month, broken down by key.
 
 ### Usage Alerts
 
@@ -119,10 +119,10 @@ View and download all past invoices under **Settings > Billing > Invoices**:
 
 Z Shield accepts the following payment methods:
 
-- **Credit/Debit Card** -- Visa, Mastercard, American Express (for monthly and annual plans)
-- **ACH Bank Transfer** -- Available for annual plans (US-based organizations)
-- **Wire Transfer** -- Available for Enterprise annual plans
-- **Purchase Order** -- Available for Enterprise customers with approved credit
+- **Credit/Debit Card** - Visa, Mastercard, American Express (for monthly and annual plans)
+- **ACH Bank Transfer** - Available for annual plans (US-based organizations)
+- **Wire Transfer** - Available for Enterprise annual plans
+- **Purchase Order** - Available for Enterprise customers with approved credit
 
 Manage payment methods under **Settings > Billing > Payment Methods**:
 

@@ -3,13 +3,13 @@ sidebar_position: 7
 title: Cross-Framework Inheritance
 ---
 
-Cross-Framework Inheritance automatically propagates compliance status across related controls in different frameworks. When you satisfy a control in one framework, mapped controls in other frameworks are updated automatically -- eliminating redundant assessment work.
+Cross-Framework Inheritance automatically propagates compliance status across related controls in different frameworks. When you satisfy a control in one framework, mapped controls in other frameworks are updated automatically - eliminating redundant assessment work.
 
 ## How It Works
 
 Many compliance frameworks share overlapping requirements. For example, MFA enforcement may simultaneously satisfy SOC 2 CC6.1, ISO 27001 A.9.4.2, and PCI-DSS Requirement 8.3. Rather than assessing the same underlying control three times, Z Shield's inheritance system propagates the status from a source control to all mapped target controls.
 
-The propagation engine runs automatically on a scheduled basis and follows deterministic rules -- no AI is involved. Every propagation is fully auditable.
+The propagation engine runs automatically on a scheduled basis and follows deterministic rules - no AI is involved. Every propagation is fully auditable.
 
 ## Mapping Types
 
@@ -19,7 +19,7 @@ Two mapping types determine how status propagates:
 
 The source and target controls are functionally identical. When the source control passes, the target control is automatically marked as passing. When the source fails, the target is marked as failing.
 
-**Example:** SOC 2 CC6.1 (Logical Access) ↔ ISO 27001 A.9.4.2 (Access Control) -- both require the same MFA enforcement evidence.
+**Example:** SOC 2 CC6.1 (Logical Access) ↔ ISO 27001 A.9.4.2 (Access Control) - both require the same MFA enforcement evidence.
 
 ### Partial Mappings
 
