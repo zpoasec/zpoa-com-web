@@ -1352,6 +1352,10 @@ body {
   gap: 3rem;
   align-items: center;
 }
+.cvpn-hero-logo {
+  display: block; width: 72px; height: 72px; border-radius: 16px;
+  margin-bottom: 1.1rem; box-shadow: 0 10px 24px rgba(76, 29, 149, 0.22);
+}
 .cvpn-hero-copy h1 {
   font-size: 3.4rem;
   font-weight: 800;

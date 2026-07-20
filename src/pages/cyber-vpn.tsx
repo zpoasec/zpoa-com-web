@@ -181,6 +181,13 @@ function VpnHero(): ReactNode {
     <section className="cvpn-hero">
       <div className="container cvpn-hero-grid">
         <div className="cvpn-hero-copy">
+          <img
+            className="cvpn-hero-logo"
+            src="/img/products/zypher-logo.png"
+            alt="ZPOA Zypher VPN"
+            width={72}
+            height={72}
+          />
           <div className="cvpn-eyebrow">ZPOA Zypher VPN</div>
           <h1>Secure access without handing over your network.</h1>
           <p className="cvpn-lede">
@@ -217,7 +224,7 @@ function VpnHero(): ReactNode {
             <div><span>Connection</span><b className="ok">● Online</b></div>
             <div><span>Control plane</span><b className="ok">● In your VPC</b></div>
             <div><span>Data residency</span><b className="ok">● On your soil</b></div>
-            <div><span>Latency</span><b>23 ms</b></div>
+            <div><span>Latency</span><b>230-250 ms</b></div>
             <div><span>Standby failover</span><b>~30 s</b></div>
             <div><span>Tunnel</span><b>WireGuard · P2P</b></div>
           </div>
