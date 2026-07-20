@@ -399,7 +399,7 @@ function VpnBusinessCase(): ReactNode {
           </p>
         </div>
 
-        <div className="cvpn-table-wrap">
+        <div className="cvpn-table-wrap cvpn-bc-tablewrap">
           <table className="cvpn-table">
             <thead>
               <tr>

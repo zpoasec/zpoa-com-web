@@ -1891,6 +1891,16 @@ body {
 .cvpn-compare-fig img { width: 100%; height: auto; display: block; border-radius: 14px; }
 @media (max-width: 900px) { .cvpn-compare-grid { grid-template-columns: 1fr; } }
 .cvpn-table { border-collapse: collapse; width: 100%; min-width: 340px; font-size: 0.95rem; }
+
+/* business-case comparison: centered, no dead space, even columns */
+.cvpn-bc-tablewrap { max-width: 960px; margin: 0 auto; }
+.cvpn-bc-tablewrap .cvpn-table { table-layout: fixed; }
+.cvpn-bc-tablewrap .cvpn-table th:first-child,
+.cvpn-bc-tablewrap .cvpn-table td:first-child { width: 22%; }
+.cvpn-bc-tablewrap .cvpn-table th:nth-child(2),
+.cvpn-bc-tablewrap .cvpn-table td:nth-child(2) { width: 39%; }
+.cvpn-bc-tablewrap .cvpn-table th:nth-child(3),
+.cvpn-bc-tablewrap .cvpn-table td:nth-child(3) { width: 39%; }
 .cvpn-table th, .cvpn-table td {
   text-align: left; padding: 0.9rem 1.15rem; border-bottom: 1px solid rgba(15,23,42,0.07);
 }

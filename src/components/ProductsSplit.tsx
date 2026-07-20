@@ -5,6 +5,7 @@ import clsx from 'clsx';
 // Clicking the "Products" label opens Explore All Products; the chevron toggles
 // a menu with "All Products".
 const EXPLORE_ALL = '/all-products';
+// Dropdown item is labelled "ZPOA Zypher VPN" but links to the All Products page.
 const ALL_PRODUCTS = '/products';
 
 export default function ProductsSplit(props: {mobile?: boolean}): ReactNode {
@@ -34,7 +35,7 @@ export default function ProductsSplit(props: {mobile?: boolean}): ReactNode {
         <Link className="menu__link" to={EXPLORE_ALL}>Products</Link>
         <ul className="menu__list">
           <li className="menu__list-item">
-            <Link className="menu__link" to={ALL_PRODUCTS}>All Products</Link>
+            <Link className="menu__link" to={ALL_PRODUCTS}>ZPOA Zypher VPN</Link>
           </li>
         </ul>
       </li>
@@ -64,7 +65,7 @@ export default function ProductsSplit(props: {mobile?: boolean}): ReactNode {
       <ul id="zwc-global-menu-container" className="dropdown__menu">
         <li>
           <Link className="dropdown__link" to={ALL_PRODUCTS} onClick={() => setOpen(false)}>
-            All Products
+            ZPOA Zypher VPN
           </Link>
         </li>
       </ul>
