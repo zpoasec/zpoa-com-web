@@ -23,14 +23,14 @@ function applyReveal() {
     el.classList.add('zpoa-reveal');
   });
 
+  // Reveal once, then stop observing. Toggling the class off on exit made content
+  // re-animate every time it scrolled back into view.
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('zpoa-reveal--visible');
-        } else {
-          entry.target.classList.remove('zpoa-reveal--visible');
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('zpoa-reveal--visible');
+        observer.unobserve(entry.target);
       });
     },
     { threshold: 0.1, rootMargin: '0px 0px -8% 0px' },

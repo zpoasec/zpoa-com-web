@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* Fonts are loaded once via `headTags` in docusaurus.config.ts. A CSS @import here
+   would duplicate that request AND serialise it behind this stylesheet's own download,
+   which is the slowest possible way to load a webfont. Do not re-add it. */
 
-/* ── Brand tokens (Webex-inspired enterprise palette) ── */
+/* ── Brand tokens ── */
 :root {
   --ifm-color-primary: #0052CC;
   --ifm-color-primary-dark: #0047B3;
@@ -434,6 +436,7 @@ body {
 .icon-fortress { background: #FFF7E6; }
 .icon-monitor { background: #F3E8FF; }
 .icon-neural { background: #E6FCFF; }
+.icon-aisec { background: #FFF4E5; }
 
 [data-theme='dark'] .icon-detect { background: rgba(222, 53, 11, 0.15); }
 [data-theme='dark'] .icon-comply { background: rgba(0, 135, 90, 0.15); }
@@ -442,6 +445,7 @@ body {
 [data-theme='dark'] .icon-fortress { background: rgba(255, 171, 0, 0.15); }
 [data-theme='dark'] .icon-monitor { background: rgba(109, 40, 217, 0.15); }
 [data-theme='dark'] .icon-neural { background: rgba(0, 184, 217, 0.15); }
+[data-theme='dark'] .icon-aisec { background: rgba(191, 99, 0, 0.15); }
 
 /* ── Integrations Section ── */
 .integrations-section {
@@ -1012,6 +1016,7 @@ body {
 .icon-fortress .icon-letter { color: #FF8B00; }
 .icon-monitor .icon-letter { color: #6D28D9; }
 .icon-neural .icon-letter { color: #00B8D9; }
+.icon-aisec .icon-letter { color: #BF6300; }
 
 .feature-subtitle {
   font-size: 0.8rem;
@@ -1224,6 +1229,7 @@ body {
 .accent-monitor { background: #F3E8FF; color: #6D28D9; }
 .accent-neural { background: #E6FCFF; color: #00B8D9; }
 .accent-vpn { background: #E6FBF7; color: #0D9488; }
+.accent-aisec { background: #FFF4E5; color: #BF6300; }
 
 [data-theme='dark'] .accent-detect { background: rgba(222, 53, 11, 0.15); color: #FF5630; }
 [data-theme='dark'] .accent-comply { background: rgba(0, 135, 90, 0.15); color: #36B37E; }
@@ -1931,6 +1937,8 @@ body {
   .cvpn-hero-copy h1 { font-size: 2.15rem; }
   .cvpn-section h2, .cvpn-h2-center { font-size: 1.9rem; }
 }
+
+[data-theme='dark'] .accent-aisec { background: rgba(191, 99, 0, 0.15); color: #FFA94D; }
 
 /* ── Module Content ── */
 .feat-content h2 {

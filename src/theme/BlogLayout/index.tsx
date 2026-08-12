@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {type ReactNode} from 'react';
 import {useLocation} from '@docusaurus/router';
 import Layout from '@theme/Layout';
 import OriginalBlogLayout from '@theme-original/BlogLayout';
@@ -7,7 +7,7 @@ import type {WrapperProps} from '@docusaurus/types';
 
 type Props = WrapperProps<typeof BlogLayoutType>;
 
-export default function BlogLayoutWrapper(props: Props): JSX.Element {
+export default function BlogLayoutWrapper(props: Props): ReactNode {
   const {pathname} = useLocation();
   const isBlogList = pathname === '/blog' || pathname === '/blog/';
 

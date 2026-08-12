@@ -7,14 +7,16 @@ Z Shield is a unified cybersecurity SaaS platform designed to consolidate your e
 
 ## The Platform at a Glance
 
-Z Shield is built around six core modules, each addressing a critical pillar of modern cybersecurity:
+Z Shield is built around eight core modules, each addressing a critical pillar of modern cybersecurity:
 
-- **Detect (SIEM)** - Real-time log ingestion, correlation, and alerting. Ingest data from across your infrastructure and surface threats as they emerge.
+- **Detect (SIEM)** - Real-time log ingestion, correlation, and alerting. Sigma-compatible detection rules with simple, threshold, and multi-stage correlation logic, plus MITRE ATT&CK mapping.
 - **Comply (GRC)** - AI-powered compliance management with automated posture assessment, a conversational Compliance Copilot, AI policy generation, evidence validation, audit readiness reports, and cross-framework inheritance across SOC 2, ISO 27001, PCI-DSS, HIPAA, and more.
-- **Discover (Asset Inventory)** - Continuous discovery and classification of every asset in your environment, from cloud workloads to on-premises endpoints.
-- **Armor (Endpoint Protection)** - Endpoint hardening, vulnerability management, and patch orchestration to reduce your attack surface.
+- **Discover (Asset Inventory)** - Continuous discovery and classification of every asset in your environment, from cloud workloads to on-premises endpoints. Vulnerability risk is scored on CVSS, EPSS exploit probability, CISA KEV membership, and asset criticality together.
+- **Armor (CSPM)** - Cloud security posture management across AWS, Azure, and GCP against CIS Benchmark rules, with attack-path analysis that chains individual misconfigurations into exploitable routes.
 - **Fortress (Identity Governance)** - Complete identity governance and administration (IGA) with lifecycle management, access reviews, 690+ app connectors, non-human identity governance, threat detection, just-in-time access, and AI-powered access intelligence.
-- **Neural Mesh (AI Engine)** - An AI-powered intelligence layer that correlates signals across all modules, identifies complex attack chains, and provides actionable recommendations.
+- **Monitor (User Activity Intelligence)** - Insider threat detection, data loss prevention, workforce analytics, and session recording, with peer-group baselines and metadata-first privacy defaults.
+- **Neural Mesh (AI Engine)** - An AI-powered intelligence layer that correlates signals across all modules, identifies complex attack chains, and provides actionable recommendations. Response actions are proposed for human approval rather than executed automatically.
+- **AI Security** - Shadow AI discovery and AI-specific data loss prevention. Inventory every AI tool in use, govern it as sanctioned or blocked, inspect what data leaves for it, and detect prompt injection against your own agents.
 
 ## 690+ Integrations
 

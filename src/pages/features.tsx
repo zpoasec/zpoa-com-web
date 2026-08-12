@@ -104,7 +104,7 @@ const modules = [
     subtitle: 'AI Intelligence Engine',
     headline: 'AI that connects the dots.',
     description:
-      'The intelligence layer that correlates signals across all six modules, identifies multi-stage attack chains, automates investigations, and surfaces threats that siloed tools miss.',
+      'The intelligence layer that correlates signals across every other module, identifies multi-stage attack chains, automates investigations, and surfaces threats that siloed tools miss. Response actions are proposed for approval, never executed behind your back.',
     highlights: [
       'Cross-module signal correlation and attack chain detection',
       'Automated investigation and root cause analysis',
@@ -114,6 +114,22 @@ const modules = [
     accentClass: 'accent-neural',
     image: '/img/features/neural.jpg',
     link: '/docs/modules/neural-mesh/overview',
+  },
+  {
+    id: 'ai-security',
+    subtitle: 'Shadow AI & AI-DLP',
+    headline: 'Govern the AI your teams already use.',
+    description:
+      'Employees adopt AI assistants, coding copilots, and AI search faster than IT can approve them. AI Security inventories every tool in use, scores its risk, and inspects what data leaves for it — with policy enforcement built for prompts, not files.',
+    highlights: [
+      'Shadow AI discovery across generative, code, image, voice, and search tools',
+      'Sanctioned / unauthorized / blocked governance with an organization risk score',
+      'AI-DLP content inspection for PII, credentials, source code, and financial data',
+      'Prompt-injection detection, LLM usage governance, and an agent kill switch',
+    ],
+    accentClass: 'accent-aisec',
+    image: '/img/features/neural.jpg',
+    link: '/docs/modules/ai-sec/overview',
   },
 ];
 

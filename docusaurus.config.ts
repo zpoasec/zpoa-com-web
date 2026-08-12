@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Z Shield',
-  tagline: 'Unified Cybersecurity Platform — DETECT | COMPLY | DISCOVER | ARMOR | FORTRESS | MONITOR',
+  tagline: 'Unified Cybersecurity Platform — DETECT | COMPLY | DISCOVER | ARMOR | FORTRESS | MONITOR | NEURAL MESH | AI SECURITY',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -77,7 +77,9 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          // home.css loads after custom.css so the marketing styles win on
+          // any shared selector.
+          customCss: ['./src/css/custom.css', './src/css/home.css'],
         },
       } satisfies Preset.Options,
     ],
