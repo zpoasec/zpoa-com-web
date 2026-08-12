@@ -1,7 +1,12 @@
 import {useEffect, type ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import {ModuleIcon, ProblemIcon, CheckIcon, Arrow} from '../components/icons';
+import {
+  ModuleIcon, ProblemIcon, CheckIcon, Arrow,
+  RailIcon, RAIL_ORDER, RAIL_BOTTOM,
+} from '../components/icons';
+import CountUp from '../components/CountUp';
+import ZaraShowcase from '../components/ZaraShowcase';
 
 // ── Content ────────────────────────────────────────────────────────────────
 
@@ -23,7 +28,52 @@ const problems = [
   },
 ];
 
+// Ordered as a buyer journey: get people connected, govern who they are and what
+// they can ask for, then work outward from assets to endpoints, cloud, detection,
+// and audit — with the AI layer that correlates all of it last.
 const modules = [
+  {
+    id: 'vpn',
+    name: 'Zypher VPN',
+    kicker: 'Zero-Trust Access',
+    body: 'A self-hosted WireGuard mesh where the control plane, database, and identity all stay inside your own network. Direct peer-to-peer tunnels, governed by the identity record rather than an IP.',
+    href: '/cyber-vpn',
+  },
+  {
+    id: 'fortress',
+    name: 'Fortress',
+    kicker: 'Identity Governance',
+    body: 'Full IGA: joiner-mover-leaver automation, access reviews, SoD simulation, just-in-time elevation, and non-human identity governance across 690+ connectors.',
+    href: '/features#fortress',
+  },
+  {
+    id: 'svchub',
+    name: 'Service Hub',
+    kicker: 'Service Catalog',
+    body: 'A self-service catalogue of every app and cloud service people can request, with approval routing and fulfilment tracked end to end — so access arrives governed instead of by ticket.',
+    href: '/features#service-hub',
+  },
+  {
+    id: 'discover',
+    name: 'Discover',
+    kicker: 'Attack Surface',
+    body: 'Continuous asset and subdomain discovery with vulnerability risk scored on CVSS, EPSS exploit probability, CISA KEV membership, and asset criticality together.',
+    href: '/features#discover',
+  },
+  {
+    id: 'monitor',
+    name: 'Monitor',
+    kicker: 'Insider Risk',
+    body: 'Endpoint telemetry with peer-group baselines, data-exfiltration detection, and session recording — metadata-first by default, with privacy controls built in.',
+    href: '/features#monitor',
+  },
+  {
+    id: 'armor',
+    name: 'Armor',
+    kicker: 'Cloud Posture',
+    body: 'CIS Benchmark evaluation across AWS, Azure, and GCP — plus attack-path analysis that chains single misconfigurations into the routes an attacker would actually take.',
+    href: '/features#armor',
+  },
   {
     id: 'detect',
     name: 'Detect',
@@ -39,54 +89,19 @@ const modules = [
     href: '/features#comply',
   },
   {
-    id: 'discover',
-    name: 'Discover',
-    kicker: 'Attack Surface',
-    body: 'Continuous asset and subdomain discovery with vulnerability risk scored on CVSS, EPSS exploit probability, CISA KEV membership, and asset criticality together.',
-    href: '/features#discover',
-  },
-  {
-    id: 'armor',
-    name: 'Armor',
-    kicker: 'Cloud Posture',
-    body: 'CIS Benchmark evaluation across AWS, Azure, and GCP — plus attack-path analysis that chains single misconfigurations into the routes an attacker would actually take.',
-    href: '/features#armor',
-  },
-  {
-    id: 'fortress',
-    name: 'Fortress',
-    kicker: 'Identity Governance',
-    body: 'Full IGA: joiner-mover-leaver automation, access reviews, SoD simulation, just-in-time elevation, and non-human identity governance across 690+ connectors.',
-    href: '/features#fortress',
-  },
-  {
-    id: 'monitor',
-    name: 'Monitor',
-    kicker: 'Insider Risk',
-    body: 'Endpoint telemetry with peer-group baselines, data-exfiltration detection, and session recording — metadata-first by default, with privacy controls built in.',
-    href: '/features#monitor',
-  },
-  {
     id: 'neural',
     name: 'Neural Mesh',
-    kicker: 'AI Correlation',
-    body: 'Correlates events across every module into single investigations with blast radius and time-to-detect. Response actions are proposed for approval, never fired silently.',
+    kicker: 'AI Correlation & AI Security',
+    body: 'Correlates events across every module into single investigations with blast radius and time-to-detect — and governs AI itself: shadow-AI discovery, prompt-injection detection, and DLP built for prompts. Response actions are proposed for approval, never fired silently.',
     href: '/features#neural-mesh',
-  },
-  {
-    id: 'aisec',
-    name: 'AI Security',
-    kicker: 'Shadow AI & DLP',
-    body: 'Inventory every AI tool in use, govern it as sanctioned or blocked, inspect what data leaves for it, and detect prompt injection against your own agents.',
-    href: '/features#ai-security',
   },
 ];
 
 const metrics = [
-  {n: '690+', l: 'Connectors'},
-  {n: '8', l: 'Security modules'},
-  {n: '23', l: 'Integration categories'},
-  {n: '5', l: 'Cross-pillar attack patterns'},
+  {to: 690, suffix: '+', l: 'Connectors'},
+  {to: 9, suffix: '', l: 'Security modules'},
+  {to: 23, suffix: '', l: 'Integration categories'},
+  {to: 5, suffix: '', l: 'Cross-pillar attack patterns'},
 ];
 
 const integrationTools = [
@@ -107,7 +122,7 @@ function Hero(): ReactNode {
             Unified Security Platform
           </div>
           <h1>
-            Eight security modules.
+            Nine security modules.
             <br />
             <span className="zs-grad">One correlated picture.</span>
           </h1>
@@ -145,34 +160,51 @@ function Hero(): ReactNode {
 function CommandCenterMock(): ReactNode {
   return (
     <div className="zs-shot zs-reveal" aria-label="Z Shield Command Center dashboard">
-      <div className="zs-scan" aria-hidden="true" />
-
       <div className="zs-shot__bar">
         <i /><i /><i />
         <span className="zs-shot__title">Command Center — Zpoa Workspace</span>
       </div>
 
+      <div className="zs-shot__frame">
+        {/* Activity bar — same containers and icons as the shipping workspace. */}
+        <nav className="zs-rail" aria-hidden="true">
+          <div className="zs-rail__top">
+            {RAIL_ORDER.map((n, i) => (
+              <span className={`zs-rail__ic${i === 1 ? ' is-active' : ''}`} key={n}>
+                <RailIcon name={n} />
+              </span>
+            ))}
+          </div>
+          <div className="zs-rail__bot">
+            {RAIL_BOTTOM.map((n) => (
+              <span className="zs-rail__ic" key={n}><RailIcon name={n} /></span>
+            ))}
+          </div>
+        </nav>
+
       <div className="zs-shot__body">
         <div className="zs-tiles">
-          <div className="zs-tile"><b>Unified Score</b><em>62</em><s>security posture</s></div>
-          <div className="zs-tile"><b>Active Alerts</b><em className="crit">34</em><s>3 critical</s></div>
-          <div className="zs-tile"><b>Assets</b><em>2,417</em><s>18 exposed</s></div>
-          <div className="zs-tile"><b>Compliance</b><em className="ok">78%</em><s>4 frameworks</s></div>
+          <div className="zs-tile"><b>Unified Score</b><em><CountUp to={62} /></em><s>security posture</s></div>
+          <div className="zs-tile"><b>Active Alerts</b><em className="crit"><CountUp to={34} /></em><s>3 critical</s></div>
+          <div className="zs-tile"><b>Assets</b><em><CountUp to={2417} group /></em><s>18 exposed</s></div>
+          <div className="zs-tile"><b>Compliance</b><em className="ok"><CountUp to={78} suffix="%" /></em><s>4 frameworks</s></div>
         </div>
 
-        <div className="zs-split">
+        <div className="zs-main">
           <div className="zs-gauge">
-            <svg width="92" height="92" viewBox="0 0 120 120" aria-hidden="true">
-              <defs>
-                <linearGradient id="zsGaugeGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#22D3EE" />
-                  <stop offset="100%" stopColor="#A78BFA" />
-                </linearGradient>
-              </defs>
-              <circle className="zs-gauge__track" cx="60" cy="60" r="52" fill="none" strokeWidth="9" />
-              <circle className="zs-gauge__val" cx="60" cy="60" r="52" fill="none" strokeWidth="9" />
-            </svg>
-            <div className="zs-gauge__num">62</div>
+            <div className="zs-gauge__ring">
+              <svg width="84" height="84" viewBox="0 0 120 120" aria-hidden="true">
+                <defs>
+                  <linearGradient id="zsGaugeGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#22D3EE" />
+                    <stop offset="100%" stopColor="#A78BFA" />
+                  </linearGradient>
+                </defs>
+                <circle className="zs-gauge__track" cx="60" cy="60" r="52" fill="none" strokeWidth="9" />
+                <circle className="zs-gauge__val" cx="60" cy="60" r="52" fill="none" strokeWidth="9" />
+              </svg>
+              <span className="zs-gauge__num"><CountUp to={62} duration={1600} /></span>
+            </div>
             <div className="zs-gauge__cap">Unified Risk</div>
           </div>
 
@@ -183,19 +215,47 @@ function CommandCenterMock(): ReactNode {
             <Meter label="Fortress" pct={84} color="#F5C451" value="84" />
             <Meter label="Armor" pct={59} color="#FF8B8E" value="59" />
           </div>
+
+          <div className="zs-feed">
+            <div className="zs-feed__head">
+              <span>Alert Feed</span>
+              <b>3 CRITICAL</b>
+            </div>
+            <Alert sev="crit" title="Impossible travel — j.patel" meta="Fortress" />
+            <Alert sev="crit" title="S3 bucket made public" meta="Armor" />
+            <Alert sev="warn" title="SSH brute force 203.0.113.44" meta="Detect" />
+            <Alert sev="warn" title="Orphaned service account" meta="Fortress" />
+          </div>
         </div>
 
         <div className="zs-zara">
           <div className="zs-zara__head">
             <span className="zs-dot" aria-hidden="true" />
-            Zara — Security Analyst
+            Zara — Agent
           </div>
           <div className="zs-zara__q">
             What SOC&nbsp;2 controls are failing?
             <span className="zs-caret" aria-hidden="true" />
           </div>
         </div>
+
+        <div className="zs-mini">
+          <div className="zs-mini__c"><b>Detect</b><em>71</em><s>detection score</s></div>
+          <div className="zs-mini__c"><b>Comply</b><em className="ok">78%</em><s>4 frameworks</s></div>
+          <div className="zs-mini__c"><b>Discover</b><em>2,417</em><s>total assets</s></div>
+        </div>
+        </div>
       </div>
+    </div>
+  );
+}
+
+function Alert({sev, title, meta}: {sev: string; title: string; meta: string}): ReactNode {
+  return (
+    <div className="zs-alert">
+      <i className={`zs-alert__sev ${sev}`} />
+      <span className="zs-alert__t">{title}</span>
+      <span className="zs-alert__m">{meta}</span>
     </div>
   );
 }
@@ -244,7 +304,7 @@ function Modules(): ReactNode {
       <div className="zs-wrap">
         <div className="zs-center">
           <div className="zs-label">The platform</div>
-          <h2 className="zs-h2">Eight modules. One platform.</h2>
+          <h2 className="zs-h2">Nine modules. One platform.</h2>
           <p className="zs-lede">
             Each module stands on its own. Together they feed a shared correlation layer
             that sees what no single tool can.
@@ -270,6 +330,60 @@ function Modules(): ReactNode {
   );
 }
 
+/* ── Zara ──────────────────────────────────────────────────────────────────
+   Zara is a platform layer, not a tenth module: it runs on the same tenant API
+   under /ai/*, is toggled by the `ai_chat` feature flag, and surfaces in both
+   the workspace and the web portal from one backend. So it gets its own section
+   after the module grid rather than a card inside it.
+   ──────────────────────────────────────────────────────────────────────── */
+const zaraPoints = [
+  {
+    t: 'It acts across every module',
+    b: 'One agent, nine modules. Zara calls governed MCP tools against your live tenant rather than guessing from a training set, and stitches the answer together across them.',
+  },
+  {
+    t: 'Writes are fail-closed',
+    b: 'Any tool that changes state requires explicit human approval. No approver, no write: the agent returns “denied: write action not approved by a human.”',
+  },
+  {
+    t: 'Bring your own model',
+    b: 'Ollama, Bedrock, OpenAI, or Anthropic — configured per tenant. Run it fully local so no prompt ever leaves your network.',
+  },
+  {
+    t: 'Agents are governed identities',
+    b: 'Every MCP server is registered and approved, tools are entitled per agent, and each execution is audited — the same lifecycle Fortress applies to people.',
+  },
+];
+
+function Zara(): ReactNode {
+  return (
+    <section className="zs-sec zs-sec--sunken" id="zara">
+      <div className="zs-wrap">
+        <div className="zs-zara-head">
+          <div className="zs-label">Zara · Agent for every module</div>
+          <h2 className="zs-h2">One agent. Every module.</h2>
+          <p className="zs-lede">
+            Zara is not a chatbot bolted onto a dashboard. It plans a sequence of tool
+            calls, executes them against your live tenant across whichever modules hold
+            the answer, and cannot change anything without a human saying yes.
+          </p>
+        </div>
+
+        <div className="zs-reveal"><ZaraShowcase /></div>
+
+        <dl className="zs-zara-pts zs-zara-pts--grid">
+          {zaraPoints.map((p) => (
+            <div key={p.t}>
+              <dt>{p.t}</dt>
+              <dd>{p.b}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+  );
+}
+
 function MetricsBand(): ReactNode {
   return (
     <section className="zs-band">
@@ -277,7 +391,7 @@ function MetricsBand(): ReactNode {
         <div className="zs-band__grid">
           {metrics.map((m) => (
             <div key={m.l}>
-              <div className="zs-band__n">{m.n}</div>
+              <div className="zs-band__n"><CountUp to={m.to} suffix={m.suffix} duration={1700} /></div>
               <div className="zs-band__l">{m.l}</div>
             </div>
           ))}
@@ -321,7 +435,7 @@ function Closing(): ReactNode {
           <Link className="zs-btn zs-btn--primary" to="/docs/getting-started/quick-start">
             Get started free <Arrow />
           </Link>
-          <Link className="zs-btn zs-btn--ghost" to="mailto:info@zpoa.com">
+          <Link className="zs-btn zs-btn--ghost" to="/schedule">
             Talk to us
           </Link>
         </div>
@@ -349,7 +463,7 @@ function useReveal() {
           const el = entry.target as HTMLElement;
           // Stagger siblings so a grid cascades instead of popping at once.
           const siblings = Array.from(el.parentElement?.children ?? []);
-          el.style.animationDelay = `${Math.min(siblings.indexOf(el), 7) * 80}ms`;
+          el.style.animationDelay = `${Math.min(siblings.indexOf(el), 5) * 55}ms`;
           el.classList.add('zs-in');
           io.unobserve(el);
         });
@@ -373,6 +487,7 @@ export default function Home(): ReactNode {
       <main>
         <Problems />
         <Modules />
+        <Zara />
         <MetricsBand />
         <Integrations />
         <Closing />

@@ -1,6 +1,7 @@
 import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import WorkspaceShowcase from '@site/src/components/WorkspaceShowcase';
 
 // "Contact Sales" / "Talk to us" -> the "Get Started with Z Shield" page,
 // which embeds the Calendly scheduler for booking a meeting.
@@ -439,6 +440,175 @@ function VpnBusinessCase(): ReactNode {
   );
 }
 
+/* ── Two sides of the product ──────────────────────────────────────────────
+   Admins run the mesh from the Zpoa Workspace; employees get a client that is
+   essentially one button. Both mockups mirror the shipping UI.
+   Names and addresses below are fictional — never ship real enrolled devices
+   or employee email addresses on a public page.
+   ──────────────────────────────────────────────────────────────────────── */
+
+const DOMAIN = 'northwind.co';
+
+const adminGateways = [
+  {name: 'zypher-vpn-gateway', owner: 'admin', mail: `admin@${DOMAIN}`, initials: 'AD', ip: '100.64.0.1', conn: 'Online', nat: 'Direct', os: 'linux', seen: 'just now'},
+];
+
+const adminDevices = [
+  {name: 'DESKTOP-4K2P9L', owner: 'r.mehta', mail: `r.mehta@${DOMAIN}`, initials: 'RM', ip: '100.64.0.6', conn: 'Direct', nat: '—', os: 'windows', seen: 'just now'},
+  {name: 'LAPTOP-7XQ2NB', owner: 'a.silva', mail: `a.silva@${DOMAIN}`, initials: 'AS', ip: '100.64.0.5', conn: 'Direct', nat: '—', os: 'windows', seen: 'just now'},
+  {name: 'MBP-DESIGN-02', owner: 'k.tanaka', mail: `k.tanaka@${DOMAIN}`, initials: 'KT', ip: '100.64.0.2', conn: 'Direct', nat: '—', os: 'macos', seen: 'just now'},
+  {name: 'WS-FINANCE-11', owner: 'l.dubois', mail: `l.dubois@${DOMAIN}`, initials: 'LD', ip: '100.64.0.4', conn: 'Offline', nat: '—', os: 'windows', seen: '3d ago'},
+  {name: 'LAPTOP-9HTR4M', owner: 'p.novak', mail: `p.novak@${DOMAIN}`, initials: 'PN', ip: '100.64.0.3', conn: 'Offline', nat: '—', os: 'windows', seen: '1d ago'},
+];
+
+const OS_ICON: Record<string, ReactNode> = {
+  linux: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6l4 4-4 4M11 16h8" /></svg>,
+  windows: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.6l7.4-1v7.1H3zM11.6 4.4L21 3v8.7h-9.4zM3 12.9h7.4V20L3 18.6zM11.6 12.9H21V21l-9.4-1.3z" /></svg>,
+  macos: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.3 12.7c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.1.8s-1.6-.7-2.7-.7c-1.4 0-2.7.8-3.4 2-1.4 2.5-.4 6.2 1 8.2.7 1 1.5 2.1 2.6 2.1 1 0 1.4-.7 2.7-.7s1.6.7 2.7.6c1.1 0 1.8-1 2.5-2 .8-1.2 1.1-2.3 1.1-2.3s-2.2-.9-2.2-3.1zM14.2 5.9c.6-.7 1-1.7.9-2.6-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5 1 .1 1.9-.5 2.5-1.2z" /></svg>,
+};
+
+const STAT_ICON: Record<string, ReactNode> = {
+  devices: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><rect x="3" y="4.5" width="18" height="12" rx="1.6" /><path d="M9 20h6" strokeLinecap="round" /></svg>,
+  online: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"><path d="M4 9.2a12 12 0 0 1 16 0M7 12.6a7.4 7.4 0 0 1 10 0" /><circle cx="12" cy="16.6" r="1.3" fill="currentColor" stroke="none" /></svg>,
+  offline: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"><path d="M12 4v8" /><path d="M7.5 6.8a7 7 0 1 0 9 0" /></svg>,
+  gateways: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><rect x="3.5" y="4.5" width="17" height="5.5" rx="1.3" /><rect x="3.5" y="14" width="17" height="5.5" rx="1.3" /></svg>,
+  exit: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.4 2.6 2.4 14.4 0 17M12 3.5c-2.4 2.6-2.4 14.4 0 17" /></svg>,
+};
+
+type DeviceRowData = {
+  name: string; owner: string; mail: string; initials: string;
+  ip: string; conn: string; nat: string; os: string; seen: string;
+};
+
+function DeviceRow({d}: {d: DeviceRowData}): ReactNode {
+  const off = d.conn === 'Offline';
+  return (
+    <tr>
+      <td className="st"><span className={`cvpn-2s-dot ${off ? 'off' : 'on'}`} /></td>
+      <td className="mc">{d.name}</td>
+      <td>
+        <span className="cvpn-2s-av">{d.initials}</span>
+        <span className="cvpn-2s-own"><b>{d.owner}</b><s>{d.mail}</s></span>
+      </td>
+      <td className="mono">{d.ip}</td>
+      <td>
+        <span className={`cvpn-2s-pill ${off ? 'off' : 'on'}`}>
+          <i className="wifi" aria-hidden="true" />{d.conn}
+        </span>
+      </td>
+      <td>{d.nat === '—' ? <span className="dim">—</span> : <span className="cvpn-2s-pill on">{d.nat}</span>}</td>
+      <td className="os"><span className="oic">{OS_ICON[d.os]}</span>{d.os}</td>
+      <td className="dim">{d.seen}</td>
+      <td className="act" aria-hidden="true"><i /><i /><i /></td>
+    </tr>
+  );
+}
+
+function VpnTwoSides(): ReactNode {
+  return (
+    <section className="cvpn-section cvpn-section-gray">
+      <div className="container">
+        <div className="cvpn-2s-head">
+          <div className="cvpn-eyebrow">Two sides, one mesh</div>
+          <h2 className="cvpn-h2-center">Admins get a control plane. Everyone else gets a button.</h2>
+          <p className="cvpn-sub">
+            The people running the network need topology, enrollment, ACLs, and live
+            connection health. The people using it need to be on the network. Zypher
+            splits those cleanly, so security teams never have to train the rest of the company.
+          </p>
+        </div>
+
+        {/* ── Admin: full-width so the frame reads as a screen ── */}
+        <div className="cvpn-2s-admin">
+          <div className="cvpn-2s-admin-copy">
+            <span className="cvpn-2s-tag admin">Admin · Zpoa Workspace</span>
+            <h3>Nine panels, one console.</h3>
+            <p>
+              Enrollment, topology, reachability diagnostics, routes and DNS approvals,
+              segmentation, exit nodes, sites and gateways — the whole network surface
+              lives in the workspace your security team already has open.
+            </p>
+          </div>
+          <WorkspaceShowcase />
+        </div>
+
+        {/* ── Admin detail ── */}
+        {/* ── Employee ── */}
+        <div className="cvpn-2s-row reversed">
+          <div className="cvpn-2s-copy">
+            <span className="cvpn-2s-tag client">Employee · Zypher client</span>
+            <h3>Connected, and that is the whole interface.</h3>
+            <p>
+              No server list to choose from, no config file to import, no credentials to
+              store. The employee signs in once with the company identity provider and the
+              client resolves the rest — profile, routes, DNS, and which gateway to use.
+            </p>
+            <ul className="cvpn-checks">
+              <li>One switch, plus split-tunnel if policy allows it</li>
+              <li>Direct peer-to-peer by default; relay only when the path demands it</li>
+              <li>Latency, uptime, and traffic visible without opening a terminal</li>
+            </ul>
+          </div>
+
+          <div className="cvpn-2s-app" aria-label="Zypher VPN desktop client">
+            <div className="cvpn-2s-win">
+              <span className="cvpn-2s-win-ic" aria-hidden="true">Z</span>
+              <span className="cvpn-2s-win-t">Zpoa Zypher VPN</span>
+              <span className="cvpn-2s-win-btns" aria-hidden="true"><i>&#8722;</i><i>&#9723;</i><i className="cl">&#10005;</i></span>
+            </div>
+
+            <div className="cvpn-2s-app-body">
+              <div className="cvpn-2s-card">
+                <div className="cvpn-2s-app-head">
+                  <span className="cvpn-2s-app-logo" aria-hidden="true">
+                    Z<b className="badge">&#10003;</b>
+                  </span>
+                  <div>
+                    <div className="cvpn-2s-app-name">Zypher VPN</div>
+                    <div className="cvpn-2s-app-state">Connected</div>
+                    <div className="cvpn-2s-app-meta">100.64.0.2 &middot; up 45h 52m &middot; direct &middot; 228 ms</div>
+                  </div>
+                </div>
+
+                <div className="cvpn-2s-app-ctl">
+                  <span className="cvpn-2s-select">Northwind<i /></span>
+                  <span className="cvpn-2s-plus">+</span>
+                  <span className="cvpn-2s-disc">Disconnect</span>
+                </div>
+
+                <div className="cvpn-2s-app-chips">
+                  <span className="on"><i />Direct</span>
+                  <span>Split tunnel</span>
+                </div>
+
+                <dl className="cvpn-2s-app-rows">
+                  <div><dt>This device</dt><dd className="mono">100.64.0.2</dd></div>
+                  <div><dt>Signed in as</dt><dd className="mono">k.tanaka@{DOMAIN}</dd></div>
+                  <div><dt>Latency</dt><dd>228 ms</dd></div>
+                  <div><dt>Uptime</dt><dd>45h 52m</dd></div>
+                  <div><dt>Traffic</dt><dd><span className="up">&uarr; 141 MB</span> <span className="dn">&darr; 1.2 GB</span></dd></div>
+                </dl>
+
+                <div className="cvpn-2s-app-foot">
+                  <span className="lnk">Network &amp; services &rsaquo;</span>
+                  <span className="dim">Sign out</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="cvpn-2s-app-status">
+              <span className="gear" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="3.1" /><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M18.5 5.5l-2.1 2.1M7.6 16.4l-2.1 2.1" strokeLinecap="round" /></svg>
+              </span>
+              <span className="prof">Profile: northwind</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function VpnCTA(): ReactNode {
   return (
     <section className="cta-section">
@@ -469,6 +639,7 @@ export default function CyberVpn(): ReactNode {
         <VpnSplit />
         <VpnArchitecture />
         <VpnFeatures />
+        <VpnTwoSides />
         <VpnFlow />
         <VpnCompare />
         <VpnBusinessCase />

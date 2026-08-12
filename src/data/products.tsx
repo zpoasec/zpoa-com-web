@@ -16,6 +16,8 @@ export const ICONS: Record<string, ReactNode> = {
   comply: (<svg {...S}><rect x="5" y="4" width="14" height="17" rx="2" /><path d="M9 4h6v2.4H9z" /><path d="M8.6 13l2.2 2.2 4-4" /></svg>),
   discover: (<svg {...S}><circle cx="11" cy="11" r="6" /><line x1="15.5" y1="15.5" x2="20" y2="20" /></svg>),
   armor: (<svg {...S}><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>),
+  aisec: (<svg {...S}><path d="M12 3l7 3v5c0 4.4-3 8-7 10-4-2-7-5.6-7-10V6l7-3z" /><path d="M12 8.4l1.1 2.5 2.5 1.1-2.5 1.1L12 15.6l-1.1-2.5L8.4 12l2.5-1.1z" /></svg>),
+  zara: (<svg {...S}><path d="M5 4.6h14a2 2 0 0 1 2 2v6.6a2 2 0 0 1-2 2h-7.6L7 19v-3.8H5a2 2 0 0 1-2-2V6.6a2 2 0 0 1 2-2z" /><path d="M11.4 7.1l.9 2.5 2.5.9-2.5.9-.9 2.5-.9-2.5-2.5-.9 2.5-.9z" fill="currentColor" stroke="none" /></svg>),
 };
 
 export type Product = {
@@ -28,10 +30,13 @@ export type Product = {
   icon: string;
   category: string;
   isNew?: boolean;
+  /** Render the Zara workspace mockup in the detail card instead of plain copy. */
+  visual?: 'zara';
 };
 
 export const CATEGORY_ORDER = [
   'Featured Apps',
+  'AI & Automation',
   'Threat Detection & Response',
   'Identity & Insider Risk',
   'Compliance, Assets & Endpoints',
@@ -43,6 +48,14 @@ export const PRODUCTS: Product[] = [
     tagline: 'Self-hosted zero-trust mesh VPN',
     desc: 'A self-hosted, identity-native zero-trust mesh VPN. Direct peer-to-peer WireGuard tunnels, with the control plane, the database, and the identity that governs access all inside your own walls.',
     features: ['Self-hosted control plane, database & relays', 'Direct peer-to-peer WireGuard mesh', 'Air-gap capable, physical tenant isolation', 'Identity-native access via the golden record'],
+  },
+  {
+    name: 'Zara AI', category: 'AI & Automation', accent: 'accent-zara', icon: 'zara', to: '/features#zara',
+    tagline: 'Agent that works across every module',
+    desc: 'Not a tenth module — an agent layered over the other nine. Zara plans a sequence of tool calls, executes them against your live tenant across whichever modules hold the answer, and cannot change anything until a human approves the action.',
+    features: ['Plans and executes multi-step tool calls, not single lookups', 'Every write is fail-closed — no approver, no action', 'Runs on your model: Ollama, Bedrock, OpenAI or Anthropic', 'MCP servers registered, approved and audited per agent'],
+    isNew: true,
+    visual: 'zara',
   },
   {
     name: 'Detect', category: 'Threat Detection & Response', accent: 'accent-detect', icon: 'detect', to: '/docs/modules/detect/overview',
@@ -85,5 +98,12 @@ export const PRODUCTS: Product[] = [
     tagline: 'Endpoint protection & hardening',
     desc: 'Endpoint hardening, vulnerability management, and patch orchestration across your entire fleet, with misconfiguration detection and drift tracking.',
     features: ['Security baseline enforcement', 'Vulnerability management with exploitability scoring', 'Automated patch orchestration & rollback', 'Configuration & drift detection'],
+  },
+  {
+    name: 'AI Security', category: 'Threat Detection & Response', accent: 'accent-aisec', icon: 'aisec', to: '/docs/modules/ai-sec/overview',
+    tagline: 'Shadow AI discovery & AI-DLP',
+    desc: 'Inventory every AI tool in use across the organization, govern it as sanctioned or blocked, and inspect what sensitive data leaves for it — with policy enforcement built for prompts rather than files.',
+    features: ['Shadow AI discovery across generative, code, image & voice tools', 'Sanctioned / unauthorized / blocked governance', 'AI-DLP inspection for PII, credentials & source code', 'Prompt-injection detection and agent kill switch'],
+    isNew: true,
   },
 ];

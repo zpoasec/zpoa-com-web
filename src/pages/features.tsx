@@ -36,6 +36,22 @@ const modules = [
     link: '/docs/modules/comply/overview',
   },
   {
+    id: 'service-hub',
+    subtitle: 'Service Catalog & Requests',
+    headline: 'Access arrives governed, not by ticket.',
+    description:
+      'A self-service catalogue of every application and cloud service people can request, with approval routing, entitlement mapping, and fulfilment tracked end to end. Because it runs on the same identity record Fortress governs, every grant is already attributed, reviewable, and revocable.',
+    highlights: [
+      'Unified catalogue spanning SaaS applications and cloud services',
+      'Request-to-fulfilment workflow with policy-driven approval routing',
+      'Entitlements mapped to the governed identity, not a free-text grant',
+      'Every fulfilment lands in the access review and audit trail automatically',
+    ],
+    accentClass: 'accent-svchub',
+    image: '/img/features/platform.jpg',
+    link: '/docs/modules/fortress/storefront',
+  },
+  {
     id: 'discover',
     subtitle: 'Asset Inventory & Attack Surface',
     headline: 'Know what you have. Protect what matters.',
@@ -162,9 +178,9 @@ function FeatHero(): ReactNode {
           One unified platform.
         </h1>
         <p className="tagline">
-          Seven purpose-built modules that work together seamlessly, giving your
-          team complete visibility and control across your entire security
-          landscape.
+          Nine purpose-built modules that each stand on their own, and together
+          feed a shared correlation layer — so an attack that crosses four of
+          them stops looking like four unrelated alerts.
         </p>
         <div className="hero-buttons">
           <Link
@@ -178,6 +194,101 @@ function FeatHero(): ReactNode {
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * Per-module specification panels.
+ *
+ * These replaced the stock photographs that previously sat beside each module.
+ * A generic image of a server room says nothing; every value below is a real
+ * fact drawn from the module's implementation, which is what a technical buyer
+ * is actually scanning for.
+ */
+const SPECS: Record<string, Array<[string, string]>> = {
+  detect: [
+    ['Rule format', 'Sigma-compatible'],
+    ['Rule types', 'Simple · Threshold · Correlation'],
+    ['Framework', 'MITRE ATT&CK, mapped per alert'],
+    ['Event store', 'ClickHouse'],
+  ],
+  comply: [
+    ['Frameworks', 'SOC 2 · ISO 27001 · PCI-DSS · HIPAA'],
+    ['Evidence collectors', 'AWS IAM, S3, CloudTrail · GitHub · Okta'],
+    ['Drift detection', 'Snapshot diff per cycle'],
+    ['Cross-framework', 'Inheritance propagation'],
+  ],
+  'service-hub': [
+    ['Catalogue scope', 'SaaS applications + cloud services'],
+    ['Workflow', 'Request → approve → fulfil'],
+    ['Identity model', 'Governed record, not free-text'],
+    ['Audit', 'Every grant enters the review trail'],
+  ],
+  discover: [
+    ['Scanners', 'Subdomain · Port · HTTP · Certificate · Vuln'],
+    ['Risk scoring', 'CVSS + EPSS + KEV + asset criticality'],
+    ['Exploit catalogue', 'CISA Known Exploited Vulnerabilities'],
+    ['Output', 'Feeds Comply evidence and Neural Mesh'],
+  ],
+  armor: [
+    ['Clouds', 'AWS · Azure · GCP'],
+    ['Rule source', 'CIS Benchmarks'],
+    ['Attack paths', 'Public storage · Network→data · Credential theft'],
+    ['Finding states', 'Compliant · Warning · Non-compliant'],
+  ],
+  fortress: [
+    ['Connectors', '690+ across 23 categories'],
+    ['Non-human identity', 'Discovery, rotation, certification, CLM'],
+    ['Behavioural detection', 'Impossible travel via Haversine distance'],
+    ['Governance', 'SoD simulation · JIT · access reviews'],
+  ],
+  monitor: [
+    ['Kernel telemetry', 'eBPF (Linux) · ETW (Windows)'],
+    ['Platforms', 'Windows · macOS · Linux'],
+    ['Session recording', '3-tier, HLS playback'],
+    ['Privacy default', 'Metadata-first, title masking'],
+  ],
+  'neural-mesh': [
+    ['Agents', 'Hunt · Comply · Cloud · Identity · Surface · Respond'],
+    ['Correlation patterns', '5 cross-pillar attack chains'],
+    ['Scoring', 'Blast radius + time-to-detect'],
+    ['Response', 'Proposed for approval, never auto-fired'],
+  ],
+  'ai-security': [
+    ['Tool discovery', 'Generative · Code · Image · Voice · Video · Search'],
+    ['Governance states', 'Sanctioned · Unauthorized · Blocked'],
+    ['DLP matching', 'Regex + keyword over prompt content'],
+    ['Agent control', 'Prompt-injection detection · kill switch'],
+  ],
+  vpn: [
+    ['Data plane', 'WireGuard, direct peer-to-peer'],
+    ['Control plane', 'Self-hosted, inside your VPC'],
+    ['Failover', '~30s fenced auto-promote'],
+    ['Deployment', 'Air-gap capable'],
+  ],
+  zara: [
+    ['Data access', 'Governed MCP tools against the live tenant'],
+    ['Write safety', 'Fail-closed — denied without human approval'],
+    ['Models', 'Ollama · Bedrock · OpenAI · Anthropic'],
+    ['Agent governance', 'MCP servers registered, approved, audited'],
+  ],
+};
+
+function SpecPanel({id, subtitle}: {id: string; subtitle: string}): ReactNode {
+  const rows = SPECS[id];
+  if (!rows) return null;
+  return (
+    <div className="feat-spec" aria-label={`${subtitle} at a glance`}>
+      <div className="feat-spec__head">At a glance</div>
+      <dl className="feat-spec__rows">
+        {rows.map(([k, v]) => (
+          <div key={k}>
+            <dt>{k}</dt>
+            <dd>{v}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
   );
 }
 
@@ -212,9 +323,53 @@ function ModuleSection({
             </Link>
           </div>
           <div className="feat-image">
-            <div className="feat-image-container">
-              <img src={module.image} alt={module.subtitle} loading="lazy" />
-            </div>
+            <SpecPanel id={module.id} subtitle={module.subtitle} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Zara is deliberately not in the `modules` array. It runs on the same tenant
+ * API under /ai/*, behind the `ai_chat` feature flag, and reaches across every
+ * module rather than sitting beside them — so it gets its own band between the
+ * modules and the standalone products.
+ */
+function ZaraCapability(): ReactNode {
+  return (
+    <section className="feat-module-section feat-section-gray" id="zara">
+      <div className="container">
+        <div className="feat-row">
+          <div className="feat-content">
+            <span className="feat-pill accent-zara">Zara · Agent</span>
+            <h2>One agent. Every module.</h2>
+            <p>
+              Most security AI summarises a dashboard you are already looking at. Zara does
+              the work instead: ask it a question and it plans a sequence of tool calls,
+              executes them against your live tenant across whichever modules hold the
+              answer, and comes back with the result rather than a paraphrase.
+            </p>
+            <p>
+              &ldquo;Which SOC&nbsp;2 controls are failing and who owns them?&rdquo; is three
+              systems away — Comply for the control states, Fortress to resolve each owner,
+              Armor to check whether any of them is also an open cloud finding. Zara makes
+              that one question.
+            </p>
+            <ul className="feat-highlights">
+              <li>Plans and executes multi-step tool calls, not single lookups</li>
+              <li>Reaches across Fortress, Comply, Armor, Detect, Monitor and the VPN in one answer</li>
+              <li>Every write is fail-closed — without an approver the action is denied outright</li>
+              <li>Runs on your model: Ollama for fully local, or Bedrock, OpenAI, Anthropic</li>
+              <li>Same agent in the workspace and the employee portal, from one backend</li>
+            </ul>
+            <Link className="feat-learn-more" to="/docs/administration/ai-settings">
+              Learn more <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+          <div className="feat-image">
+            <SpecPanel id="zara" subtitle="Zara Agent" />
           </div>
         </div>
       </div>
@@ -247,6 +402,7 @@ function ProductsIndex(): ReactNode {
                   <li key={h}>{h}</li>
                 ))}
               </ul>
+              <SpecPanel id={product.id} subtitle={product.subtitle} />
               <Link className="feat-learn-more" to={product.link}>
                 Learn more <span aria-hidden="true">&rarr;</span>
               </Link>
@@ -259,12 +415,15 @@ function ProductsIndex(): ReactNode {
 }
 
 function StatsBar(): ReactNode {
+  // Only claims that can be checked against the product. The previous set
+  // ("99.9% Uptime SLA", "<1s Alert Latency", "85% MTTR Reduction") had no
+  // status page, SLA document, or methodology behind it.
   const stats = [
     {number: '690+', label: 'Connectors'},
-    {number: '99.9%', label: 'Uptime SLA'},
-    {number: '<1s', label: 'Alert Latency'},
-    {number: '85%', label: 'MTTR Reduction'},
-    {number: '7', label: 'Security Pillars'},
+    {number: '23', label: 'Integration categories'},
+    {number: '9', label: 'Security modules'},
+    {number: '5', label: 'Cross-pillar attack patterns'},
+    {number: '3', label: 'Clouds covered by CSPM'},
   ];
 
   return (
@@ -295,7 +454,7 @@ function FeatCTA(): ReactNode {
             to="/docs/getting-started/quick-start">
             Start Free
           </Link>
-          <Link className="hero-btn-secondary" to="mailto:info@zpoa.com">
+          <Link className="hero-btn-secondary" to="/schedule">
             Contact Sales
           </Link>
         </div>
@@ -314,6 +473,7 @@ export default function Features(): ReactNode {
         {modules.map((mod, i) => (
           <ModuleSection key={mod.id} module={mod} index={i} />
         ))}
+        <ZaraCapability />
         <ProductsIndex />
         <StatsBar />
         <FeatCTA />
