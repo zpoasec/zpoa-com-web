@@ -7,7 +7,7 @@ description: "Remote Access VPN architecture, authentication models, device post
 keywords: [remote access vpn, vpn architecture, vpn authentication, device posture, split tunnel, zero trust remote access, vpn gateway, zypher vpn]
 ---
 
-![Remote Access VPN: Architecture, Protocols, and How Secure Remote Connectivity Actually Works](/img/blog/remote-access-vpn-architecture-protocols/hero.png)
+![Remote Access VPN: Architecture, Protocols, and How Secure Remote Connectivity Actually Works](/img/blog/remote-access-vpn-architecture-protocols/hero.jpg)
 
 Remote work turned what used to be an edge-case IT feature into core infrastructure. A decade ago, a [Remote Access VPN](https://www.zpoa.com/cyber-vpn) was something a handful of traveling executives or on-call engineers used occasionally. Today, for a large share of the workforce, it's the thing standing between "I can do my job from anywhere" and "I'm locked out of everything the company runs on." That shift has also exposed how differently Remote Access VPNs can be designed, and how much that design affects both security and day-to-day usability.
 

@@ -7,7 +7,7 @@ description: "How Client-to-Site VPN quietly secures a remote workforce — auth
 keywords: [client-to-site vpn, remote access security, vpn gateway, split tunneling, certificate-based authentication, device posture, zypher vpn]
 ---
 
-![Client-to-Site VPN: The Quiet Backbone of Remote Access Security](/img/blog/client-to-site-vpn-remote-access-security/hero.png)
+![Client-to-Site VPN: The Quiet Backbone of Remote Access Security](/img/blog/client-to-site-vpn-remote-access-security/hero.jpg)
 
 Every time an employee opens a laptop from a coffee shop, a home office, or a hotel room and reaches into the company network, something has to stand between that open connection and the outside world. That something, for a huge share of businesses, is a [Client-to-Site VPN](https://www.zpoa.com/cyber-vpn). It's one of those technologies that rarely gets discussed at the dinner table, yet it quietly decides whether a remote workforce is actually safe or just pretending to be.
 

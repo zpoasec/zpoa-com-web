@@ -7,7 +7,7 @@ description: "How fragmented security stacks quietly slow down every investigati
 keywords: [unified cybersecurity platform, security tool sprawl, incident response, mean time to detect, mean time to respond, identity governance, security consolidation]
 ---
 
-![What Happens During a Breach When Your Security Tools Don't Talk to Each Other](/img/blog/security-tools-dont-talk-to-each-other/hero.png)
+![What Happens During a Breach When Your Security Tools Don't Talk to Each Other](/img/blog/security-tools-dont-talk-to-each-other/hero.jpg)
 
 Picture the moment a security team first suspects something is wrong. An alert fires in the SIEM. Someone opens a ticket. And then the real work begins — not stopping the threat, but figuring out which of the eleven different dashboards actually holds the answer to what happened, when it started, and how far it's spread. That gap, the one between "we noticed something" and "we understand what's happening," is where fragmented security stacks quietly cost organizations the most time, and it's exactly the gap a [unified cybersecurity platform](https://www.zpoa.com/) is designed to close.
 
