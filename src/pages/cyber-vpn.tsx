@@ -5,7 +5,9 @@ import WorkspaceShowcase from '@site/src/components/WorkspaceShowcase';
 
 // "Contact Sales" / "Talk to us" -> the "Get Started with Z Shield" page,
 // which embeds the Calendly scheduler for booking a meeting.
-const GET_STARTED_URL = 'https://www.zpoa.com/schedule';
+// Relative: an absolute self-link leaves localhost in dev and forces a full
+// page reload in production instead of client-side routing.
+const GET_STARTED_URL = '/schedule';
 
 const ICONS: Record<string, ReactNode> = {
   // self-hosted → server rack you own

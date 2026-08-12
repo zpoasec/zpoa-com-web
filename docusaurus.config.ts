@@ -89,7 +89,12 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/logo.png',
+    // Purpose-built 1200x630 card. Previously this was img/logo.png, which was
+    // fine at its original 1062x474 but broke once the logo was resized to its
+    // actual render size (320px) — twitter:card is summary_large_image, so a
+    // 320px logo rendered as a speck inside a 1200x630 slot.
+    // Regenerate with: node scripts/make-og-image.mjs <full-res-logo.png>
+    image: 'img/og-card.png',
     colorMode: {
       // Follow the visitor's OS setting on first visit; the navbar toggle still
       // overrides and persists. Previously this was pinned to light and ignored

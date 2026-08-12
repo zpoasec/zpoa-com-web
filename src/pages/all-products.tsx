@@ -133,7 +133,7 @@ export default function AllProducts(): ReactNode {
             <p>Start with one product and add the rest whenever you are ready.</p>
             <div className="hero-buttons">
               <Link className="hero-btn-primary" to="/docs/getting-started/quick-start">Get Started Free</Link>
-              <Link className="hero-btn-secondary" to="https://www.zpoa.com/schedule">Contact Sales</Link>
+              <Link className="hero-btn-secondary" to="/schedule">Contact Sales</Link>
             </div>
           </div>
         </section>

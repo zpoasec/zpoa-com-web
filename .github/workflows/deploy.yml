@@ -17,8 +17,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm
@@ -26,7 +26,7 @@ jobs:
       - run: npm run build
       - name: Package build as Pages artifact
         run: tar --dereference --hard-dereference --directory build -cvf "$RUNNER_TEMP/artifact.tar" .
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: github-pages
           path: ${{ runner.temp }}/artifact.tar
