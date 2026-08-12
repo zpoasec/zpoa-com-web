@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Z Shield',
-  tagline: 'Unified Cybersecurity Platform — DETECT | COMPLY | DISCOVER | ARMOR | FORTRESS | MONITOR',
+  tagline: 'Unified Cybersecurity Platform — ZYPHER VPN | FORTRESS | SERVICE HUB | DISCOVER | MONITOR | ARMOR | DETECT | COMPLY | NEURAL MESH',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -55,7 +55,10 @@ const config: Config = {
     },
   ],
 
-  clientModules: ['./src/clientModules/blogReveal.ts'],
+  clientModules: [
+    './src/clientModules/blogReveal.ts',
+    './src/clientModules/scrollProgress.ts',
+  ],
 
   presets: [
     [
@@ -77,7 +80,9 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          // home.css loads after custom.css so the marketing styles win on
+          // any shared selector.
+          customCss: ['./src/css/custom.css', './src/css/home.css'],
         },
       } satisfies Preset.Options,
     ],
@@ -86,8 +91,11 @@ const config: Config = {
   themeConfig: {
     image: 'img/logo.png',
     colorMode: {
+      // Follow the visitor's OS setting on first visit; the navbar toggle still
+      // overrides and persists. Previously this was pinned to light and ignored
+      // prefers-color-scheme entirely, so a full dark palette shipped as dead CSS.
       defaultMode: 'light',
-      respectPrefersColorScheme: false,
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: '',

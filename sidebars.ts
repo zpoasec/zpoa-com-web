@@ -166,6 +166,11 @@ const sidebars: SidebarsConfig = {
       label: 'API Reference',
       items: ['api-reference/overview'],
     },
+    {
+      type: 'category',
+      label: 'Legal',
+      items: ['legal/terms', 'legal/privacy'],
+    },
   ],
 };
 

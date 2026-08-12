@@ -3,13 +3,14 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import {PRODUCTS, ICONS, CATEGORY_ORDER, type Product} from '@site/src/data/products';
 import ProductLogo from '@site/src/components/ProductLogo';
+import ZaraWorkspace from '@site/src/components/ZaraWorkspace';
 
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 const featured = PRODUCTS[0]; // ZPOA Zypher VPN
 
 function ProductDetail({p}: {p: Product}): ReactNode {
   return (
-    <div className="allp-card">
+    <div className={`allp-card${p.visual ? ' allp-card--wide' : ''}`}>
       <div className="allp-card-head">
         {p.icon === 'vpn' ? (
           <ProductLogo className="allp-logo" size={54} />
@@ -30,6 +31,11 @@ function ProductDetail({p}: {p: Product}): ReactNode {
           <li key={f}>{f}</li>
         ))}
       </ul>
+      {p.visual === 'zara' && (
+        <div className="allp-visual">
+          <ZaraWorkspace />
+        </div>
+      )}
       <Link className="allp-link" to={p.to}>
         Explore {p.name} <span aria-hidden="true">&rarr;</span>
       </Link>

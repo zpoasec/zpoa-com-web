@@ -192,7 +192,7 @@ export default function Signup(): ReactNode {
                 ))}
               </select>
               <span style={{fontSize: '0.75rem', opacity: 0.6, marginTop: 4, display: 'block'}}>
-                Enterprise & MSSP plans require custom setup — <a href="mailto:info@zpoa.com">contact sales</a>.
+                Enterprise & MSSP plans require custom setup — <a href="/schedule">book a call</a>.
               </span>
             </div>
 
