@@ -35,9 +35,18 @@
   --zpoa-gray-500: #6b7685;
   --zpoa-green: #00875A;
   --zpoa-red: #DE350B;
+
+  /* Ink for text sitting on a deliberately white surface (white buttons, white
+     search fields). Unlike --zpoa-heading this must NOT invert with the theme —
+     the surface stays white in both, so the text has to stay dark in both. */
+  --zpoa-on-light: #121a24;
 }
 
-/* Force light mode only */
+/* Dark theme.
+   The --zpoa-* tokens below are the important part: ~150 rules across this file
+   read them, and previously only the --ifm-* set was redefined here. Everything
+   keyed to --zpoa-gray-* or --zpoa-heading therefore kept its LIGHT value in dark
+   mode — which is why the navbar and several surfaces stayed pale on a dark page. */
 [data-theme='dark'] {
   --ifm-color-primary: #2684FF;
   --ifm-color-primary-dark: #0065FF;
@@ -52,6 +61,18 @@
   --ifm-heading-color: #FFFFFF;
   --ifm-footer-background-color: #000000;
   --docusaurus-highlighted-code-line-bg: rgba(38, 132, 255, 0.15);
+
+  /* Brand token dark pairs — these were missing entirely. */
+  --zpoa-blue: #4C9AFF;
+  --zpoa-text: #C6D0DC;
+  --zpoa-heading: #FFFFFF;
+  --zpoa-gray-50: #131C2A;
+  --zpoa-gray-100: #17202F;
+  --zpoa-gray-200: #26344A;
+  --zpoa-gray-400: #6B7A8F;
+  --zpoa-gray-500: #9AA7B8;
+  --zpoa-green: #57D9A3;
+  --zpoa-red: #FF8F73;
 }
 
 /* ── Global ── */
@@ -69,7 +90,13 @@ body {
   padding: 0.6rem 1.5rem;
   box-shadow: var(--ifm-navbar-shadow);
   border-bottom: 1px solid var(--zpoa-gray-200);
-  background: #fff;
+  /* Was hardcoded #fff, which left a white bar sitting on a dark page. */
+  background: var(--ifm-navbar-background-color);
+}
+
+[data-theme='dark'] .navbar {
+  --ifm-navbar-background-color: #101B2B;
+  --ifm-navbar-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .navbar__link {
@@ -522,11 +549,22 @@ body {
 }
 
 /* ── CTA Section ── */
+/* Uses a dedicated surface token. It previously read `background:
+   var(--zpoa-heading)` — a text-colour token borrowed as a dark surface, which
+   worked only while that token happened to be near-black. Once --zpoa-heading
+   got its correct dark value (#fff) the whole block went white-on-white and the
+   heading and both buttons vanished. */
 .cta-section {
   padding: 5.5rem 0;
   text-align: center;
-  background: var(--zpoa-heading);
+  background: var(--zpoa-cta-bg, #121a24);
   color: #fff;
+}
+
+[data-theme='dark'] .cta-section {
+  --zpoa-cta-bg: #10192b;
+  border-top: 1px solid var(--zpoa-gray-200);
+  border-bottom: 1px solid var(--zpoa-gray-200);
 }
 
 .cta-section h2 {
@@ -548,14 +586,14 @@ body {
 
 .cta-section .hero-btn-primary {
   background: #fff;
-  color: var(--zpoa-heading);
+  color: var(--zpoa-on-light);
   box-shadow: none;
 }
 
 .cta-section .hero-btn-primary:hover {
   background: #f0f2f5;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  color: var(--zpoa-heading);
+  color: var(--zpoa-on-light);
 }
 
 .cta-section .hero-btn-secondary {
@@ -1052,9 +1090,11 @@ body {
 /* ── Homepage Stats Bar ── */
 .home-stats-bar {
   padding: 4.5rem 0;
-  background: var(--zpoa-heading);
+  background: var(--zpoa-cta-bg, #121a24);
   color: #fff;
 }
+
+[data-theme='dark'] .home-stats-bar { --zpoa-cta-bg: #10192b; }
 
 [data-theme='dark'] .home-stats-bar {
   background: #000;
@@ -1230,6 +1270,8 @@ body {
 .accent-neural { background: #E6FCFF; color: #00B8D9; }
 .accent-vpn { background: #E6FBF7; color: #0D9488; }
 .accent-aisec { background: #FFF4E5; color: #BF6300; }
+.accent-svchub { background: #FFF0E6; color: #C25708; }
+.accent-zara { background: #EFEAFE; color: #5B3BE0; }
 
 [data-theme='dark'] .accent-detect { background: rgba(222, 53, 11, 0.15); color: #FF5630; }
 [data-theme='dark'] .accent-comply { background: rgba(0, 135, 90, 0.15); color: #36B37E; }
@@ -1250,7 +1292,7 @@ body {
   border-radius: 6px; color: var(--ifm-navbar-link-color);
 }
 .products-split-caret:hover { color: var(--ifm-navbar-link-hover-color); background: var(--ifm-color-emphasis-200); }
-.products-split-caret:focus-visible { outline: 2px solid #0D9488; outline-offset: 1px; }
+.products-split-caret:focus-visible { outline: 2px solid var(--zpoa-blue); outline-offset: 1px; }
 .products-split-caret svg { transition: transform 0.18s ease; }
 .products-split:hover .products-split-caret svg,
 .products-split-caret.is-open svg { transform: rotate(180deg); }
@@ -1618,7 +1660,7 @@ body {
 .prodx-search input {
   width: 100%; padding: 0.6rem 0.8rem 0.6rem 2.2rem; font-size: 0.9rem;
   border: 1px solid rgba(15,23,42,0.12); border-radius: 10px; background: #fff;
-  color: var(--zpoa-heading); outline: none; transition: border-color .15s ease, box-shadow .15s ease;
+  color: var(--zpoa-on-light); outline: none; transition: border-color .15s ease, box-shadow .15s ease;
 }
 .prodx-search input:focus { border-color: #0D9488; box-shadow: 0 0 0 3px rgba(13,148,136,0.12); }
 [data-theme='dark'] .prodx-search input { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); color: #fff; }
@@ -1740,7 +1782,7 @@ body {
 .allp-search-ic { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--zpoa-gray-400, #94a3b8); }
 .allp-search input {
   width: 100%; padding: 1rem 1.2rem 1rem 3rem; font-size: 1.05rem;
-  border: 1px solid rgba(15,23,42,0.10); border-radius: 12px; background: #fff; color: var(--zpoa-heading);
+  border: 1px solid rgba(15,23,42,0.10); border-radius: 12px; background: #fff; color: var(--zpoa-on-light);
   outline: none; box-shadow: 0 16px 40px rgba(15,23,42,0.16); transition: box-shadow .15s ease, border-color .15s ease;
 }
 .allp-search input:focus { border-color: #0D9488; box-shadow: 0 16px 44px rgba(15,23,42,0.2), 0 0 0 3px rgba(13,148,136,0.15); }
@@ -1939,6 +1981,8 @@ body {
 }
 
 [data-theme='dark'] .accent-aisec { background: rgba(191, 99, 0, 0.15); color: #FFA94D; }
+[data-theme='dark'] .accent-svchub { background: rgba(194, 87, 8, 0.2); color: #FFA76B; }
+[data-theme='dark'] .accent-zara { background: rgba(109, 74, 255, 0.22); color: #A78BFA; }
 
 /* ── Module Content ── */
 .feat-content h2 {
@@ -2022,8 +2066,14 @@ body {
 /* ── Features Stats Bar ── */
 .feat-stats-bar {
   padding: 4.5rem 0;
-  background: var(--zpoa-heading);
+  background: var(--zpoa-cta-bg, #121a24);
   color: #fff;
+}
+
+[data-theme='dark'] .feat-stats-bar {
+  --zpoa-cta-bg: #10192b;
+  border-top: 1px solid var(--zpoa-gray-200);
+  border-bottom: 1px solid var(--zpoa-gray-200);
 }
 
 [data-theme='dark'] .feat-stats-bar {
