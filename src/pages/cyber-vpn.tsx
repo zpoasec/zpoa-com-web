@@ -227,7 +227,6 @@ function VpnHero(): ReactNode {
             <div><span>Connection</span><b className="ok">● Online</b></div>
             <div><span>Control plane</span><b className="ok">● In your VPC</b></div>
             <div><span>Data residency</span><b className="ok">● On your soil</b></div>
-            <div><span>Latency</span><b>230-250 ms</b></div>
             <div><span>Standby failover</span><b>~30 s</b></div>
             <div><span>Tunnel</span><b>WireGuard · P2P</b></div>
           </div>
@@ -456,11 +455,11 @@ const adminGateways = [
 ];
 
 const adminDevices = [
-  {name: 'DESKTOP-4K2P9L', owner: 'r.mehta', mail: `r.mehta@${DOMAIN}`, initials: 'RM', ip: '100.64.0.6', conn: 'Direct', nat: '—', os: 'windows', seen: 'just now'},
-  {name: 'LAPTOP-7XQ2NB', owner: 'a.silva', mail: `a.silva@${DOMAIN}`, initials: 'AS', ip: '100.64.0.5', conn: 'Direct', nat: '—', os: 'windows', seen: 'just now'},
-  {name: 'MBP-DESIGN-02', owner: 'k.tanaka', mail: `k.tanaka@${DOMAIN}`, initials: 'KT', ip: '100.64.0.2', conn: 'Direct', nat: '—', os: 'macos', seen: 'just now'},
-  {name: 'WS-FINANCE-11', owner: 'l.dubois', mail: `l.dubois@${DOMAIN}`, initials: 'LD', ip: '100.64.0.4', conn: 'Offline', nat: '—', os: 'windows', seen: '3d ago'},
-  {name: 'LAPTOP-9HTR4M', owner: 'p.novak', mail: `p.novak@${DOMAIN}`, initials: 'PN', ip: '100.64.0.3', conn: 'Offline', nat: '—', os: 'windows', seen: '1d ago'},
+  {name: 'DESKTOP-4K2P9L', owner: 'j.walker', mail: `j.walker@${DOMAIN}`, initials: 'JW', ip: '100.64.0.6', conn: 'Direct', nat: '—', os: 'windows', seen: 'just now'},
+  {name: 'LAPTOP-7XQ2NB', owner: 's.bennett', mail: `s.bennett@${DOMAIN}`, initials: 'SB', ip: '100.64.0.5', conn: 'Direct', nat: '—', os: 'windows', seen: 'just now'},
+  {name: 'MBP-DESIGN-02', owner: 'm.harper', mail: `m.harper@${DOMAIN}`, initials: 'MH', ip: '100.64.0.2', conn: 'Direct', nat: '—', os: 'macos', seen: 'just now'},
+  {name: 'WS-FINANCE-11', owner: 'c.wright', mail: `c.wright@${DOMAIN}`, initials: 'CW', ip: '100.64.0.4', conn: 'Offline', nat: '—', os: 'windows', seen: '3d ago'},
+  {name: 'LAPTOP-9HTR4M', owner: 't.morgan', mail: `t.morgan@${DOMAIN}`, initials: 'TM', ip: '100.64.0.3', conn: 'Offline', nat: '—', os: 'windows', seen: '1d ago'},
 ];
 
 const OS_ICON: Record<string, ReactNode> = {
@@ -585,7 +584,7 @@ function VpnTwoSides(): ReactNode {
 
                 <dl className="cvpn-2s-app-rows">
                   <div><dt>This device</dt><dd className="mono">100.64.0.2</dd></div>
-                  <div><dt>Signed in as</dt><dd className="mono">k.tanaka@{DOMAIN}</dd></div>
+                  <div><dt>Signed in as</dt><dd className="mono">m.harper@{DOMAIN}</dd></div>
                   <div><dt>Latency</dt><dd>228 ms</dd></div>
                   <div><dt>Uptime</dt><dd>45h 52m</dd></div>
                   <div><dt>Traffic</dt><dd><span className="up">&uarr; 141 MB</span> <span className="dn">&darr; 1.2 GB</span></dd></div>

@@ -763,6 +763,62 @@ main.zpoa-blog-list a[class*='tag_']:hover {
   color: var(--zs-violet);
 }
 
+/* ══ REGION PICKER ═══════════════════════════════════════════════════════ */
+.zpoa-region {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--zpoa-gray-200); border-radius: 100px;
+  padding: 3px 11px 3px 9px;
+  font-size: 0.78rem; color: var(--zpoa-text);
+  cursor: default; user-select: none;
+}
+.zpoa-region__flag { font-size: 0.95rem; line-height: 1; }
+.zpoa-region__code { font-weight: 600; letter-spacing: 0.02em; }
+.zpoa-region__mobile-label { font-weight: 600; }
+
+/* Inline region selector on the pricing page. The section centres its text,
+   so the control needs to be a centred block rather than an inline element. */
+.pricing-section .zpoa-region-inline { display: inline-flex; }
+.pricing-section > .container { text-align: center; }
+.pricing-section .pricing-grid,
+.pricing-section .comparison-section { text-align: left; }
+
+.zpoa-region-inline {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin: 0.4rem auto 0; padding: 7px 8px 7px 15px;
+  border: 1px solid var(--zs-line); border-radius: 100px;
+  background: var(--zs-surface);
+  font-size: 0.85rem; color: var(--zs-fg-soft);
+}
+.zpoa-region-inline select {
+  appearance: none; -webkit-appearance: none;
+  background: var(--zs-sunken); border: 1px solid var(--zs-line);
+  border-radius: 100px; padding: 5px 30px 5px 12px; cursor: pointer;
+  font-family: inherit; font-size: 0.85rem; font-weight: 600;
+  color: var(--zs-fg);
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+                    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 15px) 52%, calc(100% - 10px) 52%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+.zpoa-region-inline select:hover { border-color: var(--zs-violet); }
+.zpoa-region-inline select:focus-visible { outline: 2px solid var(--zs-violet); outline-offset: 2px; }
+
+/* pricing page */
+.price-overage {
+  margin: -0.5rem 0 0.9rem; font-size: 0.78rem; color: var(--zs-fg-faint);
+}
+.price-fx {
+  max-width: 640px; margin: 1.4rem auto 0; text-align: center;
+  font-size: 0.82rem; line-height: 1.6; color: var(--zs-fg-soft);
+  background: var(--zs-sunken); border: 1px solid var(--zs-line);
+  border-radius: 9px; padding: 11px 16px;
+}
+
+@media (max-width: 996px) {
+  .zpoa-region { display: none; }   /* mobile uses the sidebar variant */
+}
+
 /* ══ SCROLLBAR ═══════════════════════════════════════════════════════════
    Hidden everywhere; the progress meter under the navbar carries the position
    cue instead. Wheel, trackpad, keyboard, and touch scrolling are untouched.
@@ -837,6 +893,15 @@ html, body, * {
   .zs-reveal, .zs-reveal.zs-in { opacity: 1 !important; animation: none !important; transform: none !important; }
   .zs-hero__glow, .zs-dot, .zs-caret, .zs-gauge__val { animation: none !important; }
   .zs-progress { transition: none !important; }
+
+  /* The mockups still cycle — the content is information, and rotation is
+     pausable by hovering — but the crossfade itself is the motion, so panels
+     swap instantly instead of sliding and fading. */
+  .ws-panel, .zw-thread, .zw-chat, .ws-tab {
+    transition: none !important;
+    transform: none !important;
+  }
+  .ws-tabs__prog { animation: none !important; opacity: 0 !important; }
 }
 
 /* ══ HERO ════════════════════════════════════════════════════════════════
@@ -1099,6 +1164,12 @@ html, body, * {
 .zs-zara__q {
   font-size: 0.74rem; color: #DDE4F2; background: rgba(0,0,0,0.28);
   border-radius: 6px; padding: 7px 10px; display: flex; align-items: center;
+  /* The prompt types in and out, so its width changes constantly. Fix the row
+     height and forbid wrapping, otherwise a long prompt would reflow the whole
+     mockup mid-animation. */
+  min-height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .zs-caret {
   display: inline-block; width: 1.5px; height: 12px; background: var(--zs-cyan-bright);
@@ -1421,8 +1492,15 @@ html, body, * {
   font-size: 0.5rem; letter-spacing: 0.11em; text-transform: uppercase;
   color: #5C6883; font-weight: 600; margin-top: 5px;
 }
-.zw-chat { border-radius: 6px; padding: 7px 8px; border-left: 2px solid transparent; }
+.zw-chat {
+  border-radius: 6px; padding: 7px 8px; border-left: 2px solid transparent;
+  background: none; border-top: none; border-right: none; border-bottom: none;
+  width: 100%; text-align: left; cursor: pointer; font-family: inherit;
+  transition: background .3s ease, border-left-color .3s ease;
+}
+.zw-chat:hover { background: rgba(255,255,255,0.045); }
 .zw-chat.is-on { background: rgba(109,74,255,0.18); border-left-color: var(--zs-cyan-bright); }
+.zw-chat:focus-visible { outline: 2px solid var(--zs-cyan-bright); outline-offset: -2px; }
 .zw-chat b { display: block; font-size: 0.67rem; font-weight: 500; color: #C2CDE2; line-height: 1.35; }
 .zw-chat.is-on b { color: #fff; }
 .zw-chat s { display: block; text-decoration: none; font-size: 0.55rem; color: #5C6883; margin-top: 2px; }
@@ -1440,7 +1518,17 @@ html, body, * {
 .zw-tabs span.is-on { color: #fff; border-bottom-color: var(--zs-cyan-bright); }
 .zw-tabs__new { margin-left: auto; color: #8593AF !important; }
 
-.zw-conv { flex: 1; padding: 12px 14px; display: flex; flex-direction: column; gap: 11px; min-width: 0; }
+/* Threads are stacked in one grid cell so switching crossfades in place
+   instead of the panel resizing to each conversation's height. */
+.zw-conv { flex: 1; padding: 12px 14px; display: grid; min-width: 0; align-content: start; }
+.zw-thread {
+  grid-area: 1 / 1; min-width: 0;
+  display: flex; flex-direction: column; gap: 11px;
+  opacity: 0; transform: translateY(6px);
+  transition: opacity .4s ease, transform .4s ease;
+  pointer-events: none;
+}
+.zw-thread.is-on { opacity: 1; transform: none; pointer-events: auto; }
 
 /* a user turn renders as a full-width section bar, as in the product */
 .zw-turn {
@@ -1479,8 +1567,17 @@ html, body, * {
   border-radius: 9px; padding: 9px 12px; font-size: 0.72rem; color: #6E7C99;
 }
 .zw-clip { opacity: 0.6; }
+/* The typed prompt sits between the clip and the PRO badge and changes width
+   constantly, so it takes the free space and clips rather than pushing them. */
+.zw-typed {
+  flex: 1; min-width: 0; display: flex; align-items: center;
+  white-space: nowrap; overflow: hidden;
+  color: #A9B6D0;
+}
 .zw-pro {
-  margin-left: auto; font-size: 0.53rem; font-weight: 700; letter-spacing: 0.08em;
+  /* margin-left:auto is gone — .zw-typed now takes the free space, so the
+     badge no longer has to be pushed right by an auto margin. */
+  flex: none; font-size: 0.53rem; font-weight: 700; letter-spacing: 0.08em;
   color: #A78BFA; background: rgba(109,74,255,0.2);
   border-radius: 4px; padding: 2px 6px;
 }

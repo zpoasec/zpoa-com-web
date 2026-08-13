@@ -172,10 +172,12 @@ function FeatHero(): ReactNode {
     <section className="feat-hero">
       <div className="container">
         <div className="hero-label">Platform Overview</div>
+        {/* Not "every security capability" — access, service management and
+            governance sit alongside the security modules. */}
         <h1>
-          Every security capability.
+          Access, identity, governance
           <br />
-          One unified platform.
+          and security. One platform.
         </h1>
         <p className="tagline">
           Nine purpose-built modules that each stand on their own, and together
@@ -421,7 +423,7 @@ function StatsBar(): ReactNode {
   const stats = [
     {number: '690+', label: 'Connectors'},
     {number: '23', label: 'Integration categories'},
-    {number: '9', label: 'Security modules'},
+    {number: '9', label: 'Unified modules'},
     {number: '5', label: 'Cross-pillar attack patterns'},
     {number: '3', label: 'Clouds covered by CSPM'},
   ];

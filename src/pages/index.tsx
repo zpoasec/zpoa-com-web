@@ -1,12 +1,14 @@
 import {useEffect, type ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import {
   ModuleIcon, ProblemIcon, CheckIcon, Arrow,
   RailIcon, RAIL_ORDER, RAIL_BOTTOM,
 } from '../components/icons';
 import CountUp from '../components/CountUp';
 import ZaraShowcase from '../components/ZaraShowcase';
+import TypingPrompt from '../components/TypingPrompt';
 
 // ── Content ────────────────────────────────────────────────────────────────
 
@@ -99,7 +101,7 @@ const modules = [
 
 const metrics = [
   {to: 690, suffix: '+', l: 'Connectors'},
-  {to: 9, suffix: '', l: 'Security modules'},
+  {to: 9, suffix: '', l: 'Unified modules'},
   {to: 23, suffix: '', l: 'Integration categories'},
   {to: 5, suffix: '', l: 'Cross-pillar attack patterns'},
 ];
@@ -122,9 +124,9 @@ function Hero(): ReactNode {
             Unified Security Platform
           </div>
           <h1>
-            Nine security modules.
+            Nine modules.
             <br />
-            <span className="zs-grad">One correlated picture.</span>
+            <span className="zs-grad">One unified platform.</span>
           </h1>
           <p className="zs-hero__sub">
             Detection, compliance, attack surface, cloud posture, identity governance,
@@ -221,7 +223,7 @@ function CommandCenterMock(): ReactNode {
               <span>Alert Feed</span>
               <b>3 CRITICAL</b>
             </div>
-            <Alert sev="crit" title="Impossible travel — j.patel" meta="Fortress" />
+            <Alert sev="crit" title="Impossible travel — j.walker" meta="Fortress" />
             <Alert sev="crit" title="S3 bucket made public" meta="Armor" />
             <Alert sev="warn" title="SSH brute force 203.0.113.44" meta="Detect" />
             <Alert sev="warn" title="Orphaned service account" meta="Fortress" />
@@ -234,8 +236,7 @@ function CommandCenterMock(): ReactNode {
             Zara — Agent
           </div>
           <div className="zs-zara__q">
-            What SOC&nbsp;2 controls are failing?
-            <span className="zs-caret" aria-hidden="true" />
+            <TypingPrompt />
           </div>
         </div>
 
@@ -304,7 +305,7 @@ function Modules(): ReactNode {
       <div className="zs-wrap">
         <div className="zs-center">
           <div className="zs-label">The platform</div>
-          <h2 className="zs-h2">Nine modules. One platform.</h2>
+          <h2 className="zs-h2">Each stands alone. Together they correlate.</h2>
           <p className="zs-lede">
             Each module stands on its own. Together they feed a shared correlation layer
             that sees what no single tool can.
@@ -483,6 +484,13 @@ export default function Home(): ReactNode {
     <Layout
       title="Unified Cybersecurity Platform"
       description="Z Shield — SIEM, compliance, attack surface, cloud posture, identity governance, insider risk, and AI security in one correlated platform.">
+      {/* The browser tab reads plain "Zpoa" on the home page. Layout would
+          otherwise render "<title> | Z Shield"; this overrides only the tab
+          text, leaving og:title and the meta description intact for search
+          and link previews. */}
+      <Head>
+        <title>Zpoa</title>
+      </Head>
       <Hero />
       <main>
         <Problems />

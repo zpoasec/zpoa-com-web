@@ -120,11 +120,7 @@ const config: Config = {
           label: 'Docs',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/zpoasec',
-          label: 'GitHub',
-          position: 'right',
-        },
+        {type: 'custom-regionPicker', position: 'right'},
         {
           to: '/schedule',
           label: "Sign up, it's Free",
