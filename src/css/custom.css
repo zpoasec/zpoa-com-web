@@ -2361,6 +2361,34 @@ article {
   margin: 0 auto;
 }
 
+/* Infima ships `table { display: block }`, which makes a markdown table
+   shrink-wrap to its content instead of filling the column, and long cells
+   then overflow the article rather than wrapping. Restoring `display: table`
+   lets width apply again; the wrapper keeps a wide table scrolling inside
+   itself so the page body never scrolls sideways. */
+.markdown table {
+  display: table;
+  width: 100%;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.markdown table th,
+.markdown table td {
+  vertical-align: top;
+  text-align: left;
+}
+
+.markdown table th {
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .markdown table th {
+    white-space: normal;
+  }
+}
+
 article header,
 article .markdown,
 article > footer {
