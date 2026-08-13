@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Z Shield',
-  tagline: 'Unified Cybersecurity Platform — ZYPHER VPN | FORTRESS | SERVICE HUB | DISCOVER | MONITOR | ARMOR | DETECT | COMPLY | NEURAL MESH',
+  tagline: 'Unified Cybersecurity Platform: ZYPHER VPN | FORTRESS | SERVICE HUB | DISCOVER | MONITOR | ARMOR | DETECT | COMPLY | NEURAL MESH',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -91,7 +91,7 @@ const config: Config = {
   themeConfig: {
     // Purpose-built 1200x630 card. Previously this was img/logo.png, which was
     // fine at its original 1062x474 but broke once the logo was resized to its
-    // actual render size (320px) — twitter:card is summary_large_image, so a
+    // actual render size (320px), and twitter:card is summary_large_image, so a
     // 320px logo rendered as a speck inside a 1200x630 slot.
     // Regenerate with: node scripts/make-og-image.mjs <full-res-logo.png>
     image: 'img/og-card.png',

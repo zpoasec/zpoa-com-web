@@ -21,7 +21,7 @@ const problems = [
   {
     icon: 'identity' as const,
     title: 'Machines outnumber people',
-    body: 'Service accounts, CI tokens, and AI agents now hold more standing access than your employees do — and almost none of it is reviewed, rotated, or attributed to an owner.',
+    body: 'Service accounts, CI tokens, and AI agents now hold more standing access than your employees do. Almost none of it is reviewed, rotated, or attributed to an owner.',
   },
   {
     icon: 'ai' as const,
@@ -32,7 +32,7 @@ const problems = [
 
 // Ordered as a buyer journey: get people connected, govern who they are and what
 // they can ask for, then work outward from assets to endpoints, cloud, detection,
-// and audit — with the AI layer that correlates all of it last.
+// and audit, with the AI layer that correlates all of it last.
 const modules = [
   {
     id: 'vpn',
@@ -52,7 +52,7 @@ const modules = [
     id: 'svchub',
     name: 'Service Hub',
     kicker: 'Service Catalog',
-    body: 'A self-service catalogue of every app and cloud service people can request, with approval routing and fulfilment tracked end to end — so access arrives governed instead of by ticket.',
+    body: 'A self-service catalogue of every app and cloud service people can request, with approval routing and fulfilment tracked end to end, so access arrives governed instead of by ticket.',
     href: '/features#service-hub',
   },
   {
@@ -66,14 +66,14 @@ const modules = [
     id: 'monitor',
     name: 'Monitor',
     kicker: 'Insider Risk',
-    body: 'Endpoint telemetry with peer-group baselines, data-exfiltration detection, and session recording — metadata-first by default, with privacy controls built in.',
+    body: 'Endpoint telemetry with peer-group baselines, data-exfiltration detection, and session recording. Metadata-first by default, with privacy controls built in.',
     href: '/features#monitor',
   },
   {
     id: 'armor',
     name: 'Armor',
     kicker: 'Cloud Posture',
-    body: 'CIS Benchmark evaluation across AWS, Azure, and GCP — plus attack-path analysis that chains single misconfigurations into the routes an attacker would actually take.',
+    body: 'CIS Benchmark evaluation across AWS, Azure, and GCP, plus attack-path analysis that chains single misconfigurations into the routes an attacker would actually take.',
     href: '/features#armor',
   },
   {
@@ -94,7 +94,7 @@ const modules = [
     id: 'neural',
     name: 'Neural Mesh',
     kicker: 'AI Correlation & AI Security',
-    body: 'Correlates events across every module into single investigations with blast radius and time-to-detect — and governs AI itself: shadow-AI discovery, prompt-injection detection, and DLP built for prompts. Response actions are proposed for approval, never fired silently.',
+    body: 'Correlates events across every module into single investigations with blast radius and time-to-detect. It also governs AI itself: shadow-AI discovery, prompt-injection detection, and DLP built for prompts. Response actions are proposed for approval, never fired silently.',
     href: '/features#neural-mesh',
   },
 ];
@@ -130,7 +130,7 @@ function Hero(): ReactNode {
           </h1>
           <p className="zs-hero__sub">
             Detection, compliance, attack surface, cloud posture, identity governance,
-            insider risk, and AI security — in one platform that correlates across all of
+            insider risk, and AI security, all in one platform that correlates across
             them, so the attack that spans four tools stops looking like four unrelated alerts.
           </p>
           <div className="zs-cta-row">
@@ -164,11 +164,11 @@ function CommandCenterMock(): ReactNode {
     <div className="zs-shot zs-reveal" aria-label="Z Shield Command Center dashboard">
       <div className="zs-shot__bar">
         <i /><i /><i />
-        <span className="zs-shot__title">Command Center — Zpoa Workspace</span>
+        <span className="zs-shot__title">Command Center · Zpoa Workspace</span>
       </div>
 
       <div className="zs-shot__frame">
-        {/* Activity bar — same containers and icons as the shipping workspace. */}
+        {/* Activity bar: same containers and icons as the shipping workspace. */}
         <nav className="zs-rail" aria-hidden="true">
           <div className="zs-rail__top">
             {RAIL_ORDER.map((n, i) => (
@@ -223,7 +223,7 @@ function CommandCenterMock(): ReactNode {
               <span>Alert Feed</span>
               <b>3 CRITICAL</b>
             </div>
-            <Alert sev="crit" title="Impossible travel — j.walker" meta="Fortress" />
+            <Alert sev="crit" title="Impossible travel: j.walker" meta="Fortress" />
             <Alert sev="crit" title="S3 bucket made public" meta="Armor" />
             <Alert sev="warn" title="SSH brute force 203.0.113.44" meta="Detect" />
             <Alert sev="warn" title="Orphaned service account" meta="Fortress" />
@@ -233,7 +233,7 @@ function CommandCenterMock(): ReactNode {
         <div className="zs-zara">
           <div className="zs-zara__head">
             <span className="zs-dot" aria-hidden="true" />
-            Zara — Agent
+            Zara Agent
           </div>
           <div className="zs-zara__q">
             <TypingPrompt />
@@ -348,11 +348,11 @@ const zaraPoints = [
   },
   {
     t: 'Bring your own model',
-    b: 'Ollama, Bedrock, OpenAI, or Anthropic — configured per tenant. Run it fully local so no prompt ever leaves your network.',
+    b: 'Ollama, Bedrock, OpenAI, or Anthropic, configured per tenant. Run it fully local so no prompt ever leaves your network.',
   },
   {
     t: 'Agents are governed identities',
-    b: 'Every MCP server is registered and approved, tools are entitled per agent, and each execution is audited — the same lifecycle Fortress applies to people.',
+    b: 'Every MCP server is registered and approved, tools are entitled per agent, and each execution is audited, the same lifecycle Fortress applies to people.',
   },
 ];
 
@@ -410,7 +410,7 @@ function Integrations(): ReactNode {
         <h2 className="zs-h2">690+ connectors, ready on day one</h2>
         <p className="zs-lede">
           Cloud providers, identity providers, EDR, SaaS, HR and ERP systems, network
-          devices, and AI platforms — across 23 categories.
+          devices, and AI platforms across 23 categories.
         </p>
         <div className="zs-int-tools">
           {integrationTools.map((t) => (
@@ -483,7 +483,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Unified Cybersecurity Platform"
-      description="Z Shield — SIEM, compliance, attack surface, cloud posture, identity governance, insider risk, and AI security in one correlated platform.">
+      description="Z Shield: SIEM, compliance, attack surface, cloud posture, identity governance, insider risk, and AI security in one correlated platform.">
       {/* The browser tab reads plain "Zpoa" on the home page. Layout would
           otherwise render "<title> | Z Shield"; this overrides only the tab
           text, leaving og:title and the meta description intact for search

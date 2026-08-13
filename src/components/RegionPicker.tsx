@@ -9,7 +9,7 @@ import Flag from './Flag';
  * Two variants:
  *
  *   navbar / mobile  a read-only indicator of the detected region. No control,
- *                    by design — the navbar states where the site thinks you
+ *                    by design: the navbar states where the site thinks you
  *                    are, it does not ask you to configure anything.
  *
  *   inline           a real selector, used on the pricing page. Timezone
@@ -51,7 +51,7 @@ export default function RegionPicker(props: {mobile?: boolean; inline?: boolean}
       <li className="menu__list-item">
         <span className="menu__link zpoa-region__mobile-label">
           <Flag code={region.code} className="zpoa-region__flag" />
-          {' '}Region — {region.label}
+          {' '}Region: {region.label}
         </span>
       </li>
     );
@@ -60,7 +60,7 @@ export default function RegionPicker(props: {mobile?: boolean; inline?: boolean}
   return (
     <span
       className="navbar__item zpoa-region"
-      title={`${region.label} — prices shown in ${region.currency}`}>
+      title={`${region.label}: prices shown in ${region.currency}`}>
       <Flag code={region.code} className="zpoa-region__flag" />
       <span className="zpoa-region__code">{region.code}</span>
     </span>

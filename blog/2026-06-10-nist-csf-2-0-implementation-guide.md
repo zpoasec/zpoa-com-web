@@ -7,7 +7,7 @@ tags: [security]
 
 ![NIST Cybersecurity Framework 2.0 Implementation Guide](/img/blog/nist-csf-2-0-implementation-guide/hero.png)
 
-Cybersecurity is no longer just an IT concern — it is a business priority that affects operations, customer trust, regulatory compliance, and long-term growth. As attacks grow in frequency and sophistication, organizations need a clear, structured approach to managing cyber risk. The **NIST Cybersecurity Framework 2.0 (NIST CSF 2.0)** provides that structure, helping organizations identify, manage, and reduce risk while aligning security with business objectives.
+Cybersecurity is no longer just an IT concern; it is a business priority that affects operations, customer trust, regulatory compliance, and long-term growth. As attacks grow in frequency and sophistication, organizations need a clear, structured approach to managing cyber risk. The **NIST Cybersecurity Framework 2.0 (NIST CSF 2.0)** provides that structure, helping organizations identify, manage, and reduce risk while aligning security with business objectives.
 
 <!-- truncate -->
 
@@ -26,7 +26,7 @@ The framework is organized around six core functions that form a continuous cycl
 
 ## Step 1: Establish Effective Cybersecurity Governance
 
-The Govern function is the foundation. Security cannot operate in isolation from the business — leadership must actively define goals, manage risk, and allocate resources. Organizations should focus on defining roles and responsibilities, establishing policies and standards, setting risk-management objectives, aligning security strategy with business priorities, and creating reporting structures for executive oversight.
+The Govern function is the foundation. Security cannot operate in isolation from the business; leadership must actively define goals, manage risk, and allocate resources. Organizations should focus on defining roles and responsibilities, establishing policies and standards, setting risk-management objectives, aligning security strategy with business priorities, and creating reporting structures for executive oversight.
 
 ## Step 2: Identify Assets and Assess Risk
 
@@ -42,7 +42,7 @@ No control eliminates every risk, so organizations must detect suspicious activi
 
 ## Step 5: Develop and Test Incident Response
 
-Incidents are inevitable; preparation limits the damage. An incident response plan should define classification criteria, roles and responsibilities, communication procedures, containment and remediation steps, and legal and regulatory reporting requirements — validated regularly through tabletop exercises and simulations.
+Incidents are inevitable; preparation limits the damage. An incident response plan should define classification criteria, roles and responsibilities, communication procedures, containment and remediation steps, and legal and regulatory reporting requirements, validated regularly through tabletop exercises and simulations.
 
 ## Step 6: Build Recovery and Cyber Resilience
 

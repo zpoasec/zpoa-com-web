@@ -8,12 +8,12 @@ description: Terms of Service for the Z Shield platform operated by Zpoa Inc.
 
 **Last updated:** 12 August 2026
 
-:::warning Draft — requires legal review before publication
+:::warning Draft: requires legal review before publication
 This document was drafted to close a gap: the signup form previously linked here and
 returned a 404. It is a good-faith starting point covering the standard sections, **not
 legal advice**, and it has not been reviewed by counsel. Have a qualified attorney review
-and adjust it — particularly the liability, indemnity, warranty, and governing-law
-sections — before treating it as binding.
+and adjust it, particularly the liability, indemnity, warranty, and governing-law
+sections, before treating it as binding.
 :::
 
 These Terms of Service ("Terms") govern your access to and use of the Z Shield platform,
@@ -70,7 +70,7 @@ You grant us a limited licence to host, process, transmit, and display Customer 
 to provide and support the Service.
 
 You are responsible for the accuracy and legality of Customer Data and for obtaining any
-consents required to collect it — particularly for the Monitor module's user-activity
+consents required to collect it, particularly for the Monitor module's user-activity
 telemetry.
 
 Our handling of personal data is described in our [Privacy Policy](/docs/legal/privacy).

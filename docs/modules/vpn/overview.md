@@ -5,7 +5,7 @@ title: ZPOA Zypher VPN Overview
 
 ![ZPOA Zypher VPN](/img/features/platform.jpg)
 
-ZPOA Zypher VPN is Z Shield's self-hosted, zero-trust network access product. It is a modern WireGuard mesh where the control plane, database, and identity that governs access all run inside your own boundary — nothing is rented from a vendor cloud.
+ZPOA Zypher VPN is Z Shield's self-hosted, zero-trust network access product. It is a modern WireGuard mesh where the control plane, database, and identity that governs access all run inside your own boundary. Nothing is rented from a vendor cloud.
 
 ## Architecture
 
@@ -27,7 +27,7 @@ A subnet router placed inside a private network advertises that network's routes
 
 ## Identity-native access
 
-Unlike VPNs that bind access to an IP or a single account, ZPOA Zypher VPN ties access to the **golden record** from Z Shield's identity platform. Because one person is resolved to one identity across all of their accounts, access follows the person — and revoking them at offboarding closes every door at once.
+Unlike VPNs that bind access to an IP or a single account, ZPOA Zypher VPN ties access to the **golden record** from Z Shield's identity platform. Because one person is resolved to one identity across all of their accounts, access follows the person, and revoking them at offboarding closes every door at once.
 
 - ACL groups derived from identity and entitlements, not static IP ranges.
 - Least-privilege access re-evaluated continuously, not just at tunnel setup.
@@ -35,14 +35,14 @@ Unlike VPNs that bind access to an IP or a single account, ZPOA Zypher VPN ties 
 
 ## Sovereignty and compliance
 
-- **Self-hosted end to end** — control plane, database, and relays stay in your VPC or datacenter.
-- **Air-gap capable** — runs on disconnected and classified networks a SaaS coordinator cannot reach.
-- **Physical isolation** — one control plane and database per customer, not a shared multi-tenant database.
-- **You own the keys, logs, and audit trail** — nothing to subpoena from a vendor.
-- **Data residency** — for Indian deployments, self-hosting on Indian soil makes DPDP and CERT-In localization automatic.
+- **Self-hosted end to end:** control plane, database, and relays stay in your VPC or datacenter.
+- **Air-gap capable:** runs on disconnected and classified networks a SaaS coordinator cannot reach.
+- **Physical isolation:** one control plane and database per customer, not a shared multi-tenant database.
+- **You own the keys, logs, and audit trail:** nothing to subpoena from a vendor.
+- **Data residency:** for Indian deployments, self-hosting on Indian soil makes DPDP and CERT-In localization automatic.
 
 ## Resilience
 
 - Postgres primary/standby with ~30-second fenced auto-promote.
-- Client-side multi-URL failover — the client already knows the backup control plane, so no HA load balancer is required.
+- Client-side multi-URL failover: the client already knows the backup control plane, so no HA load balancer is required.
 - Tunnels survive a control-plane outage from the cached network map.

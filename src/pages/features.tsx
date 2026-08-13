@@ -136,7 +136,7 @@ const modules = [
     subtitle: 'Shadow AI & AI-DLP',
     headline: 'Govern the AI your teams already use.',
     description:
-      'Employees adopt AI assistants, coding copilots, and AI search faster than IT can approve them. AI Security inventories every tool in use, scores its risk, and inspects what data leaves for it — with policy enforcement built for prompts, not files.',
+      'Employees adopt AI assistants, coding copilots, and AI search faster than IT can approve them. AI Security inventories every tool in use, scores its risk, and inspects what data leaves for it, with policy enforcement built for prompts, not files.',
     highlights: [
       'Shadow AI discovery across generative, code, image, voice, and search tools',
       'Sanctioned / unauthorized / blocked governance with an organization risk score',
@@ -157,7 +157,7 @@ const products = [
     description:
       'A modern WireGuard mesh VPN where the control plane, database, and identity all stay inside your own network. Direct peer-to-peer tunnels, identity-native access governed by the golden record, air-gap capable, with ~30s hot-standby failover.',
     highlights: [
-      'Self-hosted control plane, database, and relays — nothing leaves your VPC',
+      'Self-hosted control plane, database, and relays, so nothing leaves your VPC',
       'Identity-native access governed by the golden record, not an IP',
       'Direct peer-to-peer WireGuard mesh with encrypted relay fallback',
       'Air-gap capable, physical per-customer isolation, ~30s failover',
@@ -172,7 +172,7 @@ function FeatHero(): ReactNode {
     <section className="feat-hero">
       <div className="container">
         <div className="hero-label">Platform Overview</div>
-        {/* Not "every security capability" — access, service management and
+        {/* Not "every security capability": access, service management and
             governance sit alongside the security modules. */}
         <h1>
           Access, identity, governance
@@ -181,7 +181,7 @@ function FeatHero(): ReactNode {
         </h1>
         <p className="tagline">
           Nine purpose-built modules that each stand on their own, and together
-          feed a shared correlation layer — so an attack that crosses four of
+          feed a shared correlation layer, so an attack that crosses four of
           them stops looking like four unrelated alerts.
         </p>
         <div className="hero-buttons">
@@ -270,7 +270,7 @@ const SPECS: Record<string, Array<[string, string]>> = {
   ],
   zara: [
     ['Data access', 'Governed MCP tools against the live tenant'],
-    ['Write safety', 'Fail-closed — denied without human approval'],
+    ['Write safety', 'Fail-closed: denied without human approval'],
     ['Models', 'Ollama · Bedrock · OpenAI · Anthropic'],
     ['Agent governance', 'MCP servers registered, approved, audited'],
   ],
@@ -336,7 +336,7 @@ function ModuleSection({
 /**
  * Zara is deliberately not in the `modules` array. It runs on the same tenant
  * API under /ai/*, behind the `ai_chat` feature flag, and reaches across every
- * module rather than sitting beside them — so it gets its own band between the
+ * module rather than sitting beside them, so it gets its own band between the
  * modules and the standalone products.
  */
 function ZaraCapability(): ReactNode {
@@ -355,14 +355,14 @@ function ZaraCapability(): ReactNode {
             </p>
             <p>
               &ldquo;Which SOC&nbsp;2 controls are failing and who owns them?&rdquo; is three
-              systems away — Comply for the control states, Fortress to resolve each owner,
+              systems away: Comply for the control states, Fortress to resolve each owner,
               Armor to check whether any of them is also an open cloud finding. Zara makes
               that one question.
             </p>
             <ul className="feat-highlights">
               <li>Plans and executes multi-step tool calls, not single lookups</li>
               <li>Reaches across Fortress, Comply, Armor, Detect, Monitor and the VPN in one answer</li>
-              <li>Every write is fail-closed — without an approver the action is denied outright</li>
+              <li>Every write is fail-closed: without an approver the action is denied outright</li>
               <li>Runs on your model: Ollama for fully local, or Bedrock, OpenAI, Anthropic</li>
               <li>Same agent in the workspace and the employee portal, from one backend</li>
             </ul>
@@ -387,7 +387,7 @@ function ProductsIndex(): ReactNode {
           <span className="hero-label">Products</span>
           <h2>Standalone products</h2>
           <p className="tagline">
-            Purpose-built products you can deploy on their own — starting with
+            Purpose-built products you can deploy on their own, starting with
             our self-hosted, zero-trust ZPOA Zypher VPN.
           </p>
         </div>
@@ -469,7 +469,7 @@ export default function Features(): ReactNode {
   return (
     <Layout
       title="Features"
-      description="Z Shield features — SIEM, compliance, identity governance, endpoint protection, and AI in one platform">
+      description="Z Shield features: SIEM, compliance, identity governance, endpoint protection, and AI in one platform">
       <FeatHero />
       <main>
         {modules.map((mod, i) => (

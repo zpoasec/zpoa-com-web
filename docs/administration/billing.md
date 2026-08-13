@@ -26,7 +26,7 @@ Z Shield uses a hybrid pricing model: **SIEM priced by data volume** (GB ingeste
 | **AI Access Copilot** | Included | Included | Included | Included | Included |
 | **SSO / SAML** | Included | Included | Included | Included | Included |
 | **API Rate** | 100 req/min | 1,000 req/min | 5,000 req/min | 10,000 req/min | 10,000 req/min |
-| **Multi-Tenant** | — | — | — | — | Included |
+| **Multi-Tenant** | ✕ | ✕ | ✕ | ✕ | Included |
 | **Support** | Community | Email & Chat | 24/7 Priority | Dedicated CSM | Dedicated CSM |
 
 All plans include access to the Z Shield web console and core SIEM + IGA capabilities. Plans are billed monthly or annually (annual billing provides a 20% discount).

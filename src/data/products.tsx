@@ -52,8 +52,8 @@ export const PRODUCTS: Product[] = [
   {
     name: 'Zara AI', category: 'AI & Automation', accent: 'accent-zara', icon: 'zara', to: '/features#zara',
     tagline: 'Agent that works across every module',
-    desc: 'Not a tenth module — an agent layered over the other nine. Zara plans a sequence of tool calls, executes them against your live tenant across whichever modules hold the answer, and cannot change anything until a human approves the action.',
-    features: ['Plans and executes multi-step tool calls, not single lookups', 'Every write is fail-closed — no approver, no action', 'Runs on your model: Ollama, Bedrock, OpenAI or Anthropic', 'MCP servers registered, approved and audited per agent'],
+    desc: 'Not a tenth module, but an agent layered over the other nine. Zara plans a sequence of tool calls, executes them against your live tenant across whichever modules hold the answer, and cannot change anything until a human approves the action.',
+    features: ['Plans and executes multi-step tool calls, not single lookups', 'Every write is fail-closed: no approver, no action', 'Runs on your model: Ollama, Bedrock, OpenAI or Anthropic', 'MCP servers registered, approved and audited per agent'],
     isNew: true,
     visual: 'zara',
   },
@@ -102,7 +102,7 @@ export const PRODUCTS: Product[] = [
   {
     name: 'AI Security', category: 'Threat Detection & Response', accent: 'accent-aisec', icon: 'aisec', to: '/docs/modules/ai-sec/overview',
     tagline: 'Shadow AI discovery & AI-DLP',
-    desc: 'Inventory every AI tool in use across the organization, govern it as sanctioned or blocked, and inspect what sensitive data leaves for it — with policy enforcement built for prompts rather than files.',
+    desc: 'Inventory every AI tool in use across the organization, govern it as sanctioned or blocked, and inspect what sensitive data leaves for it, with policy enforcement built for prompts rather than files.',
     features: ['Shadow AI discovery across generative, code, image & voice tools', 'Sanctioned / unauthorized / blocked governance', 'AI-DLP inspection for PII, credentials & source code', 'Prompt-injection detection and agent kill switch'],
     isNew: true,
   },

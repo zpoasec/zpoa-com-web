@@ -444,7 +444,7 @@ function VpnBusinessCase(): ReactNode {
 /* ── Two sides of the product ──────────────────────────────────────────────
    Admins run the mesh from the Zpoa Workspace; employees get a client that is
    essentially one button. Both mockups mirror the shipping UI.
-   Names and addresses below are fictional — never ship real enrolled devices
+   Names and addresses below are fictional; never ship real enrolled devices
    or employee email addresses on a public page.
    ──────────────────────────────────────────────────────────────────────── */
 
@@ -455,11 +455,11 @@ const adminGateways = [
 ];
 
 const adminDevices = [
-  {name: 'DESKTOP-4K2P9L', owner: 'j.walker', mail: `j.walker@${DOMAIN}`, initials: 'JW', ip: '100.64.0.6', conn: 'Direct', nat: '—', os: 'windows', seen: 'just now'},
-  {name: 'LAPTOP-7XQ2NB', owner: 's.bennett', mail: `s.bennett@${DOMAIN}`, initials: 'SB', ip: '100.64.0.5', conn: 'Direct', nat: '—', os: 'windows', seen: 'just now'},
-  {name: 'MBP-DESIGN-02', owner: 'm.harper', mail: `m.harper@${DOMAIN}`, initials: 'MH', ip: '100.64.0.2', conn: 'Direct', nat: '—', os: 'macos', seen: 'just now'},
-  {name: 'WS-FINANCE-11', owner: 'c.wright', mail: `c.wright@${DOMAIN}`, initials: 'CW', ip: '100.64.0.4', conn: 'Offline', nat: '—', os: 'windows', seen: '3d ago'},
-  {name: 'LAPTOP-9HTR4M', owner: 't.morgan', mail: `t.morgan@${DOMAIN}`, initials: 'TM', ip: '100.64.0.3', conn: 'Offline', nat: '—', os: 'windows', seen: '1d ago'},
+  {name: 'DESKTOP-4K2P9L', owner: 'j.walker', mail: `j.walker@${DOMAIN}`, initials: 'JW', ip: '100.64.0.6', conn: 'Direct', nat: 'None', os: 'windows', seen: 'just now'},
+  {name: 'LAPTOP-7XQ2NB', owner: 's.bennett', mail: `s.bennett@${DOMAIN}`, initials: 'SB', ip: '100.64.0.5', conn: 'Direct', nat: 'None', os: 'windows', seen: 'just now'},
+  {name: 'MBP-DESIGN-02', owner: 'm.harper', mail: `m.harper@${DOMAIN}`, initials: 'MH', ip: '100.64.0.2', conn: 'Direct', nat: 'None', os: 'macos', seen: 'just now'},
+  {name: 'WS-FINANCE-11', owner: 'c.wright', mail: `c.wright@${DOMAIN}`, initials: 'CW', ip: '100.64.0.4', conn: 'Offline', nat: 'None', os: 'windows', seen: '3d ago'},
+  {name: 'LAPTOP-9HTR4M', owner: 't.morgan', mail: `t.morgan@${DOMAIN}`, initials: 'TM', ip: '100.64.0.3', conn: 'Offline', nat: 'None', os: 'windows', seen: '1d ago'},
 ];
 
 const OS_ICON: Record<string, ReactNode> = {
@@ -497,7 +497,7 @@ function DeviceRow({d}: {d: DeviceRowData}): ReactNode {
           <i className="wifi" aria-hidden="true" />{d.conn}
         </span>
       </td>
-      <td>{d.nat === '—' ? <span className="dim">—</span> : <span className="cvpn-2s-pill on">{d.nat}</span>}</td>
+      <td>{d.nat === 'None' ? <span className="dim">None</span> : <span className="cvpn-2s-pill on">{d.nat}</span>}</td>
       <td className="os"><span className="oic">{OS_ICON[d.os]}</span>{d.os}</td>
       <td className="dim">{d.seen}</td>
       <td className="act" aria-hidden="true"><i /><i /><i /></td>
@@ -526,7 +526,7 @@ function VpnTwoSides(): ReactNode {
             <h3>Nine panels, one console.</h3>
             <p>
               Enrollment, topology, reachability diagnostics, routes and DNS approvals,
-              segmentation, exit nodes, sites and gateways — the whole network surface
+              segmentation, exit nodes, sites and gateways: the whole network surface
               lives in the workspace your security team already has open.
             </p>
           </div>
@@ -542,7 +542,7 @@ function VpnTwoSides(): ReactNode {
             <p>
               No server list to choose from, no config file to import, no credentials to
               store. The employee signs in once with the company identity provider and the
-              client resolves the rest — profile, routes, DNS, and which gateway to use.
+              client resolves the rest: profile, routes, DNS, and which gateway to use.
             </p>
             <ul className="cvpn-checks">
               <li>One switch, plus split-tunnel if policy allows it</li>

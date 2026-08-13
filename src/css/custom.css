@@ -37,7 +37,7 @@
   --zpoa-red: #DE350B;
 
   /* Ink for text sitting on a deliberately white surface (white buttons, white
-     search fields). Unlike --zpoa-heading this must NOT invert with the theme —
+     search fields). Unlike --zpoa-heading this must NOT invert with the theme,
      the surface stays white in both, so the text has to stay dark in both. */
   --zpoa-on-light: #121a24;
 }
@@ -46,7 +46,7 @@
    The --zpoa-* tokens below are the important part: ~150 rules across this file
    read them, and previously only the --ifm-* set was redefined here. Everything
    keyed to --zpoa-gray-* or --zpoa-heading therefore kept its LIGHT value in dark
-   mode — which is why the navbar and several surfaces stayed pale on a dark page. */
+   mode: which is why the navbar and several surfaces stayed pale on a dark page. */
 [data-theme='dark'] {
   --ifm-color-primary: #2684FF;
   --ifm-color-primary-dark: #0065FF;
@@ -62,7 +62,7 @@
   --ifm-footer-background-color: #000000;
   --docusaurus-highlighted-code-line-bg: rgba(38, 132, 255, 0.15);
 
-  /* Brand token dark pairs — these were missing entirely. */
+  /* Brand token dark pairs: these were missing entirely. */
   --zpoa-blue: #4C9AFF;
   --zpoa-text: #C6D0DC;
   --zpoa-heading: #FFFFFF;
@@ -550,7 +550,7 @@ body {
 
 /* ── CTA Section ── */
 /* Uses a dedicated surface token. It previously read `background:
-   var(--zpoa-heading)` — a text-colour token borrowed as a dark surface, which
+   var(--zpoa-heading)`: a text-colour token borrowed as a dark surface, which
    worked only while that token happened to be near-black. Once --zpoa-heading
    got its correct dark value (#fff) the whole block went white-on-white and the
    heading and both buttons vanished. */
@@ -799,7 +799,7 @@ body {
   color: var(--zpoa-blue);
 }
 
-/* ── Pricing page — widen the Docusaurus container ── */
+/* ── Pricing page: widen the Docusaurus container ── */
 .pricing-section .container {
   max-width: 1340px !important;
 }
@@ -883,7 +883,7 @@ body {
   border-bottom: none;
 }
 
-/* ── Footer override — black bg like webex.com ── */
+/* ── Footer override: black bg like webex.com ── */
 .footer--dark {
   background: #000000;
 }
@@ -2212,7 +2212,7 @@ body {
   justify-content: center;
 }
 
-/* Schedule page hero subtitle — readable in both themes */
+/* Schedule page hero subtitle: readable in both themes */
 .schedule-subtitle {
   max-width: 640px;
   margin: 0 auto;
@@ -2292,7 +2292,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════
-   BLOG — typography, spacing, dark-mode readability
+   BLOG: typography, spacing, dark-mode readability
    ═══════════════════════════════════════════ */
 
 article {
@@ -2377,7 +2377,7 @@ article .markdown img {
 }
 
 /* ═══════════════════════════════════════════
-   BLOG LIST PAGE — hero header + card grid
+   BLOG LIST PAGE: hero header + card grid
    ═══════════════════════════════════════════ */
 
 .zpoa-blog-hero {
@@ -2463,7 +2463,7 @@ article .markdown img {
   margin-right: auto;
 }
 
-/* List container — card grid */
+/* List container: card grid */
 main.zpoa-blog-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2474,7 +2474,7 @@ main.zpoa-blog-list {
   position: relative;
 }
 
-/* Dark-mode body backdrop for blog list — subtle ambient blue */
+/* Dark-mode body backdrop for blog list: subtle ambient blue */
 [data-theme='dark'] main.zpoa-blog-list::before {
   content: '';
   position: absolute;
@@ -2499,7 +2499,7 @@ main.zpoa-blog-list article {
   position: relative;
 }
 
-/* Make whole card clickable — invisible overlay anchored to the title link */
+/* Make whole card clickable: invisible overlay anchored to the title link */
 main.zpoa-blog-list article > header h2 a::before {
   content: '';
   position: absolute;
@@ -2540,7 +2540,7 @@ main.zpoa-blog-list article:hover {
   border-color: rgba(76, 154, 255, 0.45);
 }
 
-/* Cover image — first <img> becomes full-bleed cover */
+/* Cover image: first <img> becomes full-bleed cover */
 main.zpoa-blog-list article .markdown img:first-of-type {
   width: 100% !important;
   height: 200px !important;
@@ -2603,7 +2603,7 @@ main.zpoa-blog-list article > header .avatar {
   display: none;
 }
 
-/* Body — truncated excerpt */
+/* Body: truncated excerpt */
 main.zpoa-blog-list article .markdown {
   padding: 0.5rem 1.5rem 1.25rem;
   flex: 1;
@@ -2641,7 +2641,7 @@ main.zpoa-blog-list article .markdown > p:nth-of-type(2) {
   margin: 0;
 }
 
-/* Footer with tags and read-more — stack vertically, full width cols */
+/* Footer with tags and read-more: stack vertically, full width cols */
 main.zpoa-blog-list article > footer.row {
   padding: 1rem 1.5rem 1.25rem !important;
   margin: auto 0 0 !important;
@@ -2699,7 +2699,7 @@ main.zpoa-blog-list article > footer.row a[rel="tag"] {
   border-color: rgba(76, 154, 255, 0.25);
 }
 
-/* Read more link — plain <a> in the second col */
+/* Read more link: plain <a> in the second col */
 main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] {
   font-size: 0.85rem;
   font-weight: 600;
@@ -2755,7 +2755,7 @@ main.zpoa-blog-list article > footer.row a[aria-label^="Read more"]:hover::after
   .zpoa-blog-hero__title { font-size: 1.85rem; }
 }
 
-/* Scroll-triggered reveal — applied by clientModules/blogReveal.ts */
+/* Scroll-triggered reveal: applied by clientModules/blogReveal.ts */
 .zpoa-reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -2835,7 +2835,7 @@ main.zpoa-blog-list > nav.pagination-nav {
 }
 
 /* Hide empty pagination items (when there's no prev or next, the wrapper
-   div has no link inside — without this it renders as an empty box). */
+   div has no link inside: without this it renders as an empty box). */
 main.zpoa-blog-list > nav.pagination-nav > div:empty {
   display: none;
 }

@@ -4,7 +4,7 @@ import {useCallback, useEffect, useRef, useState} from 'react';
  * Auto-advancing index for the product mockups.
  *
  * Replaces a hand-rolled `paused` flag that latched: hovering set paused, and
- * `onBlurCapture` was expected to clear it — but clicking a tab moves focus
+ * `onBlurCapture` was expected to clear it, but clicking a tab moves focus
  * *into* the component, so blur never fired and rotation stopped permanently
  * after the first interaction.
  *

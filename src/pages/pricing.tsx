@@ -115,7 +115,7 @@ const comparisonRows = [
   {label: 'AI Access Copilot', values: ['✓', '✓', '✓', '✓', '✓']},
   {label: 'SSO / SAML', values: ['✓', '✓', '✓', '✓', '✓']},
   {label: 'API Access', values: ['100 req/min', '1,000 req/min', '5,000 req/min', '10,000 req/min', '10,000 req/min']},
-  {label: 'Multi-Tenant', values: ['—', '—', '—', '—', '✓']},
+  {label: 'Multi-Tenant', values: ['✕', '✕', '✕', '✕', '✓']},
   {label: 'Support', values: ['Community', 'Email & Chat', '24/7 Priority', 'Dedicated CSM', 'Dedicated CSM']},
 ];
 
@@ -127,7 +127,7 @@ export default function Pricing(): ReactNode {
   const shown = (usd: number | null) => (usd === null ? 'Custom' : price(usd, region));
 
   return (
-    <Layout title="Pricing" description="Z Shield pricing — SIEM + IGA in one platform">
+    <Layout title="Pricing" description="Z Shield pricing: SIEM + IGA in one platform">
       <div className="pricing-section">
         <div className="container">
           <h1>Simple, Usage-Based Pricing</h1>
@@ -228,7 +228,7 @@ export default function Pricing(): ReactNode {
             <h3>Why Z Shield?</h3>
             <p style={{maxWidth: '700px', margin: '1rem auto'}}>
               Most organizations pay separately for SIEM ($150+/GB/day) and IGA ($15+/identity/month).
-              Z Shield bundles both into a single platform starting at $499/month — saving 60-80% vs. buying point solutions.
+              Z Shield bundles both into a single platform starting at $499/month, saving 60-80% vs. buying point solutions.
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ import {RailIcon, RAIL_ORDER, RAIL_BOTTOM} from './icons';
  * Rotating view of the Zara surfaces in the Zpoa Workspace.
  *
  * Mirrors the VPN showcase: the workspace chrome stays put while the panel
- * inside it changes. Each tab maps to a real API surface —
+ * inside it changes. Each tab maps to a real API surface:
  *   Conversation   /ai/conversations
  *   Agent runs     /ai/agent-runs  + /ai/agent-runs/:id/steps
  *   MCP tools      /ai/mcp/tools   + /ai/mcp/executions
@@ -56,7 +56,7 @@ export default function ZaraShowcase(): ReactNode {
 
       <div className="zw-bar">
         <i /><i /><i />
-        <span className="zw-bar__t">Zara — Zpoa Workspace</span>
+        <span className="zw-bar__t">Zara · Zpoa Workspace</span>
       </div>
 
       <div className="zw-frame zw-frame--showcase">
@@ -131,9 +131,9 @@ function Conversation(): ReactNode {
           <table className="zw-t zw-t--head">
             <thead><tr><th>Control</th><th>Gap</th><th>Owner</th><th>Also</th></tr></thead>
             <tbody>
-              <tr><td className="strong">CC6.1</td><td>MFA not enforced for 4 admins</td><td className="mono">s.bennett</td><td className="dim">—</td></tr>
+              <tr><td className="strong">CC6.1</td><td>MFA not enforced for 4 admins</td><td className="mono">s.bennett</td><td className="dim">None</td></tr>
               <tr><td className="strong">CC6.6</td><td>S3 bucket publicly readable</td><td className="mono">m.harper</td><td className="warn">Armor finding</td></tr>
-              <tr><td className="strong">CC7.2</td><td>CloudTrail off in eu-west-1</td><td className="mono">t.morgan</td><td className="dim">—</td></tr>
+              <tr><td className="strong">CC7.2</td><td>CloudTrail off in eu-west-1</td><td className="mono">t.morgan</td><td className="dim">None</td></tr>
             </tbody>
           </table>
           <p className="zw-sum">CC6.6 is on an active attack path. Approve a fix?</p>
@@ -170,11 +170,11 @@ function Conversation(): ReactNode {
 
 /* ── 2. Agent runs ──────────────────────────────────────────────────────── */
 const STEPS = [
-  ['1', 'plan', 'Decompose the question', '—', 'done', '120ms'],
+  ['1', 'plan', 'Decompose the question', 'n/a', 'done', '120ms'],
   ['2', 'tool', 'List failing controls', 'comply.list_failing_controls', 'done', '340ms'],
   ['3', 'tool', 'Resolve control owners', 'fortress.resolve_owner', 'done', '210ms'],
   ['4', 'tool', 'Check cloud findings', 'armor.get_finding', 'done', '180ms'],
-  ['5', 'gate', 'Await approval — restrict bucket', 'armor.restrict_bucket', 'waiting', '—'],
+  ['5', 'gate', 'Await approval: restrict bucket', 'armor.restrict_bucket', 'waiting', 'n/a'],
 ];
 
 function Runs(): ReactNode {
@@ -289,7 +289,7 @@ function Autonomy(): ReactNode {
         </div>
         <p>
           Whatever the level, a tool marked <code>write</code> is refused without an
-          approver — <code>denied: write action not approved by a human</code>.
+          approver: <code>denied: write action not approved by a human</code>.
         </p>
       </div>
     </>

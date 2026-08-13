@@ -8,11 +8,11 @@ description: How Zpoa Inc. collects, uses, and protects personal data across the
 
 **Last updated:** 12 August 2026
 
-:::warning Draft — requires legal review before publication
+:::warning Draft: requires legal review before publication
 This document was drafted to close a gap: the signup form previously linked here and
 returned a 404. It is a good-faith starting point, **not legal advice**, and has not been
 reviewed by counsel or a data protection officer. Because Z Shield processes employee
-monitoring data, this policy carries real GDPR, CCPA, and employment-law exposure — have a
+monitoring data, this policy carries real GDPR, CCPA, and employment-law exposure, so have a
 qualified privacy attorney review it before publication, and confirm the sub-processor list
 and retention periods against what the platform actually does.
 :::
@@ -22,8 +22,8 @@ personal data we collect, why, and what rights you have.
 
 We act in two different roles, and the distinction matters:
 
-- **As a controller** — for data about our own website visitors, prospects, and customer account contacts.
-- **As a processor** — for data our customers ingest into the platform about their own employees, assets, and systems. In that case our customer is the controller, and we process on their documented instructions.
+- **As a controller:** for data about our own website visitors, prospects, and customer account contacts.
+- **As a processor:** for data our customers ingest into the platform about their own employees, assets, and systems. In that case our customer is the controller, and we process on their documented instructions.
 
 ## 1. Data we collect as a controller
 
@@ -44,14 +44,14 @@ secure, and improve the Service.
 
 When a customer deploys Z Shield, the platform may process:
 
-- **Identity data** — directory records, entitlements, group membership, access history, and non-human identity metadata.
-- **Endpoint and network telemetry** — process, DNS, file, USB, and network events from the Z Shield agent.
-- **User activity data (Monitor module)** — application and web usage, file operations, idle and session events, and where the customer enables it, screenshots, session recordings, and audio with transcripts.
-- **Security and compliance data** — logs, alerts, findings, evidence, and audit records.
+- **Identity data:** directory records, entitlements, group membership, access history, and non-human identity metadata.
+- **Endpoint and network telemetry:** process, DNS, file, USB, and network events from the Z Shield agent.
+- **User activity data (Monitor module):** application and web usage, file operations, idle and session events, and where the customer enables it, screenshots, session recordings, and audio with transcripts.
+- **Security and compliance data:** logs, alerts, findings, evidence, and audit records.
 
 **This data is controlled by the customer, not by us.** We process it under our agreement
 with them. If you are an employee of a Z Shield customer and have questions about what is
-collected about you, contact your employer — they determine the configuration and are your
+collected about you, contact your employer; they determine the configuration and are your
 data controller.
 
 Customers are responsible for providing notice to, and obtaining any consent from, their
@@ -62,10 +62,10 @@ metadata-first default for this reason.
 
 Where GDPR applies, we rely on:
 
-- **Contract** — to provide the Service you signed up for.
-- **Legitimate interests** — to secure the Service, prevent abuse, and improve the product, balanced against your rights.
-- **Consent** — for marketing email and non-essential cookies, withdrawable at any time.
-- **Legal obligation** — to meet tax, accounting, and lawful-request requirements.
+- **Contract:** to provide the Service you signed up for.
+- **Legitimate interests:** to secure the Service, prevent abuse, and improve the product, balanced against your rights.
+- **Consent:** for marketing email and non-essential cookies, withdrawable at any time.
+- **Legal obligation:** to meet tax, accounting, and lawful-request requirements.
 
 ## 4. How we use data
 
@@ -78,7 +78,7 @@ models for other customers.
 
 ## 5. AI features
 
-Z Shield includes AI capabilities — the Zara analyst, Compliance Copilot, Access Copilot,
+Z Shield includes AI capabilities: the Zara analyst, Compliance Copilot, Access Copilot,
 and the AI Security module. Where a customer configures an external model provider, prompt
 content may be sent to that provider under the customer's own agreement with them.
 Customers can select a self-hosted or in-region model instead. Administrators control which
@@ -88,17 +88,17 @@ provider is used.
 
 We share personal data with:
 
-- **Sub-processors** — infrastructure, storage, email, payment, and support vendors acting on our instructions under written terms. A current list is available on request from [info@zpoa.com](mailto:info@zpoa.com).
-- **Third-party integrations** — only where a customer enables a connector, and only as that connector requires.
-- **Professional advisors** — under confidentiality.
-- **Authorities** — where legally required. We will notify the affected customer unless prohibited.
-- **Acquirers** — in a merger, acquisition, or asset sale, subject to this policy.
+- **Sub-processors:** infrastructure, storage, email, payment, and support vendors acting on our instructions under written terms. A current list is available on request from [info@zpoa.com](mailto:info@zpoa.com).
+- **Third-party integrations:** only where a customer enables a connector, and only as that connector requires.
+- **Professional advisors:** under confidentiality.
+- **Authorities:** where legally required. We will notify the affected customer unless prohibited.
+- **Acquirers:** in a merger, acquisition, or asset sale, subject to this policy.
 
 ## 7. International transfers
 
 We may process data in the United States and other countries. Where data leaves the EEA or
 UK, we rely on Standard Contractual Clauses or another approved transfer mechanism. Regional
-data residency options may be available — contact us to discuss.
+data residency options may be available; contact us to discuss.
 
 ## 8. Retention
 
@@ -117,7 +117,7 @@ affects your personal data we will notify you and any regulator as required by l
 
 Depending on where you live, you may have the right to access, correct, delete, port,
 restrict, or object to processing of your personal data, and to withdraw consent. Where CCPA
-applies, you may request disclosure of categories collected and opt out of any sale — we do
+applies, you may request disclosure of categories collected and opt out of any sale. We do
 not sell personal data.
 
 To exercise these rights over data we control, email

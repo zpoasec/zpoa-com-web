@@ -187,12 +187,12 @@ export default function Signup(): ReactNode {
               <select name="planTier" value={form.planTier} onChange={handleChange}>
                 {plans.map((p) => (
                   <option key={p.tier} value={p.tier}>
-                    {p.name} — {p.price} {p.trial && `(${p.trial})`}
+                    {p.name} · {p.price} {p.trial && `(${p.trial})`}
                   </option>
                 ))}
               </select>
               <span style={{fontSize: '0.75rem', opacity: 0.6, marginTop: 4, display: 'block'}}>
-                Enterprise & MSSP plans require custom setup — <a href="/schedule">book a call</a>.
+                Enterprise & MSSP plans require custom setup. <a href="/schedule">Book a call</a>.
               </span>
             </div>
 

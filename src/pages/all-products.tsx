@@ -56,7 +56,7 @@ export default function AllProducts(): ReactNode {
   return (
     <Layout
       title="All Products"
-      description="The complete Z Shield product portfolio with details — ZPOA Zypher VPN, Detect, Neural Mesh, Fortress, Monitor, Comply, Discover, and Armor.">
+      description="The complete Z Shield product portfolio: ZPOA Zypher VPN, Detect, Neural Mesh, Fortress, Monitor, Comply, Discover, and Armor.">
       <main className="allp">
         {/* ── Hero band ── */}
         <section className="allp-hero2">

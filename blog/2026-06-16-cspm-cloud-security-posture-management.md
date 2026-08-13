@@ -17,11 +17,11 @@ CSPM is a security solution designed to detect and remediate misconfigurations, 
 
 ## How CSPM Works
 
-**Continuous Monitoring** — CSPM solutions continuously scan cloud environments to identify security gaps and configuration errors.
+**Continuous Monitoring:** CSPM solutions continuously scan cloud environments to identify security gaps and configuration errors.
 
-**Risk Detection** — the platform detects issues such as publicly exposed resources, weak access controls, and policy violations.
+**Risk Detection:** the platform detects issues such as publicly exposed resources, weak access controls, and policy violations.
 
-**Automated Remediation** — many CSPM tools provide automated recommendations or remediation workflows to reduce risk quickly.
+**Automated Remediation:** many CSPM tools provide automated recommendations or remediation workflows to reduce risk quickly.
 
 ## Benefits of CSPM
 

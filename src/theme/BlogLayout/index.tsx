@@ -11,7 +11,7 @@ type Props = WrapperProps<typeof BlogLayoutType>;
  * Blog layout wrapper.
  *
  * Previously only the /blog index got the list treatment, so tag, paginated,
- * and archive listings fell back to raw Infima — full-size headings in link
+ * and archive listings fell back to raw Infima: full-size headings in link
  * blue, full-width hero images, no card. They are all the same kind of page and
  * now share the same shell; only the index carries the masthead.
  */

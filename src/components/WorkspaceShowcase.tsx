@@ -9,7 +9,7 @@ import {useAutoRotate} from '@site/src/lib/useAutoRotate';
  * through four real panels with a crossfade, pauses on hover/focus, and lets
  * the visitor drive it from the tab strip.
  *
- * All identifiers are fictional — never ship real enrolled devices, hostnames,
+ * All identifiers are fictional; never ship real enrolled devices, hostnames,
  * or employee addresses on a public page.
  */
 
@@ -64,7 +64,7 @@ export default function WorkspaceShowcase(): ReactNode {
 
       <div className="ws-bar">
         <i /><i /><i />
-        <span className="ws-bar__t">Connectivity — Zpoa Workspace</span>
+        <span className="ws-bar__t">Connectivity · Zpoa Workspace</span>
       </div>
 
       <div className="ws-tabs" role="tablist" aria-label="Workspace panels">
@@ -116,11 +116,11 @@ const GATEWAYS = [
 ];
 
 const DEVICES = [
-  {n: 'DESKTOP-4K2P9L', o: 'j.walker', i: 'JW', ip: '100.64.0.6', c: 'Direct', nat: '—', os: 'windows', s: 'just now'},
-  {n: 'LAPTOP-7XQ2NB', o: 's.bennett', i: 'SB', ip: '100.64.0.5', c: 'Direct', nat: '—', os: 'windows', s: 'just now'},
-  {n: 'MBP-DESIGN-02', o: 'm.harper', i: 'MH', ip: '100.64.0.2', c: 'Direct', nat: '—', os: 'macos', s: 'just now'},
-  {n: 'WS-FINANCE-11', o: 'c.wright', i: 'CW', ip: '100.64.0.4', c: 'Offline', nat: '—', os: 'windows', s: '3d ago'},
-  {n: 'LAPTOP-9HTR4M', o: 't.morgan', i: 'TM', ip: '100.64.0.3', c: 'Offline', nat: '—', os: 'windows', s: '1d ago'},
+  {n: 'DESKTOP-4K2P9L', o: 'j.walker', i: 'JW', ip: '100.64.0.6', c: 'Direct', nat: 'None', os: 'windows', s: 'just now'},
+  {n: 'LAPTOP-7XQ2NB', o: 's.bennett', i: 'SB', ip: '100.64.0.5', c: 'Direct', nat: 'None', os: 'windows', s: 'just now'},
+  {n: 'MBP-DESIGN-02', o: 'm.harper', i: 'MH', ip: '100.64.0.2', c: 'Direct', nat: 'None', os: 'macos', s: 'just now'},
+  {n: 'WS-FINANCE-11', o: 'c.wright', i: 'CW', ip: '100.64.0.4', c: 'Offline', nat: 'None', os: 'windows', s: '3d ago'},
+  {n: 'LAPTOP-9HTR4M', o: 't.morgan', i: 'TM', ip: '100.64.0.3', c: 'Offline', nat: 'None', os: 'windows', s: '1d ago'},
 ];
 
 type Row = typeof DEVICES[number];
@@ -137,7 +137,7 @@ function DeviceRow({d}: {d: Row}): ReactNode {
       </td>
       <td className="mono">{d.ip}</td>
       <td><span className={`ws-pill ${off ? 'off' : 'on'}`}>{d.c}</span></td>
-      <td>{d.nat === '—' ? <span className="dim">—</span> : <span className="ws-pill on">{d.nat}</span>}</td>
+      <td>{d.nat === 'None' ? <span className="dim">None</span> : <span className="ws-pill on">{d.nat}</span>}</td>
       <td className="dim">{d.os}</td>
       <td className="dim">{d.s}</td>
       <td className="act" aria-hidden="true"><i /><i /><i /></td>
@@ -148,7 +148,7 @@ function DeviceRow({d}: {d: Row}): ReactNode {
 function Devices(): ReactNode {
   return (
     <>
-      <Head title="Devices" sub="Every enrolled client — live status, owner, connection health, and controls." />
+      <Head title="Devices" sub="Every enrolled client: live status, owner, connection health, and controls." />
       <div className="ws-stats">
         <div><b>6</b><s>Devices</s></div>
         <div><b className="ok">4</b><s>Online</s></div>
@@ -177,7 +177,7 @@ function Devices(): ReactNode {
 /* ── 2. Network Topology → All Nodes ────────────────────────────────────── */
 // Same six nodes as the Devices panel, so the two views agree.
 const NODES = [
-  {h: 'zypher-vpn-gateway', ip: '100.64.0.1', r: 'Gateway', os: 'linux', st: 'Online', l: '—', i: '0 B', o: '0 B', s: '1m ago'},
+  {h: 'zypher-vpn-gateway', ip: '100.64.0.1', r: 'Gateway', os: 'linux', st: 'Online', l: 'n/a', i: '0 B', o: '0 B', s: '1m ago'},
   {h: 'DESKTOP-4K2P9L', ip: '100.64.0.6', r: 'Endpoint', os: 'windows', st: 'Online', l: '54ms', i: '1.0 GB', o: '79.9 MB', s: '1m ago'},
   {h: 'LAPTOP-7XQ2NB', ip: '100.64.0.5', r: 'Endpoint', os: 'windows', st: 'Online', l: '59ms', i: '296.4 MB', o: '112.1 MB', s: '1m ago'},
   {h: 'MBP-DESIGN-02', ip: '100.64.0.2', r: 'Endpoint', os: 'macos', st: 'Online', l: '24ms', i: '1.4 GB', o: '165.5 MB', s: '1m ago'},
@@ -227,7 +227,7 @@ function Topology(): ReactNode {
 function Health(): ReactNode {
   return (
     <>
-      <Head title="Mesh Health" sub="Reachability diagnostics — why clients can and cannot reach the network." />
+      <Head title="Mesh Health" sub="Reachability diagnostics: why clients can and cannot reach the network." />
       <div className="ws-stats">
         <div><b className="ok">1/1</b><s>Gateways online</s></div>
         <div><b>4/6</b><s>Devices online</s></div>
@@ -238,7 +238,7 @@ function Health(): ReactNode {
 
       <div className="ws-finding">
         <span className="ws-check">&#10003;</span>
-        No issues found — every step of the reach-the-network chain checks out.
+        No issues found. Every step of the reach-the-network chain checks out.
       </div>
 
       <div className="ws-sub">Gateways</div>
@@ -256,8 +256,8 @@ function Health(): ReactNode {
             <td className="dim">0s ago</td>
             <td className="mono">4</td>
             <td className="mono">10.0.0.0/16</td>
-            <td className="dim">—</td>
-            <td className="dim">—</td>
+            <td className="dim">0</td>
+            <td className="dim">0</td>
           </tr>
         </tbody>
       </table>
@@ -326,7 +326,7 @@ function Tunnel(): ReactNode {
       </table>
 
       <div className="ws-empty">
-        No full-tunnel policies yet. Add one to choose who gets a full tunnel —
+        No full-tunnel policies yet. Add one to choose who gets a full tunnel
         by role, by specific users, or tenant-wide.
       </div>
     </>

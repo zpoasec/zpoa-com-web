@@ -1,7 +1,7 @@
 /**
  * Region and currency detection for a static site.
  *
- * There is no server here — the site is pre-rendered and served from a CDN —
+ * There is no server here (the site is pre-rendered and served from a CDN),
  * so detection has to happen in the browser. This uses the IANA timezone the
  * browser already reports:
  *
@@ -13,7 +13,7 @@
  * every page load, and would be the sort of thing a prospect notices.
  *
  * The trade-off is that a visitor whose machine is set to another timezone
- * gets the wrong region — so the choice is always overridable, and the
+ * gets the wrong region, so the choice is always overridable, and the
  * override is what persists.
  */
 
@@ -34,7 +34,7 @@ export type Region = {
 /**
  * Conversion rates.
  *
- * These are STATIC and hand-maintained — the site has no backend to fetch live
+ * These are STATIC and hand-maintained: the site has no backend to fetch live
  * FX, and a client-side rate feed would be another third-party request. They
  * exist so a visitor sees a figure in a currency they think in; the customer is
  * charged in USD at checkout, which the pricing page states plainly.
@@ -50,7 +50,7 @@ export const REGIONS: Region[] = [
   {code: 'IN', label: 'India',         currency: 'INR', symbol: '₹',  locale: 'en-IN', rate: 88,   step: 500},
   {code: 'GB', label: 'United Kingdom',currency: 'GBP', symbol: '£',  locale: 'en-GB', rate: 0.79, step: 10},
   // en-IE, not de-DE: the site is English-only, and German grouping renders
-  // €1.840 — which an English reader parses as 1.84.
+  // €1.840, which an English reader parses as 1.84.
   {code: 'EU', label: 'Europe',        currency: 'EUR', symbol: '€',  locale: 'en-IE', rate: 0.92, step: 10},
   {code: 'CA', label: 'Canada',        currency: 'CAD', symbol: 'CA$',locale: 'en-CA', rate: 1.36, step: 10},
   {code: 'AU', label: 'Australia',     currency: 'AUD', symbol: 'A$', locale: 'en-AU', rate: 1.52, step: 10},
@@ -58,7 +58,7 @@ export const REGIONS: Region[] = [
   {code: 'AE', label: 'UAE',           currency: 'AED', symbol: 'AED',locale: 'en-AE', rate: 3.67, step: 10},
 ];
 
-export const DEFAULT_REGION = REGIONS[0]; // USD — also what SSR renders.
+export const DEFAULT_REGION = REGIONS[0]; // USD, also what SSR renders.
 
 const STORAGE_KEY = 'zpoa.region';
 

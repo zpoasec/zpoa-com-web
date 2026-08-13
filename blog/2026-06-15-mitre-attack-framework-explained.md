@@ -17,11 +17,11 @@ MITRE ATT&CK is a collection of real-world adversary behaviors observed across m
 
 ## Key Components of the Framework
 
-**Tactics** — the goals attackers aim to achieve, such as initial access, privilege escalation, credential access, and data exfiltration.
+**Tactics:** the goals attackers aim to achieve, such as initial access, privilege escalation, credential access, and data exfiltration.
 
-**Techniques** — the specific methods used to accomplish those goals, including phishing, command execution, and exploitation of software vulnerabilities.
+**Techniques:** the specific methods used to accomplish those goals, including phishing, command execution, and exploitation of software vulnerabilities.
 
-**Mitigations** — recommended security controls and defensive measures organizations can implement to reduce risk.
+**Mitigations:** recommended security controls and defensive measures organizations can implement to reduce risk.
 
 ## Benefits for Security Teams
 

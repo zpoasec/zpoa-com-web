@@ -5,7 +5,7 @@ import type {ReactNode} from 'react';
  *
  * Emoji flags are not an option: Windows ships no glyphs for them. Segoe UI
  * Emoji deliberately omits country flags, so a browser there falls back to
- * rendering the two regional-indicator letters as plain text — 🇮🇳 becomes
+ * rendering the two regional-indicator letters as plain text, so 🇮🇳 becomes
  * "IN", which next to a country code produced a chip reading "IN IN".
  *
  * These are deliberately coarse. At 16px the detail in a maple leaf or a

@@ -19,7 +19,7 @@ const base = {
 };
 
 const paths: Record<string, ReactNode> = {
-  // Detect — radar sweep
+  // Detect: radar sweep
   detect: (
     <>
       <circle cx="12" cy="12" r="9" />
@@ -28,7 +28,7 @@ const paths: Record<string, ReactNode> = {
       <circle cx="16.4" cy="8.4" r="1.3" fill="currentColor" stroke="none" />
     </>
   ),
-  // Comply — checklist clipboard
+  // Comply: checklist clipboard
   comply: (
     <>
       <path d="M9 4.5h6M9 4.5a1.5 1.5 0 0 0-1.5 1.5v.5h9V6A1.5 1.5 0 0 0 15 4.5" />
@@ -37,7 +37,7 @@ const paths: Record<string, ReactNode> = {
       <path d="M8.4 17h7.2" />
     </>
   ),
-  // Discover — magnifier over grid
+  // Discover: magnifier over grid
   discover: (
     <>
       <circle cx="10.8" cy="10.8" r="6.3" />
@@ -45,14 +45,14 @@ const paths: Record<string, ReactNode> = {
       <path d="M8.2 10.8h5.2M10.8 8.2v5.2" />
     </>
   ),
-  // Armor — cloud shield
+  // Armor: cloud shield
   armor: (
     <>
       <path d="M12 3.4 5.2 6v5.4c0 4.2 2.9 8.1 6.8 9.2 3.9-1.1 6.8-5 6.8-9.2V6z" />
       <path d="M9.2 12.1l2 2 3.6-3.8" />
     </>
   ),
-  // Fortress — keyed identity
+  // Fortress: keyed identity
   fortress: (
     <>
       <circle cx="9.6" cy="8.6" r="3.4" />
@@ -61,7 +61,7 @@ const paths: Record<string, ReactNode> = {
       <path d="M16.6 17.6V21M15.2 19.6h2.8" />
     </>
   ),
-  // Monitor — activity on a screen
+  // Monitor: activity on a screen
   monitor: (
     <>
       <rect x="3" y="4.6" width="18" height="12.4" rx="1.8" />
@@ -69,7 +69,7 @@ const paths: Record<string, ReactNode> = {
       <path d="M9.4 20.4h5.2M12 17v3.4" />
     </>
   ),
-  // Neural Mesh — connected nodes
+  // Neural Mesh: connected nodes
   neural: (
     <>
       <circle cx="12" cy="5.4" r="2.1" />
@@ -79,14 +79,14 @@ const paths: Record<string, ReactNode> = {
       <path d="M12 7.5v2.9M10.7 13.2 6.9 15.5M13.3 13.2l3.8 2.3M7.4 16.6h9.2" />
     </>
   ),
-  // AI Security — shielded spark
+  // AI Security: shielded spark
   aisec: (
     <>
       <path d="M12 3.4 5.6 5.8v5.1c0 3.9 2.7 7.6 6.4 8.7 3.7-1.1 6.4-4.8 6.4-8.7V5.8z" />
       <path d="M12 8.2l1.1 2.4 2.4 1.1-2.4 1.1L12 15.2l-1.1-2.4L8.5 11.7l2.4-1.1z" />
     </>
   ),
-  // Zypher VPN — shielded mesh of peers
+  // Zypher VPN: shielded mesh of peers
   vpn: (
     <>
       <path d="M12 3.2 5.4 5.6v5.2c0 4 2.8 7.8 6.6 8.9 3.8-1.1 6.6-4.9 6.6-8.9V5.6z" />
@@ -96,7 +96,7 @@ const paths: Record<string, ReactNode> = {
       <path d="M11.2 10.4 9.8 12.8M12.8 10.4l1.4 2.4M10.4 14h3.2" />
     </>
   ),
-  // Service Hub — catalogue tiles with a request arrow
+  // Service Hub: catalogue tiles with a request arrow
   svchub: (
     <>
       <rect x="3.6" y="4.2" width="6.4" height="6" rx="1.2" />
@@ -112,7 +112,7 @@ export function ModuleIcon({name}: {name: string}): ReactNode {
 }
 
 const problemPaths: Record<string, ReactNode> = {
-  // Fragmented stack — disconnected layers
+  // Fragmented stack: disconnected layers
   stack: (
     <>
       <rect x="3.2" y="4" width="7" height="5.4" rx="1.2" />
@@ -122,7 +122,7 @@ const problemPaths: Record<string, ReactNode> = {
       <path d="M11.2 6.7h1.6M11.2 17.3h1.6M6.7 11.1v2.2M17.3 11.1v2.2" strokeDasharray="1.6 2" />
     </>
   ),
-  // Machine identity — robot / token
+  // Machine identity: robot / token
   identity: (
     <>
       <rect x="4.4" y="7.6" width="15.2" height="11" rx="2.2" />
@@ -133,7 +133,7 @@ const problemPaths: Record<string, ReactNode> = {
       <path d="M9.4 15.6h5.2" />
     </>
   ),
-  // Ungoverned AI — prompt leaving the perimeter
+  // Ungoverned AI: prompt leaving the perimeter
   ai: (
     <>
       <path d="M4 6.2h9.4M4 10.4h6.6M4 14.6h9.4" />

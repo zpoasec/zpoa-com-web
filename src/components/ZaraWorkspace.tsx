@@ -9,7 +9,7 @@ import TypingPrompt from './TypingPrompt';
  * Modelled on the shipping panel: an activity bar, a chat list, the
  * conversation as an editor tab, and the composer.
  *
- * The chat list cycles, and the conversation follows it — previously the rail
+ * The chat list cycles, and the conversation follows it. Previously the rail
  * highlighted "How do I add an identity?" while the transcript showed VPN
  * devices, which is a detail a prospect notices. Each chat now owns its own
  * exchange.
@@ -164,7 +164,7 @@ export default function ZaraWorkspace(): ReactNode {
 
       <div className="zw-bar">
         <i /><i /><i />
-        <span className="zw-bar__t">Zara — Zpoa Workspace</span>
+        <span className="zw-bar__t">Zara · Zpoa Workspace</span>
       </div>
 
       <div className="zw-frame">
@@ -222,7 +222,7 @@ export default function ZaraWorkspace(): ReactNode {
               <span className="zw-send" aria-hidden="true">➤</span>
             </div>
             <p className="zw-hint">
-              Zara can query identities, access, threats, VPN &amp; more — or analyse an attached
+              Zara can query identities, access, threats, VPN &amp; more, or analyse an attached
               file or image.
             </p>
           </div>

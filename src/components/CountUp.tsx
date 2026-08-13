@@ -23,7 +23,7 @@ type Props = {
   className?: string;
 };
 
-// easeOutExpo — fast start, long settle. Reads as "landing on" a figure.
+// easeOutExpo: fast start, long settle. Reads as "landing on" a figure.
 const ease = (t: number): number => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
 
 export default function CountUp({

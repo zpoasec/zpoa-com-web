@@ -57,6 +57,6 @@ A Remote Access VPN looks simple from the user's side: click connect, get access
 
 ## Schedule an Appointment with ZPOA
 
-Whether you're evaluating managed SIEM services or trying to right-size an in-house SOC, the platform you build on matters as much as who's staffing it. At [ZPOA](https://www.zpoa.com), we help organizations unify detection, compliance, and identity governance onto a single platform — reducing the operational load either model has to carry.
+Whether you're evaluating managed SIEM services or trying to right-size an in-house SOC, the platform you build on matters as much as who's staffing it. At [ZPOA](https://www.zpoa.com), we help organizations unify detection, compliance, and identity governance onto a single platform, reducing the operational load either model has to carry.
 
 Explore [Zypher VPN](https://www.zpoa.com/cyber-vpn) to secure remote access with a self-hosted, zero-trust network solution.

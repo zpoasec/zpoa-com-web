@@ -3,7 +3,7 @@ slug: client-to-site-vpn-remote-access-security
 title: "Client-to-Site VPN: The Quiet Backbone of Remote Access Security"
 authors: [zpoa-team]
 tags: [security]
-description: "How Client-to-Site VPN quietly secures a remote workforce — authentication, policy-based access, split tunneling, and the operational housekeeping that determines whether it actually holds up at scale."
+description: "How Client-to-Site VPN quietly secures a remote workforce: authentication, policy-based access, split tunneling, and the operational housekeeping that determines whether it actually holds up at scale."
 keywords: [client-to-site vpn, remote access security, vpn gateway, split tunneling, certificate-based authentication, device posture, zypher vpn]
 ---
 
@@ -35,6 +35,6 @@ As remote and hybrid work continue shaping how companies operate, the Client-to-
 
 ## Schedule an Appointment with ZPOA
 
-Whether you're evaluating managed SIEM services or trying to right-size an in-house SOC, the platform you build on matters as much as who's staffing it. At [ZPOA](https://www.zpoa.com), we help organizations unify detection, compliance, and identity governance onto a single platform — reducing the operational load either model has to carry.
+Whether you're evaluating managed SIEM services or trying to right-size an in-house SOC, the platform you build on matters as much as who's staffing it. At [ZPOA](https://www.zpoa.com), we help organizations unify detection, compliance, and identity governance onto a single platform, reducing the operational load either model has to carry.
 
 Explore [Zypher VPN](https://www.zpoa.com/cyber-vpn) to secure remote access with a self-hosted, zero-trust network solution.

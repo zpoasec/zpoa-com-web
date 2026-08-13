@@ -1,10 +1,10 @@
 /* ============================================================================
-   Z Shield — marketing home styles.
+   Z Shield: marketing home styles.
    Loaded after custom.css so these win on shared selectors.
 
    Palette note: the previous accent was #0052CC (Atlassian's blue) under a
    comment reading "Webex-inspired". Replaced with a violet→cyan pair taken
-   from the Zpoa mark — distinctive, and legible on both grounds.
+   from the Zpoa mark: distinctive, and legible on both grounds.
    ========================================================================= */
 
 :root {
@@ -40,7 +40,7 @@
   --zs-ok:          #5CD79B;
 }
 
-/* ══ NAVBAR — Products dropdown ══════════════════════════════════════════
+/* ══ NAVBAR: Products dropdown ══════════════════════════════════════════
    Two-line menu entries (label + description). All colours run through Infima
    tokens so the menu inverts with the theme instead of staying light.
    ────────────────────────────────────────────────────────────────────── */
@@ -56,7 +56,7 @@
 .products-split-menu .dropdown__link:hover .products-split-item { color: var(--zpoa-blue); }
 .products-split-desc { font-size: 0.76rem; color: var(--zpoa-gray-500); line-height: 1.4; }
 
-/* ══ ZYPHER VPN — admin vs employee ══════════════════════════════════════
+/* ══ ZYPHER VPN: admin vs employee ══════════════════════════════════════
    Both mockups keep the product's own dark chrome in either site theme: the
    workspace and the client are dark applications, so rendering them light
    would misrepresent them.
@@ -118,7 +118,7 @@
 /* ── admin: devices panel ── */
 .cvpn-2s-body { padding: 15px 17px 17px; }
 
-/* panel header — icon tile, title, subtitle */
+/* panel header: icon tile, title, subtitle */
 .cvpn-2s-ph { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 15px; }
 .cvpn-2s-ph-ic {
   width: 32px; height: 32px; border-radius: 8px; flex: none; display: grid; place-items: center;
@@ -173,7 +173,7 @@
 .cvpn-2s-table .mono { font-family: var(--ifm-font-family-monospace); font-size: 0.64rem; color: #93A2BE; }
 .cvpn-2s-table .dim { color: #6E7C99; }
 
-/* group header rows — "Gateways 1", "Devices 5" */
+/* group header rows: "Gateways 1", "Devices 5" */
 .cvpn-2s-table tr.grp td {
   background: rgba(255,255,255,0.028); padding: 6px 8px;
   font-size: 0.56rem; letter-spacing: 0.09em; text-transform: uppercase;
@@ -330,7 +330,7 @@
 
 /* ══ WORKSPACE SHOWCASE (rotating panels) ════════════════════════════════
    Full-bleed inside its container so the frame lands near 16:9 instead of the
-   near-square the side-by-side layout forced. Dark in both site themes — the
+   near-square the side-by-side layout forced. Dark in both site themes, the
    workspace is a dark application.
    ────────────────────────────────────────────────────────────────────── */
 /* Capped so the frame sits near 16:9. Left full-width it stretched to ~2.6:1,
@@ -445,7 +445,7 @@
 .ws-t td.amber { color: #F5C451; }
 .ws-t td.cyan { color: #6FB2F5; }
 .ws-t td.green { color: #5CD79B; }
-/* Section rows inside the table body — "Gateways 1", "Devices 5" */
+/* Section rows inside the table body: "Gateways 1", "Devices 5" */
 .ws-t tr.grp td {
   background: rgba(255,255,255,0.028); padding: 6px 9px;
   font-size: 0.54rem; letter-spacing: 0.09em; text-transform: uppercase;
@@ -534,7 +534,7 @@
   .ws-tab { padding: 11px 12px; }
 }
 
-/* ══ FEATURES — spec panels ══════════════════════════════════════════════
+/* ══ FEATURES: spec panels ══════════════════════════════════════════════
    Replaces the stock photograph that sat beside each module. A spec sheet
    carries information; a picture of a datacentre does not.
    ────────────────────────────────────────────────────────────────────── */
@@ -615,7 +615,7 @@ main.zpoa-blog-list article .markdown img {
   border-radius: 9px;
 }
 
-/* Filtered listings (tags / pagination / archive) — give the page its own
+/* Filtered listings (tags / pagination / archive): give the page its own
    heading block instead of dropping straight into posts. */
 main.zpoa-blog-list.is-filtered { padding-top: 2.6rem; }
 main.zpoa-blog-list.is-filtered > header h1 {
@@ -633,7 +633,7 @@ main.zpoa-blog-list.is-filtered > header a {
 main.zpoa-blog-list.is-filtered > header a:hover { text-decoration: underline; }
 [data-theme='dark'] main.zpoa-blog-list.is-filtered > header a { color: #A78BFA; }
 
-/* Sidebar of recent posts — quieter, so it stops competing with the list. */
+/* Sidebar of recent posts: quieter, so it stops competing with the list. */
 .blog-wrapper aside [class*='sidebarItemTitle'] {
   font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--zs-fg-faint); font-weight: 700;
@@ -659,7 +659,7 @@ main.zpoa-blog-list article .margin-vert--md,
    That puts the text block's centre at ~54% of the viewport, which is what made
    the page read as lopsided. Long-form blogs (Stripe, Linear, Vercel) drop the
    rails entirely and centre a single measured column; that is what this does.
-   List pages are untouched — they keep their sidebar.
+   List pages are untouched: they keep their sidebar.
    ────────────────────────────────────────────────────────────────────── */
 .blog-post-page .row > aside.col--3,
 .blog-post-page .row > .col--2 { display: none; }
@@ -827,7 +827,7 @@ main.zpoa-blog-list a[class*='tag_']:hover {
 /* ══ SCROLLBAR ═══════════════════════════════════════════════════════════
    Hidden everywhere; the progress meter under the navbar carries the position
    cue instead. Wheel, trackpad, keyboard, and touch scrolling are untouched.
-   !important is required — Infima sets its own scrollbar rules at equal
+   !important is required: Infima sets its own scrollbar rules at equal
    specificity, same reason the workspace extension needs it.
    ────────────────────────────────────────────────────────────────────── */
 html, body, * {
@@ -899,8 +899,8 @@ html, body, * {
   .zs-hero__glow, .zs-dot, .zs-caret, .zs-gauge__val { animation: none !important; }
   .zs-progress { transition: none !important; }
 
-  /* The mockups still cycle — the content is information, and rotation is
-     pausable by hovering — but the crossfade itself is the motion, so panels
+  /* The mockups still cycle, since the content is information, and rotation is
+     pausable by hovering, but the crossfade itself is the motion, so panels
      swap instantly instead of sliding and fading. */
   .ws-panel, .zw-thread, .zw-chat, .ws-tab {
     transition: none !important;
@@ -911,7 +911,7 @@ html, body, * {
 
 /* ══ HERO ════════════════════════════════════════════════════════════════
    Themed through tokens so light mode gets a genuine light hero rather than a
-   dark slab on a white page. The dashboard mockup inside stays dark in both —
+   dark slab on a white page. The dashboard mockup inside stays dark in both,
    it is a dark application, and recolouring it would misrepresent the product.
    ────────────────────────────────────────────────────────────────────── */
 :root {
@@ -1054,7 +1054,7 @@ html, body, * {
 /* ══ PRODUCT MOCKUP ══════════════════════════════════════════════════════
    A structural stand-in for the real Command Center, built from the live
    dashboard's own layout. Replace with a cropped 2x screenshot of a seeded
-   demo tenant when one exists — see the workspace showcase plan.
+   demo tenant when one exists: see the workspace showcase plan.
    ────────────────────────────────────────────────────────────────────── */
 .zs-shot {
   position: relative;
@@ -1220,7 +1220,7 @@ html, body, * {
   display: block; text-decoration: none; font-size: 0.55rem; color: #616E8A; margin-top: 3px;
 }
 
-/* The looping sheen that used to sweep the mock was removed — an effect that
+/* The looping sheen that used to sweep the mock was removed, an effect that
    repeats forever draws the eye away from the copy and reads as decoration
    rather than product. Motion here is now one-shot on entry only. */
 
@@ -1286,7 +1286,7 @@ html, body, * {
 [data-theme='dark'] .zs-mod__link { color: #A78BFA; }
 [data-theme='dark'] .zs-mod__link:hover { color: #C4B5FD; }
 
-/* per-module icon tints — light then dark */
+/* per-module icon tints: light then dark */
 .zs-i-vpn      { background: #E4F7F3; color: #0D7A70; }
 .zs-i-fortress { background: #FEF2E3; color: #B4740B; }
 .zs-i-svchub   { background: #FFF0E6; color: #C25708; }
@@ -1311,7 +1311,7 @@ html, body, * {
    The transcript keeps the product's dark chrome in both site themes; the copy
    column follows the page.
    ────────────────────────────────────────────────────────────────────── */
-/* Copy above, full-width console below, capability points underneath — the
+/* Copy above, full-width console below, capability points underneath; the
    showcase needs the whole container to stay screen-shaped. */
 .zs-zara-head { max-width: 760px; margin: 0 auto 2.4rem; text-align: center; }
 .zs-zara-head .zs-lede { margin-left: auto; margin-right: auto; }
@@ -1361,7 +1361,7 @@ html, body, * {
 .zs-msg.bot b { color: #fff; font-weight: 600; }
 .zs-msg.bot em { font-style: normal; color: #A78BFA; }
 
-/* Tool-call trace — this is the part that proves it queried real data. */
+/* Tool-call trace: this is the part that proves it queried real data. */
 .zs-tools { display: flex; flex-direction: column; gap: 5px; }
 .zs-tool {
   display: flex; align-items: center; gap: 9px;
@@ -1406,9 +1406,9 @@ html, body, * {
 }
 
 /* ══ ZARA WORKSPACE SCREEN ═══════════════════════════════════════════════
-   Dark in both site themes — it is a dark application.
+   Dark in both site themes: it is a dark application.
    ────────────────────────────────────────────────────────────────────── */
-/* A card carrying a workspace mockup spans both grid columns — the frame needs
+/* A card carrying a workspace mockup spans both grid columns; the frame needs
    ~700px and a half-width card is ~400px, which squeezed the rails and clipped
    the tables. */
 .allp-card--wide { grid-column: 1 / -1; }
@@ -1580,7 +1580,7 @@ html, body, * {
   color: #A9B6D0;
 }
 .zw-pro {
-  /* margin-left:auto is gone — .zw-typed now takes the free space, so the
+  /* margin-left:auto is gone; .zw-typed now takes the free space, so the
      badge no longer has to be pushed right by an auto margin. */
   flex: none; font-size: 0.53rem; font-weight: 700; letter-spacing: 0.08em;
   color: #A78BFA; background: rgba(109,74,255,0.2);
@@ -1600,8 +1600,8 @@ html, body, * {
 }
 
 /* ══ METRICS BAND ════════════════════════════════════════════════════════ */
-/* The band stays a dark inset in both themes — it is the page's one deliberate
-   contrast beat — but light mode gets a softer indigo so it reads as a panel
+/* The band stays a dark inset in both themes: it is the page's one deliberate
+   contrast beat, but light mode gets a softer indigo so it reads as a panel
    rather than a hole punched in the page. */
 .zs-band {
   background: linear-gradient(150deg, #1E1B4B 0%, #2A1E63 52%, #17143A 100%);
