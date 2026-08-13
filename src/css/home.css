@@ -771,7 +771,12 @@ main.zpoa-blog-list a[class*='tag_']:hover {
   font-size: 0.78rem; color: var(--zpoa-text);
   cursor: default; user-select: none;
 }
-.zpoa-region__flag { font-size: 0.95rem; line-height: 1; }
+/* SVG, not an emoji: Windows renders no flag glyphs and falls back to the
+   regional-indicator letters, which made the chip read "IN IN". */
+.zpoa-region__flag {
+  display: block; width: 18px; height: auto; flex: none;
+  border-radius: 2px;
+}
 .zpoa-region__code { font-weight: 600; letter-spacing: 0.02em; }
 .zpoa-region__mobile-label { font-weight: 600; }
 

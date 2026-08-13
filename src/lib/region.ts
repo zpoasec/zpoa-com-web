@@ -18,10 +18,9 @@
  */
 
 export type Region = {
-  /** ISO 3166-1 alpha-2, also used as the storage key. */
+  /** ISO 3166-1 alpha-2, also used as the storage key and the Flag lookup. */
   code: string;
   label: string;
-  flag: string;
   currency: string;
   symbol: string;
   /** BCP 47 locale, used for digit grouping (1,00,000 in en-IN vs 100,000). */
@@ -47,16 +46,16 @@ export type Region = {
 export const RATES_REVIEWED = '2026-08';
 
 export const REGIONS: Region[] = [
-  {code: 'US', label: 'United States', flag: '🇺🇸', currency: 'USD', symbol: '$',  locale: 'en-US', rate: 1,    step: 1},
-  {code: 'IN', label: 'India',         flag: '🇮🇳', currency: 'INR', symbol: '₹',  locale: 'en-IN', rate: 88,   step: 500},
-  {code: 'GB', label: 'United Kingdom',flag: '🇬🇧', currency: 'GBP', symbol: '£',  locale: 'en-GB', rate: 0.79, step: 10},
+  {code: 'US', label: 'United States', currency: 'USD', symbol: '$',  locale: 'en-US', rate: 1,    step: 1},
+  {code: 'IN', label: 'India',         currency: 'INR', symbol: '₹',  locale: 'en-IN', rate: 88,   step: 500},
+  {code: 'GB', label: 'United Kingdom',currency: 'GBP', symbol: '£',  locale: 'en-GB', rate: 0.79, step: 10},
   // en-IE, not de-DE: the site is English-only, and German grouping renders
   // €1.840 — which an English reader parses as 1.84.
-  {code: 'EU', label: 'Europe',        flag: '🇪🇺', currency: 'EUR', symbol: '€',  locale: 'en-IE', rate: 0.92, step: 10},
-  {code: 'CA', label: 'Canada',        flag: '🇨🇦', currency: 'CAD', symbol: 'CA$',locale: 'en-CA', rate: 1.36, step: 10},
-  {code: 'AU', label: 'Australia',     flag: '🇦🇺', currency: 'AUD', symbol: 'A$', locale: 'en-AU', rate: 1.52, step: 10},
-  {code: 'SG', label: 'Singapore',     flag: '🇸🇬', currency: 'SGD', symbol: 'S$', locale: 'en-SG', rate: 1.34, step: 10},
-  {code: 'AE', label: 'UAE',           flag: '🇦🇪', currency: 'AED', symbol: 'AED',locale: 'en-AE', rate: 3.67, step: 10},
+  {code: 'EU', label: 'Europe',        currency: 'EUR', symbol: '€',  locale: 'en-IE', rate: 0.92, step: 10},
+  {code: 'CA', label: 'Canada',        currency: 'CAD', symbol: 'CA$',locale: 'en-CA', rate: 1.36, step: 10},
+  {code: 'AU', label: 'Australia',     currency: 'AUD', symbol: 'A$', locale: 'en-AU', rate: 1.52, step: 10},
+  {code: 'SG', label: 'Singapore',     currency: 'SGD', symbol: 'S$', locale: 'en-SG', rate: 1.34, step: 10},
+  {code: 'AE', label: 'UAE',           currency: 'AED', symbol: 'AED',locale: 'en-AE', rate: 3.67, step: 10},
 ];
 
 export const DEFAULT_REGION = REGIONS[0]; // USD — also what SSR renders.

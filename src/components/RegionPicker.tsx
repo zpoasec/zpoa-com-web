@@ -1,6 +1,7 @@
 import type {ReactNode} from 'react';
 import {REGIONS} from '@site/src/lib/region';
 import {useRegion} from '@site/src/lib/useRegion';
+import Flag from './Flag';
 
 /**
  * Region display.
@@ -33,7 +34,7 @@ export default function RegionPicker(props: {mobile?: boolean; inline?: boolean}
           aria-label="Show prices for region">
           {REGIONS.map((r) => (
             <option key={r.code} value={r.code}>
-              {r.flag} {r.label} · {r.currency}
+              {r.label} · {r.currency}
             </option>
           ))}
         </select>
@@ -49,7 +50,8 @@ export default function RegionPicker(props: {mobile?: boolean; inline?: boolean}
     return (
       <li className="menu__list-item">
         <span className="menu__link zpoa-region__mobile-label">
-          Region — {region.flag} {region.label}
+          <Flag code={region.code} className="zpoa-region__flag" />
+          {' '}Region — {region.label}
         </span>
       </li>
     );
@@ -59,7 +61,7 @@ export default function RegionPicker(props: {mobile?: boolean; inline?: boolean}
     <span
       className="navbar__item zpoa-region"
       title={`${region.label} — prices shown in ${region.currency}`}>
-      <span className="zpoa-region__flag" aria-hidden="true">{region.flag}</span>
+      <Flag code={region.code} className="zpoa-region__flag" />
       <span className="zpoa-region__code">{region.code}</span>
     </span>
   );
