@@ -2224,6 +2224,65 @@ body {
   opacity: 1 !important;
 }
 
+/* Calendly embed: placeholder shown while the third-party iframe arrives.
+   It sits behind the widget, so nothing moves when the real card lands. */
+.cal-wrap {
+  position: relative;
+  min-height: 1150px;
+}
+
+.cal-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  background: var(--ifm-background-surface-color);
+}
+
+.cal-loading p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.cal-spinner {
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: cal-spin 0.7s linear infinite;
+}
+
+@keyframes cal-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* The iframe is the signal that Calendly is ready. Hiding the placeholder in
+   CSS rather than JS keeps this off the hydration path entirely. */
+.cal-wrap:has(iframe) .cal-loading {
+  display: none;
+}
+
+.cal-direct {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cal-spinner {
+    animation: none;
+    border-top-color: var(--ifm-color-emphasis-300);
+  }
+}
+
 .signup-form {
   display: flex;
   flex-direction: column;
