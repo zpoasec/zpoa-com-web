@@ -1,35 +1,24 @@
-import {useState, type ReactNode} from 'react';
+import {type ReactNode} from 'react';
+import {useAutoRotate} from '@site/src/lib/useAutoRotate';
 import {RailIcon, RAIL_ORDER, RAIL_BOTTOM} from './icons';
-
-/**
- * Screenshot swap.
- *
- * The built mockup renders by default because no capture exists yet. Once a real
- * 2x screenshot is saved to the path below, flip USE_SHOT to true — server-side
- * rendering then emits the image directly, and a client-side onError still falls
- * back to the mockup if the file is ever missing.
- *
- * Leaving USE_SHOT true with no file on disk would ship an <img> in the SSR HTML
- * that only resolves after JS runs, so it is opt-in rather than automatic.
- */
-const SHOT = '/img/product/zara-workspace.png';
-const USE_SHOT = false;
+import TypingPrompt from './TypingPrompt';
 
 /**
  * Zara inside the Zpoa Workspace.
  *
- * Modelled on the shipping panel: a chat list rail, the conversation as an
- * editor tab with ZARA / All scopes, user turns rendered as section bars,
- * answers with suggested follow-ups, and the composer with its PRO toggle.
+ * Modelled on the shipping panel: an activity bar, a chat list, the
+ * conversation as an editor tab, and the composer.
  *
- * All names, hostnames, and identifiers are fictional.
+ * The chat list cycles, and the conversation follows it — previously the rail
+ * highlighted "How do I add an identity?" while the transcript showed VPN
+ * devices, which is a detail a prospect notices. Each chat now owns its own
+ * exchange.
+ *
+ * All names, hostnames and identifiers are fictional.
  */
 
-const CHATS = [
-  {t: 'zara-fortress-test', m: '2h · 2 msg'},
-  {t: 'How do I add an identity?', m: '19h · 24 msg', on: true},
-  {t: 'List me VPN devices', m: '19h · 4 msg'},
-];
+const DOMAIN = 'northwind.co';
+const ROTATE_MS = 6500;
 
 const DEVICES = [
   ['firewall-edge', '100.64.13.1', 'linux', 'online', '1 min ago'],
@@ -39,45 +28,146 @@ const DEVICES = [
 ];
 
 const APPROVALS = [
-  ['03136d52-63e7-44f6', 'Mover: A. Silva', 'lifecycle', 'medium', 'pending'],
-  ['4b751385-feef-41e4', 'Joiner: A. Silva', 'lifecycle', 'medium', 'pending'],
-  ['94ed55c7-95ed-4aa4', 'Joiner: A. Silva', 'lifecycle', 'medium', 'pending'],
+  ['03136d52-63e7-44f6', 'Mover: S. Bennett', 'lifecycle', 'medium', 'pending'],
+  ['4b751385-feef-41e4', 'Joiner: S. Bennett', 'lifecycle', 'medium', 'pending'],
+  ['94ed55c7-95ed-4aa4', 'Joiner: S. Bennett', 'lifecycle', 'medium', 'pending'],
 ];
 
 const CHIPS = ["Show today's critical findings", 'What needs immediate attention?', 'Generate executive summary'];
 
 function Chips(): ReactNode {
+  return <div className="zw-chips">{CHIPS.map((c) => <span key={c}>{c}</span>)}</div>;
+}
+
+function Answer({children}: {children: ReactNode}): ReactNode {
   return (
-    <div className="zw-chips">
-      {CHIPS.map((c) => <span key={c}>{c}</span>)}
+    <div className="zw-ans">
+      <i className="zw-bullet" aria-hidden="true" />
+      <div>{children}</div>
     </div>
   );
 }
 
-export default function ZaraWorkspace(): ReactNode {
-  const [useShot, setUseShot] = useState(USE_SHOT);
+/* ── One conversation per chat ───────────────────────────────────────────── */
 
-  if (useShot) {
-    return (
-      <img
-        className="zw-img"
-        src={SHOT}
-        alt="Zara running inside the Zpoa Workspace"
-        loading="lazy"
-        onError={() => setUseShot(false)}
-      />
-    );
-  }
+const CHATS: Array<{t: string; m: string; body: ReactNode}> = [
+  {
+    t: 'zara-fortress-test',
+    m: '2h · 2 msg',
+    body: (
+      <>
+        <div className="zw-turn">list pending approvals for s.bennett</div>
+        <Answer>
+          <p className="zw-sum"><b>S. Bennett has 3 pending approvals:</b></p>
+          <table className="zw-t zw-t--head">
+            <thead>
+              <tr><th>Approval ID</th><th>Title</th><th>Category</th><th>Risk</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              {APPROVALS.map((a) => (
+                <tr key={a[0]}>
+                  <td className="mono">{a[0]}</td><td>{a[1]}</td>
+                  <td className="dim">{a[2]}</td><td className="warn">{a[3]}</td>
+                  <td className="dim">{a[4]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="zw-sum">
+            All are medium risk, not escalated. Approve, reject, or view full details?
+          </p>
+          <Chips />
+        </Answer>
+      </>
+    ),
+  },
+  {
+    t: 'How do I add an identity?',
+    m: '19h · 24 msg',
+    body: (
+      <>
+        <div className="zw-turn">how do I add an identity?</div>
+        <Answer>
+          <p className="zw-sum">
+            Three routes, depending on where the person comes from:
+          </p>
+          <table className="zw-t zw-t--head">
+            <thead><tr><th>Route</th><th>Use when</th><th>Creates</th></tr></thead>
+            <tbody>
+              <tr>
+                <td className="strong">HR sync</td>
+                <td className="dim">The joiner exists in Workday or an HR system</td>
+                <td>Golden record + JML event</td>
+              </tr>
+              <tr>
+                <td className="strong">Directory import</td>
+                <td className="dim">They already have an Entra or Okta account</td>
+                <td>Linked account on the record</td>
+              </tr>
+              <tr>
+                <td className="strong">Manual add</td>
+                <td className="dim">Contractor or vendor, no upstream source</td>
+                <td>Record pending approval</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="zw-sum">
+            Whichever you pick, entitlements attach to the <b>golden record</b>, so a later
+            leaver event revokes every linked account at once. Want me to start one?
+          </p>
+          <Chips />
+        </Answer>
+      </>
+    ),
+  },
+  {
+    t: 'List me VPN devices',
+    m: '19h · 4 msg',
+    body: (
+      <>
+        <div className="zw-turn">list vpn devices</div>
+        <Answer>
+          <table className="zw-t">
+            <tbody>
+              {DEVICES.map((d) => (
+                <tr key={d[0]}>
+                  <td className="mono strong">{d[0]}</td>
+                  <td className="mono">{d[1]}</td>
+                  <td className="dim">{d[2]}</td>
+                  <td className={d[3] === 'online' ? 'ok' : 'dim'}>{d[3]}</td>
+                  <td className="dim">{d[4]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="zw-sum">
+            <b>Summary:</b> 17 online, 8 offline. Mostly Linux and Windows, with a few macOS
+            and mobile devices.
+          </p>
+          <Chips />
+        </Answer>
+      </>
+    ),
+  },
+];
+
+export default function ZaraWorkspace(): ReactNode {
+  const {index: active, setIndex: setActive, ref: wrap, holdProps} =
+    useAutoRotate(CHATS.length, ROTATE_MS);
 
   return (
-    <div className="zw" aria-label="Zara in the Zpoa Workspace">
+    <div
+      className="zw"
+      ref={wrap}
+      aria-label="Zara in the Zpoa Workspace"
+      {...holdProps}>
+
       <div className="zw-bar">
         <i /><i /><i />
         <span className="zw-bar__t">Zara — Zpoa Workspace</span>
       </div>
 
       <div className="zw-frame">
-        {/* activity bar — same containers as the shipping workspace, Zara active */}
         <nav className="zs-rail zw-act" aria-hidden="true">
           <div className="zs-rail__top">
             {RAIL_ORDER.map((n, i) => (
@@ -87,27 +177,28 @@ export default function ZaraWorkspace(): ReactNode {
             ))}
           </div>
           <div className="zs-rail__bot">
-            {RAIL_BOTTOM.map((n) => (
-              <span className="zs-rail__ic" key={n}><RailIcon name={n} /></span>
-            ))}
+            {RAIL_BOTTOM.map((n) => <span className="zs-rail__ic" key={n}><RailIcon name={n} /></span>)}
           </div>
         </nav>
 
-        {/* chat list rail */}
         <aside className="zw-rail">
           <div className="zw-rail__h">Zara: Chats</div>
           <div className="zw-new">+ New chat</div>
           <div className="zw-search">Search chats…</div>
           <div className="zw-day">Today</div>
-          {CHATS.map((c) => (
-            <div className={`zw-chat${c.on ? ' is-on' : ''}`} key={c.t}>
+          {CHATS.map((c, i) => (
+            <button
+              type="button"
+              className={`zw-chat${i === active ? ' is-on' : ''}`}
+              key={c.t}
+              aria-current={i === active}
+              onClick={() => setActive(i)}>
               <b>{c.t}</b>
               <s>{c.m}</s>
-            </div>
+            </button>
           ))}
         </aside>
 
-        {/* conversation */}
         <div className="zw-main">
           <div className="zw-tabs">
             <span className="is-on">✦ Zara</span>
@@ -116,65 +207,17 @@ export default function ZaraWorkspace(): ReactNode {
           </div>
 
           <div className="zw-conv">
-            <div className="zw-turn">list vpn devices</div>
-            <div className="zw-ans">
-              <i className="zw-bullet" aria-hidden="true" />
-              <div>
-                <table className="zw-t">
-                  <tbody>
-                    {DEVICES.map((d) => (
-                      <tr key={d[0]}>
-                        <td className="mono strong">{d[0]}</td>
-                        <td className="mono">{d[1]}</td>
-                        <td className="dim">{d[2]}</td>
-                        <td className={d[3] === 'online' ? 'ok' : 'dim'}>{d[3]}</td>
-                        <td className="dim">{d[4]}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <p className="zw-sum">
-                  <b>Summary:</b> 17 online, 8 offline. Mostly Linux and Windows, with a few macOS
-                  and mobile devices.
-                </p>
-                <Chips />
+            {CHATS.map((c, i) => (
+              <div className={`zw-thread${i === active ? ' is-on' : ''}`} key={c.t} aria-hidden={i !== active}>
+                {c.body}
               </div>
-            </div>
-
-            <div className="zw-turn">list pending approvals for a.silva</div>
-            <div className="zw-ans">
-              <i className="zw-bullet" aria-hidden="true" />
-              <div>
-                <p className="zw-sum"><b>A. Silva has 3 pending approvals:</b></p>
-                <table className="zw-t zw-t--head">
-                  <thead>
-                    <tr><th>Approval ID</th><th>Title</th><th>Category</th><th>Risk</th><th>Status</th></tr>
-                  </thead>
-                  <tbody>
-                    {APPROVALS.map((a) => (
-                      <tr key={a[0]}>
-                        <td className="mono">{a[0]}</td>
-                        <td>{a[1]}</td>
-                        <td className="dim">{a[2]}</td>
-                        <td className="warn">{a[3]}</td>
-                        <td className="dim">{a[4]}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <p className="zw-sum">
-                  All are medium risk, not escalated. Would you like to approve, reject, or view
-                  full details on any of these?
-                </p>
-                <Chips />
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="zw-compose">
             <div className="zw-input">
               <span className="zw-clip" aria-hidden="true">📎</span>
-              Ask Zara anything…
+              <span className="zw-typed"><TypingPrompt /></span>
               <span className="zw-pro">PRO</span>
               <span className="zw-send" aria-hidden="true">➤</span>
             </div>

@@ -1,4 +1,5 @@
-import {useEffect, useRef, useState, type ReactNode} from 'react';
+import {type ReactNode} from 'react';
+import {useAutoRotate} from '@site/src/lib/useAutoRotate';
 import {RailIcon, RAIL_ORDER, RAIL_BOTTOM} from './icons';
 
 /**
@@ -44,37 +45,14 @@ const TABS = [
 ];
 
 export default function ZaraShowcase(): ReactNode {
-  const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const wrap = useRef<HTMLDivElement>(null);
-  const inView = useRef(false);
-
-  useEffect(() => {
-    const el = wrap.current;
-    if (!el) return undefined;
-    const io = new IntersectionObserver(([e]) => { inView.current = e.isIntersecting; }, {threshold: 0.25});
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (paused) return undefined;
-    if (typeof window !== 'undefined'
-      && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
-    const t = setInterval(() => {
-      if (inView.current) setActive((i) => (i + 1) % TABS.length);
-    }, ROTATE_MS);
-    return () => clearInterval(t);
-  }, [paused]);
+  const {index: active, setIndex: setActive, ref: wrap, holdProps, held} =
+    useAutoRotate(TABS.length, ROTATE_MS);
 
   return (
     <div
       className="zw"
       ref={wrap}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={() => setPaused(false)}>
+      {...holdProps}>
 
       <div className="zw-bar">
         <i /><i /><i />
@@ -108,7 +86,7 @@ export default function ZaraShowcase(): ReactNode {
                 {t.icon}<span>{t.label}</span>
               </button>
             ))}
-            <span className="ws-tabs__prog zw-prog" key={active} data-paused={paused || undefined} />
+            <span className="ws-tabs__prog zw-prog" key={active} data-paused={held || undefined} />
           </div>
 
           <div className="ws-stage zw-stage">
@@ -133,9 +111,9 @@ function Head({t, s}: {t: string; s: string}): ReactNode {
 
 /* ── 1. Conversation ────────────────────────────────────────────────────── */
 const APPROVALS = [
-  ['03136d52-63e7-44f6', 'Mover: a.silva', 'lifecycle', 'medium', 'pending'],
-  ['4b751385-feef-41e4', 'Joiner: k.tanaka', 'lifecycle', 'medium', 'pending'],
-  ['94ed55c7-95ed-4aa4', 'Joiner: p.novak', 'lifecycle', 'low', 'pending'],
+  ['03136d52-63e7-44f6', 'Mover: s.bennett', 'lifecycle', 'medium', 'pending'],
+  ['4b751385-feef-41e4', 'Joiner: m.harper', 'lifecycle', 'medium', 'pending'],
+  ['94ed55c7-95ed-4aa4', 'Joiner: t.morgan', 'lifecycle', 'low', 'pending'],
 ];
 
 function Conversation(): ReactNode {
@@ -153,9 +131,9 @@ function Conversation(): ReactNode {
           <table className="zw-t zw-t--head">
             <thead><tr><th>Control</th><th>Gap</th><th>Owner</th><th>Also</th></tr></thead>
             <tbody>
-              <tr><td className="strong">CC6.1</td><td>MFA not enforced for 4 admins</td><td className="mono">a.silva</td><td className="dim">—</td></tr>
-              <tr><td className="strong">CC6.6</td><td>S3 bucket publicly readable</td><td className="mono">k.tanaka</td><td className="warn">Armor finding</td></tr>
-              <tr><td className="strong">CC7.2</td><td>CloudTrail off in eu-west-1</td><td className="mono">p.novak</td><td className="dim">—</td></tr>
+              <tr><td className="strong">CC6.1</td><td>MFA not enforced for 4 admins</td><td className="mono">s.bennett</td><td className="dim">—</td></tr>
+              <tr><td className="strong">CC6.6</td><td>S3 bucket publicly readable</td><td className="mono">m.harper</td><td className="warn">Armor finding</td></tr>
+              <tr><td className="strong">CC7.2</td><td>CloudTrail off in eu-west-1</td><td className="mono">t.morgan</td><td className="dim">—</td></tr>
             </tbody>
           </table>
           <p className="zw-sum">CC6.6 is on an active attack path. Approve a fix?</p>

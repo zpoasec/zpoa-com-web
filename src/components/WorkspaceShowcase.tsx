@@ -1,4 +1,5 @@
-import {useEffect, useRef, useState, type ReactNode} from 'react';
+import {type ReactNode} from 'react';
+import {useAutoRotate} from '@site/src/lib/useAutoRotate';
 
 /**
  * Rotating view of the Zpoa Workspace connectivity panels.
@@ -52,42 +53,14 @@ const TABS: Tab[] = [
 const ROTATE_MS = 5200;
 
 export default function WorkspaceShowcase(): ReactNode {
-  const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const wrap = useRef<HTMLDivElement>(null);
-  const inView = useRef(false);
-
-  // Only rotate while the component is on screen and not being interacted with.
-  useEffect(() => {
-    const el = wrap.current;
-    if (!el) return undefined;
-    const io = new IntersectionObserver(
-      ([e]) => { inView.current = e.isIntersecting; },
-      {threshold: 0.25},
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (paused) return undefined;
-    if (typeof window !== 'undefined'
-      && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
-
-    const t = setInterval(() => {
-      if (inView.current) setActive((i) => (i + 1) % TABS.length);
-    }, ROTATE_MS);
-    return () => clearInterval(t);
-  }, [paused]);
+  const {index: active, setIndex: setActive, ref: wrap, holdProps, held} =
+    useAutoRotate(TABS.length, ROTATE_MS);
 
   return (
     <div
       className="ws-shot"
       ref={wrap}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={() => setPaused(false)}>
+      {...holdProps}>
 
       <div className="ws-bar">
         <i /><i /><i />
@@ -107,7 +80,7 @@ export default function WorkspaceShowcase(): ReactNode {
             <span>{t.label}</span>
           </button>
         ))}
-        <span className="ws-tabs__prog" key={active} data-paused={paused || undefined} />
+        <span className="ws-tabs__prog" key={active} data-paused={held || undefined} />
       </div>
 
       <div className="ws-stage">
@@ -143,11 +116,11 @@ const GATEWAYS = [
 ];
 
 const DEVICES = [
-  {n: 'DESKTOP-4K2P9L', o: 'r.mehta', i: 'RM', ip: '100.64.0.6', c: 'Direct', nat: '—', os: 'windows', s: 'just now'},
-  {n: 'LAPTOP-7XQ2NB', o: 'a.silva', i: 'AS', ip: '100.64.0.5', c: 'Direct', nat: '—', os: 'windows', s: 'just now'},
-  {n: 'MBP-DESIGN-02', o: 'k.tanaka', i: 'KT', ip: '100.64.0.2', c: 'Direct', nat: '—', os: 'macos', s: 'just now'},
-  {n: 'WS-FINANCE-11', o: 'l.dubois', i: 'LD', ip: '100.64.0.4', c: 'Offline', nat: '—', os: 'windows', s: '3d ago'},
-  {n: 'LAPTOP-9HTR4M', o: 'p.novak', i: 'PN', ip: '100.64.0.3', c: 'Offline', nat: '—', os: 'windows', s: '1d ago'},
+  {n: 'DESKTOP-4K2P9L', o: 'j.walker', i: 'JW', ip: '100.64.0.6', c: 'Direct', nat: '—', os: 'windows', s: 'just now'},
+  {n: 'LAPTOP-7XQ2NB', o: 's.bennett', i: 'SB', ip: '100.64.0.5', c: 'Direct', nat: '—', os: 'windows', s: 'just now'},
+  {n: 'MBP-DESIGN-02', o: 'm.harper', i: 'MH', ip: '100.64.0.2', c: 'Direct', nat: '—', os: 'macos', s: 'just now'},
+  {n: 'WS-FINANCE-11', o: 'c.wright', i: 'CW', ip: '100.64.0.4', c: 'Offline', nat: '—', os: 'windows', s: '3d ago'},
+  {n: 'LAPTOP-9HTR4M', o: 't.morgan', i: 'TM', ip: '100.64.0.3', c: 'Offline', nat: '—', os: 'windows', s: '1d ago'},
 ];
 
 type Row = typeof DEVICES[number];
