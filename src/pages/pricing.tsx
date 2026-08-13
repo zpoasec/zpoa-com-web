@@ -1,11 +1,14 @@
 import type {ReactNode} from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import {price, unitPrice, RATES_REVIEWED} from '@site/src/lib/region';
+import {useRegion} from '@site/src/lib/useRegion';
+import RegionPicker from '@site/src/components/RegionPicker';
 
 const tiers = [
   {
     name: 'Free',
-    price: '$0',
+    usd: 0,
     period: '/month',
     description: 'For small teams getting started with security',
     features: [
@@ -23,7 +26,8 @@ const tiers = [
   },
   {
     name: 'Pro',
-    price: '$499',
+    usd: 499,
+    overage: {gb: 5, identity: 2},
     period: '/month',
     description: 'For growing security teams',
     features: [
@@ -34,7 +38,6 @@ const tiers = [
       'All 8 modules (SIEM + IGA + AI)',
       'ITDR, JIT, NHI, Identity Fabric',
       'Compliance frameworks (SOC 2, ISO)',
-      'Overage: $5/GB + $2/identity',
       'Email & chat support',
     ],
     btn: 'Start Free Trial',
@@ -43,7 +46,8 @@ const tiers = [
   },
   {
     name: 'Business',
-    price: '$1,999',
+    usd: 1999,
+    overage: {gb: 3, identity: 1},
     period: '/month',
     description: 'For security-first organizations',
     features: [
@@ -53,7 +57,6 @@ const tiers = [
       '690+ connectors',
       'All security features included',
       'AI Access Copilot & Identity Fabric',
-      'Overage: $3/GB + $1/identity',
       'Priority support (24/7)',
     ],
     btn: 'Start Free Trial',
@@ -62,7 +65,7 @@ const tiers = [
   },
   {
     name: 'Enterprise',
-    price: 'Custom',
+    usd: null,
     period: '',
     description: 'For large organizations with advanced needs',
     features: [
@@ -81,7 +84,7 @@ const tiers = [
   },
   {
     name: 'MSSP',
-    price: 'Custom',
+    usd: null,
     period: '',
     description: 'For managed security service providers',
     features: [
@@ -117,6 +120,12 @@ const comparisonRows = [
 ];
 
 export default function Pricing(): ReactNode {
+  const {region} = useRegion();
+
+  // Renders "$499" until the region resolves on the client, then swaps. Tiers
+  // without a list price (Enterprise, MSSP) stay "Custom" in every region.
+  const shown = (usd: number | null) => (usd === null ? 'Custom' : price(usd, region));
+
   return (
     <Layout title="Pricing" description="Z Shield pricing — SIEM + IGA in one platform">
       <div className="pricing-section">
@@ -128,6 +137,16 @@ export default function Pricing(): ReactNode {
             No per-seat fees. No hidden costs. Cancel anytime.
           </p>
 
+          <RegionPicker inline />
+
+          {region.code !== 'US' && (
+            <p className="price-fx">
+              Showing indicative prices in {region.currency} for {region.label}. Accounts are
+              billed in USD; your bank applies its own rate at the time of payment.
+              Conversion reviewed {RATES_REVIEWED}.
+            </p>
+          )}
+
           <div className="pricing-grid">
             {tiers.map((tier) => (
               <div
@@ -135,9 +154,15 @@ export default function Pricing(): ReactNode {
                 key={tier.name}>
                 <h3>{tier.name}</h3>
                 <div className="price">
-                  {tier.price}
+                  {shown(tier.usd)}
                   {tier.period && <span>{tier.period}</span>}
                 </div>
+                {tier.overage && (
+                  <p className="price-overage">
+                    Overage {unitPrice(tier.overage.gb, region)}/GB
+                    {' + '}{unitPrice(tier.overage.identity, region)}/identity
+                  </p>
+                )}
                 <p style={{fontSize: '0.9rem', opacity: 0.7}}>
                   {tier.description}
                 </p>
@@ -182,7 +207,7 @@ export default function Pricing(): ReactNode {
                     <td><strong>Price</strong></td>
                     {tiers.map((tier) => (
                       <td key={tier.name}>
-                        <strong>{tier.price}</strong>{tier.period}
+                        <strong>{shown(tier.usd)}</strong>{tier.period}
                       </td>
                     ))}
                   </tr>
