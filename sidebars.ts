@@ -76,6 +76,8 @@ const sidebars: SidebarsConfig = {
             'modules/fortress/onboarding',
             'modules/fortress/hr-source-health',
             'modules/fortress/contractor-access',
+            'modules/fortress/service-desk-bridge',
+            'modules/fortress/self-service-access',
             'modules/fortress/nhi',
             'modules/fortress/itdr',
             'modules/fortress/jit-access',
