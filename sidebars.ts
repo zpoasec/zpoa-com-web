@@ -90,6 +90,23 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
+          label: 'PAM (Privileged Access)',
+          items: [
+            'modules/pam/overview',
+            'modules/pam/credential-vault',
+            'modules/pam/rotation',
+            'modules/pam/session-access',
+            'modules/pam/session-recording',
+            'modules/pam/command-controls',
+            'modules/pam/break-glass',
+            'modules/pam/epm',
+            'modules/pam/ssh-certificates',
+            'modules/pam/password-policies',
+            'modules/pam/vault-mfa',
+          ],
+        },
+        {
+          type: 'category',
           label: 'Monitor (UAM)',
           items: [
             'modules/monitor/overview',
