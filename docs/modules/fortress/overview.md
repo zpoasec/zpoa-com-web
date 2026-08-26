@@ -88,8 +88,8 @@ AI-powered access mapping that automatically determines what access a person sho
 
 Minimize time from hire to full access with automated Day-1 provisioning:
 
-- **HR integration** - Receive new hire events from 130+ HR/HCM systems
-- **Auto-provisioning** - SCIM 2.0 and API-based account creation across 690+ applications
+- **HR integration** - Receive new hire events from 35 HR systems that can act as an authoritative lifecycle source
+- **Auto-provisioning** - SCIM 2.0 and API-based account creation across every governed-tier connector
 - **AI recommendations** - When birthright rules do not match, AI recommends access based on peer groups
 - **Day-30 micro-certification** - Automatic review and cleanup of unused access
 
@@ -210,9 +210,12 @@ Natural language interface for identity access management:
 - **Query templates** - Pre-built templates for common access queries
 - **Action audit log** - Every Copilot action is logged with full audit trail
 
-## 690+ Connectors
+## Connectors
 
-Fortress connects to virtually every enterprise application through 690+ pre-built connectors:
+Fortress ships pre-built connectors across every major enterprise category. Not
+every connector does the same job — see
+[Connector Tiers](../../integrations/overview.md#connector-tiers) before you plan
+around one:
 
 - **SaaS** (160+) - Office 365, Google Workspace, Slack, Zoom, Jira, and more
 - **AI/ML** (40+) - Claude, ChatGPT, GitHub Copilot, Gemini, Midjourney, and more

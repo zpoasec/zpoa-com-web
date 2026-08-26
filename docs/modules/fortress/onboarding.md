@@ -17,7 +17,8 @@ HR Event → Birthright Rules → AI Recommendation → Auto-Provision → Day-1
 
 When an HR system (Workday, BambooHR, Rippling, SAP SuccessFactors, etc.) creates a new hire record, a lifecycle event is fired to Fortress. The identity is created with `lifecycle_state: pre_hire`.
 
-Fortress supports 130+ HR/HCM connectors to receive these events, including:
+Fortress reads these events from your HR system. 35 HR connectors can act as an
+authoritative lifecycle source, including:
 - Enterprise HRIS: Workday, SAP SuccessFactors, Oracle HCM, ADP, UKG
 - Mid-market: BambooHR, Gusto, Rippling, Deel, Paylocity, Personio
 - Regional: Darwinbox, Keka, greytHR (India), Factorial (EU), Employment Hero (ANZ)
@@ -66,7 +67,10 @@ On the start date, `lifecycle_state` transitions from `pre_hire` to `active` and
 3. **License assignment** - Assign appropriate license tiers (free, standard, professional, enterprise)
 4. **Group membership** - Add to appropriate IdP groups, Slack channels, Teams, etc.
 
-Fortress supports provisioning through 690+ connectors including SCIM, REST API, LDAP, PowerShell, and custom scripts.
+Fortress provisions through its governed-tier connectors, plus SCIM, REST API,
+LDAP, PowerShell and custom scripts. See
+[Connector Tiers](../../integrations/overview.md#connector-tiers) for which
+connectors support provisioning.
 
 ### Step 5: Day-1 Ready
 

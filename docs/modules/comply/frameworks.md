@@ -27,6 +27,18 @@ The Health Insurance Portability and Accountability Act requires safeguards for 
 
 The NIST CSF organizes security activities into five functions: Identify, Protect, Detect, Respond, and Recover. Z Shield provides control mappings across all functions and their subcategories.
 
+### India Regulatory Pack
+
+Five frameworks covering the obligations Indian organisations are audited
+against: the **DPDP Act**, the **CERT-In directions**, the **RBI Master
+Direction on IT Governance**, **SEBI CSCRF**, and the **IRDAI cyber security
+guidelines**.
+
+Control codes follow each regulator's own numbering. Because these overlap
+heavily with ISO 27001 and SOC 2, most of the pack is usually already covered by
+evidence you hold — see [India Regulatory Pack](./india-regulatory-pack.md) for
+how to check before you plan any work.
+
 ### NIST 800-53
 
 NIST Special Publication 800-53 defines a comprehensive catalog of security and privacy controls for federal information systems. Z Shield supports the control families most commonly required, including Access Control (AC), Audit and Accountability (AU), Configuration Management (CM), Incident Response (IR), and System and Communications Protection (SC).

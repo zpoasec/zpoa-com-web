@@ -13,12 +13,12 @@ Z Shield is built around eight core modules, each addressing a critical pillar o
 - **Comply (GRC)** - AI-powered compliance management with automated posture assessment, a conversational Compliance Copilot, AI policy generation, evidence validation, audit readiness reports, and cross-framework inheritance across SOC 2, ISO 27001, PCI-DSS, HIPAA, and more.
 - **Discover (Asset Inventory)** - Continuous discovery and classification of every asset in your environment, from cloud workloads to on-premises endpoints. Vulnerability risk is scored on CVSS, EPSS exploit probability, CISA KEV membership, and asset criticality together.
 - **Armor (CSPM)** - Cloud security posture management across AWS, Azure, and GCP against CIS Benchmark rules, with attack-path analysis that chains individual misconfigurations into exploitable routes.
-- **Fortress (Identity Governance)** - Complete identity governance and administration (IGA) with lifecycle management, access reviews, 690+ app connectors, non-human identity governance, threat detection, just-in-time access, and AI-powered access intelligence.
+- **Fortress (Identity Governance)** - Complete identity governance and administration (IGA) with lifecycle management, access reviews, a large pre-built connector catalogue, non-human identity governance, threat detection, just-in-time access, and AI-powered access intelligence.
 - **Monitor (User Activity Intelligence)** - Insider threat detection, data loss prevention, workforce analytics, and session recording, with peer-group baselines and metadata-first privacy defaults.
 - **Neural Mesh (AI Engine)** - An AI-powered intelligence layer that correlates signals across all modules, identifies complex attack chains, and provides actionable recommendations. Response actions are proposed for human approval rather than executed automatically.
 - **AI Security** - Shadow AI discovery and AI-specific data loss prevention. Inventory every AI tool in use, govern it as sanctioned or blocked, inspect what data leaves for it, and detect prompt injection against your own agents.
 
-## 690+ Integrations
+## Integrations
 
 Z Shield connects to the tools and platforms you already use. With over 690 pre-built integrations spanning 23 categories - cloud providers, identity providers, endpoint agents, SaaS applications, HR/HCM systems, ERP platforms, network devices, AI/ML tools, and more - you can start ingesting data within minutes of signing up.
 

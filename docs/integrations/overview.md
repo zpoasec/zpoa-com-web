@@ -53,14 +53,38 @@ Click **Test Connection** to verify that Z Shield can authenticate and retrieve 
 
 Once the test passes, activate the connector. It immediately begins ingesting data according to the configured schedule or listener. Monitor health and throughput on the **Connector Health** dashboard.
 
+## Connector Tiers
+
+Not every connector does the same job, and the difference matters when you are
+planning around one. Each connector is classified by what it can actually do,
+and the tier is shown in the connector picker before you connect anything.
+
+| Tier | What it does | Use it for |
+|---|---|---|
+| **Governed** | Reads accounts, and reads entitlements or drives joiner-mover-leaver | Full identity governance: access reviews, provisioning, lifecycle automation |
+| **Connected** | A real integration, but not governance — non-human identity discovery, ticketing, log ingestion, or account read alone | Visibility and workflow, not access certification |
+| **Catalog** | Authenticates, proves reachability, reports health | Confirming a system is reachable and its credential is valid |
+
+The tier is derived from what the connector implements rather than declared, so
+it always reflects what you will actually get.
+
+**If you are planning an access review, a provisioning flow or lifecycle
+automation, check that the connector is governed tier first.** A catalog-tier
+connector will connect successfully and return no accounts, which is a
+confusing place to discover the limitation.
+
+Governed-tier coverage is strongest in HR, identity providers, cloud platforms,
+directories, ITSM and the major SaaS applications.
+
 ## Connector Categories
 
-Z Shield organizes its 690+ connectors into the following 23 categories:
+Z Shield organizes its connectors into the following 23 categories. The counts
+below are catalogue entries across all three tiers:
 
 | Category | Examples | Count |
 |---|---|---|
 | SaaS Applications | Salesforce, Google Workspace, Slack, Zoom | 160 |
-| HR / HCM | Workday, BambooHR, ADP, SAP SuccessFactors | 112 |
+| HR / HCM | Workday, Darwinbox, Keka, greytHR, BambooHR, ADP, SAP SuccessFactors | 112 |
 | AI / ML | OpenAI, AWS Bedrock, Hugging Face, Databricks | 40 |
 | ERP | SAP, Oracle ERP, NetSuite, Dynamics 365 | 36 |
 | Miscellaneous | Custom apps, legacy systems, niche tools | 35 |

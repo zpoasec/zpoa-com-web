@@ -17,7 +17,7 @@ Z Shield uses a hybrid pricing model: **SIEM priced by data volume** (GB ingeste
 | **SIEM Log Ingestion** | 1 GB/day | 10 GB/day | 50 GB/day | Unlimited | Unlimited |
 | **Managed Identities** | 25 | 500 | 5,000 | Unlimited | Unlimited |
 | **Data Retention** | 7 days | 90 days | 1 year | Custom | Custom |
-| **Connectors** | 690+ | 690+ | 690+ | 690+ | 690+ |
+| **Connectors** | All tiers | All tiers | All tiers | All tiers | All tiers |
 | **Compliance Frameworks** | 1 | 4 | All | All | All |
 | **MITRE ATT&CK Mapping** | Included | Included | Included | Included | Included |
 | **ITDR & JIT Access** | Included | Included | Included | Included | Included |
@@ -129,6 +129,50 @@ Manage payment methods under **Settings > Billing > Payment Methods**:
 - Add, update, or remove payment methods.
 - Set a default payment method for automatic billing.
 - View payment history and transaction status.
+
+## Billing in India
+
+Indian customers are invoiced in Indian rupees with GST applied, rather than in
+US dollars.
+
+### Before your first invoice
+
+Enter your **GSTIN** and **registered legal name** in **Settings → Billing →
+Tax details**. The legal name must match your GST registration rather than your
+trading name — an invoice carrying the wrong name is commonly rejected by
+accounts payable.
+
+The GSTIN also determines your **place of supply**, which decides how the tax is
+split. This follows your GST registration, not the office address you would like
+the invoice sent to. If those differ, use the registration.
+
+### How the tax is shown
+
+| Your registration | Tax applied |
+|---|---|
+| Same state as the supplier | CGST and SGST, shown as separate lines |
+| A different state | IGST, as a single line |
+| Outside India | Zero-rated export |
+
+Each line carries the SAC code for hosted software (998314) at 18%. The heads
+are listed separately because you claim input tax credit against the head, not
+against the total.
+
+### Tax deducted at source
+
+If you deduct TDS under Section 194J when paying, the amount you remit will be
+lower than the invoice total. That is expected and your account will not be
+treated as underpaid.
+
+TDS is calculated on the taxable value, not on the GST. Your invoice shows the
+expected remittance alongside the total, so your accounts team can reconcile
+without a query.
+
+### Payment terms
+
+Indian customers can be invoiced annually against a purchase order rather than
+paying monthly by card. Contact your account manager to switch to PO-based
+billing.
 
 ## Overages
 
