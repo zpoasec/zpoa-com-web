@@ -5,65 +5,76 @@ title: "Cloud Resource Inventory"
 
 # Cloud Resource Inventory
 
-The Armor Cloud Resource Inventory provides a complete, continuously synchronized catalog of every resource deployed across your connected cloud providers. Each resource is enriched with security findings, relationship data, and contextual metadata to support investigation, compliance, and remediation workflows.
+Armor keeps a catalogue of everything it finds across your connected accounts,
+normalised so that a bucket is a bucket whether it lives in AWS, Azure, Google
+Cloud or OpenStack.
 
-## Unified Resource View
+## What is in the inventory
 
-All cloud resources - regardless of provider - are normalized into a consistent schema and presented in a single searchable inventory. Supported resource categories include:
+- **Compute** — virtual machines, container clusters, serverless functions,
+  dedicated servers
+- **Storage** — object stores and containers, block volumes, file shares
+- **Databases** — managed database instances and servers
+- **Networking** — virtual networks, security groups, firewall rules, load
+  balancers, public address blocks
+- **Identity** — users, roles, service accounts and managed identities, with the
+  grants attached to each
+- **Security services** — audit trails, key-management services, key vaults
 
-- **Compute** - Virtual machines, container clusters, serverless functions, auto-scaling groups
-- **Storage** - Object stores, block volumes, file shares, database instances
-- **Networking** - Virtual networks, subnets, security groups, load balancers, DNS zones, VPN gateways
-- **Identity** - IAM users, roles, policies, service accounts, identity federation configurations
-- **Management** - Logging services, monitoring configurations, key management, secrets managers
-- **Application Services** - API gateways, message queues, notification services, CDN distributions
+## What each record tells you
 
-The inventory updates in near real-time as resources are created, modified, or deleted in your cloud accounts.
+Alongside the obvious attributes — name, type, region, tags, cost, when the
+provider created it — each resource carries the three things that decide how
+much it matters:
 
-## Resource Attributes
+**Exposure.** *Public* means directly reachable. *Reachable via path* means
+something public can get to it through a relationship Armor observed. *Private*
+means no such path was found. *Unknown* means Armor has not collected enough to
+say — and it is reported as unknown, never quietly treated as private.
 
-Each resource record includes comprehensive metadata:
+**Risk score.** A 0-100 number combining exposure, whether the resource is
+encrypted, what category it is in, whether it is production, and whether anyone
+owns it.
 
-| Attribute | Description |
-|-----------|-------------|
-| **Resource ID** | Cloud-native unique identifier (e.g., ARN, Resource ID) |
-| **Name** | Human-readable name or tag |
-| **Provider** | AWS, Azure, or GCP |
-| **Account / Subscription** | Source cloud account |
-| **Region** | Deployment region or zone |
-| **Type** | Specific resource type (e.g., `aws_s3_bucket`, `azure_vm`) |
-| **Tags** | Cloud-native tags inherited from the provider |
-| **Created** | Resource creation timestamp |
-| **Last Modified** | Most recent configuration change |
+**Relationships.** What reaches this resource and what it can reach, each with
+the evidence — the security-group binding, the attached role, the policy grant.
 
-## Resource Relationships
+## Ownership
 
-Armor maps relationships between resources to provide full architectural context:
+Armor derives an owner from conventional tags (`owner`, `Owner`, `team`,
+`Service` and similar) so that work can be routed. You can override it, and a
+manual assignment always wins: the next scan will not overwrite a decision a
+person made.
 
-- **Network connectivity** - Which resources can communicate with each other via security group and firewall rules
-- **IAM bindings** - Which identities have access to which resources and at what permission level
-- **Data flows** - Storage resources connected to compute workloads
-- **Dependencies** - Load balancers to backend instances, databases to application servers
+Resources with no owner are scored slightly higher, because unowned work does
+not get done — the goal is to make it visible rather than urgent.
 
-Relationship data powers the [Attack Path Analysis](./attack-paths.md) engine and enables security teams to understand blast radius during incident response.
+## Change history
 
-## Security Findings per Resource
+Security-relevant changes are recorded with **who made them and when** — whether
+a bucket became public, encryption was turned off, or a resource became
+internet-facing. This comes from your cloud provider's activity feed, so it is
+attributed rather than inferred from comparing two snapshots.
 
-Every resource displays its associated security findings directly in the inventory view:
+## Data classification
 
-- **Misconfiguration findings** from Armor policy evaluations
-- **Vulnerability findings** from Discover scans (where applicable)
-- **Compliance status** against selected benchmarks
-- **Risk score** aggregated from all associated findings
+Resources that hold data get a second view: what kind of data was detected, how
+sensitive it is, whether it is encrypted, and whether it is a store nobody
+registered. That is what turns *"this bucket is public"* into *"this bucket
+holds regulated data and is public"*.
 
-Click into any resource to see a detailed timeline of findings, configuration changes, and remediation history.
+## Inside your workloads
 
-## Search and Filtering
+Where the Zpoa agent runs on a host, Armor links what the agent reports — the
+operating system, installed packages, listening ports — to the cloud resource
+that host runs on. When a vulnerability on that host is in the known-exploited
+catalogue, findings on that resource are scored higher.
 
-Locate resources using the advanced query interface:
+This only sees hosts running an agent. Coverage says so explicitly: instances
+without one are **unexamined**, not verified clean.
 
-```
-provider:aws type:s3_bucket public_access:true findings_severity:critical
-```
+## Finding things
 
-Combine filters across any attribute, tag, or finding property. Save frequently used queries as bookmarks for quick access, or use them as the basis for automated alerting rules.
+Filter by provider, account, resource type, region, exposure, owner or tag — or
+just ask. "Which production databases are reachable from the internet", "what
+does the payments team own", and "what changed in the last day" all work.
