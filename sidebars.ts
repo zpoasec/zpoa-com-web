@@ -103,6 +103,11 @@ const sidebars: SidebarsConfig = {
             'modules/pam/ssh-certificates',
             'modules/pam/password-policies',
             'modules/pam/vault-mfa',
+            'modules/pam/jit-elevation',
+            'modules/pam/account-discovery',
+            'modules/pam/entitlement-right-sizing',
+            'modules/pam/native-client',
+            'modules/pam/vault-recovery',
           ],
         },
         {
