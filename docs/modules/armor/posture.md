@@ -1,72 +1,116 @@
 ---
 sidebar_position: 2
-title: "Security Posture Dashboard"
+title: "Security Posture"
 ---
 
-# Security Posture Dashboard
+# Security Posture
 
-The Armor Security Posture Dashboard provides an at-a-glance view of your organization's cloud security health. It aggregates findings across all connected cloud accounts into a single, actionable interface that helps security teams measure progress and prioritize efforts.
+Your posture is four questions, and Armor is built to answer them in this
+order.
 
-## Posture Score
+## 1. What should we fix first?
 
-The **Posture Score** is a normalized metric (0--100) representing the overall security health of your cloud environment. It is calculated by evaluating all monitored resources against applicable security policies and weighting results by severity.
+Not "what is critical" — **what is critical, reachable, and sitting in front of
+something valuable**.
 
-- **90--100** - Strong posture with minimal findings
-- **70--89** - Good posture with some areas requiring attention
-- **50--69** - Moderate risk; significant misconfigurations present
-- **Below 50** - Critical risk; immediate remediation recommended
+Armor ranks every open finding by a 0-100 risk score that starts from the
+check's severity and then adjusts for this specific resource: whether an
+attacker can reach it, how sensitive the data behind it is, whether it is
+production, and whether anyone owns it.
 
-The score is broken down by:
+That is why an unencrypted volume on an isolated test box ranks below the same
+rule on an internet-reachable production database, even though both come from
+the same check at the same severity.
 
-- **Cloud provider** - Compare posture across AWS, Azure, and GCP accounts
-- **Business unit** - Track posture by team or organizational division
-- **Environment** - Separate production, staging, and development scores
-- **Resource type** - Identify which service categories are weakest
+Ask *"what should we fix first"* and you get that list. Ask *"why is this
+critical"* about any finding and Armor shows the base severity, every adjustment
+it applied, and the exact configuration values the check read.
 
-## Trend Analysis
+## 2. What can't you see?
 
-Track posture changes over time with configurable trend views:
+A check that never ran is not a check that passed, and Armor keeps the two
+apart.
 
-- **Daily, weekly, and monthly** posture score history
-- **Rolling 30/60/90-day** trend lines to identify improvement or regression
-- **Event markers** highlighting major configuration changes, new integrations, or policy updates
-- **Comparative analysis** across accounts, regions, or business units
+If a permission is missing or a provider did not return a field, that becomes a
+**coverage** entry naming the exact permission to grant. It is never a finding
+about the resource, and never a silent pass.
 
-Trend data helps demonstrate program maturity to leadership and auditors, and surfaces regressions before they escalate.
+Ask *"what can't Armor see"* before treating a clean report as a clean
+environment. Coverage also reports how much of your fleet has an agent, so
+workload-level results are never mistaken for whole-estate results.
 
-## Benchmark Compliance
+## 3. How compliant are we?
 
-Armor evaluates your cloud resources against industry-recognized benchmarks:
+Every check is mapped to the controls it satisfies across CIS Benchmarks, NIST
+800-53, PCI DSS, SOC 2, HIPAA and ISO 27001.
 
-| Benchmark | Coverage |
-|-----------|----------|
-| **CIS AWS Foundations** | v1.5, v2.0, v3.0 |
-| **CIS Azure Foundations** | v1.5, v2.0 |
-| **CIS GCP Foundations** | v1.3, v2.0 |
-| **NIST 800-53 Rev 5** | Moderate and High baselines |
-| **SOC 2 Type II** | Trust Services Criteria |
-| **PCI DSS v4.0** | Applicable cloud controls |
-| **HIPAA** | Technical safeguards |
+For each framework Armor reports:
 
-Each benchmark produces a pass/fail report at the individual control level. Compliance percentages are displayed on the dashboard and available as downloadable reports for audit evidence.
+| | Meaning |
+|---|---|
+| **Passed** | Every check mapped to this control ran and none failed |
+| **Failed** | At least one mapped check has an open finding |
+| **Not covered** | No mapped check has evaluated anything yet |
 
-## Findings by Severity
+**Not covered is not a pass.** It usually means discovery has not reached the
+resources that control applies to, and it is reported as its own number so it
+cannot be mistaken for compliance.
 
-All misconfiguration findings are categorized by severity:
+Ask *"what's blocking our SOC 2"* to get the failing controls and the rules
+behind each.
 
-- **Critical** - Immediate exploitation risk (e.g., publicly writable S3 buckets with sensitive data)
-- **High** - Significant risk requiring prompt remediation (e.g., security groups allowing unrestricted SSH)
-- **Medium** - Moderate risk that should be addressed within standard SLA windows
-- **Low** - Informational or best-practice recommendations
-- **Info** - Non-risk observations for awareness
+## 4. Are we getting better?
 
-The dashboard displays finding counts by severity, affected resource types, and remediation status. Use filters to drill down into specific accounts, regions, or resource categories.
+Findings persist. Each one has a first-seen date, so you can see:
 
-## Exporting and Reporting
+- how long things have been open, by severity
+- what is new this week
+- your oldest unresolved finding
+- what got fixed, rather than what quietly disappeared
 
-Generate posture reports for stakeholders and compliance evidence:
+When a misconfiguration is corrected, the finding is marked resolved and keeps
+its history. Attack paths work the same way: closing one is a result you can
+point at.
 
-- **Executive summary** - High-level posture score and trend with key metrics
-- **Detailed findings report** - Full list of findings with remediation guidance
-- **Compliance report** - Benchmark-specific pass/fail results
-- **Scheduled delivery** - Automatic report generation and distribution via email or Slack
+## Working through findings
+
+Each finding carries a workflow state that a scan never touches:
+
+- **Open** — nobody has looked at it yet
+- **Acknowledged** — someone has seen it and accepted it as real work
+- **False positive** — the check is wrong here
+- **Resolved** — Armor confirmed the misconfiguration is gone
+
+Assign an owner, link the ticket the work happens under, and both survive every
+subsequent scan.
+
+## Accepting a risk
+
+To stop reporting a finding, create an **exception**. Scope it to a rule, a
+resource, a resource type or a set of tags.
+
+Every exception needs a reason, an approver, and an expiry of at most a year.
+Creating one does not suppress anything — a second person approves it, and when
+it lapses the finding comes back. There is no permanent suppression, because
+that is how a posture tool quietly stops reporting a real risk.
+
+## Fixing things
+
+For most checks Armor generates the actual change: a Terraform fragment or a CLI
+command rendered against that specific resource, with its blast radius and
+whether it can be reversed.
+
+Review the exact artefact, approve it, then apply. Nothing runs automatically,
+and an irreversible change requires you to acknowledge that explicitly.
+
+Where Armor knows which infrastructure code created the resource, it says so —
+fix the module rather than make a console change the next deploy undoes.
+
+## Staying current
+
+Connect your cloud provider's activity feed and Armor re-evaluates a resource
+within seconds of it changing. A full sweep runs every fifteen minutes as a
+backstop.
+
+Every security-relevant change is recorded with who made it, so *"who made this
+bucket public"* has an answer.
