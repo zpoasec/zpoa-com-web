@@ -9,7 +9,7 @@ keywords: [non-human identities, NHI, service accounts, API keys, machine identi
 
 ![Non-Human Identities: The Access Risk No One Is Reviewing](/img/blog/non-human-identities-access-risk-no-one-reviewing/hero.jpg)
 
-Ask most security teams how many employees have access to sensitive systems, and they can produce a reasonably confident number within minutes. Ask the same team how many API keys, service accounts, CI/CD tokens, and machine-to-machine credentials hold that same level of access, and the answer usually turns into a long pause. Non-human identities have quietly outnumbered human ones in many modern environments, yet they rarely receive the same scrutiny as human users. A unified cybersecurity platform can bring these machine identities, access privileges, and security activity into a single view, helping security teams identify overlooked access risks before they become exploitable gaps.
+Ask most security teams how many employees have access to sensitive systems, and they can produce a reasonably confident number within minutes. Ask the same team how many API keys, service accounts, CI/CD tokens, and machine-to-machine credentials hold that same level of access, and the answer usually turns into a long pause. Non-human identities have quietly outnumbered human ones in many modern environments, yet they rarely receive the same scrutiny as human users. A [unified cybersecurity platform](https://www.zpoa.com/) can bring these machine identities, access privileges, and security activity into a single view, helping security teams identify overlooked access risks before they become exploitable gaps.
 
 <!-- truncate -->
 
@@ -19,7 +19,7 @@ The reason non-human identities accumulate unchecked is structural, not accident
 
 ## The Detection Problem Machine Identities Create
 
-That accumulation creates a distinct threat detection challenge. A compromised non-human identity doesn't behave like a compromised human account — there's no login from an unusual location, no failed MFA prompt, no obvious deviation from a 9-to-5 pattern to flag. A service account making API calls at 3 a.m. might be completely normal, or it might be an attacker who found a hardcoded key in a public repository and is now moving laterally with permissions nobody remembered to restrict. Detecting the difference requires baselining what each machine identity normally does — which systems it talks to, what volume of calls is typical, what data it usually touches — and flagging deviations from that baseline rather than relying on the human-behavior signals most detection logic was originally built around.
+That accumulation creates a distinct [threat detection](https://www.zpoa.com/docs/modules/detect/overview) challenge. A compromised non-human identity doesn't behave like a compromised human account — there's no login from an unusual location, no failed MFA prompt, no obvious deviation from a 9-to-5 pattern to flag. A service account making API calls at 3 a.m. might be completely normal, or it might be an attacker who found a hardcoded key in a public repository and is now moving laterally with permissions nobody remembered to restrict. Detecting the difference requires baselining what each machine identity normally does — which systems it talks to, what volume of calls is typical, what data it usually touches — and flagging deviations from that baseline rather than relying on the human-behavior signals most detection logic was originally built around.
 
 ## Bringing Machine Identity Into the Same Picture as Everything Else
 
