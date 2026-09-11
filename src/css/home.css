@@ -780,6 +780,16 @@ main.zpoa-blog-list a[class*='tag_']:hover {
 .zpoa-region__code { font-weight: 600; letter-spacing: 0.02em; }
 .zpoa-region__mobile-label { font-weight: 600; }
 
+/* ══ LOCALE DROPDOWN ═════════════════════════════════════════════════════ */
+/* Same SVG-not-emoji flag as the region picker, sized for inline text rather
+   than a standalone chip: the dropdown trigger and each menu row both set
+   their text in a line, so the flag sits on the baseline instead of being
+   vertically centred in a pill. */
+.zpoa-locale__flag {
+  display: inline-block; width: 16px; height: auto; flex: none;
+  border-radius: 2px; vertical-align: -2px; margin-right: 6px;
+}
+
 /* Inline region selector on the pricing page. The section centres its text,
    so the control needs to be a centred block rather than an inline element. */
 .pricing-section .zpoa-region-inline { display: inline-flex; }

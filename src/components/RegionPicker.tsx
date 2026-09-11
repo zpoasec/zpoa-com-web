@@ -8,15 +8,23 @@ import Flag from './Flag';
  *
  * Two variants:
  *
- *   navbar / mobile  a read-only indicator of the detected region. No control,
- *                    by design: the navbar states where the site thinks you
- *                    are, it does not ask you to configure anything.
+ *   mobile   a read-only indicator of the detected region, in the mobile
+ *            menu. No control, by design: it states where the site thinks
+ *            you are, it does not ask you to configure anything.
  *
- *   inline           a real selector, used on the pricing page. Timezone
- *                    detection is a good guess, not a fact: someone in India on
- *                    a laptop still set to US time would otherwise be stuck
- *                    seeing USD with no way out. The pricing page is the one
- *                    place currency matters, so the correction lives there.
+ *   inline   a real selector, used on the pricing page. Timezone detection is
+ *            a good guess, not a fact: someone in India on a laptop still set
+ *            to US time would otherwise be stuck seeing USD with no way out.
+ *            The pricing page is the one place currency matters, so the
+ *            correction lives there.
+ *
+ * The desktop navbar no longer gets its own region badge: once the locale
+ * dropdown (LocaleDropdownNavbarItem) started showing a flag + country name
+ * for en/en-in, a second flag chip right next to it read as a duplicate of
+ * the same fact, not a second one — region drives currency, locale drives
+ * which page variant, and that distinction isn't visible from two flags
+ * sitting side by side. Still registered as a navbar item for the mobile
+ * branch below; desktop just renders nothing.
  */
 export default function RegionPicker(props: {mobile?: boolean; inline?: boolean}): ReactNode {
   const {region, ready, setRegion} = useRegion();
@@ -57,12 +65,5 @@ export default function RegionPicker(props: {mobile?: boolean; inline?: boolean}
     );
   }
 
-  return (
-    <span
-      className="navbar__item zpoa-region"
-      title={`${region.label}: prices shown in ${region.currency}`}>
-      <Flag code={region.code} className="zpoa-region__flag" />
-      <span className="zpoa-region__code">{region.code}</span>
-    </span>
-  );
+  return null;
 }
