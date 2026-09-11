@@ -1774,8 +1774,19 @@ body {
 @media (max-width: 820px) { .allp-grid { grid-template-columns: 1fr; } }
 
 /* All Products - Zoho-style hero band + centered search + two-pane */
-.allp-hero2 { background: linear-gradient(135deg, #3b4a6b 0%, #0f766e 100%); color: #fff; text-align: center; padding: 4rem 0 4.5rem; }
+/* Black for the US/default page, matching the reference site's dark hero
+   rather than the teal-gradient band the India locale still uses below —
+   a flat #000 read as harsher than intended next to white text at this
+   size, so it keeps a hint of depth with a soft teal glow (the same teal
+   as the old gradient, so it still reads as the same brand) rather than
+   going fully flat. */
+.allp-hero2 { background: radial-gradient(ellipse 70% 100% at 50% -20%, rgba(15,118,110,0.35), rgba(15,118,110,0) 65%), #05070a; color: #fff; text-align: center; padding: 4rem 0 4.5rem; }
 .allp-hero2 h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0 auto; max-width: 20ch; text-wrap: balance; }
+/* India locale keeps the original teal gradient — only the default/US page
+   asked for the black treatment. Same specificity as .allp-hero2, so
+   source order (this rule after) is what makes it win on the elements
+   that carry both classes. */
+.allp-hero2--in { background: linear-gradient(135deg, #3b4a6b 0%, #0f766e 100%); }
 .allp-hero-rule { width: 56px; height: 3px; border-radius: 3px; background: #fbbf24; margin: 1.5rem auto 0; }
 .allp-search-wrap { position: relative; z-index: 3; margin-top: -2.4rem; }
 .allp-search { position: relative; max-width: 680px; margin: 0 auto; }

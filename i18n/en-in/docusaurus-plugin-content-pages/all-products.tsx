@@ -59,7 +59,7 @@ export default function AllProducts(): ReactNode {
       description="The complete Z Shield product portfolio: ZPOA Zypher VPN, Detect, Neural Mesh, Fortress, Monitor, Comply, Discover, and Armor.">
       <main className="allp">
         {/* ── Hero band ── */}
-        <section className="allp-hero2">
+        <section className="allp-hero2 allp-hero2--in">
           <div className="container">
             <h1>All the software you need to run your business</h1>
             <div className="allp-hero-rule" />
