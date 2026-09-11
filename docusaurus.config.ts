@@ -27,7 +27,11 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'en-in'],
+    localeConfigs: {
+      en: {label: 'United States', htmlLang: 'en-US'},
+      'en-in': {label: 'India', htmlLang: 'en-IN'},
+    },
   },
 
   headTags: [
@@ -120,6 +124,7 @@ const config: Config = {
           label: 'Docs',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {type: 'localeDropdown', position: 'right'},
         {type: 'custom-regionPicker', position: 'right'},
         {
           to: '/schedule',
