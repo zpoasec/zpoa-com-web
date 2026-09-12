@@ -968,6 +968,72 @@ html, body, * {
   --zs-grad-3:         #C4B5FD;
 }
 
+/* Locale overrides win over both :root and [data-theme='dark'] regardless of
+   source order (html[lang=...] has higher specificity than either), so the
+   light/dark toggle no longer affects the hero once a locale is set: United
+   States always gets the black treatment, India always gets the blue one. */
+html[lang='en-US'] {
+  --zs-hero-bg:
+    radial-gradient(ellipse 70% 100% at 50% -20%, rgba(15,118,110,0.35), rgba(15,118,110,0) 65%),
+    #05070a;
+  --zs-hero-fg:        #FFFFFF;
+  --zs-hero-sub:       #A8B3CC;
+  --zs-hero-grid:      rgba(255, 255, 255, 0.045);
+  --zs-hero-glow:      rgba(109, 74, 255, 0.42);
+  --zs-eyebrow-bg:     rgba(109, 74, 255, 0.16);
+  --zs-eyebrow-bd:     rgba(140, 110, 255, 0.34);
+  --zs-eyebrow-fg:     #C6BCFF;
+  --zs-ghost-bg:       rgba(255, 255, 255, 0.05);
+  --zs-ghost-bd:       rgba(255, 255, 255, 0.17);
+  --zs-ghost-fg:       #E6EAF5;
+  --zs-ghost-bg-hover: rgba(255, 255, 255, 0.1);
+  --zs-micro-fg:       #8895B2;
+  --zs-grad-1:         #22D3EE;
+  --zs-grad-2:         #A78BFA;
+  --zs-grad-3:         #C4B5FD;
+
+  /* Same token set the rest of the homepage's sections, cards, and text
+     already read (.zs-sec, .zs-mod, .zs-prob, .zs-chip, etc.), so the
+     black treatment reaches the whole page, not just the hero. */
+  --zs-fg:          #FFFFFF;
+  --zs-fg-soft:     #A8B3CC;
+  --zs-fg-faint:    #7C879E;
+  --zs-surface:     #0a0e16;
+  --zs-sunken:      #05070a;
+  --zs-line:        rgba(255, 255, 255, 0.09);
+}
+
+html[lang='en-IN'] {
+  --zs-hero-bg:
+    radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.16), rgba(255,255,255,0) 65%),
+    #0EA5E9;
+  --zs-hero-fg:        #FFFFFF;
+  --zs-hero-sub:       #F0F9FF;
+  --zs-hero-grid:      rgba(255, 255, 255, 0.08);
+  --zs-hero-glow:      rgba(255, 255, 255, 0.28);
+  --zs-eyebrow-bg:     rgba(255, 255, 255, 0.18);
+  --zs-eyebrow-bd:     rgba(255, 255, 255, 0.36);
+  --zs-eyebrow-fg:     #FFFFFF;
+  --zs-ghost-bg:       rgba(255, 255, 255, 0.1);
+  --zs-ghost-bd:       rgba(255, 255, 255, 0.28);
+  --zs-ghost-fg:       #FFFFFF;
+  --zs-ghost-bg-hover: rgba(255, 255, 255, 0.18);
+  --zs-micro-fg:       #E0F2FE;
+  --zs-grad-1:         #FFFFFF;
+  --zs-grad-2:         #E0F2FE;
+  --zs-grad-3:         #BAE6FD;
+
+  /* Same token set the rest of the homepage's sections, cards, and text
+     already read (.zs-sec, .zs-mod, .zs-prob, .zs-chip, etc.), so the sky
+     blue treatment reaches the whole page, not just the hero. */
+  --zs-fg:          #FFFFFF;
+  --zs-fg-soft:     #F0F9FF;
+  --zs-fg-faint:    #BAE6FD;
+  --zs-surface:     #0EA5E9;
+  --zs-sunken:      #0284C7;
+  --zs-line:        rgba(255, 255, 255, 0.28);
+}
+
 .zs-hero {
   position: relative;
   overflow: hidden;
@@ -1244,6 +1310,8 @@ html, body, * {
   color: var(--zs-violet); margin-bottom: 0.85rem;
 }
 [data-theme='dark'] .zs-label { color: #A78BFA; }
+html[lang='en-US'] .zs-label { color: #A78BFA; }
+html[lang='en-IN'] .zs-label { color: #FFFFFF; }
 
 .zs-h2 {
   font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 800;
@@ -1267,6 +1335,8 @@ html, body, * {
   background: rgba(109,74,255,0.1); color: var(--zs-violet); margin-bottom: 16px;
 }
 [data-theme='dark'] .zs-prob__ico { background: rgba(109,74,255,0.2); color: #A78BFA; }
+html[lang='en-US'] .zs-prob__ico { background: rgba(109,74,255,0.2); color: #A78BFA; }
+html[lang='en-IN'] .zs-prob__ico { background: rgba(255,255,255,0.16); color: #FFFFFF; }
 .zs-prob h3 { font-size: 1.06rem; font-weight: 700; color: var(--zs-fg); margin: 0 0 8px; letter-spacing: -0.012em; }
 .zs-prob p { font-size: 0.93rem; line-height: 1.65; color: var(--zs-fg-soft); margin: 0; }
 
@@ -1292,6 +1362,9 @@ html, body, * {
   display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
 }
 .zs-mod__link:hover { text-decoration: none; gap: 10px; color: var(--zs-violet-deep); }
+html[lang='en-US'] .zs-mod__link { color: #A78BFA; }
+html[lang='en-IN'] .zs-mod__link { color: #FFFFFF; }
+html[lang='en-IN'] .zs-mod__link:hover { color: #F0F9FF; }
 .zs-mod__link span { transition: transform .18s ease; }
 [data-theme='dark'] .zs-mod__link { color: #A78BFA; }
 [data-theme='dark'] .zs-mod__link:hover { color: #C4B5FD; }
@@ -1620,6 +1693,13 @@ html, body, * {
 [data-theme='dark'] .zs-band {
   background: linear-gradient(150deg, var(--zs-ink) 0%, #1A1240 52%, #0D1424 100%);
 }
+html[lang='en-US'] .zs-band {
+  background: linear-gradient(150deg, #05070a 0%, #10142b 52%, #05070a 100%);
+}
+html[lang='en-IN'] .zs-band {
+  background: linear-gradient(150deg, #0284C7 0%, #0EA5E9 52%, #0284C7 100%);
+}
+html[lang='en-IN'] .zs-band__l { color: #F0F9FF; }
 .zs-band::after {
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(760px 320px at 22% 0%, rgba(109,74,255,0.3), transparent 62%);
@@ -1650,6 +1730,8 @@ html, body, * {
 .zs-chip:hover { border-color: rgba(109,74,255,0.5); color: var(--zs-fg); transform: translateY(-2px); }
 .zs-chip b { color: var(--zs-violet); font-weight: 700; }
 [data-theme='dark'] .zs-chip b { color: #A78BFA; }
+html[lang='en-US'] .zs-chip b { color: #A78BFA; }
+html[lang='en-IN'] .zs-chip b { color: #FFFFFF; }
 
 /* ══ CLOSING CTA ═════════════════════════════════════════════════════════ */
 .zs-close {
@@ -1663,6 +1745,18 @@ html, body, * {
   background:
     radial-gradient(760px 380px at 50% 0%, rgba(109,74,255,0.28), transparent 66%),
     linear-gradient(168deg, #0A0E1A, #131A2E);
+  border-top-color: transparent;
+}
+html[lang='en-US'] .zs-close {
+  background:
+    radial-gradient(760px 380px at 50% 0%, rgba(15,118,110,0.3), transparent 66%),
+    linear-gradient(168deg, #0a0e16, #05070a);
+  border-top-color: transparent;
+}
+html[lang='en-IN'] .zs-close {
+  background:
+    radial-gradient(760px 380px at 50% 0%, rgba(255,255,255,0.22), transparent 66%),
+    linear-gradient(168deg, #0EA5E9, #0284C7);
   border-top-color: transparent;
 }
 .zs-close h2 {

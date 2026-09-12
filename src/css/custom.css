@@ -75,6 +75,64 @@
   --zpoa-red: #FF8F73;
 }
 
+/* Locale full-site theme. html[lang=...] outranks both :root and
+   [data-theme='dark'] in specificity, so these win regardless of the
+   light/dark toggle: United States always renders near-black (like
+   ciyex.com's reference treatment), India always renders sky blue. This
+   redefines the same ~150-rule-wide --zpoa- and --ifm- token set the dark
+   theme above uses, so it reaches navbar, footer accents, and every page
+   built on these tokens without needing per-component overrides. */
+html[lang='en-US'] {
+  --ifm-color-primary: #2684FF;
+  --ifm-color-primary-dark: #0065FF;
+  --ifm-color-primary-darker: #0052CC;
+  --ifm-color-primary-darkest: #0041A8;
+  --ifm-color-primary-light: #4C9AFF;
+  --ifm-color-primary-lighter: #B3D4FF;
+  --ifm-color-primary-lightest: #DEEBFF;
+  --ifm-background-color: #05070a;
+  --ifm-background-surface-color: #0d1117;
+  --ifm-font-color-base: #d4dae2;
+  --ifm-heading-color: #FFFFFF;
+  --zpoa-blue: #4C9AFF;
+  --zpoa-text: #C6D0DC;
+  --zpoa-heading: #FFFFFF;
+  --zpoa-gray-50: #0d1117;
+  --zpoa-gray-100: #12161d;
+  --zpoa-gray-200: #232833;
+  --zpoa-gray-400: #6B7A8F;
+  --zpoa-gray-500: #9AA7B8;
+  --zpoa-green: #57D9A3;
+  --zpoa-red: #FF8F73;
+}
+
+html[lang='en-IN'] {
+  --ifm-color-primary: #4B2FD6;
+  --ifm-color-primary-dark: #4227C2;
+  --ifm-color-primary-darker: #3E24B7;
+  --ifm-color-primary-darkest: #331E97;
+  --ifm-color-primary-light: #5438EA;
+  --ifm-color-primary-lighter: #6B52EE;
+  --ifm-color-primary-lightest: #8A76F2;
+  --ifm-background-color: #0EA5E9;
+  --ifm-background-surface-color: #0284C7;
+  --ifm-font-color-base: #F0F9FF;
+  --ifm-heading-color: #FFFFFF;
+  /* A deep indigo, not another blue: the page itself is already sky blue,
+     so accents/buttons need to be a different hue to read as an accent
+     rather than disappearing into the background. */
+  --zpoa-blue: #4B2FD6;
+  --zpoa-text: #F0F9FF;
+  --zpoa-heading: #FFFFFF;
+  --zpoa-gray-50: #0369A1;
+  --zpoa-gray-100: #075985;
+  --zpoa-gray-200: rgba(255, 255, 255, 0.3);
+  --zpoa-gray-400: #BAE6FD;
+  --zpoa-gray-500: #E0F2FE;
+  --zpoa-green: #5CD79B;
+  --zpoa-red: #FF8F73;
+}
+
 /* ── Global ── */
 html {
   -webkit-font-smoothing: antialiased;
@@ -97,6 +155,16 @@ body {
 [data-theme='dark'] .navbar {
   --ifm-navbar-background-color: #101B2B;
   --ifm-navbar-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+html[lang='en-US'] .navbar {
+  --ifm-navbar-background-color: #101B2B;
+  --ifm-navbar-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+html[lang='en-IN'] .navbar {
+  --ifm-navbar-background-color: #0284C7;
+  --ifm-navbar-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .navbar__link {
@@ -1202,6 +1270,27 @@ body {
   color: #8899AA;
 }
 
+/* Locale overrides win over [data-theme='dark'] regardless of the toggle
+   (html[lang=...] outranks a bare attribute selector), so the hero always
+   reads as black for United States, blue for India. */
+html[lang='en-US'] .feat-hero {
+  background:
+    radial-gradient(ellipse 70% 100% at 50% -20%, rgba(15,118,110,0.35), rgba(15,118,110,0) 65%),
+    #05070a;
+}
+html[lang='en-US'] .feat-hero h1 { color: #FFFFFF; }
+html[lang='en-US'] .feat-hero .tagline { color: #A8B3CC; }
+html[lang='en-US'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.1); color: #E6EAF5; }
+
+html[lang='en-IN'] .feat-hero {
+  background:
+    radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 65%),
+    #0EA5E9;
+}
+html[lang='en-IN'] .feat-hero h1 { color: #FFFFFF; }
+html[lang='en-IN'] .feat-hero .tagline { color: #D3E0FA; }
+html[lang='en-IN'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.16); color: #FFFFFF; }
+
 /* ── Module Sections ── */
 .feat-module-section {
   padding: 6rem 0;
@@ -1445,6 +1534,27 @@ body {
   background: rgba(13, 148, 136, 0.14);
   border-color: rgba(45, 212, 191, 0.28);
 }
+
+/* Locale overrides win over [data-theme='dark'] regardless of the toggle
+   (html[lang=...] outranks a bare attribute selector), so the hero always
+   reads as black for United States, blue for India. */
+html[lang='en-US'] .cvpn-hero {
+  background:
+    radial-gradient(ellipse 70% 100% at 50% -20%, rgba(15,118,110,0.35), rgba(15,118,110,0) 65%),
+    #05070a;
+}
+html[lang='en-US'] .cvpn-hero-copy h1 { color: #FFFFFF; }
+html[lang='en-US'] .cvpn-lede { color: #A8B3CC; }
+html[lang='en-US'] .cvpn-trust-label { color: #8895B2; }
+
+html[lang='en-IN'] .cvpn-hero {
+  background:
+    radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 65%),
+    #0EA5E9;
+}
+html[lang='en-IN'] .cvpn-hero-copy h1 { color: #FFFFFF; }
+html[lang='en-IN'] .cvpn-lede { color: #D3E0FA; }
+html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
 
 /* status card */
 .cvpn-status {
@@ -1782,11 +1892,14 @@ body {
    going fully flat. */
 .allp-hero2 { background: radial-gradient(ellipse 70% 100% at 50% -20%, rgba(15,118,110,0.35), rgba(15,118,110,0) 65%), #05070a; color: #fff; text-align: center; padding: 4rem 0 4.5rem; }
 .allp-hero2 h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0 auto; max-width: 20ch; text-wrap: balance; }
-/* India locale keeps the original teal gradient — only the default/US page
-   asked for the black treatment. Same specificity as .allp-hero2, so
-   source order (this rule after) is what makes it win on the elements
-   that carry both classes. */
-.allp-hero2--in { background: linear-gradient(135deg, #3b4a6b 0%, #0f766e 100%); }
+/* India gets its own solid-blue treatment (mirrors the US black band's
+   glow-over-solid structure, just recolored) instead of the original teal
+   gradient. Written as a two-class selector (not source order) so it wins
+   over .allp-hero2 unconditionally — a same-specificity, order-dependent
+   rule here previously got silently reordered by the CSS minifier when it
+   merged its identical declaration with other locale rules elsewhere in
+   the file, which flipped the cascade and made India render black. */
+.allp-hero2.allp-hero2--in { background: radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 65%), #0EA5E9; }
 .allp-hero-rule { width: 56px; height: 3px; border-radius: 3px; background: #fbbf24; margin: 1.5rem auto 0; }
 .allp-search-wrap { position: relative; z-index: 3; margin-top: -2.4rem; }
 .allp-search { position: relative; max-width: 680px; margin: 0 auto; }
