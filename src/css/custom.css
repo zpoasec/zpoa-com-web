@@ -230,12 +230,16 @@ html[lang='en-IN'] .navbar {
   color: #4C9AFF;
 }
 
+/* .hero-section stays a white surface by default (only [data-theme='dark']
+   changes it), so these are pinned rather than reading the locale-flipping
+   tokens — otherwise a locale's light text color lands on the white
+   section and disappears. */
 .hero-section h1 {
   font-size: 3.75rem;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.035em;
-  color: var(--zpoa-heading);
+  color: var(--zpoa-on-light);
   margin-bottom: 1.5rem;
   max-width: 780px;
   margin-left: auto;
@@ -258,10 +262,11 @@ html[lang='en-IN'] .navbar {
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto 2.5rem;
-  color: var(--zpoa-gray-500);
+  color: #6b7685;
   line-height: 1.7;
   font-weight: 400;
 }
+[data-theme='dark'] .hero-section .tagline { color: var(--zpoa-gray-500); }
 
 [data-theme='dark'] .hero-section .tagline {
   color: #8899AA;
@@ -297,9 +302,13 @@ html[lang='en-IN'] .navbar {
 }
 
 .hero-btn-secondary {
+  /* Always a white surface (no locale/theme override changes this button's
+     own background), so text/border are pinned instead of using the tokens
+     that flip per locale — otherwise a locale's light text/border color
+     lands on this white button and disappears. */
   background: #fff;
-  color: var(--zpoa-text);
-  border: 1px solid var(--zpoa-gray-200);
+  color: var(--zpoa-on-light);
+  border: 1px solid rgba(15, 23, 42, 0.12);
   padding: 13px 32px;
   border-radius: 24px;
   font-size: 0.95rem;
@@ -592,6 +601,9 @@ html[lang='en-IN'] .navbar {
 }
 
 .integration-badge {
+  /* Always a white surface (no locale/theme override changes this badge's
+     own background), so border/text are pinned instead of using tokens
+     that flip per locale. */
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -600,8 +612,8 @@ html[lang='en-IN'] .navbar {
   font-size: 0.85rem;
   font-weight: 500;
   background: #fff;
-  border: 1px solid var(--zpoa-gray-200);
-  color: var(--zpoa-text);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  color: var(--zpoa-on-light);
   transition: all 0.15s;
 }
 
@@ -724,6 +736,13 @@ html[lang='en-IN'] .navbar {
   transition: all 0.2s;
 }
 
+/* The tier description and overage <p> tags have no class of their own
+   (JSX sets only inline font-size/opacity) and otherwise inherit body's
+   locale-flipping color, which goes invisible-light against this always-
+   white card. */
+.pricing-card > p { color: var(--zpoa-on-light); }
+[data-theme='dark'] .pricing-card > p { color: var(--zpoa-text); }
+
 [data-theme='dark'] .pricing-card {
   background: #1B2838;
   border-color: #2A3A4E;
@@ -767,10 +786,14 @@ html[lang='en-IN'] .navbar {
   background: #2684FF;
 }
 
+/* .pricing-card stays a white surface by default (only [data-theme='dark']
+   changes it), so these are pinned rather than reading the locale-flipping
+   tokens — otherwise a locale's light text color lands on the white card
+   and disappears. */
 .pricing-card h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--zpoa-heading);
+  color: var(--zpoa-on-light);
   margin-bottom: 0.5rem;
 }
 
@@ -781,7 +804,7 @@ html[lang='en-IN'] .navbar {
 .pricing-card .price {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--zpoa-heading);
+  color: var(--zpoa-on-light);
   margin-bottom: 0.25rem;
   letter-spacing: -0.03em;
 }
@@ -793,8 +816,9 @@ html[lang='en-IN'] .navbar {
 .pricing-card .price span {
   font-size: 0.9rem;
   font-weight: 400;
-  color: var(--zpoa-gray-500);
+  color: #6b7685;
 }
+[data-theme='dark'] .pricing-card .price span { color: var(--zpoa-gray-500); }
 
 .pricing-card .features-list {
   list-style: none;
@@ -809,7 +833,7 @@ html[lang='en-IN'] .navbar {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--zpoa-gray-500);
+  color: #6b7685;
 }
 
 [data-theme='dark'] .pricing-card .features-list li {
@@ -851,8 +875,11 @@ html[lang='en-IN'] .navbar {
 }
 
 .pricing-card .pricing-btn.secondary {
-  border: 1px solid var(--zpoa-gray-200);
-  color: var(--zpoa-text);
+  /* Always a white surface (no locale/theme override changes this button's
+     own background), so text/border are pinned instead of using tokens
+     that flip per locale. */
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  color: var(--zpoa-on-light);
   background: #fff;
 }
 
@@ -997,13 +1024,16 @@ html[lang='en-IN'] .navbar {
 
 /* ── Trusted badge ── */
 .trusted-badge {
+  /* Always a white surface (no locale/theme override changes this badge's
+     own background), so border/text are pinned instead of using tokens
+     that flip per locale. */
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--zpoa-gray-500);
+  color: #6b7685;
   letter-spacing: 0.02em;
   padding: 6px 16px;
   border-radius: 100px;
-  border: 1px solid var(--zpoa-gray-200);
+  border: 1px solid rgba(15, 23, 42, 0.12);
   background: #fff;
 }
 
@@ -1225,6 +1255,14 @@ html[lang='en-IN'] .navbar {
   color: #B3D4FF;
 }
 
+/* Sits directly on the page background for these locales, so pinned to a
+   higher-contrast color instead of --zpoa-blue (indigo reads too close in
+   hue to the sky blue background to pop as a link). */
+html[lang='en-US'] .feat-learn-more { color: #4C9AFF; }
+html[lang='en-US'] .feat-learn-more:hover { color: #B3D4FF; }
+html[lang='en-IN'] .feat-learn-more { color: #FFFFFF; }
+html[lang='en-IN'] .feat-learn-more:hover { color: #F0F9FF; }
+
 /* ═══════════════════════════════════════════
    FEATURES PAGE
    ═══════════════════════════════════════════ */
@@ -1309,6 +1347,11 @@ html[lang='en-IN'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.16
 [data-theme='dark'] .feat-section-white {
   background: #0D1B2A;
 }
+/* Alternates with .feat-section-gray (which already flips correctly via
+   --zpoa-gray-50); this one was hardcoded white, so its module text
+   (already reading --zpoa-heading etc.) went invisible against it. */
+html[lang='en-US'] .feat-section-white { background: #05070a; }
+html[lang='en-IN'] .feat-section-white { background: #0EA5E9; }
 
 [data-theme='dark'] .feat-section-gray {
   background: #0F1923;
@@ -1438,18 +1481,22 @@ html[lang='en-IN'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.16
   .product-card:hover { transform: none; }
 }
 
+/* .product-card stays a white surface by default (only [data-theme='dark']
+   changes it), so these are pinned rather than reading the locale-flipping
+   tokens — otherwise a locale's light text color lands on the white card
+   and disappears. */
 .product-card h3 {
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--zpoa-heading);
+  color: var(--zpoa-on-light);
   margin: 0.25rem 0 0.75rem;
 }
 
 .product-card > p {
   font-size: 1.02rem;
   line-height: 1.7;
-  color: var(--zpoa-gray-500);
+  color: #6b7685;
   margin-bottom: 1.25rem;
 }
 
@@ -1585,7 +1632,11 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 [data-theme='dark'] .cvpn-status-head { border-color: rgba(255, 255, 255, 0.08); }
-.cvpn-status-head strong { color: var(--zpoa-heading); font-size: 1rem; }
+/* This card is always a white surface (no locale/theme override changes its
+   own background), so its text must stay pinned to --zpoa-on-light rather
+   than the tokens that flip per locale — otherwise a locale's light text
+   color lands on this white card and disappears. */
+.cvpn-status-head strong { color: var(--zpoa-on-light); font-size: 1rem; }
 [data-theme='dark'] .cvpn-status-head strong { color: #FFFFFF; }
 .cvpn-status-dot {
   width: 9px; height: 9px; border-radius: 50%;
@@ -1604,8 +1655,11 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
 }
 .cvpn-status-rows > div:last-child { border-bottom: none; }
 [data-theme='dark'] .cvpn-status-rows > div { border-color: rgba(255, 255, 255, 0.06); }
-.cvpn-status-rows span { color: var(--zpoa-gray-500); }
-.cvpn-status-rows b { color: var(--zpoa-heading); font-variant-numeric: tabular-nums; }
+/* Same always-white-card reasoning as .cvpn-status-head strong above: pin to
+   fixed light-surface colors instead of the locale-flipping tokens. */
+.cvpn-status-rows span { color: #6b7685; }
+[data-theme='dark'] .cvpn-status-rows span { color: var(--zpoa-gray-500); }
+.cvpn-status-rows b { color: var(--zpoa-on-light); font-variant-numeric: tabular-nums; }
 [data-theme='dark'] .cvpn-status-rows b { color: #E9F1F7; }
 .cvpn-status-rows b.ok { color: #059669; }
 [data-theme='dark'] .cvpn-status-rows b.ok { color: #34D399; }
@@ -1614,6 +1668,11 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
 .cvpn-section { padding: 6rem 0; }
 .cvpn-section-gray { background: var(--zpoa-section-gray, #F7F9FB); }
 [data-theme='dark'] .cvpn-section-gray { background: rgba(255, 255, 255, 0.02); }
+/* --zpoa-section-gray is never defined anywhere, so this always fell back
+   to a hardcoded light gray regardless of theme or locale — its module
+   text (already reading --zpoa-heading etc.) went invisible against it. */
+html[lang='en-US'] .cvpn-section-gray { background: rgba(255, 255, 255, 0.03); }
+html[lang='en-IN'] .cvpn-section-gray { background: rgba(255, 255, 255, 0.08); }
 .cvpn-section-center { text-align: center; }
 .cvpn-section h2,
 .cvpn-h2-center {
@@ -1689,17 +1748,22 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
   border-radius: 100px; padding: 0.25rem 0.7rem; margin-bottom: 0.9rem;
 }
 [data-theme='dark'] .prod-badge-new { color: #2DD4BF; background: rgba(13,148,136,0.14); border-color: rgba(45,212,191,0.28); }
+/* .prod-featured stays a white surface by default (only [data-theme='dark']
+   changes it), so these are pinned rather than reading the locale-flipping
+   tokens — otherwise a locale's light text color lands on the white card
+   and disappears. */
 .prod-featured h2 {
   font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em;
-  color: var(--zpoa-heading); margin: 0 0 0.4rem;
+  color: var(--zpoa-on-light); margin: 0 0 0.4rem;
 }
 [data-theme='dark'] .prod-featured h2 { color: #FFFFFF; }
 .prod-featured-tagline { font-size: 1.05rem; font-weight: 600; color: #0D9488; margin: 0 0 0.9rem; }
 [data-theme='dark'] .prod-featured-tagline { color: #2DD4BF; }
-.prod-featured-desc { font-size: 1rem; line-height: 1.65; color: var(--zpoa-gray-500); margin: 0 0 1.1rem; }
+.prod-featured-desc { font-size: 1rem; line-height: 1.65; color: #6b7685; margin: 0 0 1.1rem; }
+[data-theme='dark'] .prod-featured-desc { color: var(--zpoa-gray-500); }
 .prod-featured-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.25rem; }
 .prod-featured-tags span {
-  font-size: 0.8rem; font-weight: 600; color: var(--zpoa-gray-500);
+  font-size: 0.8rem; font-weight: 600; color: #6b7685;
   background: rgba(15,23,42,0.04); border-radius: 100px; padding: 0.3rem 0.75rem;
 }
 [data-theme='dark'] .prod-featured-tags span { color: #A2B3C4; background: rgba(255,255,255,0.05); }
@@ -1745,10 +1809,18 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
 }
 .prod-ic svg { width: 23px; height: 23px; }
 .prod-tile-body { flex: 1; min-width: 0; }
-.prod-tile-name { font-size: 1.02rem; font-weight: 700; color: var(--zpoa-heading); letter-spacing: -0.01em; }
+/* .prod-tile stays a white surface by default (only [data-theme='dark']
+   changes it), so these are pinned rather than reading the locale-flipping
+   tokens — otherwise a locale's light text color lands on the white card
+   and disappears. */
+.prod-tile-name { font-size: 1.02rem; font-weight: 700; color: var(--zpoa-on-light); letter-spacing: -0.01em; }
 [data-theme='dark'] .prod-tile-name { color: #FFFFFF; }
-.prod-tile-tagline { font-size: 0.85rem; color: var(--zpoa-gray-500); line-height: 1.35; margin-top: 0.1rem; }
-.prod-tile-arrow { flex: none; color: var(--zpoa-gray-400, #94a3b8); font-size: 1.1rem; transition: transform 0.16s ease, color 0.16s ease; }
+.prod-tile-tagline { font-size: 0.85rem; color: #6b7685; line-height: 1.35; margin-top: 0.1rem; }
+[data-theme='dark'] .prod-tile-tagline { color: var(--zpoa-gray-500); }
+/* .prod-tile stays a white surface by default, so pinned like its siblings
+   above rather than reading the locale-flipping --zpoa-gray-400. */
+.prod-tile-arrow { flex: none; color: #94a3b8; font-size: 1.1rem; transition: transform 0.16s ease, color 0.16s ease; }
+[data-theme='dark'] .prod-tile-arrow { color: var(--zpoa-gray-400); }
 .prod-tile:hover .prod-tile-arrow { color: #0D9488; transform: translateX(3px); }
 
 @media (max-width: 900px) {
@@ -1766,7 +1838,10 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
 .prodx-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #0D9488; margin-bottom: 0.9rem; }
 [data-theme='dark'] .prodx-side-title { color: #2DD4BF; }
 .prodx-search { position: relative; margin-bottom: 1.5rem; }
-.prodx-search-ic { position: absolute; left: 0.72rem; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--zpoa-gray-400, #94a3b8); }
+/* Sits inside the always-white .prodx-search input, so pinned rather than
+   reading the locale-flipping --zpoa-gray-400. */
+.prodx-search-ic { position: absolute; left: 0.72rem; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: #94a3b8; }
+[data-theme='dark'] .prodx-search-ic { color: var(--zpoa-gray-400); }
 .prodx-search input {
   width: 100%; padding: 0.6rem 0.8rem 0.6rem 2.2rem; font-size: 0.9rem;
   border: 1px solid rgba(15,23,42,0.12); border-radius: 10px; background: #fff;
@@ -1808,11 +1883,16 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
 @media (prefers-reduced-motion: reduce) { .prodx-featured { transition: none; } .prodx-featured:hover { transform: none; } }
 [data-theme='dark'] .prodx-featured { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.10); box-shadow: none; }
 .prodx-featured-logo { border-radius: 18px; flex: none; box-shadow: 0 10px 24px rgba(76,29,149,0.25); }
-.prodx-featured-body h3 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--zpoa-heading); margin: 0 0 0.3rem; }
+/* .prodx-featured stays a white surface by default (only [data-theme='dark']
+   changes it), so these are pinned rather than reading the locale-flipping
+   tokens — otherwise a locale's light text color lands on the white card
+   and disappears. */
+.prodx-featured-body h3 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--zpoa-on-light); margin: 0 0 0.3rem; }
 [data-theme='dark'] .prodx-featured-body h3 { color: #fff; }
 .prodx-featured-tagline { font-size: 0.98rem; font-weight: 600; color: #0D9488; margin: 0 0 0.6rem; }
 [data-theme='dark'] .prodx-featured-tagline { color: #2DD4BF; }
-.prodx-featured-desc { font-size: 0.95rem; line-height: 1.6; color: var(--zpoa-gray-500); margin: 0 0 0.9rem; max-width: 46rem; }
+.prodx-featured-desc { font-size: 0.95rem; line-height: 1.6; color: #6b7685; margin: 0 0 0.9rem; max-width: 46rem; }
+[data-theme='dark'] .prodx-featured-desc { color: var(--zpoa-gray-500); }
 
 .prodx-cat { margin-bottom: 1.75rem; }
 .prodx-cat-name { font-size: 0.95rem; font-weight: 700; color: var(--zpoa-heading); margin: 0 0 0.75rem; }
@@ -1870,13 +1950,19 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
 .allp-ic svg { width: 24px; height: 24px; }
 .allp-logo { flex: none; border-radius: 12px; box-shadow: 0 6px 16px rgba(76,29,149,0.22); }
 .allp-name-row { display: flex; align-items: center; gap: 0.5rem; }
-.allp-name-row h3 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em; color: var(--zpoa-heading); margin: 0; }
+/* .allp-card stays a white surface by default (only [data-theme='dark']
+   changes it), so these are pinned rather than reading the locale-flipping
+   tokens — otherwise a locale's light text color lands on the white card
+   and disappears. */
+.allp-name-row h3 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em; color: var(--zpoa-on-light); margin: 0; }
 [data-theme='dark'] .allp-name-row h3 { color: #fff; }
 .allp-tagline { font-size: 0.9rem; font-weight: 600; color: #0D9488; margin: 0.1rem 0 0; }
 [data-theme='dark'] .allp-tagline { color: #2DD4BF; }
-.allp-desc { font-size: 0.95rem; line-height: 1.6; color: var(--zpoa-gray-500); margin: 0 0 1rem; }
+.allp-desc { font-size: 0.95rem; line-height: 1.6; color: #6b7685; margin: 0 0 1rem; }
+[data-theme='dark'] .allp-desc { color: var(--zpoa-gray-500); }
 .allp-features { list-style: none; margin: 0 0 1.25rem; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
-.allp-features li { position: relative; padding-left: 1.6rem; font-size: 0.9rem; color: var(--zpoa-gray-500); line-height: 1.45; }
+.allp-features li { position: relative; padding-left: 1.6rem; font-size: 0.9rem; color: #6b7685; line-height: 1.45; }
+[data-theme='dark'] .allp-features li { color: var(--zpoa-gray-500); }
 .allp-features li::before { content: '✓'; position: absolute; left: 0; top: 0; color: #0D9488; font-weight: 800; }
 [data-theme='dark'] .allp-features li::before { color: #2DD4BF; }
 .allp-link { margin-top: auto; font-weight: 700; color: #0D9488; font-size: 0.95rem; }
@@ -1903,7 +1989,8 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
 .allp-hero-rule { width: 56px; height: 3px; border-radius: 3px; background: #fbbf24; margin: 1.5rem auto 0; }
 .allp-search-wrap { position: relative; z-index: 3; margin-top: -2.4rem; }
 .allp-search { position: relative; max-width: 680px; margin: 0 auto; }
-.allp-search-ic { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--zpoa-gray-400, #94a3b8); }
+.allp-search-ic { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: #94a3b8; }
+[data-theme='dark'] .allp-search-ic { color: var(--zpoa-gray-400); }
 .allp-search input {
   width: 100%; padding: 1rem 1.2rem 1rem 3rem; font-size: 1.05rem;
   border: 1px solid rgba(15,23,42,0.10); border-radius: 12px; background: #fff; color: var(--zpoa-on-light);
@@ -2020,12 +2107,17 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
 }
 .cvpn-feature-ic svg { width: 24px; height: 24px; }
 [data-theme='dark'] .cvpn-feature-ic { color: #2DD4BF; background: rgba(45, 212, 191, 0.14); }
+/* .cvpn-feature stays a white surface by default (only [data-theme='dark']
+   changes it), so these are pinned rather than reading the locale-flipping
+   tokens — otherwise a locale's light text color lands on the white card
+   and disappears. */
 .cvpn-feature h3 {
   font-size: 1.2rem; font-weight: 750; letter-spacing: -0.01em;
-  color: var(--zpoa-heading); margin: 0 0 0.5rem;
+  color: var(--zpoa-on-light); margin: 0 0 0.5rem;
 }
 [data-theme='dark'] .cvpn-feature h3 { color: #FFFFFF; }
-.cvpn-feature p { font-size: 0.95rem; line-height: 1.6; color: var(--zpoa-gray-500); margin: 0; }
+.cvpn-feature p { font-size: 0.95rem; line-height: 1.6; color: #6b7685; margin: 0; }
+[data-theme='dark'] .cvpn-feature p { color: var(--zpoa-gray-500); }
 
 /* flow */
 .cvpn-flow {
@@ -2086,7 +2178,10 @@ html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
 [data-theme='dark'] .cvpn-th-us, [data-theme='dark'] .cvpn-td-us { background: rgba(13,148,136,0.12); }
 .cvpn-th-us { color: #0D9488 !important; }
 [data-theme='dark'] .cvpn-th-us { color: #2DD4BF !important; }
-.cvpn-td-us { font-weight: 600; color: var(--zpoa-heading); }
+/* .cvpn-td-us keeps a hardcoded light mint background in all themes/locales
+   (only [data-theme='dark'] changes it), so its text is pinned rather than
+   reading the locale-flipping --zpoa-heading. */
+.cvpn-td-us { font-weight: 600; color: var(--zpoa-on-light); }
 [data-theme='dark'] .cvpn-td-us { color: #E9F1F7; }
 .cvpn-dim { font-weight: 650; color: var(--zpoa-heading); }
 [data-theme='dark'] .cvpn-dim { color: #FFFFFF; }
@@ -2736,6 +2831,17 @@ main.zpoa-blog-list article > footer.row a {
     0 1px 2px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
+/* This card was hardcoded white (only [data-theme='dark'] changed it), so
+   its title/meta text (already reading --zpoa-heading etc.) went invisible
+   against it once those tokens flipped per locale. */
+html[lang='en-US'] main.zpoa-blog-list article {
+  background: linear-gradient(180deg, #10141f 0%, #05070a 100%);
+  border-color: rgba(255, 255, 255, 0.10);
+}
+html[lang='en-IN'] main.zpoa-blog-list article {
+  background: linear-gradient(180deg, #1f9fdb 0%, #0284C7 100%);
+  border-color: rgba(255, 255, 255, 0.25);
+}
 
 main.zpoa-blog-list article:hover {
   transform: translateY(-3px);
@@ -2909,6 +3015,21 @@ main.zpoa-blog-list article > footer.row a[rel="tag"] {
   color: #6FB3FF;
   border-color: rgba(76, 154, 255, 0.25);
 }
+/* This card is now a dark/blue surface for these locales (see the article
+   background rule above), so pinned to a higher-contrast color instead of
+   --zpoa-blue (indigo reads too close in hue to the India card to pop). */
+html[lang='en-US'] main.zpoa-blog-list article > footer.row [class*="tag_"] a,
+html[lang='en-US'] main.zpoa-blog-list article > footer.row a[rel="tag"] {
+  background: rgba(76, 154, 255, 0.12);
+  color: #6FB3FF;
+  border-color: rgba(76, 154, 255, 0.25);
+}
+html[lang='en-IN'] main.zpoa-blog-list article > footer.row [class*="tag_"] a,
+html[lang='en-IN'] main.zpoa-blog-list article > footer.row a[rel="tag"] {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.32);
+}
 
 /* Read more link: plain <a> in the second col */
 main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] {
@@ -2923,6 +3044,10 @@ main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] {
   width: auto;
   transition: gap 0.15s ease, color 0.15s ease;
 }
+/* This card is now a dark/blue surface for these locales, so pinned to a
+   higher-contrast color instead of --zpoa-blue. */
+html[lang='en-US'] main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] { color: #4C9AFF; }
+html[lang='en-IN'] main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] { color: #FFFFFF; }
 
 main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] b {
   font-weight: 600;
