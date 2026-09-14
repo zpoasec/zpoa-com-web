@@ -2248,6 +2248,12 @@ html[lang='en-IN'] .cvpn-section-gray { background: rgba(255, 255, 255, 0.08); }
   color: #C8D1DC;
 }
 
+/* .feat-highlights is reused inside .product-card (an always-white surface,
+   unlike the flipping section it sits in everywhere else), so pin it there
+   instead of the locale-flipping --zpoa-text. */
+.product-card .feat-highlights li { color: #6b7685; }
+[data-theme='dark'] .product-card .feat-highlights li { color: #C8D1DC; }
+
 .feat-highlights li::before {
   content: '\2713';
   color: var(--zpoa-green);
