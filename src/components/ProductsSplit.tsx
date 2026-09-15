@@ -1,5 +1,6 @@
 import {type ReactNode, useState, useRef, useEffect} from 'react';
 import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 
 /**
@@ -13,15 +14,27 @@ import clsx from 'clsx';
 const PRODUCTS = '/products';          // portfolio overview
 const ALL_PRODUCTS = '/all-products';  // full portfolio, with detail
 const ZYPHER_VPN = '/cyber-vpn';       // the VPN product page
+const CAPITAL = '/capital';            // ZPOA Capital product page, India only
 
 // Zara is deliberately absent: it is a platform capability, not a product, and
 // lives on the Features page (/features#zara).
-const menu: Array<{label: string; to: string; desc: string}> = [
+const baseMenu: Array<{label: string; to: string; desc: string}> = [
   {label: 'ZPOA Zypher VPN', to: ZYPHER_VPN, desc: 'Self-hosted zero-trust mesh'},
   {label: 'All Products', to: ALL_PRODUCTS, desc: 'The complete portfolio'},
 ];
 
+// ZPOA Capital (the Ciya Micro Credit lending platform) is an India-specific
+// product — microfinance lending operations aren't relevant outside that
+// market, so it's inserted only for the en-in locale rather than shown
+// everywhere. Points at its own product page, same as ZPOA Zypher VPN, not
+// straight out to the external app.
+const capitalItem = {label: 'ZPOA Capital', to: CAPITAL, desc: 'Group-lending & collections platform'};
+
 export default function ProductsSplit(props: {mobile?: boolean}): ReactNode {
+  const {i18n} = useDocusaurusContext();
+  const menu = i18n.currentLocale === 'en-in'
+    ? [baseMenu[0], capitalItem, baseMenu[1]]
+    : baseMenu;
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 

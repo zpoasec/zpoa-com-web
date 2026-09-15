@@ -18,6 +18,7 @@ export const ICONS: Record<string, ReactNode> = {
   armor: (<svg {...S}><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>),
   aisec: (<svg {...S}><path d="M12 3l7 3v5c0 4.4-3 8-7 10-4-2-7-5.6-7-10V6l7-3z" /><path d="M12 8.4l1.1 2.5 2.5 1.1-2.5 1.1L12 15.6l-1.1-2.5L8.4 12l2.5-1.1z" /></svg>),
   zara: (<svg {...S}><path d="M5 4.6h14a2 2 0 0 1 2 2v6.6a2 2 0 0 1-2 2h-7.6L7 19v-3.8H5a2 2 0 0 1-2-2V6.6a2 2 0 0 1 2-2z" /><path d="M11.4 7.1l.9 2.5 2.5.9-2.5.9-.9 2.5-.9-2.5-2.5-.9 2.5-.9z" fill="currentColor" stroke="none" /></svg>),
+  capital: (<svg {...S}><path d="M3 10.5 12 4l9 6.5" /><rect x="4.5" y="10.5" width="15" height="8.5" rx="1.2" /><path d="M8 13.5v3M12 13.5v3M16 13.5v3" /></svg>),
 };
 
 export type Product = {
@@ -32,6 +33,8 @@ export type Product = {
   isNew?: boolean;
   /** Render the Zara workspace mockup in the detail card instead of plain copy. */
   visual?: 'zara';
+  /** Restricts this product to the given locale(s). Omit to show everywhere. */
+  locales?: string[];
 };
 
 export const CATEGORY_ORDER = [
@@ -106,4 +109,17 @@ export const PRODUCTS: Product[] = [
     features: ['Shadow AI discovery across generative, code, image & voice tools', 'Sanctioned / unauthorized / blocked governance', 'AI-DLP inspection for PII, credentials & source code', 'Prompt-injection detection and agent kill switch'],
     isNew: true,
   },
+  {
+    name: 'ZPOA Capital', category: 'Featured Apps', accent: 'accent-capital', icon: 'capital', to: '/capital', isNew: true,
+    locales: ['en-in'],
+    tagline: 'Run the entire lending operation from one console',
+    desc: 'Group onboarding, loan disbursement, weekly field collection, staff performance, and the full set of books in one live system, so every action updates the numbers automatically and nothing is entered twice.',
+    features: ['Kulu (group) lending: teams, centres & leaders built in', 'Portfolio-at-Risk %, overdue, and collection efficiency up front', 'Weekly field collection with GPS-verified evidence', 'Double-entry ledger, day closing & owner/investor separation'],
+  },
 ];
+
+/** Products list scoped to a locale, preserving PRODUCTS' order (so index 0
+ * stays whichever product is meant to be "featured" for every locale). */
+export function productsForLocale(locale: string): Product[] {
+  return PRODUCTS.filter((p) => !p.locales || p.locales.includes(locale));
+}

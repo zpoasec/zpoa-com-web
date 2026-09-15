@@ -1,12 +1,12 @@
 import {type ReactNode, useState} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import {PRODUCTS, ICONS, CATEGORY_ORDER, type Product} from '@site/src/data/products';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {productsForLocale, ICONS, CATEGORY_ORDER, type Product} from '@site/src/data/products';
 import ProductLogo from '@site/src/components/ProductLogo';
 import ZaraWorkspace from '@site/src/components/ZaraWorkspace';
 
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-const featured = PRODUCTS[0]; // ZPOA Zypher VPN
 
 function ProductDetail({p}: {p: Product}): ReactNode {
   return (
@@ -44,6 +44,9 @@ function ProductDetail({p}: {p: Product}): ReactNode {
 }
 
 export default function AllProducts(): ReactNode {
+  const {i18n} = useDocusaurusContext();
+  const products = productsForLocale(i18n.currentLocale);
+  const featured = products[0]; // ZPOA Zypher VPN
   const [q, setQ] = useState('');
   const query = q.trim().toLowerCase();
   const matches = (p: Product) =>
@@ -51,7 +54,7 @@ export default function AllProducts(): ReactNode {
     p.name.toLowerCase().includes(query) ||
     p.tagline.toLowerCase().includes(query) ||
     p.desc.toLowerCase().includes(query);
-  const filtered = PRODUCTS.filter(matches);
+  const filtered = products.filter(matches);
 
   return (
     <Layout

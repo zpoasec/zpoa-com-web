@@ -1418,6 +1418,7 @@ html[lang='en-IN'] .feat-section-white { background: #0EA5E9; }
 .accent-aisec { background: #FFF4E5; color: #BF6300; }
 .accent-svchub { background: #FFF0E6; color: #C25708; }
 .accent-zara { background: #EFEAFE; color: #5B3BE0; }
+.accent-capital { background: #FEF3C7; color: #B45309; }
 
 [data-theme='dark'] .accent-detect { background: rgba(222, 53, 11, 0.15); color: #FF5630; }
 [data-theme='dark'] .accent-comply { background: rgba(0, 135, 90, 0.15); color: #36B37E; }
@@ -1427,6 +1428,7 @@ html[lang='en-IN'] .feat-section-white { background: #0EA5E9; }
 [data-theme='dark'] .accent-monitor { background: rgba(109, 40, 217, 0.15); color: #A78BFA; }
 [data-theme='dark'] .accent-neural { background: rgba(0, 184, 217, 0.15); color: #00C7E6; }
 [data-theme='dark'] .accent-vpn { background: rgba(13, 148, 136, 0.15); color: #2DD4BF; }
+[data-theme='dark'] .accent-capital { background: rgba(180, 83, 9, 0.18); color: #FBBF24; }
 
 /* ── Navbar: Products split item (label links, chevron toggles) ── */
 .products-split { position: relative; display: flex; align-items: center; }
@@ -1594,6 +1596,15 @@ html[lang='en-IN'] .feat-section-white { background: #0EA5E9; }
   color: #2DD4BF;
   background: rgba(13, 148, 136, 0.14);
   border-color: rgba(45, 212, 191, 0.28);
+}
+/* The light mint pill is tuned for a white hero; on these locales' black/blue
+   hero it reads as barely-visible pale-on-pale, so pin it to a translucent
+   white treatment instead. */
+html[lang='en-US'] .cvpn-trust-tags span,
+html[lang='en-IN'] .cvpn-trust-tags span {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.32);
 }
 
 /* Locale overrides win over [data-theme='dark'] regardless of the toggle
