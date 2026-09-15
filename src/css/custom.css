@@ -116,21 +116,25 @@ html[lang='en-IN'] {
   --ifm-color-primary-lightest: #8A76F2;
   --ifm-background-color: #0EA5E9;
   --ifm-background-surface-color: #0284C7;
-  --ifm-font-color-base: #F0F9FF;
-  --ifm-heading-color: #FFFFFF;
+  /* Body text is pure black rather than white/light: on this saturated a
+     blue, black reads crisper and more "made to be read" than white does —
+     a deliberate choice for India, not the US black theme (light-on-dark
+     stays the norm there). */
+  --ifm-font-color-base: #000000;
+  --ifm-heading-color: #000000;
   /* A deep indigo, not another blue: the page itself is already sky blue,
      so accents/buttons need to be a different hue to read as an accent
      rather than disappearing into the background. */
   --zpoa-blue: #4B2FD6;
-  --zpoa-text: #F0F9FF;
-  --zpoa-heading: #FFFFFF;
+  --zpoa-text: #000000;
+  --zpoa-heading: #000000;
   --zpoa-gray-50: #0369A1;
   --zpoa-gray-100: #075985;
-  --zpoa-gray-200: rgba(255, 255, 255, 0.3);
-  --zpoa-gray-400: #BAE6FD;
-  --zpoa-gray-500: #E0F2FE;
-  --zpoa-green: #5CD79B;
-  --zpoa-red: #FF8F73;
+  --zpoa-gray-200: rgba(0, 0, 0, 0.18);
+  --zpoa-gray-400: rgba(0, 0, 0, 0.55);
+  --zpoa-gray-500: rgba(0, 0, 0, 0.72);
+  --zpoa-green: #0D7A4C;
+  --zpoa-red: #B3261E;
 }
 
 /* ── Global ── */
@@ -1274,8 +1278,8 @@ html[lang='en-IN'] .navbar__logo img {
    hue to the sky blue background to pop as a link). */
 html[lang='en-US'] .feat-learn-more { color: #4C9AFF; }
 html[lang='en-US'] .feat-learn-more:hover { color: #B3D4FF; }
-html[lang='en-IN'] .feat-learn-more { color: #FFFFFF; }
-html[lang='en-IN'] .feat-learn-more:hover { color: #F0F9FF; }
+html[lang='en-IN'] .feat-learn-more { color: #000000; }
+html[lang='en-IN'] .feat-learn-more:hover { color: #1E1B4B; }
 
 /* ═══════════════════════════════════════════
    FEATURES PAGE
@@ -1339,9 +1343,9 @@ html[lang='en-IN'] .feat-hero {
     radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 65%),
     #0EA5E9;
 }
-html[lang='en-IN'] .feat-hero h1 { color: #FFFFFF; }
-html[lang='en-IN'] .feat-hero .tagline { color: #D3E0FA; }
-html[lang='en-IN'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.16); color: #FFFFFF; }
+html[lang='en-IN'] .feat-hero h1 { color: #000000; }
+html[lang='en-IN'] .feat-hero .tagline { color: rgba(0, 0, 0, 0.7); }
+html[lang='en-IN'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.26); color: #000000; }
 
 /* ── Module Sections ── */
 .feat-module-section {
@@ -1615,9 +1619,9 @@ html[lang='en-IN'] .product-card > p { color: #6b7685; }
    white treatment instead. */
 html[lang='en-US'] .cvpn-trust-tags span,
 html[lang='en-IN'] .cvpn-trust-tags span {
-  color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.32);
+  color: #000000;
+  background: rgba(255, 255, 255, 0.26);
+  border-color: rgba(0, 0, 0, 0.18);
 }
 
 /* Locale overrides win over [data-theme='dark'] regardless of the toggle
@@ -1637,9 +1641,9 @@ html[lang='en-IN'] .cvpn-hero {
     radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 65%),
     #0EA5E9;
 }
-html[lang='en-IN'] .cvpn-hero-copy h1 { color: #FFFFFF; }
-html[lang='en-IN'] .cvpn-lede { color: #D3E0FA; }
-html[lang='en-IN'] .cvpn-trust-label { color: #C7D6F5; }
+html[lang='en-IN'] .cvpn-hero-copy h1 { color: #000000; }
+html[lang='en-IN'] .cvpn-lede { color: rgba(0, 0, 0, 0.7); }
+html[lang='en-IN'] .cvpn-trust-label { color: rgba(0, 0, 0, 0.6); }
 
 /* status card */
 .cvpn-status {
@@ -2067,7 +2071,8 @@ html[lang='en-IN'] .allp-features li { color: #6b7685; }
    rule here previously got silently reordered by the CSS minifier when it
    merged its identical declaration with other locale rules elsewhere in
    the file, which flipped the cascade and made India render black. */
-.allp-hero2.allp-hero2--in { background: radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 65%), #0EA5E9; }
+.allp-hero2.allp-hero2--in { background: radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 65%), #0EA5E9; color: #000000; }
+.allp-hero2.allp-hero2--in h1 { color: #000000; }
 .allp-hero-rule { width: 56px; height: 3px; border-radius: 3px; background: #fbbf24; margin: 1.5rem auto 0; }
 .allp-search-wrap { position: relative; z-index: 3; margin-top: -2.4rem; }
 .allp-search { position: relative; max-width: 680px; margin: 0 auto; }
@@ -3125,9 +3130,9 @@ html[lang='en-US'] main.zpoa-blog-list article > footer.row a[rel="tag"] {
 }
 html[lang='en-IN'] main.zpoa-blog-list article > footer.row [class*="tag_"] a,
 html[lang='en-IN'] main.zpoa-blog-list article > footer.row a[rel="tag"] {
-  background: rgba(255, 255, 255, 0.16);
-  color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.28);
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.18);
 }
 
 /* Read more link: plain <a> in the second col */
@@ -3146,7 +3151,7 @@ main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] {
 /* This card is now a dark/blue surface for these locales, so pinned to a
    higher-contrast color instead of --zpoa-blue. */
 html[lang='en-US'] main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] { color: #4C9AFF; }
-html[lang='en-IN'] main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] { color: #FFFFFF; }
+html[lang='en-IN'] main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] { color: #000000; }
 
 main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] b {
   font-weight: 600;
@@ -3408,4 +3413,52 @@ nav.pagination-nav .pagination-nav__link--next .pagination-nav__label::after {
   article .markdown img {
     margin: 1.5rem auto;
   }
+}
+
+/* ═══════════════════════════════════════════
+   DOCS PAGES — India text color
+   ═══════════════════════════════════════════ */
+/* Docs pages are built on Docusaurus/Infima's own default theme, which
+   isn't otherwise customized in this file — its own [data-theme='dark']
+   styling (headings, markdown body, sidebar, TOC, breadcrumbs) sits at a
+   specificity this file's token overrides don't reliably beat, so it stays
+   white whenever the visitor's dark-mode preference is on. !important here
+   is deliberate: fighting an unaudited third-party cascade, scoped only to
+   India, never touching US or the default locale. */
+html[lang='en-IN'] .theme-doc-markdown h1,
+html[lang='en-IN'] .theme-doc-markdown h2,
+html[lang='en-IN'] .theme-doc-markdown h3,
+html[lang='en-IN'] .theme-doc-markdown h4,
+html[lang='en-IN'] .theme-doc-markdown h5,
+html[lang='en-IN'] .theme-doc-markdown h6,
+html[lang='en-IN'] .theme-doc-markdown p,
+html[lang='en-IN'] .theme-doc-markdown li,
+html[lang='en-IN'] .theme-doc-markdown td,
+html[lang='en-IN'] .theme-doc-markdown th,
+html[lang='en-IN'] .theme-doc-markdown strong,
+html[lang='en-IN'] article h1 {
+  color: #000000 !important;
+}
+html[lang='en-IN'] .menu__link {
+  color: rgba(0, 0, 0, 0.75) !important;
+}
+html[lang='en-IN'] .menu__link:hover,
+html[lang='en-IN'] .menu__link--active {
+  color: #4B2FD6 !important;
+}
+html[lang='en-IN'] .menu__list-item-collapsible:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+html[lang='en-IN'] .table-of-contents__link {
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+html[lang='en-IN'] .table-of-contents__link--active,
+html[lang='en-IN'] .table-of-contents__link:hover {
+  color: #4B2FD6 !important;
+}
+html[lang='en-IN'] .breadcrumbs__link {
+  color: rgba(0, 0, 0, 0.75) !important;
+}
+html[lang='en-IN'] .breadcrumbs__item--active .breadcrumbs__link {
+  color: #000000 !important;
 }

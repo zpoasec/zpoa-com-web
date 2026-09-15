@@ -1007,31 +1007,34 @@ html[lang='en-IN'] {
   --zs-hero-bg:
     radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.16), rgba(255,255,255,0) 65%),
     #0EA5E9;
-  --zs-hero-fg:        #FFFFFF;
-  --zs-hero-sub:       #F0F9FF;
+  /* Text is pure black rather than white: on this saturated a blue, black
+     reads crisper than white — deliberate for India only, the US black
+     theme keeps its light-on-dark text. */
+  --zs-hero-fg:        #000000;
+  --zs-hero-sub:       rgba(0, 0, 0, 0.72);
   --zs-hero-grid:      rgba(255, 255, 255, 0.08);
   --zs-hero-glow:      rgba(255, 255, 255, 0.28);
-  --zs-eyebrow-bg:     rgba(255, 255, 255, 0.18);
-  --zs-eyebrow-bd:     rgba(255, 255, 255, 0.36);
-  --zs-eyebrow-fg:     #FFFFFF;
-  --zs-ghost-bg:       rgba(255, 255, 255, 0.1);
-  --zs-ghost-bd:       rgba(255, 255, 255, 0.28);
-  --zs-ghost-fg:       #FFFFFF;
-  --zs-ghost-bg-hover: rgba(255, 255, 255, 0.18);
-  --zs-micro-fg:       #E0F2FE;
-  --zs-grad-1:         #FFFFFF;
-  --zs-grad-2:         #E0F2FE;
-  --zs-grad-3:         #BAE6FD;
+  --zs-eyebrow-bg:     rgba(255, 255, 255, 0.24);
+  --zs-eyebrow-bd:     rgba(0, 0, 0, 0.16);
+  --zs-eyebrow-fg:     #000000;
+  --zs-ghost-bg:       rgba(255, 255, 255, 0.16);
+  --zs-ghost-bd:       rgba(0, 0, 0, 0.22);
+  --zs-ghost-fg:       #000000;
+  --zs-ghost-bg-hover: rgba(255, 255, 255, 0.26);
+  --zs-micro-fg:       rgba(0, 0, 0, 0.68);
+  --zs-grad-1:         #000000;
+  --zs-grad-2:         #1E1B4B;
+  --zs-grad-3:         #4B2FD6;
 
   /* Same token set the rest of the homepage's sections, cards, and text
      already read (.zs-sec, .zs-mod, .zs-prob, .zs-chip, etc.), so the sky
      blue treatment reaches the whole page, not just the hero. */
-  --zs-fg:          #FFFFFF;
-  --zs-fg-soft:     #F0F9FF;
-  --zs-fg-faint:    #BAE6FD;
+  --zs-fg:          #000000;
+  --zs-fg-soft:     rgba(0, 0, 0, 0.72);
+  --zs-fg-faint:    rgba(0, 0, 0, 0.55);
   --zs-surface:     #0EA5E9;
   --zs-sunken:      #0284C7;
-  --zs-line:        rgba(255, 255, 255, 0.28);
+  --zs-line:        rgba(0, 0, 0, 0.16);
 }
 
 .zs-hero {
@@ -1311,7 +1314,7 @@ html[lang='en-IN'] {
 }
 [data-theme='dark'] .zs-label { color: #A78BFA; }
 html[lang='en-US'] .zs-label { color: #A78BFA; }
-html[lang='en-IN'] .zs-label { color: #FFFFFF; }
+html[lang='en-IN'] .zs-label { color: #000000; }
 
 .zs-h2 {
   font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 800;
@@ -1336,7 +1339,7 @@ html[lang='en-IN'] .zs-label { color: #FFFFFF; }
 }
 [data-theme='dark'] .zs-prob__ico { background: rgba(109,74,255,0.2); color: #A78BFA; }
 html[lang='en-US'] .zs-prob__ico { background: rgba(109,74,255,0.2); color: #A78BFA; }
-html[lang='en-IN'] .zs-prob__ico { background: rgba(255,255,255,0.16); color: #FFFFFF; }
+html[lang='en-IN'] .zs-prob__ico { background: rgba(255,255,255,0.28); color: #000000; }
 .zs-prob h3 { font-size: 1.06rem; font-weight: 700; color: var(--zs-fg); margin: 0 0 8px; letter-spacing: -0.012em; }
 .zs-prob p { font-size: 0.93rem; line-height: 1.65; color: var(--zs-fg-soft); margin: 0; }
 
@@ -1363,8 +1366,8 @@ html[lang='en-IN'] .zs-prob__ico { background: rgba(255,255,255,0.16); color: #F
 }
 .zs-mod__link:hover { text-decoration: none; gap: 10px; color: var(--zs-violet-deep); }
 html[lang='en-US'] .zs-mod__link { color: #A78BFA; }
-html[lang='en-IN'] .zs-mod__link { color: #FFFFFF; }
-html[lang='en-IN'] .zs-mod__link:hover { color: #F0F9FF; }
+html[lang='en-IN'] .zs-mod__link { color: #000000; }
+html[lang='en-IN'] .zs-mod__link:hover { color: #1E1B4B; }
 .zs-mod__link span { transition: transform .18s ease; }
 [data-theme='dark'] .zs-mod__link { color: #A78BFA; }
 [data-theme='dark'] .zs-mod__link:hover { color: #C4B5FD; }
@@ -1699,7 +1702,7 @@ html[lang='en-US'] .zs-band {
 html[lang='en-IN'] .zs-band {
   background: linear-gradient(150deg, #0284C7 0%, #0EA5E9 52%, #0284C7 100%);
 }
-html[lang='en-IN'] .zs-band__l { color: #F0F9FF; }
+html[lang='en-IN'] .zs-band__l { color: #000000; }
 .zs-band::after {
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(760px 320px at 22% 0%, rgba(109,74,255,0.3), transparent 62%);
@@ -1731,7 +1734,7 @@ html[lang='en-IN'] .zs-band__l { color: #F0F9FF; }
 .zs-chip b { color: var(--zs-violet); font-weight: 700; }
 [data-theme='dark'] .zs-chip b { color: #A78BFA; }
 html[lang='en-US'] .zs-chip b { color: #A78BFA; }
-html[lang='en-IN'] .zs-chip b { color: #FFFFFF; }
+html[lang='en-IN'] .zs-chip b { color: #000000; }
 
 /* ══ CLOSING CTA ═════════════════════════════════════════════════════════ */
 .zs-close {
