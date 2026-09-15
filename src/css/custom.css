@@ -1852,6 +1852,7 @@ html[lang='en-IN'] .prod-tile { background: #FFFFFF; border-color: rgba(15,23,42
   display: grid; place-items: center;
 }
 .prod-ic svg { width: 23px; height: 23px; }
+.prod-tile-logo { flex: none; border-radius: 12px; }
 .prod-tile-body { flex: 1; min-width: 0; }
 /* .prod-tile stays a white surface by default (only [data-theme='dark']
    changes it), so these are pinned rather than reading the locale-flipping
@@ -2097,6 +2098,8 @@ html[lang='en-IN'] .allp-features li { color: #6b7685; }
 .allp-side-item:hover { background: rgba(13,148,136,0.08); text-decoration: none; color: var(--zpoa-heading); }
 [data-theme='dark'] .allp-side-item { color: #E9F1F7; }
 .allp-side-logo { border-radius: 7px; flex: none; }
+.allp-side-ic { flex: none; width: 26px; height: 26px; border-radius: 7px; display: grid; place-items: center; }
+.allp-side-ic svg { width: 15px; height: 15px; }
 .allp-side-new { margin-left: auto; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #0D9488; background: #E6FBF7; border-radius: 100px; padding: 0.1rem 0.4rem; }
 [data-theme='dark'] .allp-side-new { color: #2DD4BF; background: rgba(13,148,136,0.16); }
 .allp-side-cat { display: block; padding: 0.4rem 0.55rem; border-radius: 8px; font-size: 0.88rem; color: var(--zpoa-gray-500); text-decoration: none; }

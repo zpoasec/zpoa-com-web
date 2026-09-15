@@ -12,8 +12,8 @@ function ProductDetail({p}: {p: Product}): ReactNode {
   return (
     <div className={`allp-card${p.visual ? ' allp-card--wide' : ''}`}>
       <div className="allp-card-head">
-        {p.icon === 'vpn' ? (
-          <ProductLogo className="allp-logo" size={54} />
+        {p.icon === 'vpn' || p.icon === 'capital' ? (
+          <ProductLogo product={p.icon} className="allp-logo" size={54} />
         ) : (
           <span className={`allp-ic ${p.accent}`} aria-hidden="true">{ICONS[p.icon]}</span>
         )}
@@ -46,7 +46,6 @@ function ProductDetail({p}: {p: Product}): ReactNode {
 export default function AllProducts(): ReactNode {
   const {i18n} = useDocusaurusContext();
   const products = productsForLocale(i18n.currentLocale);
-  const featured = products[0]; // ZPOA Zypher VPN
   const [q, setQ] = useState('');
   const query = q.trim().toLowerCase();
   const matches = (p: Product) =>
@@ -88,11 +87,17 @@ export default function AllProducts(): ReactNode {
               <div className="allp-side-featured">Featured Apps</div>
               <div className="allp-side-group">
                 <div className="allp-side-label">Apps</div>
-                <Link className="allp-side-item" to={featured.to}>
-                  <ProductLogo className="allp-side-logo" size={26} />
-                  <span>{featured.name}</span>
-                  <span className="allp-side-new">New</span>
-                </Link>
+                {products.filter((p) => p.category === 'Featured Apps').map((p) => (
+                  <Link className="allp-side-item" to={p.to} key={p.name}>
+                    {p.icon === 'vpn' || p.icon === 'capital' ? (
+                      <ProductLogo product={p.icon} className="allp-side-logo" size={26} />
+                    ) : (
+                      <span className={`allp-side-ic ${p.accent}`} aria-hidden="true">{ICONS[p.icon]}</span>
+                    )}
+                    <span>{p.name}</span>
+                    {p.isNew && <span className="allp-side-new">New</span>}
+                  </Link>
+                ))}
               </div>
               <div className="allp-side-group">
                 <div className="allp-side-label">Categories</div>

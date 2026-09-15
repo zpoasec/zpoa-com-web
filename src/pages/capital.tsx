@@ -237,6 +237,13 @@ function CapitalHero(): ReactNode {
     <section className="cvpn-hero">
       <div className="container cvpn-hero-grid">
         <div className="cvpn-hero-copy">
+          <img
+            className="cvpn-hero-logo"
+            src="/img/products/capital-logo.png"
+            alt="ZPOA Capital"
+            width={72}
+            height={72}
+          />
           <div className="cvpn-eyebrow">ZPOA Capital</div>
           <h1>Run the entire lending operation from one console.</h1>
           <p className="cvpn-lede">
