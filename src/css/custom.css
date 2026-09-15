@@ -168,11 +168,11 @@ html[lang='en-IN'] .navbar {
 }
 
 /* The logo image bakes in a dark "poa" wordmark and a light gray tagline,
-   designed for a white navbar. Now that the navbar itself is black/blue for
-   these locales, outline the logo's every opaque pixel (icon, wordmark, and
+   designed for a white navbar. Now that the navbar itself is blue for this
+   locale, outline the logo's every opaque pixel (icon, wordmark, and
    tagline alike) with a white glow so all of it reads clearly — without
-   putting a solid background behind it. */
-html[lang='en-US'] .navbar__logo img,
+   putting a solid background behind it. India only — reverted for United
+   States per request. */
 html[lang='en-IN'] .navbar__logo img {
   filter:
     drop-shadow(0 0 1px #fff)
