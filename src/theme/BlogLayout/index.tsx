@@ -1,6 +1,7 @@
 import React, {type ReactNode} from 'react';
 import {useLocation} from '@docusaurus/router';
 import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import OriginalBlogLayout from '@theme-original/BlogLayout';
 import type BlogLayoutType from '@theme/BlogLayout';
 import type {WrapperProps} from '@docusaurus/types';
@@ -14,9 +15,17 @@ type Props = WrapperProps<typeof BlogLayoutType>;
  * and archive listings fell back to raw Infima: full-size headings in link
  * blue, full-width hero images, no card. They are all the same kind of page and
  * now share the same shell; only the index carries the masthead.
+ *
+ * pathname always includes the locale prefix for non-default locales (e.g.
+ * /en-in/blog), so it has to be stripped before comparing against '/blog' —
+ * otherwise every non-default locale falls through to OriginalBlogLayout
+ * (no masthead, no card grid, the default theme's own sidebar instead).
  */
-function classify(pathname: string) {
-  const p = pathname.replace(/\/+$/, '') || '/';
+function classify(pathname: string, localePrefix: string) {
+  let p = pathname.replace(/\/+$/, '') || '/';
+  if (localePrefix && p.startsWith(localePrefix)) {
+    p = p.slice(localePrefix.length) || '/';
+  }
   const isIndex = p === '/blog';
   const isList =
     isIndex ||
@@ -28,7 +37,9 @@ function classify(pathname: string) {
 
 export default function BlogLayoutWrapper(props: Props): ReactNode {
   const {pathname} = useLocation();
-  const {isIndex, isList} = classify(pathname);
+  const {i18n} = useDocusaurusContext();
+  const localePrefix = i18n.currentLocale !== i18n.defaultLocale ? `/${i18n.currentLocale}` : '';
+  const {isIndex, isList} = classify(pathname, localePrefix);
 
   if (!isList) {
     return <OriginalBlogLayout {...props} />;
