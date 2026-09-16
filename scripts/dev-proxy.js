@@ -24,10 +24,23 @@ const IN_TARGET = `http://localhost:${IN_PORT}`;
 
 const children = [];
 
-function spawnSite(label, args, readyMarker, onReady) {
+function spawnSite(label, args, readyMarker, onReady, genFilesDirName) {
+  // Both `docusaurus start` processes point at the same site directory. By
+  // default they'd both write to the same `.docusaurus` generated-files
+  // cache at once - two processes regenerating that cache concurrently
+  // corrupts it (interleaved writes into the same file). They also both
+  // start at once and race to write Docusaurus's global update-notifier
+  // file (~/.config/configstore/update-notifier-@docusaurus/core.json),
+  // which crashes one of them with EPERM. Giving each process its own
+  // cache directory and disabling the update notifier avoids both races.
   const child = spawn(process.execPath, [DOCUSAURUS_CLI, 'start', ...args], {
     cwd: ROOT,
     shell: false,
+    env: {
+      ...process.env,
+      DOCUSAURUS_GENERATED_FILES_DIR_NAME: genFilesDirName,
+      NO_UPDATE_NOTIFIER: '1',
+    },
   });
   children.push(child);
 
@@ -90,8 +103,8 @@ function markReady() {
   if (readyCount === 2) startProxyOnce();
 }
 
-spawnSite('us', ['--port', String(US_PORT)], '[SUCCESS]', markReady);
-spawnSite('in', ['--locale', 'en-in', '--port', String(IN_PORT)], '[SUCCESS]', markReady);
+spawnSite('us', ['--port', String(US_PORT)], '[SUCCESS]', markReady, '.docusaurus-us');
+spawnSite('in', ['--locale', 'en-in', '--port', String(IN_PORT)], '[SUCCESS]', markReady, '.docusaurus-in');
 
 function shutdown() {
   for (const child of children) {
