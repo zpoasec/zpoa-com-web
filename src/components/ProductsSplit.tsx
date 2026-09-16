@@ -30,10 +30,16 @@ const baseMenu: Array<{label: string; to: string; desc: string}> = [
 // straight out to the external app.
 const capitalItem = {label: 'ZPOA Capital', to: CAPITAL, desc: 'Group-lending & collections platform'};
 
+// ZPOA Health is a hospital information system, India-specific for the same
+// reason as ZPOA Capital: the regulatory/billing surface (ABDM, GST) isn't
+// relevant outside that market. Points at its own product page.
+const HEALTH = '/health';
+const healthItem = {label: 'ZPOA Health', to: HEALTH, desc: 'Hospital Information Management System'};
+
 export default function ProductsSplit(props: {mobile?: boolean}): ReactNode {
   const {i18n} = useDocusaurusContext();
   const menu = i18n.currentLocale === 'en-in'
-    ? [baseMenu[0], capitalItem, baseMenu[1]]
+    ? [baseMenu[0], capitalItem, healthItem, baseMenu[1]]
     : baseMenu;
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

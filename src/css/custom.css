@@ -1423,6 +1423,7 @@ html[lang='en-IN'] .feat-section-white { background: #0EA5E9; }
 .accent-svchub { background: #FFF0E6; color: #C25708; }
 .accent-zara { background: #EFEAFE; color: #5B3BE0; }
 .accent-capital { background: #FEF3C7; color: #B45309; }
+.accent-health { background: #E6F4FF; color: #0369A1; }
 
 [data-theme='dark'] .accent-detect { background: rgba(222, 53, 11, 0.15); color: #FF5630; }
 [data-theme='dark'] .accent-comply { background: rgba(0, 135, 90, 0.15); color: #36B37E; }
@@ -1433,6 +1434,7 @@ html[lang='en-IN'] .feat-section-white { background: #0EA5E9; }
 [data-theme='dark'] .accent-neural { background: rgba(0, 184, 217, 0.15); color: #00C7E6; }
 [data-theme='dark'] .accent-vpn { background: rgba(13, 148, 136, 0.15); color: #2DD4BF; }
 [data-theme='dark'] .accent-capital { background: rgba(180, 83, 9, 0.18); color: #FBBF24; }
+[data-theme='dark'] .accent-health { background: rgba(3, 105, 161, 0.18); color: #7DD3FC; }
 
 /* ── Navbar: Products split item (label links, chevron toggles) ── */
 .products-split { position: relative; display: flex; align-items: center; }

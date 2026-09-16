@@ -12,7 +12,7 @@ function ProductDetail({p}: {p: Product}): ReactNode {
   return (
     <div className={`allp-card${p.visual ? ' allp-card--wide' : ''}`}>
       <div className="allp-card-head">
-        {p.icon === 'vpn' || p.icon === 'capital' ? (
+        {p.icon === 'vpn' || p.icon === 'capital' || p.icon === 'health' ? (
           <ProductLogo product={p.icon} className="allp-logo" size={54} />
         ) : (
           <span className={`allp-ic ${p.accent}`} aria-hidden="true">{ICONS[p.icon]}</span>
@@ -89,7 +89,7 @@ export default function AllProducts(): ReactNode {
                 <div className="allp-side-label">Apps</div>
                 {products.filter((p) => p.category === 'Featured Apps').map((p) => (
                   <Link className="allp-side-item" to={p.to} key={p.name}>
-                    {p.icon === 'vpn' || p.icon === 'capital' ? (
+                    {p.icon === 'vpn' || p.icon === 'capital' || p.icon === 'health' ? (
                       <ProductLogo product={p.icon} className="allp-side-logo" size={26} />
                     ) : (
                       <span className={`allp-side-ic ${p.accent}`} aria-hidden="true">{ICONS[p.icon]}</span>

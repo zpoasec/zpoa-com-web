@@ -1,7 +1,10 @@
 import {type ReactNode, useState} from 'react';
 
 // Prefer each product's PNG icon; fall back to its SVG if the PNG is missing.
-const LOGOS = {
+// Typed as plain `string` (not `as const`) so identical png/svg paths, like
+// health's below, don't collapse the per-key literal union in a way that
+// breaks the setSrc(svg) fallback's type.
+const LOGOS: Record<'vpn' | 'capital' | 'health', {png: string; svg: string}> = {
   vpn: {
     png: '/img/products/zypher-logo.png',
     svg: '/img/products/zypher-logo.svg',
@@ -10,7 +13,11 @@ const LOGOS = {
     png: '/img/products/capital-logo.png',
     svg: '/img/products/capital-logo.svg',
   },
-} as const;
+  health: {
+    png: '/img/products/health-logo.png',
+    svg: '/img/products/health-logo.png',
+  },
+};
 
 export default function ProductLogo({
   product = 'vpn',

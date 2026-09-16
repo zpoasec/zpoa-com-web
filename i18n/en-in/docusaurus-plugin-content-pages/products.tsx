@@ -8,7 +8,7 @@ import ProductLogo from '@site/src/components/ProductLogo';
 function ProductTile({p}: {p: Product}): ReactNode {
   return (
     <Link className="prod-tile" to={p.to}>
-      {p.icon === 'vpn' || p.icon === 'capital' ? (
+      {p.icon === 'vpn' || p.icon === 'capital' || p.icon === 'health' ? (
         <ProductLogo product={p.icon} className="prod-tile-logo" size={46} />
       ) : (
         <span className={`prod-ic ${p.accent}`} aria-hidden="true">{ICONS[p.icon]}</span>
