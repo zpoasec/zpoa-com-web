@@ -14,7 +14,7 @@ import clsx from 'clsx';
 const PRODUCTS = '/products';          // portfolio overview
 const ALL_PRODUCTS = '/all-products';  // full portfolio, with detail
 const ZYPHER_VPN = '/cyber-vpn';       // the VPN product page
-const CAPITAL = '/capital';            // ZPOA Capital product page, India only
+const CAPITAL = '/capital';            // ZPOA FinTech Solutions product page, India only
 
 // Zara is deliberately absent: it is a platform capability, not a product, and
 // lives on the Features page (/features#zara).
@@ -23,16 +23,16 @@ const baseMenu: Array<{label: string; to: string; desc: string}> = [
   {label: 'All Products', to: ALL_PRODUCTS, desc: 'The complete portfolio'},
 ];
 
-// ZPOA Capital (the Ciya Micro Credit lending platform) is an India-specific
-// product — microfinance lending operations aren't relevant outside that
-// market, so it's inserted only for the en-in locale rather than shown
-// everywhere. Points at its own product page, same as ZPOA Zypher VPN, not
-// straight out to the external app.
-const capitalItem = {label: 'ZPOA Capital', to: CAPITAL, desc: 'Group-lending & collections platform'};
+// ZPOA FinTech Solutions (the Ciya Micro Credit lending platform) is an
+// India-specific product — microfinance lending operations aren't relevant
+// outside that market, so it's inserted only for the en-in locale rather than
+// shown everywhere. Points at its own product page, same as ZPOA Zypher VPN,
+// not straight out to the external app.
+const capitalItem = {label: 'ZPOA FinTech Solutions', to: CAPITAL, desc: 'Group-lending & collections platform'};
 
 // ZPOA Health is a hospital information system, India-specific for the same
-// reason as ZPOA Capital: the regulatory/billing surface (ABDM, GST) isn't
-// relevant outside that market. Points at its own product page.
+// reason as ZPOA FinTech Solutions: the regulatory/billing surface (ABDM,
+// GST) isn't relevant outside that market. Points at its own product page.
 const HEALTH = '/health';
 const healthItem = {label: 'ZPOA Health', to: HEALTH, desc: 'Hospital Information Management System'};
 
