@@ -19,6 +19,7 @@ export const ICONS: Record<string, ReactNode> = {
   aisec: (<svg {...S}><path d="M12 3l7 3v5c0 4.4-3 8-7 10-4-2-7-5.6-7-10V6l7-3z" /><path d="M12 8.4l1.1 2.5 2.5 1.1-2.5 1.1L12 15.6l-1.1-2.5L8.4 12l2.5-1.1z" /></svg>),
   zara: (<svg {...S}><path d="M5 4.6h14a2 2 0 0 1 2 2v6.6a2 2 0 0 1-2 2h-7.6L7 19v-3.8H5a2 2 0 0 1-2-2V6.6a2 2 0 0 1 2-2z" /><path d="M11.4 7.1l.9 2.5 2.5.9-2.5.9-.9 2.5-.9-2.5-2.5-.9 2.5-.9z" fill="currentColor" stroke="none" /></svg>),
   capital: (<svg {...S}><path d="M3 10.5 12 4l9 6.5" /><rect x="4.5" y="10.5" width="15" height="8.5" rx="1.2" /><path d="M8 13.5v3M12 13.5v3M16 13.5v3" /></svg>),
+  health: (<svg {...S}><rect x="4" y="9" width="16" height="12" rx="1.5" /><path d="M9 21v-5h6v5" /><path d="M12 3v6 M9 6h6" /></svg>),
 };
 
 export type Product = {
@@ -115,6 +116,13 @@ export const PRODUCTS: Product[] = [
     tagline: 'Run the entire lending operation from one console',
     desc: 'Group onboarding, loan disbursement, weekly field collection, staff performance, and the full set of books in one live system, so every action updates the numbers automatically and nothing is entered twice.',
     features: ['Kulu (group) lending: teams, centres & leaders built in', 'Portfolio-at-Risk %, overdue, and collection efficiency up front', 'Weekly field collection with GPS-verified evidence', 'Double-entry ledger, day closing & owner/investor separation'],
+  },
+  {
+    name: 'ZPOA Health', category: 'Featured Apps', accent: 'accent-health', icon: 'health', to: '/health', isNew: true,
+    locales: ['en-in'],
+    tagline: 'Hospital Information Management System',
+    desc: 'Run the whole hospital on one system: registration and the front-desk queue, OPD, casualty, wards and theatre, lab, radiology, pharmacy and blood bank, through to the final bill, the day book and the discharge summary.',
+    features: ['23 switch-on-only-what-you-run modules', 'ABDM-ready: connects to the Ayushman Bharat gateway', 'Indian billing, GST and April-start financial year', 'Unlimited users, no per-user licence cost'],
   },
 ];
 
