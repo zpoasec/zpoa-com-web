@@ -412,14 +412,23 @@ function CapitalWhy(): ReactNode {
       <div className="container">
         <div className="cvpn-eyebrow" style={{textAlign: 'center'}}>Why lenders choose it</div>
         <h2 className="cvpn-h2-center">One system instead of five</h2>
-        <div className="cvpn-feature-grid">
-          {whyChoose.map((w) => (
-            <div className="cvpn-feature" key={w.title}>
-              <span className="cvpn-feature-ic" aria-hidden="true">{ICONS[w.icon]}</span>
-              <h3>{w.title}</h3>
-              <p>{w.body}</p>
-            </div>
-          ))}
+        <div className="cvpn-btable-wrap">
+          <table className="cvpn-btable">
+            <thead>
+              <tr>
+                <th scope="col">Benefit</th>
+                <th scope="col">Why it matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              {whyChoose.map((w) => (
+                <tr key={w.title}>
+                  <th scope="row">{w.title}</th>
+                  <td>{w.body}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

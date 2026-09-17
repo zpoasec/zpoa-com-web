@@ -3467,3 +3467,49 @@ html[lang='en-IN'] .breadcrumbs__link {
 html[lang='en-IN'] .breadcrumbs__item--active .breadcrumbs__link {
   color: #000000 !important;
 }
+
+/* --- Capital: benefits table (matches .cvpn-feature palette across themes/locales) --- */
+.cvpn-btable-wrap {
+  max-width: 900px; margin: 2.4rem auto 0; overflow-x: auto;
+  background: #FFFFFF; border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.cvpn-btable { width: 100%; border-collapse: collapse; font-size: 0.98rem; line-height: 1.55; }
+.cvpn-btable thead th {
+  text-align: left; padding: 0.85rem 1.4rem;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600, #64748b);
+  background: rgba(15, 23, 42, 0.025); border-bottom: 1px solid rgba(15, 23, 42, 0.09);
+}
+.cvpn-btable tbody th, .cvpn-btable tbody td {
+  padding: 1rem 1.4rem; border-top: 1px solid rgba(15, 23, 42, 0.07); vertical-align: top;
+}
+.cvpn-btable tbody th {
+  text-align: left; font-weight: 700; color: var(--ifm-heading-color, #0f172a);
+  width: 34%; min-width: 190px;
+}
+.cvpn-btable tbody td { color: var(--ifm-color-emphasis-700, #475569); }
+.cvpn-btable tbody tr { transition: background-color 0.15s ease; }
+.cvpn-btable tbody tr:hover { background: rgba(45, 212, 191, 0.06); }
+[data-theme='reduce-motion'] .cvpn-btable tbody tr { transition: none; }
+
+[data-theme='dark'] .cvpn-btable-wrap { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.10); box-shadow: none; }
+[data-theme='dark'] .cvpn-btable thead th { background: rgba(255,255,255,0.04); border-bottom-color: rgba(255,255,255,0.12); color: #94a3b8; }
+[data-theme='dark'] .cvpn-btable tbody th, [data-theme='dark'] .cvpn-btable tbody td { border-top-color: rgba(255,255,255,0.08); }
+[data-theme='dark'] .cvpn-btable tbody th { color: #e2e8f0; }
+[data-theme='dark'] .cvpn-btable tbody td { color: #cbd5e1; }
+[data-theme='dark'] .cvpn-btable tbody tr:hover { background: rgba(45, 212, 191, 0.09); }
+
+/* India / US locales force the light card surface — mirror that for the table */
+html[lang='en-IN'] .cvpn-btable-wrap,
+html[lang='en-US'] .cvpn-btable-wrap { background: #FFFFFF; border-color: rgba(15,23,42,0.08); box-shadow: 0 1px 2px rgba(15,23,42,0.04); }
+html[lang='en-IN'] .cvpn-btable thead th,
+html[lang='en-US'] .cvpn-btable thead th { background: rgba(15,23,42,0.025); color: #64748b; border-bottom-color: rgba(15,23,42,0.09); }
+html[lang='en-IN'] .cvpn-btable tbody th,
+html[lang='en-US'] .cvpn-btable tbody th { color: #0f172a; }
+html[lang='en-IN'] .cvpn-btable tbody td,
+html[lang='en-US'] .cvpn-btable tbody td { color: #475569; }
+html[lang='en-IN'] .cvpn-btable tbody th, html[lang='en-IN'] .cvpn-btable tbody td,
+html[lang='en-US'] .cvpn-btable tbody th, html[lang='en-US'] .cvpn-btable tbody td { border-top-color: rgba(15,23,42,0.07); }
+
+@media (max-width: 600px) { .cvpn-btable { font-size: 0.9rem; } .cvpn-btable tbody th { min-width: 150px; } .cvpn-btable thead th, .cvpn-btable tbody th, .cvpn-btable tbody td { padding: 0.8rem 1rem; } }
