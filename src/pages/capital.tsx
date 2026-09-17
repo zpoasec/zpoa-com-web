@@ -119,6 +119,19 @@ const ICONS: Record<string, ReactNode> = {
       <circle cx="12" cy="12" r="2.7" />
     </svg>
   ),
+  // expense → receipt
+  expense: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 3h12v18l-3-1.6-3 1.6-3-1.6-3 1.6V3z" />
+      <path d="M9 8.5h6 M9 12.5h6" />
+    </svg>
+  ),
+  // report → bar chart
+  report: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 20V10 M10 20V4 M16 20v-8 M3 20h18" />
+    </svg>
+  ),
 };
 
 const lifecycle = [
@@ -162,6 +175,12 @@ const lifecycle = [
 
 const modules = [
   {
+    icon: 'gps',
+    k: 'Verification',
+    title: 'Evidence + GPS',
+    body: 'Photo verification before every collection, image, time, latitude/longitude, and address attached, turning a photo into a proof-of-visit record.',
+  },
+  {
     icon: 'team',
     k: 'Field team',
     title: 'Staff Collection',
@@ -172,6 +191,12 @@ const modules = [
     k: 'Performance',
     title: 'Staff Analytics',
     body: 'Collection rates and productivity per officer, so managers can coach the team.',
+  },
+  {
+    icon: 'customer',
+    k: 'People',
+    title: 'Field-Officer Management',
+    body: 'Employees with roles, branches, and assigned teams; active/inactive status, with history retained for audit after they leave.',
   },
   {
     icon: 'capital',
@@ -192,10 +217,28 @@ const modules = [
     body: 'Investor principal and ROI, reported separately so it never inflates owner equity.',
   },
   {
+    icon: 'ledger',
+    k: 'Accounting',
+    title: 'General Ledger',
+    body: 'Every module posts here as double-entry vouchers, live cash, trial balance, and chart of accounts.',
+  },
+  {
+    icon: 'expense',
+    k: 'Costs',
+    title: 'Expenses',
+    body: 'Expense log and dashboard with employee monthly summaries, feeding straight into profitability.',
+  },
+  {
     icon: 'dayclose',
-    k: 'Daily close',
-    title: 'Expenses · Day Closing · Cash Handover',
-    body: 'The daily reconciliation trio that matches the software to the cash box, record expenses, close the day, and hand over collected cash with a clear audit trail.',
+    k: 'Reconcile',
+    title: 'Day Closing & Cash Handover',
+    body: 'Count physical cash, reconcile the difference, and control handover → verification → close, matching the software to the cash box.',
+  },
+  {
+    icon: 'report',
+    k: 'Oversight',
+    title: 'Reports & Analytics',
+    body: 'Management reporting computed from the same source as every module, so the numbers never disagree.',
   },
 ];
 
@@ -206,14 +249,19 @@ const whyChoose = [
     body: 'Lending, field collection, staff, and full accounting, no spreadsheets stitched together after the fact.',
   },
   {
-    icon: 'team',
-    title: 'Group (Kulu) lending, built in',
-    body: 'Teams, centres, leaders, and weekly schedules are first-class, not bolted on to a generic loan app.',
-  },
-  {
     icon: 'live',
     title: 'Live and automatic',
     body: 'Dashboards and the ledger update themselves the moment money moves. No manual re-keying, no month-end scramble.',
+  },
+  {
+    icon: 'ledger',
+    title: 'Operations and accounting stay in sync',
+    body: 'A single collection updates repayment, loan balance, ledger, and capital together, one connected source of truth.',
+  },
+  {
+    icon: 'team',
+    title: 'Group (Kulu) lending, built in',
+    body: 'Teams, centres, leaders, and weekly schedules are first-class, not bolted on to a generic loan app.',
   },
   {
     icon: 'split',
@@ -223,12 +271,27 @@ const whyChoose = [
   {
     icon: 'gps',
     title: 'Field-ready by design',
-    body: 'Printable collection sheets, day closing, and cash handover match how the work actually happens on the ground.',
+    body: 'GPS + photo evidence, printable collection sheets, day closing, and cash handover match how the work actually happens on the ground.',
+  },
+  {
+    icon: 'dayclose',
+    title: 'Physical-cash control',
+    body: 'Handover → verification → day-close reconciliation catches shortfalls the same day, not next month.',
   },
   {
     icon: 'risk',
     title: 'Risk you can see',
     body: 'Portfolio-at-Risk %, overdue amounts, and collection efficiency are surfaced up front, before they become losses.',
+  },
+  {
+    icon: 'customer',
+    title: 'Accountability and audit trail',
+    body: 'Per-officer performance and GPS-stamped evidence records, with history retained even after a staff member leaves.',
+  },
+  {
+    icon: 'report',
+    title: 'Payroll and billing ready',
+    body: 'Staff summaries and exports feed payroll and reconciliation without extra work.',
   },
 ];
 
