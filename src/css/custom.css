@@ -72,7 +72,7 @@
   --zpoa-gray-400: #6B7A8F;
   --zpoa-gray-500: #9AA7B8;
   --zpoa-green: #57D9A3;
-  --zpoa-red: #FF8F73;
+  --zpoa-red: #FF5630;
 }
 
 /* Locale full-site theme. html[lang=...] outranks both :root and
@@ -103,36 +103,34 @@ html[lang='en-US'] {
   --zpoa-gray-400: #6B7A8F;
   --zpoa-gray-500: #9AA7B8;
   --zpoa-green: #57D9A3;
-  --zpoa-red: #FF8F73;
+  --zpoa-red: #FF5630;
 }
 
+/* Light neutral base + one indigo accent, not a full-page color wash: after
+   two saturated washes (sky blue, then emerald) both read as unpleasant, a
+   clean near-white theme with a single brand accent colour reads calmer and
+   more "professional software" — while still contrasting hard against the
+   US black theme just by virtue of being light instead of dark. */
 html[lang='en-IN'] {
-  --ifm-color-primary: #4B2FD6;
-  --ifm-color-primary-dark: #4227C2;
-  --ifm-color-primary-darker: #3E24B7;
-  --ifm-color-primary-darkest: #331E97;
-  --ifm-color-primary-light: #5438EA;
-  --ifm-color-primary-lighter: #6B52EE;
-  --ifm-color-primary-lightest: #8A76F2;
-  --ifm-background-color: #0EA5E9;
-  --ifm-background-surface-color: #0284C7;
-  /* Body text is pure black rather than white/light: on this saturated a
-     blue, black reads crisper and more "made to be read" than white does —
-     a deliberate choice for India, not the US black theme (light-on-dark
-     stays the norm there). */
-  --ifm-font-color-base: #000000;
-  --ifm-heading-color: #000000;
-  /* A deep indigo, not another blue: the page itself is already sky blue,
-     so accents/buttons need to be a different hue to read as an accent
-     rather than disappearing into the background. */
-  --zpoa-blue: #4B2FD6;
-  --zpoa-text: #000000;
-  --zpoa-heading: #000000;
-  --zpoa-gray-50: #0369A1;
-  --zpoa-gray-100: #075985;
-  --zpoa-gray-200: rgba(0, 0, 0, 0.18);
-  --zpoa-gray-400: rgba(0, 0, 0, 0.55);
-  --zpoa-gray-500: rgba(0, 0, 0, 0.72);
+  --ifm-color-primary: #0284C7;
+  --ifm-color-primary-dark: #075985;
+  --ifm-color-primary-darker: #0C4A6E;
+  --ifm-color-primary-darkest: #082F49;
+  --ifm-color-primary-light: #38BDF8;
+  --ifm-color-primary-lighter: #7DD3FC;
+  --ifm-color-primary-lightest: #BAE6FD;
+  --ifm-background-color: #FFF8EF;
+  --ifm-background-surface-color: #FFFFFF;
+  --ifm-font-color-base: #6B5B4D;
+  --ifm-heading-color: #2B1B12;
+  --zpoa-blue: #0284C7;
+  --zpoa-text: #6B5B4D;
+  --zpoa-heading: #2B1B12;
+  --zpoa-gray-50: #FFF1DE;
+  --zpoa-gray-100: #FFE4C7;
+  --zpoa-gray-200: rgba(43, 27, 18, 0.1);
+  --zpoa-gray-400: #C9A98C;
+  --zpoa-gray-500: #8A6F5C;
   --zpoa-green: #0D7A4C;
   --zpoa-red: #B3261E;
 }
@@ -167,22 +165,8 @@ html[lang='en-US'] .navbar {
 }
 
 html[lang='en-IN'] .navbar {
-  --ifm-navbar-background-color: #0284C7;
-  --ifm-navbar-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-}
-
-/* The logo image bakes in a dark "poa" wordmark and a light gray tagline,
-   designed for a white navbar. Now that the navbar itself is blue for this
-   locale, outline the logo's every opaque pixel (icon, wordmark, and
-   tagline alike) with a white glow so all of it reads clearly — without
-   putting a solid background behind it. India only — reverted for United
-   States per request. */
-html[lang='en-IN'] .navbar__logo img {
-  filter:
-    drop-shadow(0 0 1px #fff)
-    drop-shadow(0 0 1px #fff)
-    drop-shadow(0 0 3px rgba(255, 255, 255, 0.95))
-    drop-shadow(0 0 7px rgba(255, 255, 255, 0.7));
+  --ifm-navbar-background-color: #FFF8EF;
+  --ifm-navbar-shadow: 0 1px 2px rgba(43, 27, 18, 0.08);
 }
 
 .navbar__link {
@@ -1273,13 +1257,12 @@ html[lang='en-IN'] .navbar__logo img {
   color: #B3D4FF;
 }
 
-/* Sits directly on the page background for these locales, so pinned to a
+/* Sits directly on the page background for the US theme, so pinned to a
    higher-contrast color instead of --zpoa-blue (indigo reads too close in
-   hue to the sky blue background to pop as a link). */
+   hue to the black background to pop as a link). India is light again, so
+   --zpoa-blue (indigo) already pops fine there — no override needed. */
 html[lang='en-US'] .feat-learn-more { color: #4C9AFF; }
 html[lang='en-US'] .feat-learn-more:hover { color: #B3D4FF; }
-html[lang='en-IN'] .feat-learn-more { color: #000000; }
-html[lang='en-IN'] .feat-learn-more:hover { color: #1E1B4B; }
 
 /* ═══════════════════════════════════════════
    FEATURES PAGE
@@ -1340,12 +1323,12 @@ html[lang='en-US'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.1)
 
 html[lang='en-IN'] .feat-hero {
   background:
-    radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 65%),
-    #0EA5E9;
+    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(103, 232, 249, 0.55), transparent 60%),
+    linear-gradient(135deg, #22B6E0 0%, #0284C7 45%, #075985 100%);
 }
-html[lang='en-IN'] .feat-hero h1 { color: #000000; }
-html[lang='en-IN'] .feat-hero .tagline { color: rgba(0, 0, 0, 0.7); }
-html[lang='en-IN'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.26); color: #000000; }
+html[lang='en-IN'] .feat-hero h1 { color: #FFFFFF; }
+html[lang='en-IN'] .feat-hero .tagline { color: rgba(255, 255, 255, 0.85); }
+html[lang='en-IN'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.2); color: #FFFFFF; }
 
 /* ── Module Sections ── */
 .feat-module-section {
@@ -1367,9 +1350,11 @@ html[lang='en-IN'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.26
 }
 /* Alternates with .feat-section-gray (which already flips correctly via
    --zpoa-gray-50); this one was hardcoded white, so its module text
-   (already reading --zpoa-heading etc.) went invisible against it. */
+   (already reading --zpoa-heading etc.) went invisible against it on the
+   US black theme. India wants a pastel tint site-wide rather than plain
+   white, so it gets its own light override too. */
 html[lang='en-US'] .feat-section-white { background: #05070a; }
-html[lang='en-IN'] .feat-section-white { background: #0EA5E9; }
+html[lang='en-IN'] .feat-section-white { background: #FFF8EF; }
 
 [data-theme='dark'] .feat-section-gray {
   background: #0F1923;
@@ -1616,14 +1601,14 @@ html[lang='en-IN'] .product-card > p { color: #6b7685; }
   background: rgba(13, 148, 136, 0.14);
   border-color: rgba(45, 212, 191, 0.28);
 }
-/* The light mint pill is tuned for a white hero; on these locales' black/blue
-   hero it reads as barely-visible pale-on-pale, so pin it to a translucent
-   white treatment instead. */
+/* The light mint pill is tuned for a white hero; on the US black hero and
+   India's coral-gradient hero it reads as barely-visible pale-on-pale, so
+   both pin it to a translucent white treatment instead. */
 html[lang='en-US'] .cvpn-trust-tags span,
 html[lang='en-IN'] .cvpn-trust-tags span {
-  color: #000000;
-  background: rgba(255, 255, 255, 0.26);
-  border-color: rgba(0, 0, 0, 0.18);
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Locale overrides win over [data-theme='dark'] regardless of the toggle
@@ -1640,12 +1625,12 @@ html[lang='en-US'] .cvpn-trust-label { color: #8895B2; }
 
 html[lang='en-IN'] .cvpn-hero {
   background:
-    radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 65%),
-    #0EA5E9;
+    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(103, 232, 249, 0.55), transparent 60%),
+    linear-gradient(135deg, #22B6E0 0%, #0284C7 45%, #075985 100%);
 }
-html[lang='en-IN'] .cvpn-hero-copy h1 { color: #000000; }
-html[lang='en-IN'] .cvpn-lede { color: rgba(0, 0, 0, 0.7); }
-html[lang='en-IN'] .cvpn-trust-label { color: rgba(0, 0, 0, 0.6); }
+html[lang='en-IN'] .cvpn-hero-copy h1 { color: #FFFFFF; }
+html[lang='en-IN'] .cvpn-lede { color: rgba(255, 255, 255, 0.85); }
+html[lang='en-IN'] .cvpn-trust-label { color: rgba(255, 255, 255, 0.75); }
 
 /* status card */
 .cvpn-status {
@@ -1716,7 +1701,7 @@ html[lang='en-IN'] .cvpn-trust-label { color: rgba(0, 0, 0, 0.6); }
    to a hardcoded light gray regardless of theme or locale — its module
    text (already reading --zpoa-heading etc.) went invisible against it. */
 html[lang='en-US'] .cvpn-section-gray { background: rgba(255, 255, 255, 0.03); }
-html[lang='en-IN'] .cvpn-section-gray { background: rgba(255, 255, 255, 0.08); }
+html[lang='en-IN'] .cvpn-section-gray { background: #FFF1DE; }
 .cvpn-section-center { text-align: center; }
 .cvpn-section h2,
 .cvpn-h2-center {
@@ -2074,8 +2059,13 @@ html[lang='en-IN'] .allp-features li { color: #6b7685; }
    rule here previously got silently reordered by the CSS minifier when it
    merged its identical declaration with other locale rules elsewhere in
    the file, which flipped the cascade and made India render black. */
-.allp-hero2.allp-hero2--in { background: radial-gradient(ellipse 70% 100% at 50% -20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 65%), #0EA5E9; color: #000000; }
-.allp-hero2.allp-hero2--in h1 { color: #000000; }
+.allp-hero2.allp-hero2--in {
+  background:
+    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(103, 232, 249, 0.55), transparent 60%),
+    linear-gradient(135deg, #22B6E0 0%, #0284C7 45%, #075985 100%);
+  color: #FFFFFF;
+}
+.allp-hero2.allp-hero2--in h1 { color: #FFFFFF; }
 .allp-hero-rule { width: 56px; height: 3px; border-radius: 3px; background: #fbbf24; margin: 1.5rem auto 0; }
 .allp-search-wrap { position: relative; z-index: 3; margin-top: -2.4rem; }
 .allp-search { position: relative; max-width: 680px; margin: 0 auto; }
@@ -2942,14 +2932,12 @@ main.zpoa-blog-list article > footer.row a {
 }
 /* This card was hardcoded white (only [data-theme='dark'] changed it), so
    its title/meta text (already reading --zpoa-heading etc.) went invisible
-   against it once those tokens flipped per locale. */
+   against it once the US black theme flipped that text white. India is a
+   light theme, so the plain white card (its default, no override needed)
+   already works fine there. */
 html[lang='en-US'] main.zpoa-blog-list article {
   background: linear-gradient(180deg, #10141f 0%, #05070a 100%);
   border-color: rgba(255, 255, 255, 0.10);
-}
-html[lang='en-IN'] main.zpoa-blog-list article {
-  background: linear-gradient(180deg, #1f9fdb 0%, #0284C7 100%);
-  border-color: rgba(255, 255, 255, 0.25);
 }
 
 main.zpoa-blog-list article:hover {
@@ -3124,20 +3112,15 @@ main.zpoa-blog-list article > footer.row a[rel="tag"] {
   color: #6FB3FF;
   border-color: rgba(76, 154, 255, 0.25);
 }
-/* This card is now a dark/blue surface for these locales (see the article
+/* This card is now a dark surface for the US theme (see the article
    background rule above), so pinned to a higher-contrast color instead of
-   --zpoa-blue (indigo reads too close in hue to the India card to pop). */
+   --zpoa-blue. India's card is white/light again, so it keeps the base
+   tag style unchanged. */
 html[lang='en-US'] main.zpoa-blog-list article > footer.row [class*="tag_"] a,
 html[lang='en-US'] main.zpoa-blog-list article > footer.row a[rel="tag"] {
   background: rgba(76, 154, 255, 0.12);
   color: #6FB3FF;
   border-color: rgba(76, 154, 255, 0.25);
-}
-html[lang='en-IN'] main.zpoa-blog-list article > footer.row [class*="tag_"] a,
-html[lang='en-IN'] main.zpoa-blog-list article > footer.row a[rel="tag"] {
-  background: rgba(255, 255, 255, 0.28);
-  color: #000000;
-  border-color: rgba(0, 0, 0, 0.18);
 }
 
 /* Read more link: plain <a> in the second col */
@@ -3153,10 +3136,10 @@ main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] {
   width: auto;
   transition: gap 0.15s ease, color 0.15s ease;
 }
-/* This card is now a dark/blue surface for these locales, so pinned to a
-   higher-contrast color instead of --zpoa-blue. */
+/* This card is now a dark surface for the US theme, so pinned to a
+   higher-contrast color instead of --zpoa-blue. India's card is white/light
+   again, so it keeps the base link color unchanged. */
 html[lang='en-US'] main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] { color: #4C9AFF; }
-html[lang='en-IN'] main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] { color: #000000; }
 
 main.zpoa-blog-list article > footer.row a[aria-label^="Read more"] b {
   font-weight: 600;
@@ -3449,7 +3432,7 @@ html[lang='en-IN'] .menu__link {
 }
 html[lang='en-IN'] .menu__link:hover,
 html[lang='en-IN'] .menu__link--active {
-  color: #4B2FD6 !important;
+  color: #0284C7 !important;
 }
 html[lang='en-IN'] .menu__list-item-collapsible:hover {
   background: rgba(255, 255, 255, 0.3) !important;
@@ -3459,7 +3442,7 @@ html[lang='en-IN'] .table-of-contents__link {
 }
 html[lang='en-IN'] .table-of-contents__link--active,
 html[lang='en-IN'] .table-of-contents__link:hover {
-  color: #4B2FD6 !important;
+  color: #0284C7 !important;
 }
 html[lang='en-IN'] .breadcrumbs__link {
   color: rgba(0, 0, 0, 0.75) !important;
