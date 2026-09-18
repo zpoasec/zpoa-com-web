@@ -122,7 +122,7 @@ export default function AllProducts(): ReactNode {
                       ) : (
                         <h2 className="allp-cat-name">{cat}</h2>
                       )}
-                      <div className={`allp-grid${isFeatured ? ' allp-featured-grid' : ''}`}>
+                      <div className={`allp-grid${isFeatured ? ' allp-featured-grid' : ''}${items.length === 1 ? ' allp-grid--single' : ''}`}>
                         {items.map((p) => (
                           <ProductDetail p={p} key={p.name} />
                         ))}
