@@ -11,7 +11,7 @@ const LOGOS: Record<'vpn' | 'capital' | 'health', {png: string; svg: string}> = 
   },
   capital: {
     png: '/img/products/capital-logo.png',
-    svg: '/img/products/capital-logo.svg',
+    svg: '/img/products/capital-logo.png',
   },
   health: {
     png: '/img/products/health-logo.png',

@@ -10,7 +10,7 @@ import {Redirect} from '@docusaurus/router';
 // instead of client-side routing.
 const GET_STARTED_URL = '/schedule';
 
-// The live app itself: Ciya Micro Credit, branded here as ZPOA Capital.
+// The live app itself: Ciya Micro Credit, branded here as ZPOA FinTech Solutions.
 // Requires a login, so this only ever appears as a "sign in" destination,
 // never embedded or scraped for content on this page.
 const APP_URL = 'https://cmc.hinisoft.com/loans';
@@ -119,6 +119,19 @@ const ICONS: Record<string, ReactNode> = {
       <circle cx="12" cy="12" r="2.7" />
     </svg>
   ),
+  // expense → receipt
+  expense: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 3h12v18l-3-1.6-3 1.6-3-1.6-3 1.6V3z" />
+      <path d="M9 8.5h6 M9 12.5h6" />
+    </svg>
+  ),
+  // report → bar chart
+  report: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 20V10 M10 20V4 M16 20v-8 M3 20h18" />
+    </svg>
+  ),
 };
 
 const lifecycle = [
@@ -162,6 +175,12 @@ const lifecycle = [
 
 const modules = [
   {
+    icon: 'gps',
+    k: 'Verification',
+    title: 'Evidence + GPS',
+    body: 'Photo verification before every collection, image, time, latitude/longitude, and address attached, turning a photo into a proof-of-visit record.',
+  },
+  {
     icon: 'team',
     k: 'Field team',
     title: 'Staff Collection',
@@ -172,6 +191,12 @@ const modules = [
     k: 'Performance',
     title: 'Staff Analytics',
     body: 'Collection rates and productivity per officer, so managers can coach the team.',
+  },
+  {
+    icon: 'customer',
+    k: 'People',
+    title: 'Field-Officer Management',
+    body: 'Employees with roles, branches, and assigned teams; active/inactive status, with history retained for audit after they leave.',
   },
   {
     icon: 'capital',
@@ -192,10 +217,28 @@ const modules = [
     body: 'Investor principal and ROI, reported separately so it never inflates owner equity.',
   },
   {
+    icon: 'ledger',
+    k: 'Accounting',
+    title: 'General Ledger',
+    body: 'Every module posts here as double-entry vouchers, live cash, trial balance, and chart of accounts.',
+  },
+  {
+    icon: 'expense',
+    k: 'Costs',
+    title: 'Expenses',
+    body: 'Expense log and dashboard with employee monthly summaries, feeding straight into profitability.',
+  },
+  {
     icon: 'dayclose',
-    k: 'Daily close',
-    title: 'Expenses · Day Closing · Cash Handover',
-    body: 'The daily reconciliation trio that matches the software to the cash box, record expenses, close the day, and hand over collected cash with a clear audit trail.',
+    k: 'Reconcile',
+    title: 'Day Closing & Cash Handover',
+    body: 'Count physical cash, reconcile the difference, and control handover → verification → close, matching the software to the cash box.',
+  },
+  {
+    icon: 'report',
+    k: 'Oversight',
+    title: 'Reports & Analytics',
+    body: 'Management reporting computed from the same source as every module, so the numbers never disagree.',
   },
 ];
 
@@ -206,14 +249,19 @@ const whyChoose = [
     body: 'Lending, field collection, staff, and full accounting, no spreadsheets stitched together after the fact.',
   },
   {
-    icon: 'team',
-    title: 'Group (Kulu) lending, built in',
-    body: 'Teams, centres, leaders, and weekly schedules are first-class, not bolted on to a generic loan app.',
-  },
-  {
     icon: 'live',
     title: 'Live and automatic',
     body: 'Dashboards and the ledger update themselves the moment money moves. No manual re-keying, no month-end scramble.',
+  },
+  {
+    icon: 'ledger',
+    title: 'Operations and accounting stay in sync',
+    body: 'A single collection updates repayment, loan balance, ledger, and capital together, one connected source of truth.',
+  },
+  {
+    icon: 'team',
+    title: 'Group (Kulu) lending, built in',
+    body: 'Teams, centres, leaders, and weekly schedules are first-class, not bolted on to a generic loan app.',
   },
   {
     icon: 'split',
@@ -223,12 +271,27 @@ const whyChoose = [
   {
     icon: 'gps',
     title: 'Field-ready by design',
-    body: 'Printable collection sheets, day closing, and cash handover match how the work actually happens on the ground.',
+    body: 'GPS + photo evidence, printable collection sheets, day closing, and cash handover match how the work actually happens on the ground.',
+  },
+  {
+    icon: 'dayclose',
+    title: 'Physical-cash control',
+    body: 'Handover → verification → day-close reconciliation catches shortfalls the same day, not next month.',
   },
   {
     icon: 'risk',
     title: 'Risk you can see',
     body: 'Portfolio-at-Risk %, overdue amounts, and collection efficiency are surfaced up front, before they become losses.',
+  },
+  {
+    icon: 'customer',
+    title: 'Accountability and audit trail',
+    body: 'Per-officer performance and GPS-stamped evidence records, with history retained even after a staff member leaves.',
+  },
+  {
+    icon: 'report',
+    title: 'Payroll and billing ready',
+    body: 'Staff summaries and exports feed payroll and reconciliation without extra work.',
   },
 ];
 
@@ -240,11 +303,11 @@ function CapitalHero(): ReactNode {
           <img
             className="cvpn-hero-logo"
             src="/img/products/capital-logo.png"
-            alt="ZPOA Capital"
+            alt="ZPOA FinTech Solutions"
             width={72}
             height={72}
           />
-          <div className="cvpn-eyebrow">ZPOA Capital</div>
+          <div className="cvpn-eyebrow">ZPOA FinTech Solutions</div>
           <h1>Run the entire lending operation from one console.</h1>
           <p className="cvpn-lede">
             Ciya Micro Credit, now on the ZPOA platform: group onboarding,
@@ -255,7 +318,7 @@ function CapitalHero(): ReactNode {
           </p>
           <div className="hero-buttons">
             <Link className="hero-btn-primary" to={APP_URL}>
-              Sign in to ZPOA Capital
+              Sign in to ZPOA FinTech Solutions
             </Link>
             <Link className="hero-btn-secondary" to={GET_STARTED_URL}>
               Contact Sales
@@ -272,10 +335,10 @@ function CapitalHero(): ReactNode {
           </div>
         </div>
 
-        <div className="cvpn-status" aria-label="ZPOA Capital status panel">
+        <div className="cvpn-status" aria-label="ZPOA FinTech Solutions status panel">
           <div className="cvpn-status-head">
             <span className="cvpn-status-dot" />
-            <strong>ZPOA Capital</strong>
+            <strong>ZPOA FinTech Solutions</strong>
             <span className="cvpn-status-sync">connected ledger</span>
           </div>
           <div className="cvpn-status-rows">
@@ -349,14 +412,23 @@ function CapitalWhy(): ReactNode {
       <div className="container">
         <div className="cvpn-eyebrow" style={{textAlign: 'center'}}>Why lenders choose it</div>
         <h2 className="cvpn-h2-center">One system instead of five</h2>
-        <div className="cvpn-feature-grid">
-          {whyChoose.map((w) => (
-            <div className="cvpn-feature" key={w.title}>
-              <span className="cvpn-feature-ic" aria-hidden="true">{ICONS[w.icon]}</span>
-              <h3>{w.title}</h3>
-              <p>{w.body}</p>
-            </div>
-          ))}
+        <div className="cvpn-btable-wrap">
+          <table className="cvpn-btable">
+            <thead>
+              <tr>
+                <th scope="col">Benefit</th>
+                <th scope="col">Why it matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              {whyChoose.map((w) => (
+                <tr key={w.title}>
+                  <th scope="row">{w.title}</th>
+                  <td>{w.body}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -371,7 +443,7 @@ function CapitalCTA(): ReactNode {
         <p>Capital, loans, collections, and accounting, on one connected system.</p>
         <div className="hero-buttons">
           <Link className="hero-btn-primary" to={APP_URL}>
-            Sign in to ZPOA Capital
+            Sign in to ZPOA FinTech Solutions
           </Link>
           <Link className="hero-btn-secondary" to={GET_STARTED_URL}>
             Contact Sales
@@ -385,8 +457,8 @@ function CapitalCTA(): ReactNode {
 function CapitalPage(): ReactNode {
   return (
     <Layout
-      title="ZPOA Capital"
-      description="ZPOA Capital: run the entire microfinance lending operation from one console, group onboarding, disbursement, weekly field collection, staff performance, and a live double-entry ledger.">
+      title="ZPOA FinTech Solutions"
+      description="ZPOA FinTech Solutions: run the entire microfinance lending operation from one console, group onboarding, disbursement, weekly field collection, staff performance, and a live double-entry ledger.">
       <main>
         <CapitalHero />
         <CapitalLifecycle />
@@ -398,7 +470,7 @@ function CapitalPage(): ReactNode {
   );
 }
 
-// ZPOA Capital (Ciya Micro Credit) is India-only: NBFC-MFI lending isn't
+// ZPOA FinTech Solutions (Ciya Micro Credit) is India-only: NBFC-MFI lending isn't
 // relevant outside that market. The pages plugin only discovers files under
 // src/pages (an i18n-only override with no default-locale counterpart is
 // never picked up), so this single file backs the route for every locale,
