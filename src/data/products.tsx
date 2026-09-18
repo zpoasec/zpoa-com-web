@@ -40,6 +40,8 @@ export type Product = {
 
 export const CATEGORY_ORDER = [
   'Featured Apps',
+  'Financial Services',
+  'Healthcare',
   'AI & Automation',
   'Threat Detection & Response',
   'Identity & Insider Risk',
@@ -111,14 +113,14 @@ export const PRODUCTS: Product[] = [
     isNew: true,
   },
   {
-    name: 'ZPOA Capital', category: 'Featured Apps', accent: 'accent-capital', icon: 'capital', to: '/capital', isNew: true,
+    name: 'ZPOA Capital', category: 'Financial Services', accent: 'accent-capital', icon: 'capital', to: '/capital', isNew: true,
     locales: ['en-in'],
     tagline: 'Run the entire lending operation from one console',
     desc: 'Group onboarding, loan disbursement, weekly field collection, staff performance, and the full set of books in one live system, so every action updates the numbers automatically and nothing is entered twice.',
     features: ['Kulu (group) lending: teams, centres & leaders built in', 'Portfolio-at-Risk %, overdue, and collection efficiency up front', 'Weekly field collection with GPS-verified evidence', 'Double-entry ledger, day closing & owner/investor separation'],
   },
   {
-    name: 'ZPOA Health', category: 'Featured Apps', accent: 'accent-health', icon: 'health', to: '/health', isNew: true,
+    name: 'Ciyex HIMS', category: 'Healthcare', accent: 'accent-health', icon: 'health', to: '/health', isNew: true,
     locales: ['en-in'],
     tagline: 'Hospital Information Management System',
     desc: 'Run the whole hospital on one system: registration and the front-desk queue, OPD, casualty, wards and theatre, lab, radiology, pharmacy and blood bank, through to the final bill, the day book and the discharge summary.',

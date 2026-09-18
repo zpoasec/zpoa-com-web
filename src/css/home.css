@@ -40,21 +40,157 @@
   --zs-ok:          #5CD79B;
 }
 
-/* ══ NAVBAR: Products dropdown ══════════════════════════════════════════
-   Two-line menu entries (label + description). All colours run through Infima
-   tokens so the menu inverts with the theme instead of staying light.
+/* ══ NAVBAR: Products mega-menu ══════════════════════════════════════════
+   Two-pane layout — a sector list on the left, that sector's products on the
+   right — the same pattern a multi-line-of-business "Industries"/"Products"
+   mega-menu uses elsewhere on the web, rather than one flat dropdown list.
+   A sliding highlight tracks the hovered sector and the right panel
+   cross-fades in on switch, rather than everything snapping instantly.
+   All colours run through Infima tokens so the menu inverts with the theme
+   instead of staying light.
    ────────────────────────────────────────────────────────────────────── */
-.products-split-menu { min-width: 244px; padding: 6px; }
-.products-split-menu .dropdown__link {
-  display: flex; flex-direction: column; gap: 2px;
-  padding: 9px 12px; border-radius: 7px; white-space: normal;
+@keyframes products-mega-in {
+  from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
-.products-split-menu .dropdown__link:hover {
-  background: var(--ifm-dropdown-hover-background-color);
+@keyframes products-mega-panel-in {
+  from { opacity: 0; transform: translateX(6px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
-.products-split-item { font-weight: 600; font-size: 0.9rem; color: var(--ifm-font-color-base); }
-.products-split-menu .dropdown__link:hover .products-split-item { color: var(--zpoa-blue); }
-.products-split-desc { font-size: 0.76rem; color: var(--zpoa-gray-500); line-height: 1.4; }
+.products-mega {
+  display: flex; align-items: stretch;
+  width: 640px; max-width: calc(100vw - 32px);
+  padding: 0; overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px -14px rgba(15, 23, 42, 0.28), 0 0 0 1px var(--zpoa-gray-200);
+  transform-origin: top center;
+}
+.dropdown--show .products-mega,
+.dropdown--hoverable:hover .products-mega {
+  animation: products-mega-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .products-mega, .products-mega-panel-inner { animation: none !important; }
+}
+.products-mega-nav {
+  position: relative;
+  list-style: none; margin: 0; padding: 14px 10px;
+  display: flex; flex-direction: column; gap: 3px;
+  flex: none; width: 216px;
+  background: var(--ifm-background-surface-color, #fff);
+  border-right: 1px solid var(--zpoa-gray-200);
+}
+/* The sliding pill behind the active item — a single element that glides to
+   the hovered sector, instead of a background flipping on and off per item. */
+.products-mega-nav-highlight {
+  position: absolute; left: 10px; right: 10px; top: 0;
+  background: var(--zpoa-gray-50);
+  border-radius: 10px;
+  box-shadow: inset 3px 0 0 var(--zpoa-blue);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), height 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none; z-index: 0;
+}
+.products-mega-nav-item {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 11px; width: 100%; text-align: left;
+  background: none; border: none; border-radius: 10px;
+  padding: 10px 12px; font-size: 0.9rem; font-weight: 600;
+  color: var(--ifm-font-color-base); cursor: pointer;
+  text-decoration: none; transition: color 0.15s ease;
+}
+.products-mega-nav-item.is-active { color: var(--zpoa-blue); }
+.products-mega-nav-ic {
+  flex: none; display: grid; place-items: center;
+  width: 30px; height: 30px; border-radius: 8px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.products-mega-nav-ic svg { width: 16px; height: 16px; }
+.products-mega-nav-item.is-active .products-mega-nav-ic { transform: scale(1.08); }
+.products-mega-panel {
+  flex: 1; min-width: 0; padding: 22px 26px 18px;
+  display: flex; flex-direction: column;
+  background: var(--ifm-background-surface-color, #fff);
+}
+.products-mega-panel-inner {
+  animation: products-mega-panel-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.products-mega-panel-head {
+  display: flex; align-items: flex-start; gap: 13px;
+  margin: 0 0 16px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--zpoa-gray-200);
+}
+.products-mega-panel-ic {
+  flex: none; display: grid; place-items: center;
+  width: 38px; height: 38px; border-radius: 10px; margin-top: 1px;
+}
+.products-mega-panel-ic svg { width: 20px; height: 20px; }
+.products-mega-panel-head h4 {
+  margin: 0 0 3px; font-size: 1.08rem; font-weight: 700; color: var(--zpoa-heading);
+}
+.products-mega-panel-head p { margin: 0; font-size: 0.85rem; color: var(--zpoa-gray-500); }
+.products-mega-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(170px, 1fr)); gap: 8px;
+  margin-bottom: 8px;
+}
+/* A sector with only one product (Financial Services, Healthcare today)
+   still got a 2-column track, squeezing that one card into a narrow half
+   width and wrapping its description into a tall, empty-looking column
+   with dead space beside it — one full-width column instead. */
+.products-mega-grid--single { grid-template-columns: 1fr; }
+.products-mega-card {
+  display: flex; align-items: flex-start; gap: 11px;
+  padding: 11px; border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease;
+}
+.products-mega-card:hover {
+  background: var(--zpoa-gray-50);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -10px rgba(15, 23, 42, 0.25);
+}
+.products-mega-card-ic {
+  flex: none; display: grid; place-items: center;
+  width: 34px; height: 34px; border-radius: 9px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.products-mega-card:hover .products-mega-card-ic { transform: scale(1.1) rotate(-4deg); }
+.products-mega-card-ic svg { width: 17px; height: 17px; }
+.products-mega-card-logo {
+  flex: none; border-radius: 9px; object-fit: cover;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.products-mega-card:hover .products-mega-card-logo { transform: scale(1.1) rotate(-4deg); }
+.products-mega-card-body { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.products-mega-card-title { font-weight: 700; font-size: 0.9rem; color: var(--zpoa-heading); }
+.products-mega-card-desc { font-size: 0.78rem; color: var(--zpoa-gray-500); line-height: 1.4; }
+.products-mega-card-arrow {
+  flex: none; align-self: center; color: var(--zpoa-blue);
+  opacity: 0; transform: translateX(-4px);
+  transition: opacity 0.18s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.products-mega-card:hover .products-mega-card-arrow { opacity: 1; transform: translateX(0); }
+.products-mega-all {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  margin-top: auto; padding-top: 14px;
+  border-top: 1px solid var(--zpoa-gray-200);
+  font-size: 0.85rem; font-weight: 700; color: var(--zpoa-blue);
+  text-decoration: none;
+}
+.products-mega-all:hover { text-decoration: none; color: var(--zpoa-blue); }
+.products-mega-all span { display: inline-block; transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1); }
+.products-mega-all:hover span { transform: translateX(4px); }
+
+@media (max-width: 640px) {
+  .products-mega { width: 92vw; }
+  .products-mega-nav { width: 168px; }
+  .products-mega-grid { grid-template-columns: 1fr; }
+}
+
+.products-split-sector-mobile {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--zpoa-gray-500); cursor: default;
+}
 
 /* ══ ZYPHER VPN: admin vs employee ══════════════════════════════════════
    Both mockups keep the product's own dark chrome in either site theme: the

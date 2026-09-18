@@ -2103,6 +2103,11 @@ html[lang='en-IN'] .allp-features li { color: #6b7685; }
 .allp-cat-label { text-align: center; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--zpoa-heading); margin: 0 0 1.5rem; }
 [data-theme='dark'] .allp-cat-label { color: #fff; }
 .allp-featured-grid { grid-template-columns: min(620px, 100%); justify-content: center; }
+/* Same one-card treatment as .allp-featured-grid, for any other category
+   (Financial Services, Healthcare today) that currently holds a single
+   product — a fixed 2-column track squeezed that one card into a narrow
+   half width and wrapped its description into a tall, empty-looking column. */
+.allp-grid--single { grid-template-columns: min(620px, 100%); justify-content: center; }
 
 @media (max-width: 960px) {
   .allp-grid2 { grid-template-columns: 1fr; }

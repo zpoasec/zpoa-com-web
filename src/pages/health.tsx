@@ -10,7 +10,7 @@ import {Redirect} from '@docusaurus/router';
 // instead of client-side routing.
 const GET_STARTED_URL = '/schedule';
 
-// The live app itself, branded here as ZPOA Health. Requires a login, so
+// The live app itself, branded here as Ciyex HIMS. Requires a login, so
 // this only ever appears as a "sign in" destination, never embedded or
 // scraped for content on this page.
 const APP_URL = 'https://ciyex.com/en-in/';
@@ -247,7 +247,7 @@ function HealthHero(): ReactNode {
     <section className="cvpn-hero">
       <div className="container cvpn-hero-grid">
         <div className="cvpn-hero-copy">
-          <div className="cvpn-eyebrow">ZPOA Health</div>
+          <div className="cvpn-eyebrow">Ciyex HIMS</div>
           <h1>Run the whole hospital on one system.</h1>
           <p className="cvpn-lede">
             Registration and the front-desk queue, OPD, casualty, wards and
@@ -257,7 +257,7 @@ function HealthHero(): ReactNode {
           </p>
           <div className="hero-buttons">
             <Link className="hero-btn-primary" to={APP_URL}>
-              Sign in to ZPOA Health
+              Sign in to Ciyex HIMS
             </Link>
             <Link className="hero-btn-secondary" to={GET_STARTED_URL}>
               Contact Sales
@@ -274,10 +274,10 @@ function HealthHero(): ReactNode {
           </div>
         </div>
 
-        <div className="cvpn-status" aria-label="ZPOA Health status panel">
+        <div className="cvpn-status" aria-label="Ciyex HIMS status panel">
           <div className="cvpn-status-head">
             <span className="cvpn-status-dot" />
-            <strong>ZPOA Health</strong>
+            <strong>Ciyex HIMS</strong>
             <span className="cvpn-status-sync">live patient record</span>
           </div>
           <div className="cvpn-status-rows">
@@ -371,7 +371,7 @@ function HealthCTA(): ReactNode {
         <p>Registration, treatment, pharmacy, and billing, on one connected system.</p>
         <div className="hero-buttons">
           <Link className="hero-btn-primary" to={APP_URL}>
-            Sign in to ZPOA Health
+            Sign in to Ciyex HIMS
           </Link>
           <Link className="hero-btn-secondary" to={GET_STARTED_URL}>
             Contact Sales
@@ -385,8 +385,8 @@ function HealthCTA(): ReactNode {
 function HealthPage(): ReactNode {
   return (
     <Layout
-      title="ZPOA Health"
-      description="ZPOA Health: run the whole hospital on one system, registration, OPD and IPD, lab and radiology, pharmacy and blood bank, billing and discharge.">
+      title="Ciyex HIMS"
+      description="Ciyex HIMS: run the whole hospital on one system, registration, OPD and IPD, lab and radiology, pharmacy and blood bank, billing and discharge.">
       <main>
         <HealthHero />
         <HealthLifecycle />
@@ -398,7 +398,7 @@ function HealthPage(): ReactNode {
   );
 }
 
-// ZPOA Health is India-only: this hospital information system targets the
+// Ciyex HIMS is India-only: this hospital information system targets the
 // Indian regulatory/billing environment specifically (ABDM, GST). The pages
 // plugin only discovers files under src/pages (an i18n-only override with no
 // default-locale counterpart is never picked up), so this single file backs
