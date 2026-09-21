@@ -43,7 +43,7 @@ const SECTOR_ICONS: Record<string, ReactNode> = {
 const PRODUCTS = '/products';          // portfolio overview
 const ALL_PRODUCTS = '/all-products';  // full portfolio, with detail
 const ZYPHER_VPN = '/cyber-vpn';       // the VPN product page
-const CAPITAL = '/capital';            // ZPOA FinTech Solutions product page, India only
+const CAPITAL = '/capital';            // FinTech Solutions product page, India only
 const HEALTH = '/health';              // Ciyex HIMS product page, India only
 
 type Item = {label: string; to: string; desc: string; icon: string; accent: string};
@@ -58,7 +58,7 @@ const securitySector: Sector = {
   ],
 };
 
-// ZPOA FinTech Solutions (the Ciya Micro Credit lending platform) and Ciyex HIMS (a
+// FinTech Solutions (the Ciya Micro Credit lending platform) and Ciyex HIMS (a
 // hospital information system) are India-specific: their regulatory surface
 // (NBFC-MFI lending rules, ABDM/GST) isn't relevant outside that market, so
 // they're only inserted for the en-in locale. Each points at its own product
@@ -68,7 +68,7 @@ const financeSector: Sector = {
   icon: 'finance', accent: 'accent-capital',
   blurb: 'Lending operations for microfinance institutions.',
   items: [
-    {label: 'ZPOA FinTech Solutions', to: CAPITAL, desc: 'Group-lending & collections platform.', icon: 'capital', accent: 'accent-capital'},
+    {label: 'FinTech Solutions', to: CAPITAL, desc: 'Group-lending & collections platform.', icon: 'capital', accent: 'accent-capital'},
   ],
 };
 const healthcareSector: Sector = {

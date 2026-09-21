@@ -113,7 +113,7 @@ export const PRODUCTS: Product[] = [
     isNew: true,
   },
   {
-    name: 'ZPOA FinTech Solutions', category: 'Financial Services', accent: 'accent-capital', icon: 'capital', to: '/capital', isNew: true,
+    name: 'FinTech Solutions', category: 'Financial Services', accent: 'accent-capital', icon: 'capital', to: '/capital', isNew: true,
     locales: ['en-in'],
     tagline: 'Run the entire lending operation from one console',
     desc: 'Group onboarding, loan disbursement, weekly field collection, staff performance, and the full set of books in one live system, so every action updates the numbers automatically and nothing is entered twice.',
