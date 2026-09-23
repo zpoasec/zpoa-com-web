@@ -121,7 +121,7 @@ const flow = [
   {
     n: 1,
     title: 'Deploy the brain on your own infra',
-    body: 'Stand up the ZPOA Zypher VPN control plane and Postgres primary/standby on your own VPC or rack, and point DNS at your box. No vendor cloud is involved.',
+    body: 'Stand up the Zypher VPN control plane and Postgres primary/standby on your own VPC or rack, and point DNS at your box. No vendor cloud is involved.',
   },
   {
     n: 2,
@@ -187,11 +187,11 @@ function VpnHero(): ReactNode {
           <img
             className="cvpn-hero-logo"
             src="/img/products/zypher-logo.png"
-            alt="ZPOA Zypher VPN"
+            alt="Zypher VPN"
             width={72}
             height={72}
           />
-          <div className="cvpn-eyebrow">ZPOA Zypher VPN</div>
+          <div className="cvpn-eyebrow">Zypher VPN</div>
           <h1>Secure access without handing over your network.</h1>
           <p className="cvpn-lede">
             Give your team direct, zero-config access to any resource through an
@@ -217,10 +217,10 @@ function VpnHero(): ReactNode {
           </div>
         </div>
 
-        <div className="cvpn-status" aria-label="ZPOA Zypher VPN status panel">
+        <div className="cvpn-status" aria-label="Zypher VPN status panel">
           <div className="cvpn-status-head">
             <span className="cvpn-status-dot" />
-            <strong>ZPOA Zypher VPN status</strong>
+            <strong>Zypher VPN status</strong>
             <span className="cvpn-status-sync">self-hosted</span>
           </div>
           <div className="cvpn-status-rows">
@@ -243,7 +243,7 @@ function VpnMesh(): ReactNode {
         <h2>Seamless remote access, without rearchitecting your network.</h2>
         <p className="cvpn-sub">
           Centralized VPNs are slow to roll out and a single point of failure.
-          ZPOA Zypher VPN connects people straight to resources over a peer-to-peer
+          Zypher VPN connects people straight to resources over a peer-to-peer
           mesh, no concentrator in the middle.
         </p>
         <div className="cvpn-figure">
@@ -266,7 +266,7 @@ function VpnSplit(): ReactNode {
           <div className="cvpn-eyebrow">Identity-aware, and yours</div>
           <h2>One brain. Inside your walls.</h2>
           <p>
-            Built on WireGuard, ZPOA Zypher VPN keeps the control plane (who-can-reach-what)
+            Built on WireGuard, Zypher VPN keeps the control plane (who-can-reach-what)
             strictly separate from the data plane (the encrypted packets), and
             puts <strong>both</strong> inside your boundary. The coordination server
             is only a matchmaker: it authenticates devices, hands out the network
@@ -281,7 +281,7 @@ function VpnSplit(): ReactNode {
         <div className="cvpn-figure">
           <img
             src="/img/features/vpn-architecture.svg"
-            alt="ZPOA Zypher VPN self-host architecture: control plane with Postgres primary and standby, plus a data plane of client to subnet router to corp servers"
+            alt="Zypher VPN self-host architecture: control plane with Postgres primary and standby, plus a data plane of client to subnet router to corp servers"
             loading="lazy"
           />
         </div>
@@ -297,7 +297,7 @@ function VpnArchitecture(): ReactNode {
         <div className="cvpn-eyebrow">Under the hood</div>
         <h2 className="cvpn-h2-center">The technical architecture</h2>
         <p className="cvpn-sub">
-          ZPOA Zypher VPN is built on a strict separation of concerns. A
+          Zypher VPN is built on a strict separation of concerns. A
           self-hosted control plane manages authentication, IP allocation, policy,
           and key exchange, coordinating with every endpoint over an encrypted
           Noise_IK channel, yet it never carries a single packet of user traffic.
@@ -308,7 +308,7 @@ function VpnArchitecture(): ReactNode {
         <div className="cvpn-figure cvpn-figure-wide">
           <img
             src="/img/features/cyber-vpn-system.svg"
-            alt="ZPOA Zypher VPN system architecture: unified agents connect to the zpoa-access control plane over Noise_IK, which reads and writes PostgreSQL, ClickHouse, Redis and Kafka; the data plane is a direct WireGuard mesh to a gateway and corp resources, with a DERP relay fallback"
+            alt="Zypher VPN system architecture: unified agents connect to the zpoa-access control plane over Noise_IK, which reads and writes PostgreSQL, ClickHouse, Redis and Kafka; the data plane is a direct WireGuard mesh to a gateway and corp resources, with a DERP relay fallback"
             loading="lazy"
           />
         </div>
@@ -361,7 +361,7 @@ function VpnCompare(): ReactNode {
   return (
     <section className="cvpn-section">
       <div className="container">
-        <h2 className="cvpn-h2-center">What you own with ZPOA Zypher VPN</h2>
+        <h2 className="cvpn-h2-center">What you own with Zypher VPN</h2>
         <p className="cvpn-sub cvpn-sub-center">
           Self-hosted, identity-native, and yours end to end, the control plane,
           the database, and the identity that governs access all inside your walls.
@@ -632,8 +632,8 @@ function VpnCTA(): ReactNode {
 export default function CyberVpn(): ReactNode {
   return (
     <Layout
-      title="ZPOA Zypher VPN"
-      description="ZPOA Zypher VPN, a self-hosted, identity-native, zero-trust WireGuard mesh. Control plane, database, and identity all inside your own walls.">
+      title="Zypher VPN"
+      description="Zypher VPN, a self-hosted, identity-native, zero-trust WireGuard mesh. Control plane, database, and identity all inside your own walls.">
       <main>
         <VpnHero />
         <VpnMesh />

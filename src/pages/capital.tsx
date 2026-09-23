@@ -10,7 +10,7 @@ import {Redirect} from '@docusaurus/router';
 // instead of client-side routing.
 const GET_STARTED_URL = '/schedule';
 
-// The live app itself: Ciya Micro Credit, branded here as ZPOA FinTech Solutions.
+// The live app itself: Ciya Micro Credit, branded here as FinTech Solutions.
 // Requires a login, so this only ever appears as a "sign in" destination,
 // never embedded or scraped for content on this page.
 const APP_URL = 'https://cmc.hinisoft.com/loans';
@@ -303,11 +303,11 @@ function CapitalHero(): ReactNode {
           <img
             className="cvpn-hero-logo"
             src="/img/products/capital-logo.png"
-            alt="ZPOA FinTech Solutions"
+            alt="FinTech Solutions"
             width={72}
             height={72}
           />
-          <div className="cvpn-eyebrow">ZPOA FinTech Solutions</div>
+          <div className="cvpn-eyebrow">FinTech Solutions</div>
           <h1>Run the entire lending operation from one console.</h1>
           <p className="cvpn-lede">
             Ciya Micro Credit, now on the ZPOA platform: group onboarding,
@@ -318,7 +318,7 @@ function CapitalHero(): ReactNode {
           </p>
           <div className="hero-buttons">
             <Link className="hero-btn-primary" to={APP_URL}>
-              Sign in to ZPOA FinTech Solutions
+              Sign in to FinTech Solutions
             </Link>
             <Link className="hero-btn-secondary" to={GET_STARTED_URL}>
               Contact Sales
@@ -335,10 +335,10 @@ function CapitalHero(): ReactNode {
           </div>
         </div>
 
-        <div className="cvpn-status" aria-label="ZPOA FinTech Solutions status panel">
+        <div className="cvpn-status" aria-label="FinTech Solutions status panel">
           <div className="cvpn-status-head">
             <span className="cvpn-status-dot" />
-            <strong>ZPOA FinTech Solutions</strong>
+            <strong>FinTech Solutions</strong>
             <span className="cvpn-status-sync">connected ledger</span>
           </div>
           <div className="cvpn-status-rows">
@@ -443,7 +443,7 @@ function CapitalCTA(): ReactNode {
         <p>Capital, loans, collections, and accounting, on one connected system.</p>
         <div className="hero-buttons">
           <Link className="hero-btn-primary" to={APP_URL}>
-            Sign in to ZPOA FinTech Solutions
+            Sign in to FinTech Solutions
           </Link>
           <Link className="hero-btn-secondary" to={GET_STARTED_URL}>
             Contact Sales
@@ -457,8 +457,8 @@ function CapitalCTA(): ReactNode {
 function CapitalPage(): ReactNode {
   return (
     <Layout
-      title="ZPOA FinTech Solutions"
-      description="ZPOA FinTech Solutions: run the entire microfinance lending operation from one console, group onboarding, disbursement, weekly field collection, staff performance, and a live double-entry ledger.">
+      title="FinTech Solutions"
+      description="FinTech Solutions: run the entire microfinance lending operation from one console, group onboarding, disbursement, weekly field collection, staff performance, and a live double-entry ledger.">
       <main>
         <CapitalHero />
         <CapitalLifecycle />
@@ -470,7 +470,7 @@ function CapitalPage(): ReactNode {
   );
 }
 
-// ZPOA FinTech Solutions (Ciya Micro Credit) is India-only: NBFC-MFI lending isn't
+// FinTech Solutions (Ciya Micro Credit) is India-only: NBFC-MFI lending isn't
 // relevant outside that market. The pages plugin only discovers files under
 // src/pages (an i18n-only override with no default-locale counterpart is
 // never picked up), so this single file backs the route for every locale,

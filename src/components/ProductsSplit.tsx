@@ -29,7 +29,7 @@ const SECTOR_ICONS: Record<string, ReactNode> = {
  * Split "Products" navbar item: the label navigates, the chevron opens a menu.
  *
  * Routing note: every entry now lands where its label says it will. Previously
- * the item labelled "ZPOA Zypher VPN" pointed at /products (the portfolio index)
+ * the item labelled "Zypher VPN" pointed at /products (the portfolio index)
  * rather than the VPN product page, so the most specific item in the menu was
  * the one that did not go where it claimed.
  *
@@ -43,7 +43,7 @@ const SECTOR_ICONS: Record<string, ReactNode> = {
 const PRODUCTS = '/products';          // portfolio overview
 const ALL_PRODUCTS = '/all-products';  // full portfolio, with detail
 const ZYPHER_VPN = '/cyber-vpn';       // the VPN product page
-const CAPITAL = '/capital';            // ZPOA FinTech Solutions product page, India only
+const CAPITAL = '/capital';            // FinTech Solutions product page, India only
 const HEALTH = '/health';              // Ciyex HIMS product page, India only
 
 type Item = {label: string; to: string; desc: string; icon: string; accent: string};
@@ -54,21 +54,21 @@ const securitySector: Sector = {
   icon: 'security', accent: 'accent-vpn',
   blurb: 'The core unified security platform.',
   items: [
-    {label: 'ZPOA Zypher VPN', to: ZYPHER_VPN, desc: 'Self-hosted zero-trust mesh VPN.', icon: 'vpn', accent: 'accent-vpn'},
+    {label: 'Zypher VPN', to: ZYPHER_VPN, desc: 'Self-hosted zero-trust mesh VPN.', icon: 'vpn', accent: 'accent-vpn'},
   ],
 };
 
-// ZPOA FinTech Solutions (the Ciya Micro Credit lending platform) and Ciyex HIMS (a
+// FinTech Solutions (the Ciya Micro Credit lending platform) and Ciyex HIMS (a
 // hospital information system) are India-specific: their regulatory surface
 // (NBFC-MFI lending rules, ABDM/GST) isn't relevant outside that market, so
 // they're only inserted for the en-in locale. Each points at its own product
-// page, same as ZPOA Zypher VPN, not straight out to an external app.
+// page, same as Zypher VPN, not straight out to an external app.
 const financeSector: Sector = {
   label: 'Financial Services',
   icon: 'finance', accent: 'accent-capital',
   blurb: 'Lending operations for microfinance institutions.',
   items: [
-    {label: 'ZPOA FinTech Solutions', to: CAPITAL, desc: 'Group-lending & collections platform.', icon: 'capital', accent: 'accent-capital'},
+    {label: 'FinTech Solutions', to: CAPITAL, desc: 'Group-lending & collections platform.', icon: 'capital', accent: 'accent-capital'},
   ],
 };
 const healthcareSector: Sector = {

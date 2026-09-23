@@ -33,7 +33,7 @@ function ExploreAll(): ReactNode {
 export default function Products(): ReactNode {
   const {i18n} = useDocusaurusContext();
   const products = productsForLocale(i18n.currentLocale);
-  const featured = products[0]; // ZPOA Zypher VPN
+  const featured = products[0]; // Zypher VPN
   const [q, setQ] = useState('');
   const query = q.trim().toLowerCase();
   const matches = (p: Product) =>
@@ -45,7 +45,7 @@ export default function Products(): ReactNode {
   return (
     <Layout
       title="Products"
-      description="Explore the Z Shield product portfolio, including ZPOA Zypher VPN, Detect, Fortress, Comply, and more.">
+      description="Explore the Z Shield product portfolio, including Zypher VPN, Detect, Fortress, Comply, and more.">
       <main className="prodx">
         <div className="container prodx-grid">
           {/* ── Sidebar ── */}
@@ -85,7 +85,7 @@ export default function Products(): ReactNode {
               <section className="prodx-block">
                 <h2 className="prodx-h2">Recent Launches</h2>
                 <Link className="prodx-featured" to={featured.to}>
-                  <ProductLogo className="prodx-featured-logo" size={84} alt="ZPOA Zypher VPN logo" />
+                  <ProductLogo className="prodx-featured-logo" size={84} alt="Zypher VPN logo" />
                   <div className="prodx-featured-body">
                     <span className="prod-badge-new">New</span>
                     <h3>{featured.name}</h3>
