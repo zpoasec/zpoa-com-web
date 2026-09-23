@@ -155,6 +155,44 @@ const ICONS: Record<string, ReactNode> = {
       <path d="M3 12.5h18" />
     </svg>
   ),
+  // books → accounting ledger
+  books: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 6.2C10.2 5 7.8 4.6 5.3 4.9A1 1 0 0 0 4.5 5.9v11.2a1 1 0 0 0 1.1 1c2.3-.3 4.6.1 6.4 1.2 1.8-1.1 4.1-1.5 6.4-1.2a1 1 0 0 0 1.1-1V5.9a1 1 0 0 0-.8-1C16.2 4.6 13.8 5 12 6.2z" />
+      <path d="M12 6.2V19" />
+    </svg>
+  ),
+  // invoice → tax invoice document
+  invoice: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 3h9l3 3v15H6z" />
+      <path d="M15 3v3h3" />
+      <path d="M9 12h6 M9 15.5h4" />
+    </svg>
+  ),
+  // billing → recurring cycle
+  billing: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4.5 12a7.5 7.5 0 0 1 12.3-5.8" />
+      <path d="M19.5 12a7.5 7.5 0 0 1-12.3 5.8" />
+      <path d="M17 3.5V6.4h-2.9 M7 20.5v-2.9h2.9" />
+    </svg>
+  ),
+  // asset → cube / fixed asset
+  asset: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3l8 4.5v9L12 21 4 16.5v-9L12 3z" />
+      <path d="M4 7.5l8 4.5 8-4.5 M12 12v9" />
+    </svg>
+  ),
+  // tax → percent
+  tax: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6.5 17.5L17.5 6.5" />
+      <circle cx="7.75" cy="7.75" r="2.25" />
+      <circle cx="16.25" cy="16.25" r="2.25" />
+    </svg>
+  ),
 };
 
 const lifecycle = [
@@ -409,7 +447,7 @@ const loanCategories = [
 
 function CapitalLoanCategories(): ReactNode {
   return (
-    <section className="cvpn-section">
+    <section className="cvpn-section cvpn-section-gray">
       <div className="container">
         <div className="cvpn-eyebrow" style={{textAlign: 'center'}}>Across every loan category</div>
         <h2 className="cvpn-h2-center">One platform, every kind of lending</h2>
@@ -436,6 +474,74 @@ function CapitalLoanCategories(): ReactNode {
                   <li key={it}>{it}</li>
                 ))}
               </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const financeSuite = [
+  {
+    icon: 'books',
+    name: 'ZPOA Books',
+    tag: 'Accounting',
+    body: 'The general ledger at the centre of everything: expenses, receivables, and income streams all post here, with a controlled period close that locks each month once it is reconciled.',
+  },
+  {
+    icon: 'invoice',
+    name: 'ZPOA Invoice',
+    tag: 'Sales invoicing',
+    body: 'Raise sales invoices and compliant tax invoices, with the right tax treatment applied automatically and every invoice flowing straight through to the books.',
+  },
+  {
+    icon: 'billing',
+    name: 'ZPOA Billing',
+    tag: 'Recurring revenue',
+    body: 'Recurring billing schedules paired with revenue recognition, so subscription and instalment income is earned over its term rather than booked all at once.',
+  },
+  {
+    icon: 'asset',
+    name: 'ZPOA Assets',
+    tag: 'Fixed assets',
+    body: 'A fixed-asset register that runs depreciation on schedule and tracks insurance cover against each asset, keeping the balance sheet accurate and audit-ready.',
+  },
+  {
+    icon: 'tax',
+    name: 'ZPOA Tax',
+    tag: 'Statutory',
+    body: 'Statutory filing with the tax positions behind each return retained, so every figure filed traces back to the transactions that produced it.',
+  },
+  {
+    icon: 'expense',
+    name: 'ZPOA Expense',
+    tag: 'Claims & travel',
+    body: 'Employee expense claims, advances, travel requests, and final settlement, reconciled against the ledger and ready for payroll without re-keying.',
+  },
+];
+
+function CapitalFinanceSuite(): ReactNode {
+  return (
+    <section className="cvpn-section">
+      <div className="container">
+        <div className="cvpn-eyebrow" style={{textAlign: 'center'}}>The ZPOA finance suite</div>
+        <h2 className="cvpn-h2-center">A full finance back office, module by module</h2>
+        <p className="cvpn-sub cvpn-sub-center">
+          Beyond lending, ZPOA runs the accounting that sits behind it. Books,
+          invoicing, billing, assets, tax, and expenses, each a focused module
+          that posts back to the same ledger, so the numbers reconcile
+          themselves.
+        </p>
+        <div className="cvpn-suite-grid">
+          {financeSuite.map((m) => (
+            <div className="cvpn-suite-card" key={m.name}>
+              <div className="cvpn-loancat-head">
+                <span className="cvpn-feature-ic" aria-hidden="true">{ICONS[m.icon]}</span>
+                <span className="cvpn-loancat-tag">{m.tag}</span>
+              </div>
+              <h3>{m.name}</h3>
+              <p>{m.body}</p>
             </div>
           ))}
         </div>
@@ -898,6 +1004,7 @@ function CapitalPage(): ReactNode {
       <main>
         <CapitalHero />
         <CapitalDashboardShowcase />
+        <CapitalFinanceSuite />
         <CapitalLoanCategories />
         <CapitalLifecycle />
         <CapitalModules />

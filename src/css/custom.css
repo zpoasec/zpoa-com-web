@@ -112,25 +112,25 @@ html[lang='en-US'] {
    more "professional software" — while still contrasting hard against the
    US black theme just by virtue of being light instead of dark. */
 html[lang='en-IN'] {
-  --ifm-color-primary: #0284C7;
-  --ifm-color-primary-dark: #075985;
-  --ifm-color-primary-darker: #0C4A6E;
-  --ifm-color-primary-darkest: #082F49;
-  --ifm-color-primary-light: #38BDF8;
-  --ifm-color-primary-lighter: #7DD3FC;
-  --ifm-color-primary-lightest: #BAE6FD;
-  --ifm-background-color: #FFF8EF;
+  --ifm-color-primary: #6E5DC6;
+  --ifm-color-primary-dark: #574AA6;
+  --ifm-color-primary-darker: #443A86;
+  --ifm-color-primary-darkest: #332B66;
+  --ifm-color-primary-light: #9B8AE0;
+  --ifm-color-primary-lighter: #C4B5FD;
+  --ifm-color-primary-lightest: #E9E3FB;
+  --ifm-background-color: #F5FAF9;
   --ifm-background-surface-color: #FFFFFF;
-  --ifm-font-color-base: #6B5B4D;
-  --ifm-heading-color: #2B1B12;
-  --zpoa-blue: #0284C7;
-  --zpoa-text: #6B5B4D;
-  --zpoa-heading: #2B1B12;
-  --zpoa-gray-50: #FFF1DE;
-  --zpoa-gray-100: #FFE4C7;
-  --zpoa-gray-200: rgba(43, 27, 18, 0.1);
-  --zpoa-gray-400: #C9A98C;
-  --zpoa-gray-500: #8A6F5C;
+  --ifm-font-color-base: #4A625B;
+  --ifm-heading-color: #0F2A25;
+  --zpoa-blue: #6E5DC6;
+  --zpoa-text: #4A625B;
+  --zpoa-heading: #0F2A25;
+  --zpoa-gray-50: #E8F3F0;
+  --zpoa-gray-100: #D5EAE4;
+  --zpoa-gray-200: rgba(13, 80, 68, 0.10);
+  --zpoa-gray-400: #8CA39D;
+  --zpoa-gray-500: #5E756E;
   --zpoa-green: #0D7A4C;
   --zpoa-red: #B3261E;
 }
@@ -165,8 +165,8 @@ html[lang='en-US'] .navbar {
 }
 
 html[lang='en-IN'] .navbar {
-  --ifm-navbar-background-color: #FFF8EF;
-  --ifm-navbar-shadow: 0 1px 2px rgba(43, 27, 18, 0.08);
+  --ifm-navbar-background-color: #FFFFFF;
+  --ifm-navbar-shadow: 0 1px 2px rgba(13, 80, 68, 0.08);
 }
 
 .navbar__link {
@@ -1323,8 +1323,8 @@ html[lang='en-US'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.1)
 
 html[lang='en-IN'] .feat-hero {
   background:
-    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(103, 232, 249, 0.55), transparent 60%),
-    linear-gradient(135deg, #22B6E0 0%, #0284C7 45%, #075985 100%);
+    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(196, 181, 245, 0.5), transparent 60%),
+    linear-gradient(135deg, #7C3AED 0%, #4F6BED 38%, #2596E0 66%, #14B8A6 100%);
 }
 html[lang='en-IN'] .feat-hero h1 { color: #FFFFFF; }
 html[lang='en-IN'] .feat-hero .tagline { color: rgba(255, 255, 255, 0.85); }
@@ -1354,7 +1354,7 @@ html[lang='en-IN'] .feat-hero .hero-label { background: rgba(255, 255, 255, 0.2)
    US black theme. India wants a pastel tint site-wide rather than plain
    white, so it gets its own light override too. */
 html[lang='en-US'] .feat-section-white { background: #05070a; }
-html[lang='en-IN'] .feat-section-white { background: #FFF8EF; }
+html[lang='en-IN'] .feat-section-white { background: #F5FAF9; }
 
 [data-theme='dark'] .feat-section-gray {
   background: #0F1923;
@@ -1634,8 +1634,8 @@ html[lang='en-US'] .cvpn-trust-label { color: #8895B2; }
 
 html[lang='en-IN'] .cvpn-hero {
   background:
-    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(103, 232, 249, 0.55), transparent 60%),
-    linear-gradient(135deg, #22B6E0 0%, #0284C7 45%, #075985 100%);
+    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(196, 181, 245, 0.5), transparent 60%),
+    linear-gradient(135deg, #7C3AED 0%, #4F6BED 38%, #2596E0 66%, #14B8A6 100%);
 }
 html[lang='en-IN'] .cvpn-hero-copy h1 { color: #FFFFFF; }
 html[lang='en-IN'] .cvpn-lede { color: rgba(255, 255, 255, 0.85); }
@@ -1729,7 +1729,7 @@ html[lang='en-IN'] .cvpn-status-rows b { color: var(--zpoa-on-light); }
    to a hardcoded light gray regardless of theme or locale — its module
    text (already reading --zpoa-heading etc.) went invisible against it. */
 html[lang='en-US'] .cvpn-section-gray { background: rgba(255, 255, 255, 0.03); }
-html[lang='en-IN'] .cvpn-section-gray { background: #FFF1DE; }
+html[lang='en-IN'] .cvpn-section-gray { background: #E8F3F0; }
 .cvpn-section-center { text-align: center; }
 .cvpn-section h2,
 .cvpn-h2-center {
@@ -2117,8 +2117,8 @@ html[lang='en-IN'] .allp-features li { color: #6b7685; }
    the file, which flipped the cascade and made India render black. */
 .allp-hero2.allp-hero2--in {
   background:
-    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(103, 232, 249, 0.55), transparent 60%),
-    linear-gradient(135deg, #22B6E0 0%, #0284C7 45%, #075985 100%);
+    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(196, 181, 245, 0.5), transparent 60%),
+    linear-gradient(135deg, #7C3AED 0%, #4F6BED 38%, #2596E0 66%, #14B8A6 100%);
   color: #FFFFFF;
 }
 .allp-hero2.allp-hero2--in h1 { color: #FFFFFF; }
@@ -3639,7 +3639,7 @@ html[lang='en-IN'] .menu__link {
 }
 html[lang='en-IN'] .menu__link:hover,
 html[lang='en-IN'] .menu__link--active {
-  color: #0284C7 !important;
+  color: #6E5DC6 !important;
 }
 html[lang='en-IN'] .menu__list-item-collapsible:hover {
   background: rgba(255, 255, 255, 0.3) !important;
@@ -3649,7 +3649,7 @@ html[lang='en-IN'] .table-of-contents__link {
 }
 html[lang='en-IN'] .table-of-contents__link--active,
 html[lang='en-IN'] .table-of-contents__link:hover {
-  color: #0284C7 !important;
+  color: #6E5DC6 !important;
 }
 html[lang='en-IN'] .breadcrumbs__link {
   color: rgba(0, 0, 0, 0.75) !important;
@@ -3787,3 +3787,34 @@ html[lang='en-IN'] .cvpn-loancat h3 { color: var(--zpoa-on-light); }
 html[lang='en-US'] .cvpn-loancat-list li,
 html[lang='en-IN'] .cvpn-loancat-list li { color: #6b7685; }
 @media (max-width: 900px) { .cvpn-loancat-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+/* finance suite (capital.tsx CapitalFinanceSuite) */
+.cvpn-suite-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-top: 2.75rem;
+}
+.cvpn-suite-card {
+  display: flex; flex-direction: column;
+  background: #FFFFFF; border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px; padding: 1.9rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.cvpn-suite-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08); border-color: rgba(13, 148, 136, 0.35); }
+[data-theme='reduce-motion'] .cvpn-suite-card { transition: none; }
+[data-theme='reduce-motion'] .cvpn-suite-card:hover { transform: none; }
+[data-theme='dark'] .cvpn-suite-card { background: rgba(255, 255, 255, 0.03); border-color: rgba(255, 255, 255, 0.10); box-shadow: none; }
+[data-theme='dark'] .cvpn-suite-card:hover { border-color: rgba(45, 212, 191, 0.4); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35); }
+html[lang='en-US'] .cvpn-suite-card,
+html[lang='en-IN'] .cvpn-suite-card { background: #FFFFFF; border-color: rgba(15, 23, 42, 0.08); box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04); }
+.cvpn-suite-card h3 {
+  font-size: 1.2rem; font-weight: 750; letter-spacing: -0.01em;
+  color: var(--zpoa-on-light); margin: 1.1rem 0 0.6rem;
+}
+[data-theme='dark'] .cvpn-suite-card h3 { color: #FFFFFF; }
+html[lang='en-US'] .cvpn-suite-card h3,
+html[lang='en-IN'] .cvpn-suite-card h3 { color: var(--zpoa-on-light); }
+.cvpn-suite-card p { font-size: 0.95rem; line-height: 1.6; color: #6b7685; margin: 0; }
+[data-theme='dark'] .cvpn-suite-card p { color: var(--zpoa-gray-500); }
+html[lang='en-US'] .cvpn-suite-card p,
+html[lang='en-IN'] .cvpn-suite-card p { color: #6b7685; }
+@media (max-width: 900px) { .cvpn-suite-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
