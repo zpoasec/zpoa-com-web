@@ -87,7 +87,7 @@ export default function AllProducts(): ReactNode {
               <div className="allp-side-featured">Featured Apps</div>
               <div className="allp-side-group">
                 <div className="allp-side-label">Apps</div>
-                {products.filter((p) => p.category === 'Featured Apps').map((p) => (
+                {products.filter((p) => p.icon === 'vpn' || p.icon === 'capital' || p.icon === 'health').map((p) => (
                   <Link className="allp-side-item" to={p.to} key={p.name}>
                     {p.icon === 'vpn' || p.icon === 'capital' || p.icon === 'health' ? (
                       <ProductLogo product={p.icon} className="allp-side-logo" size={26} />

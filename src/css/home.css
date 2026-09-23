@@ -59,7 +59,7 @@
 }
 .products-mega {
   display: flex; align-items: stretch;
-  width: 640px; max-width: calc(100vw - 32px);
+  width: 760px; max-width: calc(100vw - 32px);
   padding: 0; overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 24px 60px -14px rgba(15, 23, 42, 0.28), 0 0 0 1px var(--zpoa-gray-200);
@@ -72,13 +72,32 @@
 @media (prefers-reduced-motion: reduce) {
   .products-mega, .products-mega-panel-inner { animation: none !important; }
 }
-.products-mega-nav {
-  position: relative;
-  list-style: none; margin: 0; padding: 14px 10px;
-  display: flex; flex-direction: column; gap: 3px;
-  flex: none; width: 216px;
+.products-mega-nav-col {
+  flex: none; width: 216px; display: flex; flex-direction: column; min-height: 0;
   background: var(--ifm-background-surface-color, #fff);
   border-right: 1px solid var(--zpoa-gray-200);
+}
+.products-mega-search { position: relative; margin: 12px 12px 4px; flex: none; }
+.products-mega-search-ic {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  width: 14px; height: 14px; color: var(--zpoa-gray-400, #94a3b8); pointer-events: none;
+}
+.products-mega-search input {
+  width: 100%; padding: 0.5rem 0.7rem 0.5rem 2rem; font-size: 0.84rem;
+  border: 1px solid var(--zpoa-gray-200); border-radius: 9px;
+  background: var(--zpoa-gray-50, #f8fafc); color: var(--zpoa-on-light, var(--ifm-font-color-base));
+  outline: none; transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.products-mega-search input:focus {
+  border-color: #0D9488; background: var(--ifm-background-surface-color, #fff);
+  box-shadow: 0 0 0 3px rgba(13,148,136,0.12);
+}
+.products-mega-search input::-webkit-search-cancel-button { cursor: pointer; }
+.products-mega-nav {
+  position: relative;
+  list-style: none; margin: 0; padding: 6px 10px 14px;
+  display: flex; flex-direction: column; gap: 3px;
+  flex: 1; min-height: 0; overflow-y: auto;
 }
 /* The sliding pill behind the active item — a single element that glides to
    the hovered sector, instead of a background flipping on and off per item. */
@@ -129,7 +148,7 @@
 }
 .products-mega-panel-head p { margin: 0; font-size: 0.85rem; color: var(--zpoa-gray-500); }
 .products-mega-grid {
-  display: grid; grid-template-columns: repeat(2, minmax(170px, 1fr)); gap: 8px;
+  display: grid; grid-template-columns: repeat(2, minmax(190px, 1fr)); gap: 8px;
   margin-bottom: 8px;
 }
 /* A sector with only one product (Financial Services, Healthcare today)
@@ -162,8 +181,18 @@
 }
 .products-mega-card:hover .products-mega-card-logo { transform: scale(1.1) rotate(-4deg); }
 .products-mega-card-body { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
-.products-mega-card-title { font-weight: 700; font-size: 0.9rem; color: var(--zpoa-heading); }
+.products-mega-card-title {
+  font-weight: 700; font-size: 0.9rem; color: var(--zpoa-heading); line-height: 1.35;
+}
+.products-mega-card-new {
+  display: inline-block; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; color: #0D9488; background: #E6FBF7; border: 1px solid #B8ECE4;
+  border-radius: 100px; padding: 0.05rem 0.45rem; line-height: 1.5;
+  margin-left: 6px; vertical-align: middle; white-space: nowrap;
+}
+[data-theme='dark'] .products-mega-card-new { color: #2DD4BF; background: rgba(45,212,191,0.14); border-color: rgba(45,212,191,0.28); }
 .products-mega-card-desc { font-size: 0.78rem; color: var(--zpoa-gray-500); line-height: 1.4; }
+.products-mega-empty { font-size: 0.85rem; color: var(--zpoa-gray-500); padding: 1rem 0; }
 .products-mega-card-arrow {
   flex: none; align-self: center; color: var(--zpoa-blue);
   opacity: 0; transform: translateX(-4px);
@@ -182,8 +211,9 @@
 .products-mega-all:hover span { transform: translateX(4px); }
 
 @media (max-width: 640px) {
-  .products-mega { width: 92vw; }
-  .products-mega-nav { width: 168px; }
+  .products-mega { width: 92vw; max-height: 80vh; }
+  .products-mega-nav-col { width: 168px; }
+  .products-mega-panel { overflow-y: auto; }
   .products-mega-grid { grid-template-columns: 1fr; }
 }
 
@@ -1152,37 +1182,37 @@ html[lang='en-IN'] {
      the page — so those stay dark-on-light here, and the hero's own white
      text is applied via scoped .zs-hero overrides instead. */
   --zs-hero-bg:
-    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(103, 232, 249, 0.55), transparent 60%),
-    linear-gradient(135deg, #22B6E0 0%, #0284C7 45%, #075985 100%);
-  --zs-hero-fg:        #2B1B12;
-  --zs-hero-sub:       #6B5B4D;
+    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(196, 181, 245, 0.5), transparent 60%),
+    linear-gradient(135deg, #7C3AED 0%, #4F6BED 38%, #2596E0 66%, #14B8A6 100%);
+  --zs-hero-fg:        #0F2A25;
+  --zs-hero-sub:       #4A625B;
   --zs-hero-grid:      rgba(255, 255, 255, 0.12);
   --zs-hero-glow:      rgba(255, 255, 255, 0.3);
-  --zs-eyebrow-bg:     rgba(2, 132, 199, 0.08);
-  --zs-eyebrow-bd:     rgba(2, 132, 199, 0.25);
-  --zs-eyebrow-fg:     #0284C7;
-  --zs-ghost-bg:       rgba(43, 27, 18, 0.04);
-  --zs-ghost-bd:       rgba(43, 27, 18, 0.14);
-  --zs-ghost-fg:       #2B1B12;
-  --zs-ghost-bg-hover: rgba(43, 27, 18, 0.08);
-  --zs-micro-fg:       #8A6F5C;
+  --zs-eyebrow-bg:     rgba(110, 93, 198, 0.08);
+  --zs-eyebrow-bd:     rgba(110, 93, 198, 0.25);
+  --zs-eyebrow-fg:     #6E5DC6;
+  --zs-ghost-bg:       rgba(13, 80, 68, 0.05);
+  --zs-ghost-bd:       rgba(13, 80, 68, 0.16);
+  --zs-ghost-fg:       #0F2A25;
+  --zs-ghost-bg-hover: rgba(13, 80, 68, 0.10);
+  --zs-micro-fg:       #5E756E;
   /* .zs-grad is only ever used inside this hero's own h1, so unlike the
      tokens above it's free to be tuned for the vivid gradient background:
      a bright highlight instead of the dark-on-light gradient used when the
      rest of the page (and .zs-close) needed a token that stayed dark. */
   --zs-grad-1:         #FFFFFF;
-  --zs-grad-2:         #BAE6FD;
-  --zs-grad-3:         #67E8F9;
+  --zs-grad-2:         #C4B5FD;
+  --zs-grad-3:         #9B8AE0;
 
   /* Same token set the rest of the homepage's sections, cards, and text
      already read (.zs-sec, .zs-mod, .zs-prob, .zs-chip, etc.), so the light
      treatment reaches the whole page, not just the hero. */
-  --zs-fg:          #2B1B12;
-  --zs-fg-soft:     #6B5B4D;
-  --zs-fg-faint:    #8A6F5C;
-  --zs-surface:     #FFF8EF;
-  --zs-sunken:      #FFF1DE;
-  --zs-line:        rgba(43, 27, 18, 0.08);
+  --zs-fg:          #0F2A25;
+  --zs-fg-soft:     #4A625B;
+  --zs-fg-faint:    #5E756E;
+  --zs-surface:     #F5FAF9;
+  --zs-sunken:      #E8F3F0;
+  --zs-line:        rgba(13, 80, 68, 0.08);
 }
 
 /* Scoped to just .zs-hero (not the shared tokens above), since this hero's
@@ -1481,7 +1511,7 @@ html[lang='en-IN'] .zs-hero .zs-microproof svg { color: #FFFFFF; }
 }
 [data-theme='dark'] .zs-label { color: #A78BFA; }
 html[lang='en-US'] .zs-label { color: #A78BFA; }
-html[lang='en-IN'] .zs-label { color: #0284C7; }
+html[lang='en-IN'] .zs-label { color: #6E5DC6; }
 
 .zs-h2 {
   font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 800;
@@ -1506,7 +1536,7 @@ html[lang='en-IN'] .zs-label { color: #0284C7; }
 }
 [data-theme='dark'] .zs-prob__ico { background: rgba(109,74,255,0.2); color: #A78BFA; }
 html[lang='en-US'] .zs-prob__ico { background: rgba(109,74,255,0.2); color: #A78BFA; }
-html[lang='en-IN'] .zs-prob__ico { background: rgba(2, 132, 199,0.08); color: #0284C7; }
+html[lang='en-IN'] .zs-prob__ico { background: rgba(110, 93, 198,0.08); color: #6E5DC6; }
 .zs-prob h3 { font-size: 1.06rem; font-weight: 700; color: var(--zs-fg); margin: 0 0 8px; letter-spacing: -0.012em; }
 .zs-prob p { font-size: 0.93rem; line-height: 1.65; color: var(--zs-fg-soft); margin: 0; }
 
@@ -1533,8 +1563,8 @@ html[lang='en-IN'] .zs-prob__ico { background: rgba(2, 132, 199,0.08); color: #0
 }
 .zs-mod__link:hover { text-decoration: none; gap: 10px; color: var(--zs-violet-deep); }
 html[lang='en-US'] .zs-mod__link { color: #A78BFA; }
-html[lang='en-IN'] .zs-mod__link { color: #0284C7; }
-html[lang='en-IN'] .zs-mod__link:hover { color: #082F49; }
+html[lang='en-IN'] .zs-mod__link { color: #6E5DC6; }
+html[lang='en-IN'] .zs-mod__link:hover { color: #443A86; }
 .zs-mod__link span { transition: transform .18s ease; }
 [data-theme='dark'] .zs-mod__link { color: #A78BFA; }
 [data-theme='dark'] .zs-mod__link:hover { color: #C4B5FD; }
@@ -1870,7 +1900,7 @@ html[lang='en-US'] .zs-band {
    this "one bold moment" band stays in the same warm family as the rest of
    the India page rather than clashing with it. */
 html[lang='en-IN'] .zs-band {
-  background: linear-gradient(150deg, #0C4A6E 0%, #075985 52%, #082F49 100%);
+  background: linear-gradient(150deg, #443A86 0%, #332B66 52%, #241E4D 100%);
 }
 .zs-band::after {
   content: ''; position: absolute; inset: 0;
@@ -1878,7 +1908,7 @@ html[lang='en-IN'] .zs-band {
   pointer-events: none;
 }
 html[lang='en-IN'] .zs-band::after {
-  background: radial-gradient(760px 320px at 22% 0%, rgba(103, 232, 249, 0.35), transparent 62%);
+  background: radial-gradient(760px 320px at 22% 0%, rgba(196, 181, 245, 0.35), transparent 62%);
 }
 .zs-band__grid {
   position: relative; z-index: 1;
@@ -1895,7 +1925,7 @@ html[lang='en-IN'] .zs-band::after {
 .zs-band__l { font-size: 0.76rem; letter-spacing: 0.09em; text-transform: uppercase; color: #94A2BE; }
 /* The base cyan-to-violet number gradient reads coolly against the warm
    maroon band above, so India gets a warm gold-to-cream version instead. */
-html[lang='en-IN'] .zs-band__n { background: linear-gradient(96deg, #67E8F9, #BAE6FD); -webkit-background-clip: text; background-clip: text; }
+html[lang='en-IN'] .zs-band__n { background: linear-gradient(96deg, #9B8AE0, #C4B5FD); -webkit-background-clip: text; background-clip: text; }
 html[lang='en-IN'] .zs-band__l { color: rgba(186, 230, 253, 0.75); }
 
 /* ══ INTEGRATIONS ════════════════════════════════════════════════════════ */
@@ -1910,7 +1940,7 @@ html[lang='en-IN'] .zs-band__l { color: rgba(186, 230, 253, 0.75); }
 .zs-chip b { color: var(--zs-violet); font-weight: 700; }
 [data-theme='dark'] .zs-chip b { color: #A78BFA; }
 html[lang='en-US'] .zs-chip b { color: #A78BFA; }
-html[lang='en-IN'] .zs-chip b { color: #0284C7; }
+html[lang='en-IN'] .zs-chip b { color: #6E5DC6; }
 
 /* ══ CLOSING CTA ═════════════════════════════════════════════════════════ */
 .zs-close {
@@ -1939,8 +1969,8 @@ html[lang='en-US'] .zs-close {
    dark gradient above while the text stayed dark — invisible. */
 html[lang='en-IN'] .zs-close {
   background:
-    radial-gradient(760px 380px at 50% 0%, rgba(2, 132, 199, 0.14), transparent 66%),
-    linear-gradient(168deg, #FFFBF5, #FFF1DE);
+    radial-gradient(760px 380px at 50% 0%, rgba(110, 93, 198, 0.14), transparent 66%),
+    linear-gradient(168deg, #FFFFFF, #E8F3F0);
   border-top-color: transparent;
 }
 .zs-close h2 {
