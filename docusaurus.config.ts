@@ -63,6 +63,7 @@ const config: Config = {
     './src/clientModules/blogReveal.ts',
     './src/clientModules/scrollProgress.ts',
     './src/clientModules/motion.ts',
+    './src/clientModules/heroCanvas.ts',
   ],
 
   presets: [
@@ -87,7 +88,7 @@ const config: Config = {
         theme: {
           // home.css loads after custom.css so the marketing styles win on
           // any shared selector.
-          customCss: ['./src/css/custom.css', './src/css/home.css', './src/css/motion.css', './src/css/india-dark.css', './src/css/us-dark.css'],
+          customCss: ['./src/css/custom.css', './src/css/home.css', './src/css/motion.css', './src/css/india-dark.css', './src/css/us-dark.css', './src/css/us-hud.css', './src/css/india-glass.css'],
         },
       } satisfies Preset.Options,
     ],

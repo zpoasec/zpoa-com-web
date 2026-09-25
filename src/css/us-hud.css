@@ -1,0 +1,181 @@
+/* United States — "Command Center" design language.
+   Where India is soft, rounded and luminous, the US site is sharp, technical
+   and instrument-like: HUD corner brackets, monospace readouts, chamfered
+   buttons, a scanning beam and a perspective floor grid. Scoped to en-US. */
+
+html[lang='en-US'] { --hud: #2DD4BF; --hud-2: #60A5FA; }
+
+/* ── Geometry: tight corners instead of soft ones ── */
+html[lang='en-US'] .zs-prob,
+html[lang='en-US'] .zs-mod,
+html[lang='en-US'] .product-card,
+html[lang='en-US'] .prod-tile,
+html[lang='en-US'] .prodx-featured,
+html[lang='en-US'] .allp-card,
+html[lang='en-US'] .cvpn-feature,
+html[lang='en-US'] .cvpn-loancat,
+html[lang='en-US'] .cvpn-suite-card,
+html[lang='en-US'] .cvpn-dash,
+html[lang='en-US'] .cvpn-btable-wrap,
+html[lang='en-US'] .pricing-card,
+html[lang='en-US'] .signup-form,
+html[lang='en-US'] .cal-wrap,
+html[lang='en-US'] .cvpn-status,
+html[lang='en-US'] .zs-shot,
+html[lang='en-US'] main.zpoa-blog-list article { border-radius: 4px; }
+html[lang='en-US'] .zs-chip { border-radius: 2px; font-family: var(--ifm-font-family-monospace); font-size: 0.74rem; letter-spacing: 0.04em; }
+html[lang='en-US'] .form-group input,
+html[lang='en-US'] .form-group select,
+html[lang='en-US'] .allp-search input,
+html[lang='en-US'] .prodx-search input { border-radius: 3px; }
+
+/* ── HUD corner brackets that tighten on hover ── */
+html[lang='en-US'] .zs-prob::after,
+html[lang='en-US'] .zs-mod::after,
+html[lang='en-US'] .product-card::after,
+html[lang='en-US'] .prod-tile::after,
+html[lang='en-US'] .prodx-featured::after,
+html[lang='en-US'] .allp-card::after,
+html[lang='en-US'] .cvpn-feature::after,
+html[lang='en-US'] .cvpn-loancat::after,
+html[lang='en-US'] .cvpn-suite-card::after,
+html[lang='en-US'] .pricing-card::after,
+html[lang='en-US'] .cvpn-status::after,
+html[lang='en-US'] .zs-shot::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  pointer-events: none;
+  opacity: 0.5;
+  background:
+    linear-gradient(var(--hud), var(--hud)) left top / 14px 1.5px no-repeat,
+    linear-gradient(var(--hud), var(--hud)) left top / 1.5px 14px no-repeat,
+    linear-gradient(var(--hud), var(--hud)) right top / 14px 1.5px no-repeat,
+    linear-gradient(var(--hud), var(--hud)) right top / 1.5px 14px no-repeat,
+    linear-gradient(var(--hud), var(--hud)) left bottom / 14px 1.5px no-repeat,
+    linear-gradient(var(--hud), var(--hud)) left bottom / 1.5px 14px no-repeat,
+    linear-gradient(var(--hud), var(--hud)) right bottom / 14px 1.5px no-repeat,
+    linear-gradient(var(--hud), var(--hud)) right bottom / 1.5px 14px no-repeat;
+  transition: inset 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s;
+}
+html[lang='en-US'] .zs-prob:hover::after,
+html[lang='en-US'] .zs-mod:hover::after,
+html[lang='en-US'] .product-card:hover::after,
+html[lang='en-US'] .prod-tile:hover::after,
+html[lang='en-US'] .prodx-featured:hover::after,
+html[lang='en-US'] .allp-card:hover::after,
+html[lang='en-US'] .cvpn-feature:hover::after,
+html[lang='en-US'] .cvpn-loancat:hover::after,
+html[lang='en-US'] .cvpn-suite-card:hover::after,
+html[lang='en-US'] .pricing-card:hover::after,
+html[lang='en-US'] .cvpn-status:hover::after { inset: 2px; opacity: 1; }
+html[lang='en-US'] .zs-shot { position: relative; }
+
+/* ── Monospace readouts ── */
+html[lang='en-US'] .zs-label,
+html[lang='en-US'] .cvpn-eyebrow,
+html[lang='en-US'] .zs-eyebrow,
+html[lang='en-US'] .hero-label,
+html[lang='en-US'] .zs-band__n,
+html[lang='en-US'] .zs-band__l,
+html[lang='en-US'] .pricing-card .price,
+html[lang='en-US'] .cvpn-dash-stat-value,
+html[lang='en-US'] .cvpn-status-sync {
+  font-family: var(--ifm-font-family-monospace);
+}
+html[lang='en-US'] .zs-label,
+html[lang='en-US'] .cvpn-eyebrow { letter-spacing: 0.22em; }
+html[lang='en-US'] .zs-label::before,
+html[lang='en-US'] .cvpn-eyebrow::before { content: '// '; color: var(--hud-2); text-shadow: none; }
+html[lang='en-US'] .zs-eyebrow,
+html[lang='en-US'] .hero-label { border-radius: 2px; }
+html[lang='en-US'] .zs-band__n { font-variant-numeric: tabular-nums; }
+
+/* ── Chamfered (parallelogram) buttons ── */
+html[lang='en-US'] .zs-btn,
+html[lang='en-US'] .hero-btn-primary,
+html[lang='en-US'] .hero-btn-secondary,
+html[lang='en-US'] .pricing-card .pricing-btn,
+html[lang='en-US'] .navbar-login-btn {
+  border-radius: 0 !important;
+  clip-path: polygon(11px 0, 100% 0, calc(100% - 11px) 100%, 0 100%);
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+html[lang='en-US'] .zs-btn--ghost,
+html[lang='en-US'] .hero-btn-secondary { border-color: transparent; background: rgba(96, 165, 250, 0.14); box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.5); }
+html[lang='en-US'] .zs-btn--primary,
+html[lang='en-US'] .hero-btn-primary { box-shadow: none; filter: drop-shadow(0 8px 18px rgba(45, 212, 191, 0.35)); }
+html[lang='en-US'] .zs-btn--primary:hover,
+html[lang='en-US'] .hero-btn-primary:hover { box-shadow: none; filter: drop-shadow(0 12px 26px rgba(45, 212, 191, 0.6)); }
+
+/* ── Scan beam + faint scanlines over the whole page ── */
+html[lang='en-US'] #__docusaurus::before,
+html[lang='en-US'] #__docusaurus::after {
+  content: '';
+  position: fixed;
+  left: 0; right: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+html[lang='en-US'] #__docusaurus::before {
+  top: 0; bottom: 0;
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 3px);
+}
+html[lang='en-US'] #__docusaurus::after {
+  top: 0; height: 140px;
+  background: linear-gradient(180deg, transparent, rgba(45, 212, 191, 0.06) 60%, rgba(96, 165, 250, 0.09) 96%, transparent);
+  animation: us-scan 11s linear infinite;
+}
+@keyframes us-scan {
+  from { transform: translateY(-160px); }
+  to   { transform: translateY(100vh); }
+}
+
+/* ── Navbar: a travelling light segment along the bottom edge ── */
+html[lang='en-US'] .navbar::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -1px;
+  height: 1px; width: 22%;
+  background: linear-gradient(90deg, transparent, var(--hud), transparent);
+  box-shadow: 0 0 12px var(--hud);
+  animation: us-nav 6.5s linear infinite;
+  pointer-events: none;
+}
+@keyframes us-nav { from { left: -22%; } to { left: 100%; } }
+
+/* ── Hero: perspective floor grid rushing toward the viewer ── */
+html[lang='en-US'] .zs-hero::after {
+  content: '';
+  position: absolute;
+  left: -20%; right: -20%; bottom: -8%;
+  height: 52%;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(45, 212, 191, 0.32) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.28) 1px, transparent 1px);
+  background-size: 64px 64px;
+  transform: perspective(520px) rotateX(64deg);
+  transform-origin: 50% 100%;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 88%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 88%);
+  animation: us-floor 3.2s linear infinite;
+}
+@keyframes us-floor { to { background-position: 0 64px, 64px 0; } }
+html[lang='en-US'] .zs-hero__inner { position: relative; z-index: 1; }
+
+/* ── Section titles: a HUD underline that draws in ── */
+html[lang='en-US'] .zs-h2 { position: relative; }
+
+@media (prefers-reduced-motion: reduce) {
+  html[lang='en-US'] #__docusaurus::after,
+  html[lang='en-US'] .navbar::after,
+  html[lang='en-US'] .zs-hero::after { animation: none; }
+}

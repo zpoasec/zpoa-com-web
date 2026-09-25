@@ -1,0 +1,116 @@
+/* India — "Aurora Glass" design language.
+   Where the US site is sharp and instrument-like, India is soft, rounded and
+   luminous: a jaali (lattice) pattern, large radii, a rotating light border on
+   hover, and a small tricolour thread. Scoped to en-IN. */
+
+@property --in-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ── Jaali lattice replaces the plain grid ── */
+html[lang='en-IN'] body::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96' fill='none' stroke='rgba%28190%2C175%2C255%2C0.10%29' stroke-width='1'%3E%3Crect x='26' y='26' width='44' height='44'/%3E%3Crect x='26' y='26' width='44' height='44' transform='rotate%2845 48 48%29'/%3E%3Ccircle cx='48' cy='48' r='8'/%3E%3Ccircle cx='48' cy='48' r='20' stroke='rgba%28120%2C220%2C240%2C0.06%29'/%3E%3Cpath d='M0 0l10 10M96 0l-10 10M0 96l10-10M96 96l-10-10M48 0v14M48 96v-14M0 48h14M96 48h-14'/%3E%3C/svg%3E");
+  background-size: 96px 96px;
+  animation: in-jaali 60s linear infinite;
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 25%, #000 15%, transparent 80%);
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 25%, #000 15%, transparent 80%);
+}
+@keyframes in-jaali { to { background-position: 96px 96px; } }
+
+/* ── Soft, generous geometry ── */
+html[lang='en-IN'] .zs-prob,
+html[lang='en-IN'] .zs-mod,
+html[lang='en-IN'] .product-card,
+html[lang='en-IN'] .prod-tile,
+html[lang='en-IN'] .prodx-featured,
+html[lang='en-IN'] .allp-card,
+html[lang='en-IN'] .cvpn-feature,
+html[lang='en-IN'] .cvpn-loancat,
+html[lang='en-IN'] .cvpn-suite-card,
+html[lang='en-IN'] .cvpn-dash,
+html[lang='en-IN'] .cvpn-btable-wrap,
+html[lang='en-IN'] .pricing-card,
+html[lang='en-IN'] .signup-form,
+html[lang='en-IN'] .cal-wrap,
+html[lang='en-IN'] .cvpn-status,
+html[lang='en-IN'] .zs-shot,
+html[lang='en-IN'] main.zpoa-blog-list article { border-radius: 26px; }
+html[lang='en-IN'] .zs-btn,
+html[lang='en-IN'] .hero-btn-primary,
+html[lang='en-IN'] .hero-btn-secondary,
+html[lang='en-IN'] .pricing-card .pricing-btn { border-radius: 999px; }
+html[lang='en-IN'] .zs-shot { overflow: hidden; }
+
+/* ── Rotating conic light border on hover ── */
+html[lang='en-IN'] .zs-prob:hover,
+html[lang='en-IN'] .zs-mod:hover,
+html[lang='en-IN'] .product-card:hover,
+html[lang='en-IN'] .prod-tile:hover,
+html[lang='en-IN'] .prodx-featured:hover,
+html[lang='en-IN'] .allp-card:hover,
+html[lang='en-IN'] .cvpn-feature:hover,
+html[lang='en-IN'] .cvpn-loancat:hover,
+html[lang='en-IN'] .cvpn-suite-card:hover,
+html[lang='en-IN'] .pricing-card:hover {
+  border-color: transparent;
+  background:
+    var(--mo-spot, linear-gradient(transparent, transparent)),
+    linear-gradient(rgba(10, 12, 30, 0.94), rgba(10, 12, 30, 0.94)) padding-box,
+    conic-gradient(from var(--in-angle), rgba(34, 211, 238, 0), #22D3EE 12%, #8B5CF6 32%, #F472B6 50%, #FF9933 62%, rgba(34, 211, 238, 0) 78%) border-box;
+  animation: in-spin 3.4s linear infinite;
+}
+@keyframes in-spin { to { --in-angle: 360deg; } }
+html[lang='en-IN'] .pricing-card.featured {
+  border-color: transparent;
+  background:
+    linear-gradient(rgba(10, 12, 30, 0.94), rgba(10, 12, 30, 0.94)) padding-box,
+    conic-gradient(from var(--in-angle), rgba(34, 211, 238, 0), #22D3EE 12%, #8B5CF6 32%, #F472B6 50%, #FF9933 62%, rgba(34, 211, 238, 0) 78%) border-box;
+  animation: in-spin 5s linear infinite;
+}
+
+/* ── Tricolour thread (saffron / white / green) ── */
+html[lang='en-IN'] .navbar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FF9933 0 33.3%, #FFFFFF 33.3% 66.6%, #138808 66.6% 100%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+html[lang='en-IN'] .zs-label::before,
+html[lang='en-IN'] .cvpn-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 5px; height: 5px;
+  margin-right: 24px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #FF9933;
+  box-shadow: 9px 0 0 #FFFFFF, 18px 0 0 #138808;
+}
+html[lang='en-IN'] .zs-label,
+html[lang='en-IN'] .cvpn-eyebrow { letter-spacing: 0.2em; }
+
+/* ── Luminous headings ── */
+html[lang='en-IN'] .zs-h2,
+html[lang='en-IN'] .cvpn-section h2,
+html[lang='en-IN'] .cvpn-h2-center { text-shadow: 0 0 60px rgba(139, 92, 246, 0.45); }
+
+/* ── Hero mockup: a slow halo ring behind it ── */
+html[lang='en-IN'] .zs-shot {
+  box-shadow:
+    0 50px 110px -30px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(167, 139, 250, 0.35),
+    0 0 120px -10px rgba(139, 92, 246, 0.6),
+    0 0 220px 0 rgba(34, 211, 238, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[lang='en-IN'] body::after,
+  html[lang='en-IN'] .zs-prob:hover,
+  html[lang='en-IN'] .zs-mod:hover,
+  html[lang='en-IN'] .pricing-card.featured { animation: none; }
+}
