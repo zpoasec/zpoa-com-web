@@ -1,0 +1,511 @@
+/* United States — "Deep Ocean". Loaded last (after custom.css and home.css) so that
+   equal-specificity html[lang='en-US'] rules here win. Everything is scoped to
+   the US locale. */
+
+html[lang='en-US'] {
+  color-scheme: dark;
+
+  --us-bg: #030B14;
+  --us-bg-2: #07131F;
+  --us-card: rgba(255, 255, 255, 0.045);
+  --us-card-hi: rgba(255, 255, 255, 0.075);
+  --us-line: rgba(255, 255, 255, 0.10);
+  --us-text: #B4BCD8;
+  --us-faint: #7F89AB;
+  --us-head: #F6F7FF;
+  --us-violet: #3B82F6;
+  --us-indigo: #0EA5E9;
+  --us-cyan: #2DD4BF;
+  --us-pink: #34D399;
+  --us-amber: #FBBF24;
+  --us-mint: #34D399;
+  --us-grad: linear-gradient(100deg, #2DD4BF 0%, #3B82F6 50%, #34D399 100%);
+  --us-grad-btn: linear-gradient(100deg, #0EA5E9 0%, #3B82F6 55%, #10B981 100%);
+
+  --ifm-color-primary: #5AA2FF;
+  --ifm-color-primary-dark: #3F8BF0;
+  --ifm-color-primary-darker: #2F7BE6;
+  --ifm-color-primary-darkest: #1F63C8;
+  --ifm-color-primary-light: #8CBEFF;
+  --ifm-color-primary-lighter: #A9CDFF;
+  --ifm-color-primary-lightest: #D3E6FF;
+  --ifm-background-color: var(--us-bg);
+  --ifm-background-surface-color: #08141F;
+  --ifm-font-color-base: var(--us-text);
+  --ifm-heading-color: var(--us-head);
+  --ifm-navbar-background-color: rgba(3, 11, 20, 0.62);
+  --ifm-navbar-shadow: none;
+  --ifm-link-color: #8CBEFF;
+  --ifm-toc-border-color: var(--us-line);
+  --ifm-hr-border-color: var(--us-line);
+
+  --zpoa-blue: #5AA2FF;
+  --zpoa-text: var(--us-text);
+  --zpoa-heading: var(--us-head);
+  --zpoa-gray-50: #07131F;
+  --zpoa-gray-100: #0C1A28;
+  --zpoa-gray-200: rgba(255, 255, 255, 0.09);
+  --zpoa-gray-400: #6E7897;
+  --zpoa-gray-500: #97A1BF;
+  --zpoa-green: #34D399;
+  --zpoa-red: #FF6B6B;
+
+  --zs-hero-bg: transparent;
+  --zs-hero-fg: #FFFFFF;
+  --zs-hero-sub: #B4BCD8;
+  --zs-hero-grid: rgba(255, 255, 255, 0.05);
+  --zs-hero-glow: rgba(59, 130, 246, 0.5);
+  --zs-eyebrow-bg: rgba(59, 130, 246, 0.14);
+  --zs-eyebrow-bd: rgba(96, 165, 250, 0.4);
+  --zs-eyebrow-fg: #BFDBFE;
+  --zs-ghost-bg: rgba(255, 255, 255, 0.05);
+  --zs-ghost-bd: rgba(255, 255, 255, 0.18);
+  --zs-ghost-fg: #EEF0FF;
+  --zs-ghost-bg-hover: rgba(255, 255, 255, 0.1);
+  --zs-micro-fg: #8F99B8;
+  --zs-grad-1: #2DD4BF;
+  --zs-grad-2: #60A5FA;
+  --zs-grad-3: #34D399;
+  --zs-fg: #F6F7FF;
+  --zs-fg-soft: #B4BCD8;
+  --zs-fg-faint: #7F89AB;
+  --zs-surface: rgba(255, 255, 255, 0.04);
+  --zs-sunken: rgba(255, 255, 255, 0.02);
+  --zs-line: rgba(255, 255, 255, 0.09);
+
+  --mo-spot-rgb: 59, 130, 246;
+}
+
+/* ───────────── Canvas: aurora + grid, fixed behind everything ───────────── */
+html[lang='en-US'],
+html[lang='en-US'] body {
+  background: var(--us-bg);
+}
+html[lang='en-US'] body::before,
+html[lang='en-US'] body::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+}
+html[lang='en-US'] body::before {
+  inset: -20%;
+  background:
+    radial-gradient(38% 34% at 18% 12%, rgba(14, 165, 233, 0.34), transparent 70%),
+    radial-gradient(34% 30% at 84% 8%, rgba(45, 212, 191, 0.22), transparent 70%),
+    radial-gradient(40% 36% at 74% 62%, rgba(16, 185, 129, 0.18), transparent 72%),
+    radial-gradient(36% 32% at 12% 78%, rgba(45, 212, 191, 0.14), transparent 72%);
+  filter: blur(30px) saturate(1.15);
+  animation: us-aurora 26s ease-in-out infinite alternate;
+}
+html[lang='en-US'] body::after {
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 20%, transparent 78%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 20%, transparent 78%);
+}
+html[lang='en-US'] #__docusaurus {
+  position: relative;
+  z-index: 1;
+}
+@keyframes us-aurora {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50%  { transform: translate3d(3%, -2%, 0) rotate(6deg) scale(1.08); }
+  100% { transform: translate3d(-3%, 3%, 0) rotate(-5deg) scale(1.04); }
+}
+
+html[lang='en-US'] ::selection { background: rgba(59, 130, 246, 0.5); color: #fff; }
+html[lang='en-US'] ::-webkit-scrollbar { width: 11px; height: 11px; }
+html[lang='en-US'] ::-webkit-scrollbar-track { background: var(--us-bg); }
+html[lang='en-US'] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0EA5E9, #3B82F6);
+  border-radius: 8px; border: 2px solid var(--us-bg);
+}
+
+/* ───────────── Navbar: glass with a gradient hairline ───────────── */
+html[lang='en-US'] .navbar {
+  --ifm-navbar-background-color: rgba(3, 11, 20, 0.6);
+  --ifm-navbar-shadow: none;
+  background: rgba(3, 11, 20, 0.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  backdrop-filter: blur(18px) saturate(1.5);
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.55), rgba(45, 212, 191, 0.5), transparent) 1;
+}
+html[lang='en-US'] .navbar__link { color: #C9D0EA; }
+html[lang='en-US'] .navbar__link:hover,
+html[lang='en-US'] .navbar__link--active { color: #fff; }
+html[lang='en-US'] .navbar-login-btn,
+html[lang='en-US'] .navbar-login-btn:hover {
+  background: var(--us-grad-btn) !important;
+  box-shadow: 0 6px 22px rgba(59, 130, 246, 0.4);
+}
+html[lang='en-US'] .navbar .dropdown__menu.products-mega {
+  background: rgba(7, 19, 31, 0.92);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+  border: 1px solid var(--us-line);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.8), 0 0 60px -20px rgba(59, 130, 246, 0.5);
+}
+
+/* ───────────── Hero (home): transparent so the aurora shows ───────────── */
+html[lang='en-US'] .zs-hero,
+html[lang='en-US'] .feat-hero,
+html[lang='en-US'] .cvpn-hero {
+  background:
+    radial-gradient(ellipse 60% 70% at 50% -10%, rgba(59, 130, 246, 0.28), transparent 70%),
+    transparent;
+}
+html[lang='en-US'] .zs-hero h1,
+html[lang='en-US'] .feat-hero h1,
+html[lang='en-US'] .cvpn-hero-copy h1 { color: #fff; }
+html[lang='en-US'] .zs-hero__glow { filter: blur(70px); opacity: 0.9; }
+html[lang='en-US'] .zs-grad {
+  background: linear-gradient(96deg, #2DD4BF 0%, #60A5FA 40%, #34D399 70%, #2DD4BF 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: us-shimmer 7s linear infinite;
+}
+@keyframes us-shimmer { to { background-position: 220% 0; } }
+
+html[lang='en-US'] .zs-eyebrow,
+html[lang='en-US'] .hero-label {
+  background: rgba(59, 130, 246, 0.14);
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  color: #BFDBFE;
+  box-shadow: 0 0 24px -6px rgba(59, 130, 246, 0.6);
+}
+
+/* Buttons */
+html[lang='en-US'] .zs-btn--primary,
+html[lang='en-US'] .hero-btn-primary,
+html[lang='en-US'] .pricing-card .pricing-btn.primary {
+  position: relative;
+  overflow: hidden;
+  background: var(--us-grad-btn);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 34px -6px rgba(59, 130, 246, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+html[lang='en-US'] .zs-btn--primary::after,
+html[lang='en-US'] .hero-btn-primary::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; width: 60%; left: -80%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+html[lang='en-US'] .zs-btn--primary:hover::after,
+html[lang='en-US'] .hero-btn-primary:hover::after { left: 130%; }
+html[lang='en-US'] .zs-btn--primary:hover,
+html[lang='en-US'] .hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 44px -6px rgba(59, 130, 246, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+html[lang='en-US'] .zs-btn--ghost,
+html[lang='en-US'] .hero-btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #EEF0FF;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+html[lang='en-US'] .zs-btn--ghost:hover,
+html[lang='en-US'] .hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(96, 165, 250, 0.7);
+  color: #fff;
+}
+
+/* ───────────── Sections: transparent, hairline-separated ───────────── */
+html[lang='en-US'] .zs-sec,
+html[lang='en-US'] .feat-section-white,
+html[lang='en-US'] .feat-module-section,
+html[lang='en-US'] .cvpn-section,
+html[lang='en-US'] .pricing-section,
+html[lang='en-US'] .comparison-section,
+html[lang='en-US'] .signup-section,
+html[lang='en-US'] .cta-section { background: transparent; }
+html[lang='en-US'] .zs-sec--sunken,
+html[lang='en-US'] .feat-section-gray,
+html[lang='en-US'] .cvpn-section-gray,
+html[lang='en-US'] .savings-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+html[lang='en-US'] .zs-h2,
+html[lang='en-US'] .cvpn-section h2,
+html[lang='en-US'] .cvpn-h2-center,
+html[lang='en-US'] .cta-section h2,
+html[lang='en-US'] .pricing-section h2,
+html[lang='en-US'] .savings-section h2,
+html[lang='en-US'] .comparison-section h2,
+html[lang='en-US'] .feat-content h2,
+html[lang='en-US'] .prodx-title, html[lang='en-US'] .prodx-h2,
+html[lang='en-US'] .allp-hero h1, html[lang='en-US'] .allp-cat-name, html[lang='en-US'] .allp-cat-label,
+html[lang='en-US'] .prod-hero h1, html[lang='en-US'] .prod-cat-head h2, html[lang='en-US'] .prod-category-head h3,
+html[lang='en-US'] .prodx-cat-name, html[lang='en-US'] .cvpn-quote, html[lang='en-US'] .cvpn-step h3,
+html[lang='en-US'] .cvpn-points .pt-label { color: #F6F7FF; }
+html[lang='en-US'] .zs-label {
+  color: #5EEAD4;
+  letter-spacing: 0.16em;
+  text-shadow: 0 0 18px rgba(45, 212, 191, 0.55);
+}
+html[lang='en-US'] .zs-lede,
+html[lang='en-US'] .cvpn-lede,
+html[lang='en-US'] .feat-hero .tagline,
+html[lang='en-US'] .zs-hero__sub { color: #B4BCD8; }
+
+/* ───────────── Glass cards ───────────── */
+html[lang='en-US'] .zs-prob,
+html[lang='en-US'] .zs-mod,
+html[lang='en-US'] .zs-chip,
+html[lang='en-US'] .product-card,
+html[lang='en-US'] .prod-tile,
+html[lang='en-US'] .prodx-featured,
+html[lang='en-US'] .allp-card,
+html[lang='en-US'] .cvpn-feature,
+html[lang='en-US'] .cvpn-loancat,
+html[lang='en-US'] .cvpn-suite-card,
+html[lang='en-US'] .cvpn-dash,
+html[lang='en-US'] .cvpn-btable-wrap,
+html[lang='en-US'] .pricing-card,
+html[lang='en-US'] .signup-form,
+html[lang='en-US'] .cal-wrap,
+html[lang='en-US'] .cvpn-status {
+  position: relative;
+  background:
+    var(--mo-spot, linear-gradient(transparent, transparent)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)) padding-box,
+    rgba(7, 19, 31, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 20px 50px -28px rgba(0, 0, 0, 0.9);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s, box-shadow 0.35s, background 0.3s;
+}
+html[lang='en-US'] .zs-chip { border-radius: 100px; }
+html[lang='en-US'] .zs-prob:hover,
+html[lang='en-US'] .zs-mod:hover,
+html[lang='en-US'] .zs-chip:hover,
+html[lang='en-US'] .product-card:hover,
+html[lang='en-US'] .prod-tile:hover,
+html[lang='en-US'] .prodx-featured:hover,
+html[lang='en-US'] .allp-card:hover,
+html[lang='en-US'] .cvpn-feature:hover,
+html[lang='en-US'] .cvpn-loancat:hover,
+html[lang='en-US'] .cvpn-suite-card:hover,
+html[lang='en-US'] .pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(96, 165, 250, 0.55);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 30px 70px -24px rgba(0, 0, 0, 0.95),
+    0 0 50px -10px rgba(59, 130, 246, 0.55);
+}
+html[lang='en-US'] .pricing-card.featured {
+  border-color: rgba(96, 165, 250, 0.7);
+  box-shadow: 0 0 60px -12px rgba(59, 130, 246, 0.7), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+html[lang='en-US'] .pricing-card.featured::before { background: var(--us-grad-btn); }
+
+/* Card text (these were pinned to dark-on-white by shared rules) */
+html[lang='en-US'] .product-card h3, html[lang='en-US'] .prod-tile-name,
+html[lang='en-US'] .prodx-featured-body h3, html[lang='en-US'] .allp-name-row h3,
+html[lang='en-US'] .cvpn-feature h3, html[lang='en-US'] .cvpn-loancat h3,
+html[lang='en-US'] .cvpn-suite-card h3, html[lang='en-US'] .cvpn-benefit h4,
+html[lang='en-US'] .cvpn-status-head strong, html[lang='en-US'] .cvpn-status-rows b,
+html[lang='en-US'] .cvpn-dash-stat-value, html[lang='en-US'] .cvpn-td-us,
+html[lang='en-US'] .pricing-card h3, html[lang='en-US'] .pricing-card .price,
+html[lang='en-US'] .zs-prob h3, html[lang='en-US'] .zs-mod h3 { color: #F6F7FF; }
+html[lang='en-US'] .product-card > p, html[lang='en-US'] .prod-tile-tagline,
+html[lang='en-US'] .prodx-featured-desc, html[lang='en-US'] .allp-desc,
+html[lang='en-US'] .allp-features li, html[lang='en-US'] .cvpn-feature p,
+html[lang='en-US'] .cvpn-loancat-list li, html[lang='en-US'] .cvpn-suite-card p,
+html[lang='en-US'] .cvpn-benefit p, html[lang='en-US'] .product-card .feat-highlights li,
+html[lang='en-US'] .pricing-card > p, html[lang='en-US'] .pricing-card .features-list li,
+html[lang='en-US'] .cvpn-status-rows span { color: #AEB7D6; }
+html[lang='en-US'] .prod-tile-arrow { color: #5AA2FF; }
+html[lang='en-US'] .cvpn-dash-stat {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+html[lang='en-US'] .cvpn-cap-chip,
+html[lang='en-US'] .cvpn-loancat-tag {
+  background: rgba(45, 212, 191, 0.12); color: #5EEAD4; border-color: rgba(45, 212, 191, 0.3);
+}
+html[lang='en-US'] .cvpn-trust-tags span {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #DDE2F7;
+}
+
+/* ───────────── Product / feature icon chips ───────────── */
+html[lang='en-US'] .zs-prob__ico,
+html[lang='en-US'] .zs-mod__ico { box-shadow: 0 0 26px -6px currentColor; }
+html[lang='en-US'] .zs-i-vpn      { background: rgba(45, 212, 191, 0.14); color: #5EEAD4; }
+html[lang='en-US'] .zs-i-fortress { background: rgba(251, 191, 36, 0.14); color: #FCD34D; }
+html[lang='en-US'] .zs-i-svchub   { background: rgba(251, 146, 60, 0.14); color: #FDBA74; }
+html[lang='en-US'] .zs-i-discover { background: rgba(96, 165, 250, 0.16); color: #93C5FD; }
+html[lang='en-US'] .zs-i-monitor  { background: rgba(16, 185, 129, 0.14); color: #6EE7B7; }
+html[lang='en-US'] .zs-i-armor    { background: rgba(96, 165, 250, 0.16); color: #93C5FD; }
+html[lang='en-US'] .zs-i-detect   { background: rgba(248, 113, 113, 0.15); color: #FCA5A5; }
+html[lang='en-US'] .zs-i-comply   { background: rgba(52, 211, 153, 0.15); color: #6EE7B7; }
+html[lang='en-US'] .zs-i-neural   { background: rgba(45, 212, 191, 0.15); color: #5EEAD4; }
+html[lang='en-US'] .zs-prob__ico  { background: rgba(59, 130, 246, 0.18); color: #93C5FD; }
+html[lang='en-US'] .zs-mod__link, html[lang='en-US'] .feat-learn-more,
+html[lang='en-US'] .zs-chip b { color: #5EEAD4; }
+html[lang='en-US'] .zs-mod__link:hover, html[lang='en-US'] .feat-learn-more:hover { color: #fff; }
+
+/* ───────────── Stat band + closing CTA ───────────── */
+html[lang='en-US'] .zs-band {
+  background:
+    radial-gradient(60% 120% at 20% 0%, rgba(14, 165, 233, 0.35), transparent 70%),
+    radial-gradient(50% 120% at 90% 100%, rgba(16, 185, 129, 0.25), transparent 70%),
+    #050E18;
+  border-top: 1px solid rgba(96, 165, 250, 0.25);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.25);
+}
+html[lang='en-US'] .zs-band__n {
+  background: linear-gradient(96deg, #5EEAD4, #93C5FD 60%, #6EE7B7);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 22px rgba(59, 130, 246, 0.45));
+}
+html[lang='en-US'] .zs-band__l { color: #9AA5C6; }
+html[lang='en-US'] .zs-close {
+  background:
+    radial-gradient(700px 360px at 50% 0%, rgba(59, 130, 246, 0.32), transparent 70%),
+    radial-gradient(500px 300px at 85% 100%, rgba(45, 212, 191, 0.14), transparent 70%),
+    rgba(255, 255, 255, 0.015);
+  border-top: 1px solid rgba(96, 165, 250, 0.3);
+  color: #fff;
+}
+html[lang='en-US'] .zs-close .zs-h2,
+html[lang='en-US'] .zs-close h2 { color: #fff; }
+html[lang='en-US'] .cta-section { border-top: 1px solid rgba(255, 255, 255, 0.06); }
+html[lang='en-US'] .cta-section p { color: #B4BCD8; }
+
+/* ───────────── Tables, forms, modal ───────────── */
+html[lang='en-US'] .comparison-table,
+html[lang='en-US'] .cvpn-table {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+}
+html[lang='en-US'] .comparison-table th,
+html[lang='en-US'] .comparison-table td,
+html[lang='en-US'] .cvpn-table th,
+html[lang='en-US'] .cvpn-table td { border-color: rgba(255, 255, 255, 0.08); color: #C9D0EA; }
+html[lang='en-US'] .comparison-table thead th,
+html[lang='en-US'] .cvpn-table thead th,
+html[lang='en-US'] .cvpn-btable thead th {
+  background: linear-gradient(100deg, rgba(14, 165, 233, 0.55), rgba(59, 130, 246, 0.5));
+  color: #fff;
+}
+html[lang='en-US'] .cvpn-btable thead th { color: #DDE2F7; border-bottom-color: rgba(255, 255, 255, 0.1); }
+html[lang='en-US'] .cvpn-btable tbody th { color: #F6F7FF; }
+html[lang='en-US'] .cvpn-btable tbody td { color: #B4BCD8; }
+html[lang='en-US'] .cvpn-btable tbody th,
+html[lang='en-US'] .cvpn-btable tbody td { border-top-color: rgba(255, 255, 255, 0.08); }
+html[lang='en-US'] .form-group label { color: #DDE2F7; }
+html[lang='en-US'] .form-group input,
+html[lang='en-US'] .form-group select,
+html[lang='en-US'] .form-group textarea,
+html[lang='en-US'] .prodx-search input,
+html[lang='en-US'] .allp-search input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #F6F7FF;
+  border-radius: 12px;
+}
+html[lang='en-US'] .form-group input:focus,
+html[lang='en-US'] .form-group select:focus,
+html[lang='en-US'] .prodx-search input:focus,
+html[lang='en-US'] .allp-search input:focus {
+  outline: none;
+  border-color: #60A5FA;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25), 0 0 30px -6px rgba(59, 130, 246, 0.6);
+}
+html[lang='en-US'] .cvpn-modal {
+  background: rgba(8, 20, 34, 0.94);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9), 0 0 80px -20px rgba(59, 130, 246, 0.6);
+}
+html[lang='en-US'] .cvpn-modal h3 { color: #fff; }
+html[lang='en-US'] .cvpn-modal-lede { color: #B4BCD8; }
+html[lang='en-US'] .cvpn-modal-details li { color: #AEB7D6; }
+
+/* All-products / products sidebars */
+html[lang='en-US'] .allp-side-item,
+html[lang='en-US'] .prodx-side-item { color: #DDE2F7; }
+html[lang='en-US'] .allp-side-item:hover,
+html[lang='en-US'] .prodx-side-item:hover { background: rgba(59, 130, 246, 0.16); color: #fff; }
+
+/* Blog cards */
+html[lang='en-US'] main.zpoa-blog-list article {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* Footer */
+html[lang='en-US'] .footer {
+  background: linear-gradient(180deg, transparent, rgba(5, 6, 15, 0.9));
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+html[lang='en-US'] .footer__link-item,
+html[lang='en-US'] .footer__title { color: #AEB7D6; }
+html[lang='en-US'] .footer__link-item:hover { color: #fff; }
+
+/* Scroll progress bar (existing .zs-progress) */
+html[lang='en-US'] .zs-progress { background: var(--us-grad); box-shadow: 0 0 14px rgba(59, 130, 246, 0.8); }
+
+/* Product dashboard mockup: float + glow */
+html[lang='en-US'] .zs-shot {
+  border-color: rgba(96, 165, 250, 0.35);
+  box-shadow: 0 50px 110px -30px rgba(0, 0, 0, 0.9), 0 0 90px -20px rgba(59, 130, 246, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[lang='en-US'] body::before,
+  html[lang='en-US'] .zs-grad { animation: none; }
+}
+
+/* Section eyebrows: glowing cyan text, not a box */
+html[lang='en-US'] .cvpn-eyebrow {
+  background: none; border: 0; box-shadow: none; padding: 0;
+  color: #5EEAD4; letter-spacing: 0.18em;
+  text-shadow: 0 0 18px rgba(45, 212, 191, 0.55);
+}
+
+/* All-products hero + search: dark aurora instead of the bright gradient */
+html[lang='en-US'] .allp-hero2.allp-hero2--in {
+  background:
+    radial-gradient(ellipse 60% 100% at 50% -20%, rgba(59, 130, 246, 0.4), transparent 70%),
+    transparent;
+}
+html[lang='en-US'] .allp-hero-rule { background: var(--us-grad); box-shadow: 0 0 18px rgba(59, 130, 246, 0.8); }
+html[lang='en-US'] .allp-search input {
+  background: rgba(9, 22, 36, 0.85);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #F6F7FF;
+  box-shadow: 0 20px 50px -14px rgba(0, 0, 0, 0.8), 0 0 40px -12px rgba(59, 130, 246, 0.5);
+}
+html[lang='en-US'] .allp-search input::placeholder,
+html[lang='en-US'] .prodx-search input::placeholder { color: #8791B4; }
+html[lang='en-US'] .allp-search-ic { color: #8CBEFF; }
+
+html[lang='en-US'] .allp-hero2 {
+  background:
+    radial-gradient(ellipse 60% 100% at 50% -20%, rgba(59, 130, 246, 0.36), transparent 70%),
+    transparent;
+}
