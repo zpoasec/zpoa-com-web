@@ -62,6 +62,7 @@ const config: Config = {
   clientModules: [
     './src/clientModules/blogReveal.ts',
     './src/clientModules/scrollProgress.ts',
+    './src/clientModules/motion.ts',
   ],
 
   presets: [
@@ -86,7 +87,7 @@ const config: Config = {
         theme: {
           // home.css loads after custom.css so the marketing styles win on
           // any shared selector.
-          customCss: ['./src/css/custom.css', './src/css/home.css'],
+          customCss: ['./src/css/custom.css', './src/css/home.css', './src/css/motion.css', './src/css/india-dark.css'],
         },
       } satisfies Preset.Options,
     ],

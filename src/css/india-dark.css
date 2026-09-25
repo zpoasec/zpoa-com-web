@@ -1,0 +1,505 @@
+/* India — "Aurora Night". Loaded last (after custom.css and home.css) so that
+   equal-specificity html[lang='en-IN'] rules here win. Everything is scoped to
+   the India locale; the US site is untouched. */
+
+html[lang='en-IN'] {
+  color-scheme: dark;
+
+  --in-bg: #05060F;
+  --in-bg-2: #0A0C1D;
+  --in-card: rgba(255, 255, 255, 0.045);
+  --in-card-hi: rgba(255, 255, 255, 0.075);
+  --in-line: rgba(255, 255, 255, 0.10);
+  --in-text: #B4BCD8;
+  --in-faint: #7F89AB;
+  --in-head: #F6F7FF;
+  --in-violet: #8B5CF6;
+  --in-indigo: #6366F1;
+  --in-cyan: #22D3EE;
+  --in-pink: #F472B6;
+  --in-amber: #FBBF24;
+  --in-mint: #34D399;
+  --in-grad: linear-gradient(100deg, #22D3EE 0%, #8B5CF6 50%, #F472B6 100%);
+  --in-grad-btn: linear-gradient(100deg, #6366F1 0%, #8B5CF6 55%, #D946EF 100%);
+
+  --ifm-color-primary: #8B7CFF;
+  --ifm-color-primary-dark: #7767F5;
+  --ifm-color-primary-darker: #6A59EE;
+  --ifm-color-primary-darkest: #5646D0;
+  --ifm-color-primary-light: #A99EFF;
+  --ifm-color-primary-lighter: #B9B0FF;
+  --ifm-color-primary-lightest: #D6D1FF;
+  --ifm-background-color: var(--in-bg);
+  --ifm-background-surface-color: #0B0E1F;
+  --ifm-font-color-base: var(--in-text);
+  --ifm-heading-color: var(--in-head);
+  --ifm-navbar-background-color: rgba(6, 8, 20, 0.62);
+  --ifm-navbar-shadow: none;
+  --ifm-link-color: #A99EFF;
+  --ifm-toc-border-color: var(--in-line);
+  --ifm-hr-border-color: var(--in-line);
+
+  --zpoa-blue: #8B7CFF;
+  --zpoa-text: var(--in-text);
+  --zpoa-heading: var(--in-head);
+  --zpoa-gray-50: #0A0C1D;
+  --zpoa-gray-100: #0F1226;
+  --zpoa-gray-200: rgba(255, 255, 255, 0.09);
+  --zpoa-gray-400: #6E7897;
+  --zpoa-gray-500: #97A1BF;
+  --zpoa-green: #34D399;
+  --zpoa-red: #FF6B6B;
+
+  --zs-hero-bg: transparent;
+  --zs-hero-fg: #FFFFFF;
+  --zs-hero-sub: #B4BCD8;
+  --zs-hero-grid: rgba(255, 255, 255, 0.05);
+  --zs-hero-glow: rgba(139, 92, 246, 0.5);
+  --zs-eyebrow-bg: rgba(139, 92, 246, 0.14);
+  --zs-eyebrow-bd: rgba(167, 139, 250, 0.4);
+  --zs-eyebrow-fg: #D8CCFF;
+  --zs-ghost-bg: rgba(255, 255, 255, 0.05);
+  --zs-ghost-bd: rgba(255, 255, 255, 0.18);
+  --zs-ghost-fg: #EEF0FF;
+  --zs-ghost-bg-hover: rgba(255, 255, 255, 0.1);
+  --zs-micro-fg: #8F99B8;
+  --zs-grad-1: #22D3EE;
+  --zs-grad-2: #A78BFA;
+  --zs-grad-3: #F472B6;
+  --zs-fg: #F6F7FF;
+  --zs-fg-soft: #B4BCD8;
+  --zs-fg-faint: #7F89AB;
+  --zs-surface: rgba(255, 255, 255, 0.04);
+  --zs-sunken: rgba(255, 255, 255, 0.02);
+  --zs-line: rgba(255, 255, 255, 0.09);
+
+  --mo-spot-rgb: 139, 92, 246;
+}
+
+/* ───────────── Canvas: aurora + grid, fixed behind everything ───────────── */
+html[lang='en-IN'],
+html[lang='en-IN'] body {
+  background: var(--in-bg);
+}
+html[lang='en-IN'] body::before,
+html[lang='en-IN'] body::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+}
+html[lang='en-IN'] body::before {
+  inset: -20%;
+  background:
+    radial-gradient(38% 34% at 18% 12%, rgba(99, 102, 241, 0.34), transparent 70%),
+    radial-gradient(34% 30% at 84% 8%, rgba(34, 211, 238, 0.22), transparent 70%),
+    radial-gradient(40% 36% at 74% 62%, rgba(217, 70, 239, 0.18), transparent 72%),
+    radial-gradient(36% 32% at 12% 78%, rgba(45, 212, 191, 0.14), transparent 72%);
+  filter: blur(30px) saturate(1.15);
+  animation: in-aurora 26s ease-in-out infinite alternate;
+}
+html[lang='en-IN'] body::after {
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 20%, transparent 78%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 20%, transparent 78%);
+}
+html[lang='en-IN'] #__docusaurus {
+  position: relative;
+  z-index: 1;
+}
+@keyframes in-aurora {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50%  { transform: translate3d(3%, -2%, 0) rotate(6deg) scale(1.08); }
+  100% { transform: translate3d(-3%, 3%, 0) rotate(-5deg) scale(1.04); }
+}
+
+html[lang='en-IN'] ::selection { background: rgba(139, 92, 246, 0.5); color: #fff; }
+html[lang='en-IN'] ::-webkit-scrollbar { width: 11px; height: 11px; }
+html[lang='en-IN'] ::-webkit-scrollbar-track { background: var(--in-bg); }
+html[lang='en-IN'] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366F1, #8B5CF6);
+  border-radius: 8px; border: 2px solid var(--in-bg);
+}
+
+/* ───────────── Navbar: glass with a gradient hairline ───────────── */
+html[lang='en-IN'] .navbar {
+  --ifm-navbar-background-color: rgba(6, 8, 20, 0.6);
+  --ifm-navbar-shadow: none;
+  background: rgba(6, 8, 20, 0.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  backdrop-filter: blur(18px) saturate(1.5);
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.55), rgba(34, 211, 238, 0.5), transparent) 1;
+}
+html[lang='en-IN'] .navbar__link { color: #C9D0EA; }
+html[lang='en-IN'] .navbar__link:hover,
+html[lang='en-IN'] .navbar__link--active { color: #fff; }
+html[lang='en-IN'] .navbar-login-btn,
+html[lang='en-IN'] .navbar-login-btn:hover {
+  background: var(--in-grad-btn) !important;
+  box-shadow: 0 6px 22px rgba(139, 92, 246, 0.4);
+}
+html[lang='en-IN'] .navbar .dropdown__menu.products-mega {
+  background: rgba(10, 12, 30, 0.92);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+  border: 1px solid var(--in-line);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.8), 0 0 60px -20px rgba(139, 92, 246, 0.5);
+}
+
+/* ───────────── Hero (home): transparent so the aurora shows ───────────── */
+html[lang='en-IN'] .zs-hero,
+html[lang='en-IN'] .feat-hero,
+html[lang='en-IN'] .cvpn-hero {
+  background:
+    radial-gradient(ellipse 60% 70% at 50% -10%, rgba(139, 92, 246, 0.28), transparent 70%),
+    transparent;
+}
+html[lang='en-IN'] .zs-hero h1,
+html[lang='en-IN'] .feat-hero h1,
+html[lang='en-IN'] .cvpn-hero-copy h1 { color: #fff; }
+html[lang='en-IN'] .zs-hero__glow { filter: blur(70px); opacity: 0.9; }
+html[lang='en-IN'] .zs-grad {
+  background: linear-gradient(96deg, #22D3EE 0%, #A78BFA 40%, #F472B6 70%, #22D3EE 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: in-shimmer 7s linear infinite;
+}
+@keyframes in-shimmer { to { background-position: 220% 0; } }
+
+html[lang='en-IN'] .zs-eyebrow,
+html[lang='en-IN'] .hero-label {
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  color: #D8CCFF;
+  box-shadow: 0 0 24px -6px rgba(139, 92, 246, 0.6);
+}
+
+/* Buttons */
+html[lang='en-IN'] .zs-btn--primary,
+html[lang='en-IN'] .hero-btn-primary,
+html[lang='en-IN'] .pricing-card .pricing-btn.primary {
+  position: relative;
+  overflow: hidden;
+  background: var(--in-grad-btn);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 34px -6px rgba(139, 92, 246, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+html[lang='en-IN'] .zs-btn--primary::after,
+html[lang='en-IN'] .hero-btn-primary::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; width: 60%; left: -80%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+html[lang='en-IN'] .zs-btn--primary:hover::after,
+html[lang='en-IN'] .hero-btn-primary:hover::after { left: 130%; }
+html[lang='en-IN'] .zs-btn--primary:hover,
+html[lang='en-IN'] .hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 44px -6px rgba(139, 92, 246, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+html[lang='en-IN'] .zs-btn--ghost,
+html[lang='en-IN'] .hero-btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #EEF0FF;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+html[lang='en-IN'] .zs-btn--ghost:hover,
+html[lang='en-IN'] .hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(167, 139, 250, 0.7);
+  color: #fff;
+}
+
+/* ───────────── Sections: transparent, hairline-separated ───────────── */
+html[lang='en-IN'] .zs-sec,
+html[lang='en-IN'] .feat-section-white,
+html[lang='en-IN'] .feat-module-section,
+html[lang='en-IN'] .cvpn-section,
+html[lang='en-IN'] .pricing-section,
+html[lang='en-IN'] .comparison-section,
+html[lang='en-IN'] .signup-section,
+html[lang='en-IN'] .cta-section { background: transparent; }
+html[lang='en-IN'] .zs-sec--sunken,
+html[lang='en-IN'] .feat-section-gray,
+html[lang='en-IN'] .cvpn-section-gray,
+html[lang='en-IN'] .savings-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+html[lang='en-IN'] .zs-h2,
+html[lang='en-IN'] .cvpn-section h2,
+html[lang='en-IN'] .cvpn-h2-center,
+html[lang='en-IN'] .cta-section h2,
+html[lang='en-IN'] .pricing-section h2,
+html[lang='en-IN'] .savings-section h2,
+html[lang='en-IN'] .comparison-section h2,
+html[lang='en-IN'] .feat-content h2,
+html[lang='en-IN'] .prodx-title, html[lang='en-IN'] .prodx-h2,
+html[lang='en-IN'] .allp-hero h1, html[lang='en-IN'] .allp-cat-name, html[lang='en-IN'] .allp-cat-label,
+html[lang='en-IN'] .prod-hero h1, html[lang='en-IN'] .prod-cat-head h2, html[lang='en-IN'] .prod-category-head h3,
+html[lang='en-IN'] .prodx-cat-name, html[lang='en-IN'] .cvpn-quote, html[lang='en-IN'] .cvpn-step h3,
+html[lang='en-IN'] .cvpn-points .pt-label { color: #F6F7FF; }
+html[lang='en-IN'] .zs-label {
+  color: #67E8F9;
+  letter-spacing: 0.16em;
+  text-shadow: 0 0 18px rgba(34, 211, 238, 0.55);
+}
+html[lang='en-IN'] .zs-lede,
+html[lang='en-IN'] .cvpn-lede,
+html[lang='en-IN'] .feat-hero .tagline,
+html[lang='en-IN'] .zs-hero__sub { color: #B4BCD8; }
+
+/* ───────────── Glass cards ───────────── */
+html[lang='en-IN'] .zs-prob,
+html[lang='en-IN'] .zs-mod,
+html[lang='en-IN'] .zs-chip,
+html[lang='en-IN'] .product-card,
+html[lang='en-IN'] .prod-tile,
+html[lang='en-IN'] .prodx-featured,
+html[lang='en-IN'] .allp-card,
+html[lang='en-IN'] .cvpn-feature,
+html[lang='en-IN'] .cvpn-loancat,
+html[lang='en-IN'] .cvpn-suite-card,
+html[lang='en-IN'] .cvpn-dash,
+html[lang='en-IN'] .cvpn-btable-wrap,
+html[lang='en-IN'] .pricing-card,
+html[lang='en-IN'] .signup-form,
+html[lang='en-IN'] .cal-wrap,
+html[lang='en-IN'] .cvpn-status {
+  position: relative;
+  background:
+    var(--mo-spot, linear-gradient(transparent, transparent)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)) padding-box,
+    rgba(10, 12, 30, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 20px 50px -28px rgba(0, 0, 0, 0.9);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s, box-shadow 0.35s, background 0.3s;
+}
+html[lang='en-IN'] .zs-chip { border-radius: 100px; }
+html[lang='en-IN'] .zs-prob:hover,
+html[lang='en-IN'] .zs-mod:hover,
+html[lang='en-IN'] .zs-chip:hover,
+html[lang='en-IN'] .product-card:hover,
+html[lang='en-IN'] .prod-tile:hover,
+html[lang='en-IN'] .prodx-featured:hover,
+html[lang='en-IN'] .allp-card:hover,
+html[lang='en-IN'] .cvpn-feature:hover,
+html[lang='en-IN'] .cvpn-loancat:hover,
+html[lang='en-IN'] .cvpn-suite-card:hover,
+html[lang='en-IN'] .pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(167, 139, 250, 0.55);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 30px 70px -24px rgba(0, 0, 0, 0.95),
+    0 0 50px -10px rgba(139, 92, 246, 0.55);
+}
+html[lang='en-IN'] .pricing-card.featured {
+  border-color: rgba(167, 139, 250, 0.7);
+  box-shadow: 0 0 60px -12px rgba(139, 92, 246, 0.7), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+html[lang='en-IN'] .pricing-card.featured::before { background: var(--in-grad-btn); }
+
+/* Card text (these were pinned to dark-on-white by shared rules) */
+html[lang='en-IN'] .product-card h3, html[lang='en-IN'] .prod-tile-name,
+html[lang='en-IN'] .prodx-featured-body h3, html[lang='en-IN'] .allp-name-row h3,
+html[lang='en-IN'] .cvpn-feature h3, html[lang='en-IN'] .cvpn-loancat h3,
+html[lang='en-IN'] .cvpn-suite-card h3, html[lang='en-IN'] .cvpn-benefit h4,
+html[lang='en-IN'] .cvpn-status-head strong, html[lang='en-IN'] .cvpn-status-rows b,
+html[lang='en-IN'] .cvpn-dash-stat-value, html[lang='en-IN'] .cvpn-td-us,
+html[lang='en-IN'] .pricing-card h3, html[lang='en-IN'] .pricing-card .price,
+html[lang='en-IN'] .zs-prob h3, html[lang='en-IN'] .zs-mod h3 { color: #F6F7FF; }
+html[lang='en-IN'] .product-card > p, html[lang='en-IN'] .prod-tile-tagline,
+html[lang='en-IN'] .prodx-featured-desc, html[lang='en-IN'] .allp-desc,
+html[lang='en-IN'] .allp-features li, html[lang='en-IN'] .cvpn-feature p,
+html[lang='en-IN'] .cvpn-loancat-list li, html[lang='en-IN'] .cvpn-suite-card p,
+html[lang='en-IN'] .cvpn-benefit p, html[lang='en-IN'] .product-card .feat-highlights li,
+html[lang='en-IN'] .pricing-card > p, html[lang='en-IN'] .pricing-card .features-list li,
+html[lang='en-IN'] .cvpn-status-rows span { color: #AEB7D6; }
+html[lang='en-IN'] .prod-tile-arrow { color: #8B7CFF; }
+html[lang='en-IN'] .cvpn-dash-stat {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+html[lang='en-IN'] .cvpn-cap-chip,
+html[lang='en-IN'] .cvpn-loancat-tag {
+  background: rgba(34, 211, 238, 0.12); color: #67E8F9; border-color: rgba(34, 211, 238, 0.3);
+}
+html[lang='en-IN'] .cvpn-trust-tags span {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #DDE2F7;
+}
+
+/* ───────────── Product / feature icon chips ───────────── */
+html[lang='en-IN'] .zs-prob__ico,
+html[lang='en-IN'] .zs-mod__ico { box-shadow: 0 0 26px -6px currentColor; }
+html[lang='en-IN'] .zs-i-vpn      { background: rgba(45, 212, 191, 0.14); color: #5EEAD4; }
+html[lang='en-IN'] .zs-i-fortress { background: rgba(251, 191, 36, 0.14); color: #FCD34D; }
+html[lang='en-IN'] .zs-i-svchub   { background: rgba(251, 146, 60, 0.14); color: #FDBA74; }
+html[lang='en-IN'] .zs-i-discover { background: rgba(167, 139, 250, 0.16); color: #C4B5FD; }
+html[lang='en-IN'] .zs-i-monitor  { background: rgba(217, 70, 239, 0.14); color: #F0ABFC; }
+html[lang='en-IN'] .zs-i-armor    { background: rgba(96, 165, 250, 0.16); color: #93C5FD; }
+html[lang='en-IN'] .zs-i-detect   { background: rgba(248, 113, 113, 0.15); color: #FCA5A5; }
+html[lang='en-IN'] .zs-i-comply   { background: rgba(52, 211, 153, 0.15); color: #6EE7B7; }
+html[lang='en-IN'] .zs-i-neural   { background: rgba(34, 211, 238, 0.15); color: #67E8F9; }
+html[lang='en-IN'] .zs-prob__ico  { background: rgba(139, 92, 246, 0.18); color: #C4B5FD; }
+html[lang='en-IN'] .zs-mod__link, html[lang='en-IN'] .feat-learn-more,
+html[lang='en-IN'] .zs-chip b { color: #67E8F9; }
+html[lang='en-IN'] .zs-mod__link:hover, html[lang='en-IN'] .feat-learn-more:hover { color: #fff; }
+
+/* ───────────── Stat band + closing CTA ───────────── */
+html[lang='en-IN'] .zs-band {
+  background:
+    radial-gradient(60% 120% at 20% 0%, rgba(99, 102, 241, 0.35), transparent 70%),
+    radial-gradient(50% 120% at 90% 100%, rgba(217, 70, 239, 0.25), transparent 70%),
+    #080A1A;
+  border-top: 1px solid rgba(167, 139, 250, 0.25);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.25);
+}
+html[lang='en-IN'] .zs-band__n {
+  background: linear-gradient(96deg, #67E8F9, #C4B5FD 60%, #F0ABFC);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 22px rgba(139, 92, 246, 0.45));
+}
+html[lang='en-IN'] .zs-band__l { color: #9AA5C6; }
+html[lang='en-IN'] .zs-close {
+  background:
+    radial-gradient(700px 360px at 50% 0%, rgba(139, 92, 246, 0.32), transparent 70%),
+    radial-gradient(500px 300px at 85% 100%, rgba(34, 211, 238, 0.14), transparent 70%),
+    rgba(255, 255, 255, 0.015);
+  border-top: 1px solid rgba(167, 139, 250, 0.3);
+  color: #fff;
+}
+html[lang='en-IN'] .zs-close .zs-h2,
+html[lang='en-IN'] .zs-close h2 { color: #fff; }
+html[lang='en-IN'] .cta-section { border-top: 1px solid rgba(255, 255, 255, 0.06); }
+html[lang='en-IN'] .cta-section p { color: #B4BCD8; }
+
+/* ───────────── Tables, forms, modal ───────────── */
+html[lang='en-IN'] .comparison-table,
+html[lang='en-IN'] .cvpn-table {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+}
+html[lang='en-IN'] .comparison-table th,
+html[lang='en-IN'] .comparison-table td,
+html[lang='en-IN'] .cvpn-table th,
+html[lang='en-IN'] .cvpn-table td { border-color: rgba(255, 255, 255, 0.08); color: #C9D0EA; }
+html[lang='en-IN'] .comparison-table thead th,
+html[lang='en-IN'] .cvpn-table thead th,
+html[lang='en-IN'] .cvpn-btable thead th {
+  background: linear-gradient(100deg, rgba(99, 102, 241, 0.55), rgba(139, 92, 246, 0.5));
+  color: #fff;
+}
+html[lang='en-IN'] .cvpn-btable thead th { color: #DDE2F7; border-bottom-color: rgba(255, 255, 255, 0.1); }
+html[lang='en-IN'] .cvpn-btable tbody th { color: #F6F7FF; }
+html[lang='en-IN'] .cvpn-btable tbody td { color: #B4BCD8; }
+html[lang='en-IN'] .cvpn-btable tbody th,
+html[lang='en-IN'] .cvpn-btable tbody td { border-top-color: rgba(255, 255, 255, 0.08); }
+html[lang='en-IN'] .form-group label { color: #DDE2F7; }
+html[lang='en-IN'] .form-group input,
+html[lang='en-IN'] .form-group select,
+html[lang='en-IN'] .form-group textarea,
+html[lang='en-IN'] .prodx-search input,
+html[lang='en-IN'] .allp-search input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #F6F7FF;
+  border-radius: 12px;
+}
+html[lang='en-IN'] .form-group input:focus,
+html[lang='en-IN'] .form-group select:focus,
+html[lang='en-IN'] .prodx-search input:focus,
+html[lang='en-IN'] .allp-search input:focus {
+  outline: none;
+  border-color: #A78BFA;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.25), 0 0 30px -6px rgba(139, 92, 246, 0.6);
+}
+html[lang='en-IN'] .cvpn-modal {
+  background: rgba(12, 14, 34, 0.94);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9), 0 0 80px -20px rgba(139, 92, 246, 0.6);
+}
+html[lang='en-IN'] .cvpn-modal h3 { color: #fff; }
+html[lang='en-IN'] .cvpn-modal-lede { color: #B4BCD8; }
+html[lang='en-IN'] .cvpn-modal-details li { color: #AEB7D6; }
+
+/* All-products / products sidebars */
+html[lang='en-IN'] .allp-side-item,
+html[lang='en-IN'] .prodx-side-item { color: #DDE2F7; }
+html[lang='en-IN'] .allp-side-item:hover,
+html[lang='en-IN'] .prodx-side-item:hover { background: rgba(139, 92, 246, 0.16); color: #fff; }
+
+/* Blog cards */
+html[lang='en-IN'] main.zpoa-blog-list article {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* Footer */
+html[lang='en-IN'] .footer {
+  background: linear-gradient(180deg, transparent, rgba(5, 6, 15, 0.9));
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+html[lang='en-IN'] .footer__link-item,
+html[lang='en-IN'] .footer__title { color: #AEB7D6; }
+html[lang='en-IN'] .footer__link-item:hover { color: #fff; }
+
+/* Scroll progress bar (existing .zs-progress) */
+html[lang='en-IN'] .zs-progress { background: var(--in-grad); box-shadow: 0 0 14px rgba(139, 92, 246, 0.8); }
+
+/* Product dashboard mockup: float + glow */
+html[lang='en-IN'] .zs-shot {
+  border-color: rgba(167, 139, 250, 0.35);
+  box-shadow: 0 50px 110px -30px rgba(0, 0, 0, 0.9), 0 0 90px -20px rgba(139, 92, 246, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[lang='en-IN'] body::before,
+  html[lang='en-IN'] .zs-grad { animation: none; }
+}
+
+/* Section eyebrows: glowing cyan text, not a box */
+html[lang='en-IN'] .cvpn-eyebrow {
+  background: none; border: 0; box-shadow: none; padding: 0;
+  color: #67E8F9; letter-spacing: 0.18em;
+  text-shadow: 0 0 18px rgba(34, 211, 238, 0.55);
+}
+
+/* All-products hero + search: dark aurora instead of the bright gradient */
+html[lang='en-IN'] .allp-hero2.allp-hero2--in {
+  background:
+    radial-gradient(ellipse 60% 100% at 50% -20%, rgba(139, 92, 246, 0.4), transparent 70%),
+    transparent;
+}
+html[lang='en-IN'] .allp-hero-rule { background: var(--in-grad); box-shadow: 0 0 18px rgba(139, 92, 246, 0.8); }
+html[lang='en-IN'] .allp-search input {
+  background: rgba(14, 16, 38, 0.85);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #F6F7FF;
+  box-shadow: 0 20px 50px -14px rgba(0, 0, 0, 0.8), 0 0 40px -12px rgba(139, 92, 246, 0.5);
+}
+html[lang='en-IN'] .allp-search input::placeholder,
+html[lang='en-IN'] .prodx-search input::placeholder { color: #8791B4; }
+html[lang='en-IN'] .allp-search-ic { color: #A99EFF; }

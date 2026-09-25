@@ -1,0 +1,116 @@
+/* Shared motion system (US + India). Uses the individual `translate`/`scale`
+   properties instead of `transform`, so it never fights the transforms that
+   existing components already animate. All of it is opt-in via html.mo-on,
+   which motion.ts only sets when the user has not asked for reduced motion. */
+
+html { --mo-spot-rgb: 38, 132, 255; }
+
+/* ── Scroll reveal ── */
+html.mo-on .mo-reveal {
+  opacity: 0;
+  translate: 0 34px;
+  scale: 0.97;
+  filter: blur(8px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    translate 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    scale 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--mo-i, 0) * 80ms);
+  will-change: opacity, translate, filter;
+}
+html.mo-on .mo-reveal.mo-in {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+  filter: blur(0);
+}
+
+/* ── Hero entrance (pure CSS, staggered) ── */
+@keyframes mo-rise {
+  from { opacity: 0; translate: 0 26px; filter: blur(10px); }
+  to   { opacity: 1; translate: 0 0;    filter: blur(0); }
+}
+html.mo-on .zs-hero .zs-eyebrow,
+html.mo-on .zs-hero h1,
+html.mo-on .zs-hero .zs-hero__sub,
+html.mo-on .zs-hero .zs-cta-row,
+html.mo-on .zs-hero .zs-microproof,
+html.mo-on .cvpn-hero-copy > *,
+html.mo-on .feat-hero .container > *,
+html.mo-on .allp-hero2 h1,
+html.mo-on .prod-hero h1 {
+  animation: mo-rise 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+html.mo-on .zs-hero .zs-eyebrow { animation-delay: 0.05s; }
+html.mo-on .zs-hero h1 { animation-delay: 0.18s; }
+html.mo-on .zs-hero .zs-hero__sub { animation-delay: 0.32s; }
+html.mo-on .zs-hero .zs-cta-row { animation-delay: 0.46s; }
+html.mo-on .zs-hero .zs-microproof { animation-delay: 0.58s; }
+html.mo-on .cvpn-hero-copy > :nth-child(1) { animation-delay: 0.05s; }
+html.mo-on .cvpn-hero-copy > :nth-child(2) { animation-delay: 0.15s; }
+html.mo-on .cvpn-hero-copy > :nth-child(3) { animation-delay: 0.27s; }
+html.mo-on .cvpn-hero-copy > :nth-child(4) { animation-delay: 0.39s; }
+html.mo-on .cvpn-hero-copy > :nth-child(5) { animation-delay: 0.5s; }
+html.mo-on .cvpn-hero-copy > :nth-child(6) { animation-delay: 0.6s; }
+html.mo-on .cvpn-hero-copy > :nth-child(n+7) { animation-delay: 0.7s; }
+html.mo-on .feat-hero .container > :nth-child(1) { animation-delay: 0.05s; }
+html.mo-on .feat-hero .container > :nth-child(2) { animation-delay: 0.2s; }
+html.mo-on .feat-hero .container > :nth-child(3) { animation-delay: 0.35s; }
+html.mo-on .feat-hero .container > :nth-child(n+4) { animation-delay: 0.5s; }
+
+/* ── Floating product mockups ── */
+@keyframes mo-float {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -12px; }
+}
+html.mo-on .zs-shot,
+html.mo-on .cvpn-status-wrap {
+  animation: mo-float 7s ease-in-out 1.2s infinite;
+}
+
+/* ── Parallax (driven by --mo-scroll, unitless px) ── */
+html.mo-on .zs-hero__glow { translate: 0 calc(var(--mo-scroll, 0) * 0.22px); }
+html.mo-on .zs-hero::before { translate: 0 calc(var(--mo-scroll, 0) * 0.08px); }
+html.mo-on .zs-hero__inner { translate: 0 calc(var(--mo-scroll, 0) * -0.05px); }
+
+/* ── 3D tilt (applied by motion.ts to .cvpn-status) ── */
+[data-mo-tilt] {
+  transform: perspective(1100px) rotateX(var(--mo-rx, 0deg)) rotateY(var(--mo-ry, 0deg));
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+[data-mo-tilt].mo-tilting { transition: transform 0.08s linear; }
+
+/* ── Cursor spotlight on cards (layer read by the card backgrounds) ── */
+.mo-spot:hover {
+  --mo-spot: radial-gradient(340px circle at var(--mx, 50%) var(--my, 0%), rgba(var(--mo-spot-rgb), 0.22), transparent 65%);
+}
+html[lang='en-US'] .mo-spot:hover { background-image: var(--mo-spot); }
+
+/* ── Cursor glow follower (fine pointers only, added by motion.ts) ── */
+.mo-cursor {
+  position: fixed;
+  left: 0; top: 0;
+  width: 460px; height: 460px;
+  margin: -230px 0 0 -230px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  background: radial-gradient(circle, rgba(var(--mo-spot-rgb), 0.16), transparent 62%);
+  transition: opacity 0.4s;
+  will-change: transform;
+}
+.mo-cursor.is-on { opacity: 1; }
+
+/* ── Magnetic buttons ── */
+.zs-btn, .hero-btn-primary, .hero-btn-secondary, .pricing-btn {
+  transition-property: transform, box-shadow, background, border-color, color, translate;
+  transition-duration: 0.25s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.mo-on .mo-reveal { opacity: 1; translate: none; scale: none; filter: none; transition: none; }
+  .mo-cursor { display: none; }
+}
