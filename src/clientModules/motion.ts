@@ -1,6 +1,6 @@
 // Shared motion layer for both locales: scroll reveals with stagger, pointer
-// spotlight on cards, 3D tilt, magnetic buttons, scroll parallax, and (India,
-// fine pointers only) a cursor glow. Never runs under prefers-reduced-motion.
+// spotlight on cards, 3D tilt, magnetic buttons, scroll parallax, and (fine
+// pointers only) a cursor glow. Never runs under prefers-reduced-motion.
 
 const REVEAL = [
   '.zs-h2', '.zs-label', '.zs-lede', '.zs-chip',
@@ -92,7 +92,7 @@ function boot() {
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   if (!finePointer) return;
 
-  // Cursor glow (India only), eased toward the pointer.
+  // Cursor glow, eased toward the pointer.
   let glow: HTMLDivElement | null = null;
   let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
   const step = () => {
@@ -108,7 +108,7 @@ function boot() {
       const target = e.target as Element | null;
       if (!target || !target.closest) return;
 
-      if (root.lang === 'en-IN') {
+      {
         if (!glow) {
           glow = document.createElement('div');
           glow.className = 'mo-cursor';
