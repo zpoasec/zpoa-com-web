@@ -114,3 +114,135 @@ html[lang='en-IN'] .zs-shot {
   html[lang='en-IN'] .zs-mod:hover,
   html[lang='en-IN'] .pricing-card.featured { animation: none; }
 }
+
+
+/* ═══════════════ Products dropdown — Aurora Glass ═══════════════ */
+html[lang='en-IN'] .navbar .dropdown__menu.products-mega {
+  width: 920px;
+  border-radius: 32px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(rgba(8, 9, 26, 0.9), rgba(8, 9, 26, 0.9)) padding-box,
+    conic-gradient(from var(--in-angle), rgba(34, 211, 238, 0), #22D3EE 12%, #8B5CF6 32%, #F472B6 50%, #FF9933 62%, rgba(34, 211, 238, 0) 78%) border-box;
+  box-shadow: 0 50px 110px -28px #000, 0 0 90px -20px rgba(139, 92, 246, 0.6);
+  -webkit-backdrop-filter: blur(26px) saturate(1.4);
+  backdrop-filter: blur(26px) saturate(1.4);
+  position: relative;
+  animation: in-spin 7s linear infinite;
+}
+html[lang='en-IN'] .dropdown--show .products-mega,
+html[lang='en-IN'] .dropdown--hoverable:hover .products-mega {
+  animation: in-dd-in 0.6s cubic-bezier(0.34, 1.35, 0.5, 1) both, in-spin 7s linear infinite;
+}
+@keyframes in-dd-in {
+  from { opacity: 0; transform: translateY(-14px) scale(0.94); filter: blur(10px); }
+  to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+/* drifting aurora light + jaali pattern inside the panel */
+html[lang='en-IN'] .products-mega::before {
+  content: '';
+  position: absolute; inset: -30%;
+  background:
+    radial-gradient(34% 30% at 20% 20%, rgba(99, 102, 241, 0.32), transparent 70%),
+    radial-gradient(30% 28% at 80% 15%, rgba(34, 211, 238, 0.2), transparent 70%),
+    radial-gradient(36% 32% at 70% 85%, rgba(217, 70, 239, 0.22), transparent 72%);
+  filter: blur(24px);
+  animation: in-aurora 16s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+html[lang='en-IN'] .products-mega::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96' fill='none' stroke='rgba%28190%2C175%2C255%2C0.14%29' stroke-width='1'%3E%3Crect x='26' y='26' width='44' height='44'/%3E%3Crect x='26' y='26' width='44' height='44' transform='rotate%2845 48 48%29'/%3E%3Ccircle cx='48' cy='48' r='8'/%3E%3Ccircle cx='48' cy='48' r='20' stroke='rgba%28120%2C220%2C240%2C0.06%29'/%3E%3Cpath d='M0 0l10 10M96 0l-10 10M0 96l10-10M96 96l-10-10M48 0v14M48 96v-14M0 48h14M96 48h-14'/%3E%3C/svg%3E");
+  background-size: 96px 96px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 75% 20%, #000, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 80% at 75% 20%, #000, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+html[lang='en-IN'] .products-mega > * { position: relative; z-index: 1; }
+
+html[lang='en-IN'] .products-mega-nav-col {
+  background: rgba(255, 255, 255, 0.03);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  width: 244px;
+}
+html[lang='en-IN'] .products-mega-search input {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #F6F7FF;
+  padding-left: 2.2rem;
+}
+html[lang='en-IN'] .products-mega-search input::placeholder { color: #8791B4; }
+html[lang='en-IN'] .products-mega-search input:focus {
+  border-color: #A78BFA; background: rgba(139, 92, 246, 0.14);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.22), 0 0 30px -6px rgba(139, 92, 246, 0.7);
+}
+html[lang='en-IN'] .products-mega-search-ic { color: #C4B5FD; left: 14px; }
+html[lang='en-IN'] .products-mega-nav-item { border-radius: 999px; color: #C6CDE8; padding: 10px 14px; }
+html[lang='en-IN'] .products-mega-nav-item:hover { color: #fff; }
+html[lang='en-IN'] .products-mega-nav-item.is-active { color: #fff; }
+html[lang='en-IN'] .products-mega-nav-highlight {
+  border-radius: 999px;
+  background: linear-gradient(100deg, rgba(139, 92, 246, 0.42), rgba(34, 211, 238, 0.2));
+  box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.55), 0 0 30px -6px rgba(139, 92, 246, 0.8);
+}
+html[lang='en-IN'] .products-mega-nav-ic { border-radius: 50%; box-shadow: 0 0 20px -4px currentColor; }
+html[lang='en-IN'] .products-mega-panel { background: transparent; padding: 24px 28px 18px; }
+html[lang='en-IN'] .products-mega-panel-head { border-bottom: 1px solid rgba(255, 255, 255, 0.09); }
+html[lang='en-IN'] .products-mega-panel-head h4 {
+  font-size: 1.2rem;
+  background: linear-gradient(96deg, #FFFFFF, #C4B5FD 70%, #F0ABFC);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+html[lang='en-IN'] .products-mega-panel-head p { color: #AEB7D6; }
+html[lang='en-IN'] .products-mega-panel-ic { border-radius: 50%; box-shadow: 0 0 34px -4px rgba(139, 92, 246, 0.8); }
+
+html[lang='en-IN'] .products-mega-grid { gap: 12px; }
+html[lang='en-IN'] .products-mega-card {
+  border-radius: 22px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s, box-shadow 0.35s, background 0.3s;
+  animation: in-card-in 0.6s cubic-bezier(0.34, 1.35, 0.5, 1) both;
+}
+html[lang='en-IN'] .products-mega-card:nth-child(1) { animation-delay: 0.04s; }
+html[lang='en-IN'] .products-mega-card:nth-child(2) { animation-delay: 0.1s; }
+html[lang='en-IN'] .products-mega-card:nth-child(3) { animation-delay: 0.16s; }
+html[lang='en-IN'] .products-mega-card:nth-child(4) { animation-delay: 0.22s; }
+html[lang='en-IN'] .products-mega-card:nth-child(n+5) { animation-delay: 0.28s; }
+@keyframes in-card-in { from { opacity: 0; transform: translateY(20px) scale(0.95); filter: blur(6px); } to { opacity: 1; transform: none; filter: blur(0); } }
+html[lang='en-IN'] .products-mega-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(167, 139, 250, 0.6);
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.2), rgba(34, 211, 238, 0.06));
+  box-shadow: 0 26px 50px -22px rgba(0, 0, 0, 0.95), 0 0 46px -10px rgba(139, 92, 246, 0.65);
+}
+html[lang='en-IN'] .products-mega-card-title { color: #F6F7FF; }
+html[lang='en-IN'] .products-mega-card-desc { color: #AEB7D6; }
+html[lang='en-IN'] .products-mega-card-logo,
+html[lang='en-IN'] .products-mega-card-ic { border-radius: 14px; }
+html[lang='en-IN'] .products-mega-card-new {
+  color: #FDE68A; background: linear-gradient(100deg, rgba(255, 153, 51, 0.25), rgba(244, 114, 182, 0.2));
+  border-color: rgba(255, 153, 51, 0.5);
+}
+html[lang='en-IN'] .products-mega-card-arrow { color: #C4B5FD; }
+html[lang='en-IN'] .products-mega-all {
+  align-self: flex-start; margin-top: 14px; padding: 9px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05); color: #E5E0FF;
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+html[lang='en-IN'] .products-mega-all:hover {
+  background: linear-gradient(100deg, rgba(99, 102, 241, 0.5), rgba(217, 70, 239, 0.4));
+  border-color: transparent; color: #fff; box-shadow: 0 10px 34px -8px rgba(139, 92, 246, 0.8);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[lang='en-IN'] .products-mega,
+  html[lang='en-IN'] .products-mega::before,
+  html[lang='en-IN'] .products-mega-card { animation: none !important; }
+}
