@@ -68,6 +68,19 @@ function setupReveal() {
   targets.forEach((el) => observer!.observe(el));
 }
 
+// Floats the hero mockups with the Web Animations API rather than a CSS
+// `animation`, so it can never replace the page's own reveal animation.
+function floatMockups() {
+  document.querySelectorAll<HTMLElement>('.zs-shot, .cvpn-status-wrap').forEach((el) => {
+    if (el.dataset.moFloat) return;
+    el.dataset.moFloat = '1';
+    el.animate(
+      [{translate: '0 0'}, {translate: '0 -12px'}, {translate: '0 0'}],
+      {duration: 7000, iterations: Infinity, easing: 'ease-in-out', delay: 1200},
+    );
+  });
+}
+
 function boot() {
   if (booted) return;
   booted = true;
@@ -174,4 +187,5 @@ export function onRouteDidUpdate() {
   if (typeof window === 'undefined' || reduced()) return;
   boot();
   window.setTimeout(setupReveal, 80);
+  window.setTimeout(floatMockups, 120);
 }
