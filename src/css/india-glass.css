@@ -127,7 +127,6 @@ html[lang='en-IN'] .navbar .dropdown__menu.products-mega {
   box-shadow: 0 50px 110px -28px #000, 0 0 90px -20px rgba(139, 92, 246, 0.6);
   -webkit-backdrop-filter: blur(26px) saturate(1.4);
   backdrop-filter: blur(26px) saturate(1.4);
-  position: relative;
   animation: in-spin 7s linear infinite;
 }
 html[lang='en-IN'] .dropdown--show .products-mega,
