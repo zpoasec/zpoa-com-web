@@ -58,7 +58,7 @@ const HIDDEN_CATEGORIES = new Set([
  * Split "Products" navbar item: the label navigates, the chevron opens a menu.
  *
  * Routing note: every entry now lands where its label says it will. Previously
- * the item labelled "ZPOA Zypher VPN" pointed at /products (the portfolio index)
+ * the item labelled "Zypher VPN" pointed at /products (the portfolio index)
  * rather than the VPN product page, so the most specific item in the menu was
  * the one that did not go where it claimed.
  *

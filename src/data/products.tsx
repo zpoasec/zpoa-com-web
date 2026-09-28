@@ -50,7 +50,7 @@ export const CATEGORY_ORDER = [
 
 export const PRODUCTS: Product[] = [
   {
-    name: 'ZPOA Zypher VPN', category: 'Featured Apps', accent: 'accent-vpn', icon: 'vpn', to: '/cyber-vpn', isNew: true,
+    name: 'Zypher VPN', category: 'Featured Apps', accent: 'accent-vpn', icon: 'vpn', to: '/cyber-vpn', isNew: true,
     tagline: 'Self-hosted zero-trust mesh VPN',
     desc: 'A self-hosted, identity-native zero-trust mesh VPN. Direct peer-to-peer WireGuard tunnels, with the control plane, the database, and the identity that governs access all inside your own walls.',
     features: ['Self-hosted control plane, database & relays', 'Direct peer-to-peer WireGuard mesh', 'Air-gap capable, physical tenant isolation', 'Identity-native access via the golden record'],

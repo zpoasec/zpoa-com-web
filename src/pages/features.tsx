@@ -152,7 +152,7 @@ const modules = [
 const products = [
   {
     id: 'vpn',
-    subtitle: 'ZPOA Zypher VPN',
+    subtitle: 'Zypher VPN',
     headline: 'Zero-trust access. Fully self-hosted.',
     description:
       'A modern WireGuard mesh VPN where the control plane, database, and identity all stay inside your own network. Direct peer-to-peer tunnels, identity-native access governed by the golden record, air-gap capable, with ~30s hot-standby failover.',
@@ -388,7 +388,7 @@ function ProductsIndex(): ReactNode {
           <h2>Standalone products</h2>
           <p className="tagline">
             Purpose-built products you can deploy on their own, starting with
-            our self-hosted, zero-trust ZPOA Zypher VPN.
+            our self-hosted, zero-trust Zypher VPN.
           </p>
         </div>
         <div className="products-grid">

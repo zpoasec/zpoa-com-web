@@ -247,6 +247,13 @@ function HealthHero(): ReactNode {
     <section className="cvpn-hero">
       <div className="container cvpn-hero-grid">
         <div className="cvpn-hero-copy">
+          <img
+            className="cvpn-hero-logo"
+            src="/img/products/health-logo.png"
+            alt="Ciyex HIMS"
+            width={72}
+            height={72}
+          />
           <div className="cvpn-eyebrow">Ciyex HIMS</div>
           <h1>Run the whole hospital on one system.</h1>
           <p className="cvpn-lede">

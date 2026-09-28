@@ -1138,7 +1138,7 @@ html, body, * {
    source order (html[lang=...] has higher specificity than either), so the
    light/dark toggle no longer affects the hero once a locale is set: United
    States always gets the black treatment, India always gets the blue one. */
-html[lang='en-US'] {
+html[lang='en-US'], html[lang='en-IN'] {
   --zs-hero-bg:
     radial-gradient(ellipse 70% 100% at 50% -20%, rgba(15,118,110,0.35), rgba(15,118,110,0) 65%),
     #05070a;
@@ -1174,65 +1174,10 @@ html[lang='en-US'] {
    blue, then emerald) both read as unpleasant, a calm near-white theme with
    a single brand accent reads as considered software rather than a colour
    test. Still reads as clearly distinct from the US black theme. */
-html[lang='en-IN'] {
-  /* --zs-hero-bg/grid/glow are only ever consumed inside .zs-hero itself, so
-     they're free to be the vivid gradient below. --zs-hero-fg, --zs-hero-sub,
-     and the eyebrow/ghost tokens are also read by .zs-close and the ghost
-     button used there, both of which sit on a light background further down
-     the page — so those stay dark-on-light here, and the hero's own white
-     text is applied via scoped .zs-hero overrides instead. */
-  --zs-hero-bg:
-    radial-gradient(ellipse 90% 100% at 30% -10%, rgba(196, 181, 245, 0.5), transparent 60%),
-    linear-gradient(135deg, #7C3AED 0%, #4F6BED 38%, #2596E0 66%, #14B8A6 100%);
-  --zs-hero-fg:        #0F2A25;
-  --zs-hero-sub:       #4A625B;
-  --zs-hero-grid:      rgba(255, 255, 255, 0.12);
-  --zs-hero-glow:      rgba(255, 255, 255, 0.3);
-  --zs-eyebrow-bg:     rgba(110, 93, 198, 0.08);
-  --zs-eyebrow-bd:     rgba(110, 93, 198, 0.25);
-  --zs-eyebrow-fg:     #6E5DC6;
-  --zs-ghost-bg:       rgba(13, 80, 68, 0.05);
-  --zs-ghost-bd:       rgba(13, 80, 68, 0.16);
-  --zs-ghost-fg:       #0F2A25;
-  --zs-ghost-bg-hover: rgba(13, 80, 68, 0.10);
-  --zs-micro-fg:       #5E756E;
-  /* .zs-grad is only ever used inside this hero's own h1, so unlike the
-     tokens above it's free to be tuned for the vivid gradient background:
-     a bright highlight instead of the dark-on-light gradient used when the
-     rest of the page (and .zs-close) needed a token that stayed dark. */
-  --zs-grad-1:         #FFFFFF;
-  --zs-grad-2:         #C4B5FD;
-  --zs-grad-3:         #9B8AE0;
-
-  /* Same token set the rest of the homepage's sections, cards, and text
-     already read (.zs-sec, .zs-mod, .zs-prob, .zs-chip, etc.), so the light
-     treatment reaches the whole page, not just the hero. */
-  --zs-fg:          #0F2A25;
-  --zs-fg-soft:     #4A625B;
-  --zs-fg-faint:    #5E756E;
-  --zs-surface:     #F5FAF9;
-  --zs-sunken:      #E8F3F0;
-  --zs-line:        rgba(13, 80, 68, 0.08);
-}
 
 /* Scoped to just .zs-hero (not the shared tokens above), since this hero's
    background is a vivid coral gradient while .zs-close and the ghost button
    further down the page share those tokens and need to stay dark-on-light. */
-html[lang='en-IN'] .zs-hero .zs-eyebrow {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #FFFFFF;
-}
-html[lang='en-IN'] .zs-hero h1 { color: #FFFFFF; }
-html[lang='en-IN'] .zs-hero .zs-hero__sub { color: rgba(255, 255, 255, 0.88); }
-html[lang='en-IN'] .zs-hero .zs-btn--ghost {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #FFFFFF;
-}
-html[lang='en-IN'] .zs-hero .zs-btn--ghost:hover { background: rgba(255, 255, 255, 0.26); color: #FFFFFF; }
-html[lang='en-IN'] .zs-hero .zs-microproof { color: rgba(255, 255, 255, 0.88); }
-html[lang='en-IN'] .zs-hero .zs-microproof svg { color: #FFFFFF; }
 
 .zs-hero {
   position: relative;
@@ -1510,8 +1455,7 @@ html[lang='en-IN'] .zs-hero .zs-microproof svg { color: #FFFFFF; }
   color: var(--zs-violet); margin-bottom: 0.85rem;
 }
 [data-theme='dark'] .zs-label { color: #A78BFA; }
-html[lang='en-US'] .zs-label { color: #A78BFA; }
-html[lang='en-IN'] .zs-label { color: #6E5DC6; }
+html[lang='en-US'] .zs-label, html[lang='en-IN'] .zs-label { color: #A78BFA; }
 
 .zs-h2 {
   font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 800;
@@ -1535,8 +1479,7 @@ html[lang='en-IN'] .zs-label { color: #6E5DC6; }
   background: rgba(109,74,255,0.1); color: var(--zs-violet); margin-bottom: 16px;
 }
 [data-theme='dark'] .zs-prob__ico { background: rgba(109,74,255,0.2); color: #A78BFA; }
-html[lang='en-US'] .zs-prob__ico { background: rgba(109,74,255,0.2); color: #A78BFA; }
-html[lang='en-IN'] .zs-prob__ico { background: rgba(110, 93, 198,0.08); color: #6E5DC6; }
+html[lang='en-US'] .zs-prob__ico, html[lang='en-IN'] .zs-prob__ico { background: rgba(109,74,255,0.2); color: #A78BFA; }
 .zs-prob h3 { font-size: 1.06rem; font-weight: 700; color: var(--zs-fg); margin: 0 0 8px; letter-spacing: -0.012em; }
 .zs-prob p { font-size: 0.93rem; line-height: 1.65; color: var(--zs-fg-soft); margin: 0; }
 
@@ -1562,9 +1505,7 @@ html[lang='en-IN'] .zs-prob__ico { background: rgba(110, 93, 198,0.08); color: #
   display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
 }
 .zs-mod__link:hover { text-decoration: none; gap: 10px; color: var(--zs-violet-deep); }
-html[lang='en-US'] .zs-mod__link { color: #A78BFA; }
-html[lang='en-IN'] .zs-mod__link { color: #6E5DC6; }
-html[lang='en-IN'] .zs-mod__link:hover { color: #443A86; }
+html[lang='en-US'] .zs-mod__link, html[lang='en-IN'] .zs-mod__link { color: #A78BFA; }
 .zs-mod__link span { transition: transform .18s ease; }
 [data-theme='dark'] .zs-mod__link { color: #A78BFA; }
 [data-theme='dark'] .zs-mod__link:hover { color: #C4B5FD; }
@@ -1893,22 +1834,16 @@ html[lang='en-IN'] .zs-mod__link:hover { color: #443A86; }
 [data-theme='dark'] .zs-band {
   background: linear-gradient(150deg, var(--zs-ink) 0%, #1A1240 52%, #0D1424 100%);
 }
-html[lang='en-US'] .zs-band {
+html[lang='en-US'] .zs-band, html[lang='en-IN'] .zs-band {
   background: linear-gradient(150deg, #05070a 0%, #10142b 52%, #05070a 100%);
 }
 /* A warm dark maroon/coral gradient instead of the base's cool indigo, so
    this "one bold moment" band stays in the same warm family as the rest of
    the India page rather than clashing with it. */
-html[lang='en-IN'] .zs-band {
-  background: linear-gradient(150deg, #443A86 0%, #332B66 52%, #241E4D 100%);
-}
 .zs-band::after {
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(760px 320px at 22% 0%, rgba(109,74,255,0.3), transparent 62%);
   pointer-events: none;
-}
-html[lang='en-IN'] .zs-band::after {
-  background: radial-gradient(760px 320px at 22% 0%, rgba(196, 181, 245, 0.35), transparent 62%);
 }
 .zs-band__grid {
   position: relative; z-index: 1;
@@ -1925,8 +1860,6 @@ html[lang='en-IN'] .zs-band::after {
 .zs-band__l { font-size: 0.76rem; letter-spacing: 0.09em; text-transform: uppercase; color: #94A2BE; }
 /* The base cyan-to-violet number gradient reads coolly against the warm
    maroon band above, so India gets a warm gold-to-cream version instead. */
-html[lang='en-IN'] .zs-band__n { background: linear-gradient(96deg, #9B8AE0, #C4B5FD); -webkit-background-clip: text; background-clip: text; }
-html[lang='en-IN'] .zs-band__l { color: rgba(186, 230, 253, 0.75); }
 
 /* ══ INTEGRATIONS ════════════════════════════════════════════════════════ */
 .zs-int-tools { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin: 2.6rem 0 1.6rem; }
@@ -1939,8 +1872,7 @@ html[lang='en-IN'] .zs-band__l { color: rgba(186, 230, 253, 0.75); }
 .zs-chip:hover { border-color: rgba(109,74,255,0.5); color: var(--zs-fg); transform: translateY(-2px); }
 .zs-chip b { color: var(--zs-violet); font-weight: 700; }
 [data-theme='dark'] .zs-chip b { color: #A78BFA; }
-html[lang='en-US'] .zs-chip b { color: #A78BFA; }
-html[lang='en-IN'] .zs-chip b { color: #6E5DC6; }
+html[lang='en-US'] .zs-chip b, html[lang='en-IN'] .zs-chip b { color: #A78BFA; }
 
 /* ══ CLOSING CTA ═════════════════════════════════════════════════════════ */
 .zs-close {
@@ -1956,7 +1888,7 @@ html[lang='en-IN'] .zs-chip b { color: #6E5DC6; }
     linear-gradient(168deg, #0A0E1A, #131A2E);
   border-top-color: transparent;
 }
-html[lang='en-US'] .zs-close {
+html[lang='en-US'] .zs-close, html[lang='en-IN'] .zs-close {
   background:
     radial-gradient(760px 380px at 50% 0%, rgba(15,118,110,0.3), transparent 66%),
     linear-gradient(168deg, #0a0e16, #05070a);
@@ -1967,12 +1899,6 @@ html[lang='en-US'] .zs-close {
    stay dark for India regardless of the manual dark-mode toggle, so this
    background must be pinned too, or toggling dark mode would swap in the
    dark gradient above while the text stayed dark — invisible. */
-html[lang='en-IN'] .zs-close {
-  background:
-    radial-gradient(760px 380px at 50% 0%, rgba(110, 93, 198, 0.14), transparent 66%),
-    linear-gradient(168deg, #FFFFFF, #E8F3F0);
-  border-top-color: transparent;
-}
 .zs-close h2 {
   font-size: clamp(1.8rem,3.4vw,2.5rem); font-weight: 800;
   letter-spacing: -0.028em; color: var(--zs-hero-fg); margin: 0 0 1rem;
